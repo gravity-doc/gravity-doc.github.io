@@ -1,6 +1,8 @@
-## Welcome to GitHub Pages
+## 欢迎进入上海交通大学天文系高性能计算中心
 
 You can use the [editor on GitHub](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+
+如果你要了解上海交通大学天文系高性能集群计算中心，可以点击[github](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io)进入网址，查看手册
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
