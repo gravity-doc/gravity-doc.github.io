@@ -1,8 +1,6 @@
 ## 上海交通大学天文系高性能计算中心
 
-You can use the [editor on GitHub](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+欢迎进入上海交通大学天文系高性能计算中心，如需了解详情可点击[sjtu-gravity-hpc](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io)进入网址
 
 ### 高性能集群队列信息
 
@@ -45,10 +43,3 @@ module can be used to manage the software in this cluster. Usage as follow:
 如想要了解更详细信息请点击[github](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/blob/master/上海交大用户手册.pdf)进入网址,查看详细的用户手册.
 
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
