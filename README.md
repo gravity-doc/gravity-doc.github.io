@@ -1,7 +1,7 @@
 ## 上海交通大学天文系高性能集群计算中心
 
 You can use the [editor on GitHub](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
+[上海交通大学天文系高性能集群计算用户文档](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io)
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
