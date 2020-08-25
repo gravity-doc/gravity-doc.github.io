@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAV
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### 集群队列信息
+### 高性能集群队列信息
 
 ```集群队列信息
 A job scheduling system(pbs/torque),which configured with three queues: 
@@ -42,7 +42,7 @@ module can be used to manage the software in this cluster. Usage as follow:
  4. module list   # list modulefiles loaded now
  5. module switch modulefiles1 modulefiles2        # switch from modulefiles1 to modulefiles2
 ```
-如想要了解更详细信息请点击[github](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io)进入网址,查看详细的用户手册.
+如想要了解更详细信息请点击[github](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/blob/master/上海交大用户手册.pdf)进入网址,查看详细的用户手册.
 
 
 ### Jekyll Themes
