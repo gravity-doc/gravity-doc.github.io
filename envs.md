@@ -6,7 +6,10 @@ sort: 6
 
 Module 
 
+use `module avail` to check the available softwares/libraries.
+```bash
 module avail
+```
 
 module load aaa
 
