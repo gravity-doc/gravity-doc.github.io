@@ -6,12 +6,12 @@ sort: 1
 
 先来张Gravity照骗
 
-## Gravity拥有？
+## Login nodes
 - 2 login nodes
 
+## Computing nodes
 - 36 compute nodes
     72 cores, 384G memo
-
 - 1 fat node
     192 cores, 6T memo
 
