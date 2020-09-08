@@ -12,6 +12,7 @@ sort: 1
 ## Computing nodes
 - 36 compute nodes
     72 cores, 384G memo
+    
 - 1 fat node
     192 cores, 6T memo
 
