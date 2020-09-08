@@ -18,9 +18,14 @@ fat
 
 
 ## PBS commands
+
 ###submit a new job
+
 ###check job status
+
 `qstat`
 S,R,Q,C,E
+
 ###cancel a job
+
 ###check job status
