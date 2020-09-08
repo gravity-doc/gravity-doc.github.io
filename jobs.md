@@ -2,7 +2,7 @@
 sort: 5
 ---
 
-### Job submission
+# Job submission
 
 Gravity uses PBS to manage jobs.
 
@@ -10,5 +10,17 @@ BALABALA
 
 ## Queues
 
+normal
 
-## aaa
+small
+
+fat
+
+
+## PBS commands
+###submit a new job
+###check job status
+`qstat`
+S,R,Q,C,E
+###cancel a job
+###check job status
