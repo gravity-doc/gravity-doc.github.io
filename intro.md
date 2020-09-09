@@ -20,7 +20,7 @@ sort: 1
 
 ## Storage
 Parallel storage
-Total amount:
+Total amount:4.2p
 
 ## Network
 
