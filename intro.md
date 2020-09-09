@@ -4,7 +4,7 @@ sort: 1
 
 # Introduction
 
-![image](https://github.com/gravity-doc/gravity-doc.github.io/blob/master/gravity.png)
+![image](gravity.png)
 
 ## Login nodes
 - 2 login nodes
