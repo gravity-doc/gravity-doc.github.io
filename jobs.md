@@ -27,5 +27,8 @@ fat
 S,R,Q,C,E
 
 ### cancel a job
+'qdel job ID'
 
 ### check job status
+'checkjob job ID'
+'qstat -an'
