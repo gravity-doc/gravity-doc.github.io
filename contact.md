@@ -3,6 +3,4 @@ sort: 100
 ---
 
 ### contact
-
-mails, mails, mails.
-
+- 1365049345@qq.com
