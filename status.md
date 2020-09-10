@@ -11,10 +11,9 @@ sort: 4
 `pbsnodes -l all`
 
 ## Check jobs
-
+`checkjob job ID`
 
 ## Check queue
-
 
 
 ## Web interface
