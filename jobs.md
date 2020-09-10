@@ -20,11 +20,11 @@ fat
 ## PBS commands
 
 ### submit a new job
-
+- qsub ./filename
 ### check job status
-
 `qstat`
 S,R,Q,C,E
+'qstat -an'
 
 ### cancel a job
 'qdel job ID'
