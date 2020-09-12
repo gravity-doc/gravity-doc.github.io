@@ -40,6 +40,6 @@ module can be used to manage the software in this cluster. Usage as follow:
  4. module list   # list modulefiles loaded now
  5. module switch modulefiles1 modulefiles2        # switch from modulefiles1 to modulefiles2
 ```
-如想要了解更详细信息请点击[github](https://github.com/gravity-doc/gravity-doc.github.io/blob/master/上海交通大学物理天文学院用户手册.pdf)进入网址,查看详细的用户手册.
+如想要了解更详细信息请点击[github](docs/上海交通大学物理天文学院用户手册.pdf)进入网址,查看详细的用户手册.
 
 

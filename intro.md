@@ -7,21 +7,21 @@ sort: 1
 ![image](imgs/gravity.png)
 
 ## Login nodes
-- 2 login nodes
-   - 1个登录节点是login01、1个登录节点是login02，Intel Gold 6240 CPU（2.6GHz,18C）。
-
+- 2 login nodes **login01** and **login02**
+   - 2X Intel Gold 6240 CPU（2.6GHz,18C)
+   - 192G memo.
 
 ## Computing nodes
-- 36 compute nodes
+- 36 compute nodes **gr01** - **gr36**
     - each node has 4X Intel Gold 6240 CPU (2.6GHz,18C), totally 72 cores.
     - each node has 384G memo.
     
-- 1 fat node
+- 1 fat node **fat01**
     - The fat node has 8X Intel Platinum 8268 CPU（2.9GHz，24C), totally 192 cores.
     - Totally, 192 cores, 6T memo，
 
 ## Storage
-Parallel storage
+Parallel storage.
 
 Total amount:4.2p
 
