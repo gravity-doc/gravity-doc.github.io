@@ -6,7 +6,7 @@ sort: 6
 
 Module 
 
-use `module avail` to check the available softwares/libraries.
+Use `module avail` to check the available softwares/libraries.
 ```bash
 [testuser@GRAVITY:~]:module avail
 
@@ -25,13 +25,15 @@ compiler/intel-2018u3  hdf5/1.12.0            mpi/mpich-3.2.1
 compiler/intel-2020    hdf5-parallel/1.12.0   mpi/openmpi-3.1.1
 ```
 
-module load aaa
+Use `module load ABC` to load the softwares/libraries you need.
 
-module list
+Use `module list` to check the list of all the module loaded.
 
-module unload aaa
+Use `module unload ABC` to unload one specific module.  `module purge` can be used to unload all the modules.
 
-module purge
+```tip
+The order of the module loading matters if some of them have dependence on others.
+```
 
 
 

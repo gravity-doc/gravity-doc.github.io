@@ -20,7 +20,8 @@ fat
 ## PBS commands
 
 ### submit a new job
-- qsub ./filename
+`qsub ./filename`
+
 ### check job status
 `qstat`
 S,R,Q,C,E

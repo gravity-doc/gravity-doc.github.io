@@ -14,13 +14,15 @@ sort: 2
 
 ## Password
 
-You will recieve an email once your account is created.
+You will receive an email once your account is created.
 The initial password is included.
-Use `passwd` command to update your password.
+You can use `yppasswd` command on *login02* node to update your password.
 
 ## Reset password
 
+You can contact the admins to reset your password.
 
-```tips
+
+```tip
 how to set high level password
 ```
