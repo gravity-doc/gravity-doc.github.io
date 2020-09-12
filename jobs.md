@@ -20,7 +20,12 @@ Queue **small** is reserved for specific users.
 ### submit a new job
 
 One can submit a job via the `qsub` command.
-`qsub [-a date_time] [-c interval] [-C directive_prefix] [-e path] [-I] [-j join] [-k keep] [-l resource_list] [-m mail_options] [-M user_list][-N name] [-o path] [-p priority] [-q destination] [-r c] [-S path_list] [-u user_list][-v variable_list] [-V] [-W additional_attributes] [-z] [script]`
+`qsub [-a date_time] [-c interval] [-C directive_prefix] [-e path]`
+`[-I] [-j join] [-k keep] [-l resource_list] [-m mail_options]`
+`[-M user_list][-N name] [-o path] [-p priority] [-q destination]`
+`[-r c] [-S path_list] [-u user_list][-v variable_list] [-V]`
+`[-W additional_attributes] [-z] [script]`
+
 We recommend to submit jobs via the job scripts.
 `qsub JOB_SCRIPT`
 For job script sample, check the [samples](samples).
