@@ -21,11 +21,11 @@ Queue **small** is reserved for specific users.
 
 One can submit a job via the `qsub` command.
 
-`qsub [-a date_time] [-c interval] [-C directive_prefix] [-e path]`
-`[-I] [-j join] [-k keep] [-l resource_list] [-m mail_options]`
-`[-M user_list][-N name] [-o path] [-p priority] [-q destination]`
-`[-r c] [-S path_list] [-u user_list][-v variable_list] [-V]`
-`[-W additional_attributes] [-z] [script]`
+`qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
+`[-I]` `[-j join]` `[-k keep]` `[-l resource_list]` `[-m mail_options]`
+`[-M user_list]` `[-N name]` `[-o path]` `[-p priority]` `[-q destination]`
+`[-r c]` `[-S path_list]` `[-u user_list]` `[-v variable_list]` `[-V]`
+`[-W additional_attributes]` `[-z]` `[script]`
 
 We recommend submit jobs via the job scripts, `qsub JOB_SCRIPT`.
 For job script sample, check the [samples](samples).
@@ -53,7 +53,11 @@ Use `qstat -u USERNAME` to show the jobs submitted by one user.
 ### references
 
 ```note
-`qsub [-a date_time] [-c interval] [-C directive_prefix] [-e path] [-I] [-j join] [-k keep] [-l resource_list] [-m mail_options] [-M user_list][-N name] [-o path] [-p priority] [-q destination] [-r c] [-S path_list] [-u user_list][-v variable_list] [-V] [-W additional_attributes] [-z] [script]`
+`qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
+`[-I]` `[-j join]` `[-k keep]` `[-l resource_list]` `[-m mail_options]`
+`[-M user_list]` `[-N name]` `[-o path]` `[-p priority]` `[-q destination]`
+`[-r c]` `[-S path_list]` `[-u user_list]` `[-v variable_list]` `[-V]`
+`[-W additional_attributes]` `[-z]` `[script]`  
 -a  date_time ： delay the job with time [[[[CC]YY]MM]DD]hhmm[.SS]    
 -c  interval   ： 定义作业的检查点间隔，如果机器不支持检查点，则忽略此选项。  
 -C  directive_prefix ：treat all lines begin with directive_prefix as qsub option. Otherwise, qsub option begins with '#PBS'
@@ -80,7 +84,7 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 ```
 
 ```note
-`qstat [-f][-a][-i] [-n][-s] [-R] [-Q][-q][-B][-u]`  
+`qstat` `[-f JOB_ID]` `[-a]` `[-i]` `[-n]` `[-s]` `[-R]` `[-Q [QUEUE]]` `[-q]` `[-B]` `[-u USER]`  
 -f JOB_ID : specify the job  
 -a        : list all the jobs  
 -i        : list all non-running jobs 
@@ -88,8 +92,8 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 -n        : list the nodes assigned to jobs  
 -s         : 列出队列管理员与scheduler所提供的建议  
 -R         : 列出磁盘预留信息  
--Q [queue] : queue status
--q [queue] : queue status 
+-Q [QUEUE] : list queue status
+-q [QUEUE] : list queue status 
 -B         : list PBS Server information 
 -u USER    : list the jobs for USER 
 ```
