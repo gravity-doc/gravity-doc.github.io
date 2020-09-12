@@ -6,7 +6,7 @@ sort: 4
 
 The following commands provide the status of job queue system.
 
-`pestat` can provide the CPU and memory usage of all the nodes.
+`pestat` provides the CPU and memory usage of all the nodes.
 ```bash
 [testuser@GRAVITY:~]:pestat
 node	 state	 load	 pmem	 ncpu	 mem	 resi	 usrs	 tasks	 jobids/users
@@ -23,6 +23,23 @@ gr33	 free 	 64.00*	 385382	  72	 417382	  76560 	 65/1 	   1 	 [1276:user3]
 gr36	 free 	 63.96*	 385382	  72	 417382	  76529 	 69/1 	   1 	 [1276:user3]
 fat01	 free 	 192.02* 6191128  192	 6223128  1284016 	 1/1 	   1 	 [1340:user4]
 ```
+
+
+PSB job management provides `pbsnodes -l all` to check whether the nodes is free or occupied.
+```bash
+[testuser@GRAVITY:~]:pbsnodes -l all
+gr01                 free
+...
+gr17                 free
+gr18                 job-exclusive
+...
+gr31                 job-exclusive
+...
+gr36                 free
+fat01                free
+```
+
+## Check queue
 
 `showq` provides the queue information.
 ```bash
@@ -52,23 +69,7 @@ JOBNAME            USERNAME      STATE  PROC     WCLIMIT            QUEUETIME
 Total Jobs: 5   Active Jobs: 4   Idle Jobs: 1   Blocked Jobs: 0
 ```
 
-`pbsnodes -l all` can to use to check whether the nodes is free or occupied
-```bash
-[testuser@GRAVITY:~]:pbsnodes -l all
-gr01                 free
-...
-gr17                 free
-gr18                 job-exclusive
-...
-gr31                 job-exclusive
-...
-gr36                 free
-fat01                free
-```
-
-
-## Check queue
-
+One can also use `qstat` and `qstat -an` to check basic and detailed queue information.
 
 ```bash
 [testuser@GRAVITY:~]:qstat -an
@@ -88,7 +89,6 @@ Job ID                  Username    Queue    Jobname          SessID  NDS   TSK 
    gr31/0-71+gr30/0-71+gr29/0-71+gr28/0-71+gr27/0-71+gr26/0-71+gr25/0-71
    +gr24/0-71+gr23/0-71+gr22/0-71+gr21/0-71+gr20/0-71+gr19/0-71+gr18/0-71
 ```
-
 
 ## Web interface
 check Gravity status on your browser by: 

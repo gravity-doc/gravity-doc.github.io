@@ -4,7 +4,7 @@ sort: 6
 
 # Environments
 
-Module 
+**Gravity** provides **module environment** to manage frequently used softwares and libraries.  
 
 Use `module avail` to check the available softwares/libraries.
 ```bash
