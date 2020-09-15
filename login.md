@@ -51,13 +51,28 @@ SSH 端口为 22
 ## Windows用户
 启动客户端 Xshell,填写登录节点地址：gravity.sjtu.edu.cn，端口号采用默认值22，然后点击连接，如下图所示：
 
-![image](../imgs/login01.png)
+![image](imgs/login01.png)
  
 在终端窗口中，输入您的SSH用户名和密码进行登录，如图2,图3所示：
 
-![avater](../imgs/login02.png)
+![image](imgs/login02.png)
 
-![avater](../imgs/login02.png)
+![image](imgs/login02.png)
+
+## Linux/Unix/Mac 用户
+Linux / Unix / Mac 用户可以使用终端中的命令行工具登录。下列语句指出了该节点的IP地址、用户名和SSH端口。
+
+```bash
+$ ssh YOUR_USERNAME@TARGET_IP
+```
+
+# 使用SSH传输文件
+## Windows 用户
+
+安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
+输入数据集群IP 用户名 密码和端口号，如下图所示：
+
+
 
 
 
