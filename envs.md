@@ -31,6 +31,26 @@ Use `module list` to check the list of all the module loaded.
 
 Use `module unload ABC` to unload one specific module.  `module purge` can be used to unload all the modules.
 
+module purge/load/unload/list:完整的模块工作流程
+
+在开始新作业之前，先卸载所有已加载的模块是一个好习惯。
+```bash
+$ mdoule purge
+```
+
+可以一次加载或卸载多个模块
+
+```bash
+$ mdoule load python/python-3.8.5
+$ module unload python/python-3.8.5
+```
+
+您还可以在工作中的任何时间查看加载的模块
+
+```bash
+$ mdoule list
+```
+
 ```tip
 The order of the module loading matters if some of them have dependence on others.
 ```
