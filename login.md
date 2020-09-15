@@ -85,7 +85,8 @@ $ scp -r data/ YOUR_USERNAME@TARGET_IP:tmp/
 $ scp YOUR_USERNAME@TARGET_IP:data.out ./
 ```
 
-# 无密码登录
+# 免密码登录
+*提示：“无密码登录”仅适用于使用 SSH 命令行工具的 Linux/ UNIX / Mac 用户*
 
 
 
