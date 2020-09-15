@@ -72,6 +72,25 @@ $ ssh YOUR_USERNAME@TARGET_IP
 安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
 输入数据集群IP 用户名 密码和端口号，如下图所示：
 
+![image](imgs/upload01.png)
+
+## Linux/Unix/Mac用户
+
+Linux/Unix/Mac 用户可以使用命令行工具在集群和您自己的计算机之间传输数据。下列语句会将文件夹data/上传到主文件夹的tmp/。
+
+```bash
+$ scp -r data/ YOUR_USERNAME@TARGET_IP:tmp/
+```
+
+下列语句会将主文件夹的data.out下载到本地当前工作目录中。
+
+```bash
+$ scp YOUR_USERNAME@TARGET_IP:data.out ./
+```
+
+# 无密码登录
+
+
 
 
 
