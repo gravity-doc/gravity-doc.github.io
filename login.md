@@ -51,7 +51,13 @@ SSH 端口为 22
 ## Windows用户
 启动客户端 Xshell,填写登录节点地址：gravity.sjtu.edu.cn，端口号采用默认值22，然后点击连接，如下图所示：
 
+![image](../imgs/login01.png)
+ 
+在终端窗口中，输入您的SSH用户名和密码进行登录，如图2,图3所示：
 
+![avater](../imgs/login02.png)
+
+![avater](../imgs/login02.png)
 
 
 
