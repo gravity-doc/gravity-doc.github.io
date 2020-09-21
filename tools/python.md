@@ -25,7 +25,7 @@ pip list
 If you need to install additional python packages, for example, `iminuit`, the easiest way is to use
 
 ```
-pip install --local iminuit
+pip install --user iminuit
 ```
 
 # Virtual env
