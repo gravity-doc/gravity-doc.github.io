@@ -1,7 +1,8 @@
 ---
 sort: 1
 ---
-# Python modules
+# Python
+## Python Modules
 There is a system default python installation available if you do not load any module, which may already be able to meet your requirements. If you run into problems, you can try switching to another python module.
 
 To see available python modules, use 
@@ -27,7 +28,7 @@ If you need to install additional python packages, for example, `iminuit`, the e
 pip install --user iminuit
 ```
 
-# Virtual env
+## Virtual env
 
 In some situations you may need different versions of a package that cannot be installed under the same python path. To solve the problem you can create a virtual environment to manage the conflict. Creating and activating a virtual env is like having a separate python installation so that you can install different collections of packages without affecting the base environment, but should be much easier to manage.
 
@@ -52,7 +53,7 @@ deactivate
 ```
 
 
-# Anaconda
+## Anaconda
 
 Some users may prefer to use the anaconda python distribution. To use anaconda,
 
@@ -62,7 +63,7 @@ module load anaconda
 
 Note you will have to unload any previously loaded python module if you see conflicts.
 
-## conda env
+### conda env
 You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`
 
 ```
@@ -82,7 +83,7 @@ To see list of env,
 conda env list
 ```
 
-# References
+## References
 
 * [virtualenv command options](https://virtualenv.pypa.io/en/latest/cli_interface.html)
 * [conda env](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
