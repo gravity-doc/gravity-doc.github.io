@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# System Python modules
+# Python modules
 There is a system default python installation available if you do not load any module, which may already be able to meet your requirements. If you run into problems, you can try switching to another python module.
 
 To see available python modules, use 
@@ -82,3 +82,9 @@ To see list of env,
 ```
 conda env list
 ```
+
+# References
+
+* virtualenv command options: https://virtualenv.pypa.io/en/latest/cli_interface.html
+* conda env: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+* Getting started with Conda: https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html
