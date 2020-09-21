@@ -18,7 +18,8 @@ module load python/python-2.7.15
 
 The system python modules already have the common python packages preconfigured. To see a list of already installed pacakages, do
 
-```pip list
+```
+pip list
 ```
 
 If you need to install additional python packages, for example, `iminuit`, the easiest way is to use
