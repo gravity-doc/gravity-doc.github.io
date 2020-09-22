@@ -43,9 +43,8 @@ By default this will create an "virtual environment" under `myenv/` in your curr
 
    Currently the `virtualenv` command only works for python2. For python3 users, after loading the python3 module, you can create the virtualenv by 
 
-   ```
-   python3 -m venv myenv
-   ```
+   `python3 -m venv myenv`
+   
 ```
 
 Once this is done, you can activate it by
