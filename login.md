@@ -25,8 +25,7 @@ One can also use login01 via the IP address **111.186.40.52**.
  
 按照文档的操作说明将有助于您完成工作，谢谢您的配合！
 
-```note 注意事项
-
+```note 
    * HPC账号仅限于同一课题组的成员使用，请勿将账号借给他人使用。
    * 请妥善保管好您的账号密码，不要告知他人。HPC管理员不会要求您提供密码。
    * 恶意的SSH客户端软件会窃取您的密码，请在官网下载正版授权SSH客户端软件。
@@ -67,10 +66,10 @@ $ ssh YOUR_USERNAME@TARGET_IP
 ```
 
 ## Web-based login
-visit `https://[ip of login01]:4200` in your browser.
+visit [https://[ip_of_login01]:4200](https://11.186.40.52:4200) in your browser.
 
 ```tip
-Replace `[ip of login01]` with the actual ip.
+Replace `[ip_of_login01]` with the actual ip.
 ```
 
 # File transfer to/from server
