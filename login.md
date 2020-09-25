@@ -58,12 +58,19 @@ SSH 端口为 22
 
 ![image](imgs/login02.png)
 
+其它常用windows下的ssh客户端：putty, bitvise ssh client,
+
 # Linux/Unix/Mac 用户
 Linux / Unix / Mac 用户可以使用终端中的命令行工具登录。下列语句指出了该节点的IP地址、用户名和SSH端口。
 
 ```bash
 $ ssh YOUR_USERNAME@TARGET_IP
 ```
+
+# Login from a web browser
+visit `https://[ip of login01]:4200` in your browser.
+replace `[ip of login01]` with the actual ip.
+
 # Windows 用户使用ssh传输文件
 
 安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
@@ -84,5 +91,6 @@ $ scp -r data/ YOUR_USERNAME@TARGET_IP:tmp/
 ```bash
 $ scp YOUR_USERNAME@TARGET_IP:data.out ./
 ```
+
 
 
