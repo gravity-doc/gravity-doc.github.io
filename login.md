@@ -66,7 +66,7 @@ $ ssh YOUR_USERNAME@TARGET_IP
 ```
 
 ## Web-based login
-visit [https://[ip_of_login01]:4200](https://11.186.40.52:4200) in your browser.
+visit [https://[ip_of_login01]:4200](https://111.186.40.52:4200) in your browser.
 
 ```tip
 Replace `[ip_of_login01]` with the actual ip.
