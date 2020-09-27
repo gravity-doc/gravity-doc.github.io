@@ -66,7 +66,7 @@ $ ssh YOUR_USERNAME@TARGET_IP
 ```
 
 ## Web-based login
-visit [https://[ip_of_login01]:4200](https://111.186.40.52:4200) in your browser.
+visit cluster engine [https://[ip_of_login01]:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
 
 ```tip
 Replace `[ip_of_login01]` with the actual ip.
