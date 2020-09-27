@@ -1,6 +1,6 @@
-## 上海交通大学天文系高性能计算中心文档
+## 上海交通大学天文系Gravity集群用户手册
 
-欢迎进入上海交通大学天文系高性能计算中心，如果你想要修改此文档可以点击[edit this file](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/blob/master/index.md)
+此文档为交大天文系Gravity集群用户手册。欢迎用户共同维护此文档，如果你想要修改此文档可以点击[edit this file](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/blob/master/index.md)
 
 ### 高性能集群队列信息
 
