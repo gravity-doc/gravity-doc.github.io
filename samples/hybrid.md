@@ -14,8 +14,6 @@ implicit none
 integer(4)::rank,nrank
 integer(4)::ierr
 integer(4)::NUM_THREADS
-real(4),allocatable::ran(:)
-integer(4),allocatable::iran(:)
 character(len=MPI_MAX_PROCESSOR_NAME)::nodename
 integer(4)::namelen
 
