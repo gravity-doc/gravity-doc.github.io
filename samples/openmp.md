@@ -4,7 +4,7 @@ sort: 3
 
 # Openmp job
 
-```fortran
+```
 program testopenmp
 use omp_lib
 implicit none
@@ -25,10 +25,12 @@ enddo
 
 endprogram testopenmp
 ```
+
 ```bash
 module load compiler/intel-2018
 ifort testopenmp.f90 -fopenmp
 ```
+
 ```bash
 #!/bin/sh
 #PBS -N testopenmp
@@ -50,6 +52,7 @@ export OMP_NUM_THREADS=8
 
 mpirun -np 1 ./a.out > log
 ```
+
 ```bash
  number of threads:           8
  loop           1 is processed by thread           0
