@@ -4,6 +4,7 @@ sort: 3
 
 # Openmp job
 
+This is a sample fortran90 program using openmp to parallelize a *do* loop.
 ```
 program testopenmp
 use omp_lib
@@ -26,11 +27,14 @@ enddo
 endprogram testopenmp
 ```
 
+Use *intel compiler* to compile.
 ```bash
 module load compiler/intel-2018
 ifort testopenmp.f90 -fopenmp
 ```
 
+This sample job submission script is applying one node.
+The number of threads is set to 8.
 ```bash
 #!/bin/sh
 #PBS -N testopenmp
@@ -53,6 +57,7 @@ export OMP_NUM_THREADS=8
 mpirun -np 1 ./a.out > log
 ```
 
+The result shows that the *do* loop is been parallelized by 8 threads.
 ```bash
  number of threads:           8
  loop           1 is processed by thread           0
