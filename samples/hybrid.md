@@ -5,7 +5,7 @@ sort: 4
 # Hybrid job
 
 This sample *Fortran90* program use both *MPI* and *openmp*.
-```Fortran
+```fortran
 program checkhybrid
 use omp_lib
 use mpi
