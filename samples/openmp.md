@@ -4,8 +4,8 @@ sort: 3
 
 # Openmp job
 
-This is a sample fortran90 program using openmp to parallelize a *do* loop.
-```
+This is a sample *Fortran90* program using *openmp* to parallelize a *do* loop.
+```fortran
 program testopenmp
 use omp_lib
 implicit none
@@ -38,7 +38,7 @@ The number of threads is set to 8.
 ```bash
 #!/bin/sh
 #PBS -N testopenmp
-#PBS -l nodes=1:ppn=16
+#PBS -l nodes=1:ppn=1
 #PBS -l walltime=1:00:00
 
 cd $PBS_O_WORKDIR
