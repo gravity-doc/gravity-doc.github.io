@@ -48,13 +48,12 @@ echo "###############################################"
 echo "JOBID: " ${PBS_JOBID}
 echo "JOBNAME: " ${PBS_JOBNAME}
 module load compiler/intel-2018 && echo $_ "LOADED"
+export OMP_NUM_THREADS=8
 
 ### RUN ###
 echo "###############################################"
-
-export OMP_NUM_THREADS=8
-
 mpirun -np 1 ./a.out > log
+
 ```
 
 The result shows that the *do* loop is been parallelized by 8 threads.

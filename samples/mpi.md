@@ -52,11 +52,11 @@ module load mpi/intel-2018 && echo $_ "LOADED"
 
 ### RUN ###
 echo "###############################################"
-
 mpirun -np ${PBS_NP} ./a.out > log
+
 ```
 
-The result shows that gr25-gr28 is used to finish the job, with 2 process per node.
+The result shows that *gr25*-*gr28* is used to finish the job, with 2 processes per node.
 ```bash
   rank   2    is run on node  gr27
   rank   6    is run on node  gr25
