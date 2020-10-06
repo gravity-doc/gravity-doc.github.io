@@ -31,7 +31,7 @@ Use *Intel compiler* and *IntelMPI* to compile.
 ```bash
 module load compiler/intel-2018
 module load mpi/intel-2018
-mpif90 testmpi.f90 -fopenmp
+mpif90 testmpi.f90
 ```
 
 This sample script is applying 4 nodes and setting 2 processes per node.
