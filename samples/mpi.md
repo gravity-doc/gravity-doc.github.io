@@ -4,7 +4,7 @@ sort: 2
 
 # MPI job
 
-This sample shows a *mpi* parallel program in *Fortran90*.
+This sample shows a *MPI* parallel program in *Fortran90*.
 ```fortran
 program testmpi
 use mpi
@@ -27,14 +27,14 @@ call mpi_finalize(ierr)
 endprogram testmpi
 ```
 
-Use *intel compiler* and *intelMPI* to compile. 
+Use *Intel compiler* and *IntelMPI* to compile. 
 ```bash
 module load compiler/intel-2018
 module load mpi/intel-2018
 mpif90 testmpi.f90 -fopenmp
 ```
 
-This sample script is applying 4 nodes and 2 processor per node.
+This sample script is applying 4 nodes and setting 2 processes per node.
 ```bash
 #!/bin/sh
 #PBS -N testmpi

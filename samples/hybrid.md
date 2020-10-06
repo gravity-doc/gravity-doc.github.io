@@ -32,14 +32,14 @@ call mpi_finalize(ierr)
 endprogram checkhybrid
 ```
 
-Use *intel compiler* and *intelMPI* to compile the code. 
+Use *Intel compiler* and *IntelMPI* to compile the code. 
 ```bash
 module load compiler/intel-2018
 module load mpi/intel-2018
 mpif90 testhybrid.f90 -fopenmp
 ```
 
-The first script is applying 4 nodes and set 4 processes per node.
+The first script is applying 4 nodes and setting 4 processes per node.
 The number of openmp thread is not set in the environment.
 ```bash
 #!/bin/sh

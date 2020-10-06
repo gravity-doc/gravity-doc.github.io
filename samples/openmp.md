@@ -27,7 +27,7 @@ enddo
 endprogram testopenmp
 ```
 
-Use *intel compiler* to compile.
+Use *Intel compiler* to compile.
 ```bash
 module load compiler/intel-2018
 ifort testopenmp.f90 -fopenmp
