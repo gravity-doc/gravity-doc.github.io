@@ -16,6 +16,7 @@ sort: 8
 ## compiler/intel-2020 module无法使用的问题
 
   使用module load compiler/intel-2020无法生效，可能是因为一些参数没有配置，目前还没有找到是因为什么参数没有配置。
+  
   大家提交任务如果需要使用intel2020的话，可以直接写source路径。
   ```bash
   
