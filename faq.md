@@ -5,8 +5,8 @@ sort: 8
 ### FAQ
 
 ## 日志残留问题
-  当用户提交两个节点以上的任务时，就会出现日志残留问题。
-  问题描述
+  
+  问题描述:当用户提交两个节点以上的任务时，就会出现日志残留问题。
   ```bash
   [inspur@login02 gr01]$ cat inspur-test-3.e2619
     cgdelete: cannot remove group 'gr28.2619.login01': No such file or directory
