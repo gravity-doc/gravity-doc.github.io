@@ -5,16 +5,39 @@ sort: 5
 # GPU job
 
 This sample use *nvcc* to compile a example cuda code
-```fortran
-program testseries
-implicit none
+```cuda
+/* ---------------------------------------------------
+   My Hello world for CUDA programming
+   --------------------------------------------------- */
 
-write(*,*) 'Hello World!'
+#include <stdio.h>        // C programming header file
+#include <unistd.h>       // C programming header file
+                          // cude.h is automatically included by nvcc...
 
-endprogram testseries
+/* ------------------------------------
+   Your first kernel (= GPU function)
+   ------------------------------------ */
+__global__ void hello( )
+{
+   printf("Hello World From GPU!\n");
+}
+
+int main()
+{
+   /* ------------------------------------
+      Call the hello( ) kernel function
+      ------------------------------------ */
+   hello<<< 1, 4 >>>( );
+
+   printf("I am the CPU: Hello World ! \n");
+
+   sleep(1);   // Necessary to give time to let GPU threads run !!!
+
+   return 0;
+}
 ```
 ```bash
-nvcc 
+nvcc hello.cu -o hello
 ```
 
 A simply job submission script is as follow.
@@ -31,9 +54,17 @@ cd $PBS_O_WORKDIR
 echo "###############################################"
 echo "JOBID: " ${PBS_JOBID}
 echo "JOBNAME: " ${PBS_JOBNAME}
-module load gcc && echo $_ "LOADED"
 
 ### RUN ###
 echo "###############################################"
-./a.out > log
+./hello > log
+```
+
+You will see the following output
+```
+I am the CPU: Hello World ! 
+Hello World From GPU!
+Hello World From GPU!
+Hello World From GPU!
+Hello World From GPU!
 ```
