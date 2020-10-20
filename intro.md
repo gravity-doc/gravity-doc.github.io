@@ -19,6 +19,9 @@ sort: 1
 - 1 fat node **fat01**
     - The fat node has 8X Intel Platinum 8268 CPU（2.9GHz，24C), totally 192 cores.
     - Totally, 192 cores, 6T mem，
+- 1 GPU node **gr36**
+    - This node has 1X NVIDIA Tesla V100s PCIe 32 GB card, together with 4X Intel Gold 6240 CPU (2.6GHz,18C). 
+    
 
 ## Storage
 - Inspur AS13000 parallel storage, with 17 nodes, inter-connected with a dual-10Gbps network. 
