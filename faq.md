@@ -15,9 +15,10 @@ sort: 8
   
  ### compiler/intel-2020 module无法使用的问题
 
-  使用module load compiler/intel-2020无法生效，可能是因为一些参数没有配置，目前还没有找到是因为什么参数没有配置。
+  目前intel2020跟module适配存在问题，使用module load compiler/intel-2020载入环境变量无法生效。
   
-  大家提交任务如果需要使用intel2020的话，可以直接写source路径。
+  如果需要使用intel2020，可以直接写source路径，或者通过source载入。
+  source /opt/intel-2020.sh
   ```bash
   
   ```
