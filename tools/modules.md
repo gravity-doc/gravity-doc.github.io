@@ -1,8 +1,7 @@
 ---
-sort: 5
+sort: 3
 ---
-
-#Modules environment
+#Module environment
 
 ## Use modules
 
