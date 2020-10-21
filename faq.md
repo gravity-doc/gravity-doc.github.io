@@ -18,6 +18,7 @@ sort: 8
   目前intel2020跟module适配存在问题，使用module load compiler/intel-2020载入环境变量无法生效。
   
   如果需要使用intel2020，可以直接写source路径，或者通过source载入。
+
   source /opt/intel-2020.sh
   ```bash
   
