@@ -19,9 +19,8 @@ sort: 8
   
   如果需要使用intel2020，可以直接写source路径，或者通过source载入。
 
-  source /opt/intel-2020.sh
   ```bash
-  
+  source /opt/intel-2020.sh
   ```
   
 
