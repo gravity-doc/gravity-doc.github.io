@@ -73,6 +73,25 @@ Replace `[ip_of_login01]` with the actual ip.
 ```
 
 # File transfer to/from server
+## 查看用户总内存与已使用内存
+
+在login02节点查看
+```bash
+[inspur03@login02 ~]$ icfsquota inspur03
+max_size=3T,used=8.3GB
+```
+## 查看用户简介
+
+在login01节点查看
+```bash
+[inspur03@login01 ~]$ finger inspur
+Login: inspur         			Name: Shiyu Tan
+Directory: /home/inspur             	Shell: /bin/bash
+Office: sytan
+Last login Thu Oct 15 09:14 (CST) on 
+No mail.
+No Plan.
+```
 ## Windows 用户使用ssh传输文件
 
 安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
