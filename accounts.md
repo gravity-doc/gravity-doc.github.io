@@ -19,14 +19,6 @@ You will receive an email once your account is created.
 The initial password is included.
 You can use `yppasswd` command on *login02* node to update your password.
 
-## Reset password
-
-You can contact the admins to reset your password.
-
-```tip
-how to set high level password
-```
-
 ## Forget the password
 
 如果您因为种种原因忘记了密码，请发送邮件至[hpc](https://gravity-doc.github.io/contact.html)邮箱，在邮件中注明您要重置密码的账号。如果您不是账号申请人，为了确认您的身份，请务必抄送账号申请人的邮箱。我们会在确保本次重置并非恶意重置之后完成密码重置工作，并发送邮件通知您新的密码。
