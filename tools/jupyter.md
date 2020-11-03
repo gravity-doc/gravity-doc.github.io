@@ -19,4 +19,4 @@ ssh -L 8000:localhost:8000 user@gravity.sjtu.edu.cn -fN
 replace `user` with your actual username. 
 ```
 
-Then visit http://localhost:8000 
+Then visit [http://localhost:8000](http://localhost:8000)
