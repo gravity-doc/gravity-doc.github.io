@@ -33,6 +33,8 @@ Then configure it
 `python -m ipykernel install --user --name MYENV --display-name "abc"`
 
 The virtual environment *MYENV* is shown as *abc* in your jupyternotebook.
+
+![image](imgs/jupytervirtualenv.png)
 `
 
 
