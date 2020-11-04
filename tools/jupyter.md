@@ -20,3 +20,19 @@ replace `user` with your actual username.
 ```
 
 Then visit [http://localhost:8000](http://localhost:8000)
+
+# Add your own virtual env into Jupyter Notebook
+
+To do so, you need *ipykernel* package installed in your virtual environment.
+
+Assume that you have created your own virtual environment named *MYENV* and activated.
+
+Install *ipykernel*, `pip install ipykernel` .
+
+Then configure it 
+`python -m ipykernel install --user --name MYENV --display-name "abc"`
+
+The virtual environment *MYENV* is shown as *abc* in your jupyternotebook.
+`
+
+
