@@ -34,7 +34,7 @@ Then configure it
 
 The virtual environment *MYENV* is shown as *abc* in your jupyternotebook.
 
-![image](imgs/jupytervirtualenv.png)
+![image](../imgs/jupytervirtualenv.png){:width="50"}
 `
 
 
