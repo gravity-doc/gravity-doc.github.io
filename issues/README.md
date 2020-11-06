@@ -29,3 +29,12 @@ The same happens when update conda from old version.
 This issue has not been resolved and is under investigation.
 
 One can avoid to use Anaconda and conda temporarily.
+
+## openmpi-4.0.4
+
+High version *openmpi* use UCX (Unified Communication X) as the default pml (Physical Markup Language).
+You need to specify this in the running command.
+```bash
+mpirun -np 4 --mca pml ucx ./a.out
+```
+[For more details.]{https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX}
