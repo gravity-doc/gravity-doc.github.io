@@ -9,8 +9,8 @@ sort: 2
 [Use this link to apply](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u)
 
 ```warning
-请仔细阅读用户协议，并征求导师同意。
-Please read the license carefully, can communicate with your sponsor/supervisor.
+请仔细阅读[用户协议](https://notes.sjtu.edu.cn/s/ZF46PNYoF#)，并征求导师同意。
+Please read the user policy carefully, and get consent of your sponsor/supervisor before application.
 ```
 
 ## Password
