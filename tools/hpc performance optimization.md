@@ -1,4 +1,8 @@
-## hpc performance optimization
+---
+sort: 4
+---
+
+# hpc performance optimization
 
 ### 并行编程基础
   
