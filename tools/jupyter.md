@@ -13,6 +13,12 @@ Visit [https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn)
 
 Note the "s" in "https".
 
+```note
+Some browsers show warning about the invalid certificate.  You may manually chose "allow", "trust" or "visit the website" in the settings/permissions/privacy options.
+
+For Safari, click "show details" in the warning page and click "visit the website"
+```
+
 # Add your own virtual env into Jupyter Notebook
 
 To do so, you need *ipykernel* package installed in your virtual environment.
