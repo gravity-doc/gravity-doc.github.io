@@ -5,7 +5,10 @@ sort: 5
 # Job submission
 
 **Gravity** uses PBS to manage jobs.
-This page provides basic usage of the PBS commands.  For detailed information please 自行百度。
+This page provides basic usage of the PBS commands.  
+
+## Example scripts
+See [this section](https://gravity-doc.github.io/samples/) for example job scripts.
 
 ## Queues
 
@@ -14,6 +17,7 @@ This page provides basic usage of the PBS commands.  For detailed information pl
 Jobs in **normal** queue can apply computing nodes **gr01** to **gr32**.
 To use fat node, use **fat** queue.
 Queue **small** is reserved for specific users.
+
 
 ## PBS commands
 
