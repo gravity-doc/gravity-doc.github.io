@@ -9,7 +9,7 @@ This page provides basic usage of the PBS commands.
 
 ## Example scripts
 The content of an example PBS script (`example.qsub`) is provided below:
-```bash:
+```bash
   #PBS -N gr01-linpack
   #PBS -l nodes=gr01:ppn=72
   #PBS -q normal
@@ -21,7 +21,7 @@ The content of an example PBS script (`example.qsub`) is provided below:
   mpirun -np 72 exec
 ```
 
-```note: 
+```note
 the `group_list` argument is your project name to charge time if you have one. Otherwise delete this option, and the cputime will be charged to your default group.
 ```
 
