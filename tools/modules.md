@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Module environment
+# Custom Modules
 
 ## Use modules
 
