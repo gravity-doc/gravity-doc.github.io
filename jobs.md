@@ -8,7 +8,29 @@ sort: 5
 This page provides basic usage of the PBS commands.  
 
 ## Example scripts
-See [this section](https://gravity-doc.github.io/samples/) for example job scripts.
+The content of an example PBS script (`example.qsub`) is provided below:
+```bash:
+  #PBS -N gr01-linpack
+  #PBS -l nodes=gr01:ppn=72
+  #PBS -q normal
+  #PBS -V
+  #PBS -S /bin/bash
+  #PBS -W group_list=project2
+
+  cd $PBS_O_WORKDIR
+  mpirun -np 72 exec
+```
+
+```note: 
+the `group_list` argument is your project name to charge time if you have one. Otherwise delete this option, and the cputime will be charged to your default group.
+```
+
+To submit the job,
+```bash:
+qsub example.qsub
+```
+
+See [this section](https://gravity-doc.github.io/samples/) for more example job scripts.
 
 ## Queues
 
