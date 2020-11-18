@@ -1,6 +1,6 @@
 ---
 sort: 10
-title: samples
+title: Example Job scripts
 ---
 
 A basic job script looks like this
