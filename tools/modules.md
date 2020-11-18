@@ -6,11 +6,7 @@ sort: 3
 
 ## Use modules
 
-Gravity provides a lot of softwares and libraries pre-installed.
-
-
-
-
+Gravity provides a lot of softwares and libraries pre-installed through the `module` tool, as documented on [this page](https://gravity-doc.github.io/envs.html).
 
 ## Add your own modulefiles
 
