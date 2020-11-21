@@ -9,7 +9,7 @@ Use the domain name **gravity.sjtu.edu.cn** or IP address **111.186.40.49** to l
 
 ```bash
 ssh YOUR_ACCOUNT@gravity.sjtu.edu.cn
-```) or Xshell.
+```
 The default log in node is **login02**.
 One can also ue login01 via the IP address **111.186.40.52**.
 
