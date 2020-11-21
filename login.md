@@ -13,22 +13,23 @@ ssh YOUR_ACCOUNT@gravity.sjtu.edu.cn
 The default log in node is **login02**.
 One can also use login01 via the IP address **111.186.40.52**.
 
+File transfer can be done similarly with `scp` or `rsync`. Google it for detailed documentation.
+
+## Linux/Mac/Windows
 - On Linux/Mac, you can do this directly on the command line in a shell.
 
 - On Windows, you may need to install a ssh client first. 
   * Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. 
   * If you prefer a GUI client, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell.
 
-File transfer can be done similarly with `scp` or `rsync`. Google it for detailed documentation.
-
 ## Web-based login
-visit cluster engine [https://[ip_of_login01]:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
+You can also login through a web browser. 
 
-```tip
-Replace `[ip_of_login01]` with the actual ip.
-```
+Visit cluster engine [https://111.186.40.52:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
+
 --------
 
+# 登陆集群
 本文将向大家介绍如何通过 SSH 远程登录到 HPC 集群上。在阅读本文档之前，您需要具备 Linux/Unix、终端、MS-DOS、SSH 远程登录的相关知识，或者您可以阅读参考资料理解这些概念。
 
 本文主要内容：
@@ -80,25 +81,6 @@ $ ssh YOUR_USERNAME@TARGET_IP
 ```
 
 # File transfer to/from server
-## 查看用户总内存与已使用内存
-
-在login02节点查看
-```bash
-[inspur03@login02 ~]$ icfsquota inspur03
-max_size=3T,used=8.3GB
-```
-## 查看用户简介
-
-在login01节点查看
-```bash
-[inspur03@login01 ~]$ finger inspur
-Login: inspur         			Name: Shiyu Tan
-Directory: /home/inspur             	Shell: /bin/bash
-Office: sytan
-Last login Thu Oct 15 09:14 (CST) on 
-No mail.
-No Plan.
-```
 ## Windows 用户使用ssh传输文件
 
 安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
