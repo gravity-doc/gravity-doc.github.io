@@ -9,9 +9,15 @@ Use the domain name **gravity.sjtu.edu.cn** or IP address **111.186.40.49** to l
 
 ```bash
 ssh YOUR_ACCOUNT@gravity.sjtu.edu.cn
-```
+```) or Xshell.
 The default log in node is **login02**.
-One can also use login01 via the IP address **111.186.40.52**.
+One can also ue login01 via the IP address **111.186.40.52**.
+
+On Linux/Mac, you can do this directly on the command line in a shell.
+
+On Windows, you may need to install a ssh client first. Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. If you prefer a GUI client, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell.
+
+File transfer can be done similarly with `scp` or `rsync`. Google it for detailed documentation.
 
 --------
 
