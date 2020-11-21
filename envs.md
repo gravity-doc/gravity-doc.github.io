@@ -2,7 +2,7 @@
 sort: 6
 ---
 
-# Software Modules
+# Available Software
 
 **Gravity** provides **module environment** to manage frequently used softwares and libraries.  
 
