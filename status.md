@@ -7,6 +7,8 @@ sort: 4
 You can check the status of jobs and queues through the [ClusterEngine](https://111.186.40.52:8443) webpage.
 
 ## Command line
+The following commands provide the status of job queue system.
+
 ### user information
 
 ```bash
@@ -32,7 +34,6 @@ max_size=3T,used=8.3GB
 ```
 
 ### nodes 
-The following commands provide the status of job queue system.
 
 `pestat` provides the CPU and memory usage of all the nodes.
 ```bash
@@ -53,7 +54,7 @@ fat01	 free 	 192.02* 6191128  192	 6223128  1284016 	 1/1 	   1 	 [1340:user4]
 ```
 
 
-PSB job management provides `pbsnodes -l all` to check whether the nodes is free or occupied.
+PBS job management provides `pbsnodes -l all` to check whether the nodes is free or occupied.
 ```bash
 [testuser@GRAVITY:~]:pbsnodes -l all
 gr01                 free
