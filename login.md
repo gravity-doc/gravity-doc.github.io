@@ -21,6 +21,12 @@ One can also use login01 via the IP address **111.186.40.52**.
 
 File transfer can be done similarly with `scp` or `rsync`. Google it for detailed documentation.
 
+## Web-based login
+visit cluster engine [https://[ip_of_login01]:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
+
+```tip
+Replace `[ip_of_login01]` with the actual ip.
+```
 --------
 
 本文将向大家介绍如何通过 SSH 远程登录到 HPC 集群上。在阅读本文档之前，您需要具备 Linux/Unix、终端、MS-DOS、SSH 远程登录的相关知识，或者您可以阅读参考资料理解这些概念。
@@ -71,13 +77,6 @@ Linux / Unix / Mac 用户可以使用终端中的命令行工具登录。下列�
 
 ```bash
 $ ssh YOUR_USERNAME@TARGET_IP
-```
-
-## Web-based login
-visit cluster engine [https://[ip_of_login01]:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
-
-```tip
-Replace `[ip_of_login01]` with the actual ip.
 ```
 
 # File transfer to/from server
