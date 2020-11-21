@@ -1,9 +1,37 @@
 ---
 sort: 4
 ---
+# Resource Monitoring
 
-# Status
+## Web interface
+You can check the status of jobs and queues through the [ClusterEngine](https://111.186.40.52:8443) webpage.
 
+## command line tools
+### user information
+
+```bash
+[inspur03@login01 ~]$ finger inspur
+Login: inspur         			Name: Shiyu Tan
+Directory: /home/inspur             	Shell: /bin/bash
+Office: sytan
+Last login Thu Oct 15 09:14 (CST) on 
+No mail.
+No Plan.
+```
+
+```tip
+More complete user information is available on login01.
+```
+
+### disk quota
+
+On login02, 
+```bash
+[inspur03@login02 ~]$ icfsquota inspur03
+max_size=3T,used=8.3GB
+```
+
+### nodes 
 The following commands provide the status of job queue system.
 
 `pestat` provides the CPU and memory usage of all the nodes.
@@ -39,7 +67,7 @@ gr36                 free
 fat01                free
 ```
 
-## Check queue
+### queue status
 
 `showq` provides the queue information.
 ```bash
@@ -89,7 +117,3 @@ Job ID                  Username    Queue    Jobname          SessID  NDS   TSK 
    gr31/0-71+gr30/0-71+gr29/0-71+gr28/0-71+gr27/0-71+gr26/0-71+gr25/0-71
    +gr24/0-71+gr23/0-71+gr22/0-71+gr21/0-71+gr20/0-71+gr19/0-71+gr18/0-71
 ```
-
-## Web interface
-check Gravity status on your browser by: 
-[this link](https://111.186.40.52:8443)
