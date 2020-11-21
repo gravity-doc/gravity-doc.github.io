@@ -6,7 +6,7 @@ sort: 4
 ## Web interface
 You can check the status of jobs and queues through the [ClusterEngine](https://111.186.40.52:8443) webpage.
 
-## Command line tools
+## Command line
 ### user information
 
 ```bash
