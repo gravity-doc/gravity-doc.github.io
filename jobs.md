@@ -124,6 +124,6 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 -u USER    : list the jobs for USER 
 ```
 
-
-
+## References
+http://docs.adaptivecomputing.com/torque/4-1-3/help.htm#topics/commands/qsub.htm
 
