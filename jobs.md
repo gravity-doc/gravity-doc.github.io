@@ -125,5 +125,7 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 ```
 
 ## References
-http://docs.adaptivecomputing.com/torque/4-1-3/help.htm#topics/commands/qsub.htm
+- [qsub doc](http://docs.adaptivecomputing.com/torque/4-1-3/help.htm#topics/commands/qsub.htm)
+- `man qsub`
+- `man pbs_resources`
 
