@@ -3,8 +3,7 @@ sort: 1
 ---
 
 # Introduction
-
-![](imgs/gravitypic.jpg)
+<img src="imgs/gravitypic.jpg" width="200" height="250"/>
 
 ## Login nodes
 - 2 login nodes **login02** (primary) and **login01** (backup)
