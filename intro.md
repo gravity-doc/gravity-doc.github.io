@@ -4,7 +4,7 @@ sort: 1
 
 # Introduction
 
-![image](imgs/gravity.png)
+![image](imgs/gravitypic.jpg)
 
 ## Login nodes
 - 2 login nodes **login02** (primary) and **login01** (backup)
