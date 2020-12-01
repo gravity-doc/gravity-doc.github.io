@@ -7,9 +7,7 @@ sort: 2
 You can start your own jupyter-notebook on the login node.
 
 # Jupyter hub
-Jupyterhub is available on login01. 
-
-Visit [https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn)
+Jupyterhub is available at [https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn)
 
 Note the "s" in "https".
 
