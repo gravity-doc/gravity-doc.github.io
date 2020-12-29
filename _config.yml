@@ -8,3 +8,6 @@ author: [Gravity Admins]
 copyright:
   since: false # like: 2000
   revision: false # is show the revision
+  
+gems:
+  - jemoji
