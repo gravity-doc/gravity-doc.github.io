@@ -33,6 +33,15 @@ On login02,
 max_size=3T,used=8.3GB
 ```
 
+The default quota per account is 3T.  
+
+If you run out of quota, you can free out space by deleting some files that are no longer needed.
+
+By default, deleted files are moved to `$HOME/.local/share/Trash` to protect against accidental deletion. To empty the trash folder and free out space: 
+```bash
+rm -rf ./local/share/Trash/*
+```
+
 ### nodes 
 
 `pestat` provides the CPU and memory usage of all the nodes.
