@@ -1,45 +1,24 @@
-## 上海交通大学天文系Gravity集群用户手册
+## Gravity Documentation 
 
-此文档为交大天文系Gravity集群用户手册。欢迎用户共同维护此文档，如果你想要修改此文档可以点击[edit this file](https://github.com/SJTU-GRAVITY-HPC/SJTU-GRAVITY-HPC.github.io/blob/master/index.md)
+This is the documentation for the Gravity Supercomputer at Department of Astronomy, SJTU.
 
-### 高性能集群队列信息
+This documentation is maitained on github with the [markdown syntax](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax). Every user is welcome to contribute. Contributing is simple following the steps below. 
 
-```集群队列信息
-A job scheduling system(pbs/torque),which configured with three queues: 
- 1. normal(gr01-gr32)[default queue]
- 2. small(gr33-gr36)
- 3. fat(fat01)
- 4. all(gr01-gr36)
+- Click.    
+To contribute,   click the [edit button](https://github.com/gravity-doc/gravity-doc.github.io/edit/master/index.md) on the upper right of the page you feel like editing. Every document page is editable. This will bring you to the source files on github. You may will need to login to github to proceed. Once logged-in, a fork of the document repository will be created under your own account, so that you can edit it in whatever way you like. 
+
+- Edit.   
+Edit the page to contribute useful staff. Check [here](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) or the existing source pages for help with the syntax.
+
+- Commit.    
+Finish the editing by leaving a commit message, describing what you have done.
+
+- Submit.    
+Submit a pull request so that your changes will be submitted to the upstream branch (a.k.a., this website). The administrators will review your changes and absorb them into the website. 
+
+```tip
+Your name will be honoured in the contributor list once your contributions are merged. 
+
+Feel free to try. Your edits will be reviewed before it merges to this website, so that you won't break anything! 中文内容也欢迎！
 ```
-### 高性能集群作业提交脚本
-
-```作业提交脚本
-the sample submit script for torque:
-  #PBS -N gr01-linpack
-  #PBS -l nodes=gr01:ppn=72
-  #PBS -q normal
-  #PBS -V
-  #PBS -S /bin/bash
-  #PBS -W group_list=project2
-  ### Set intel environment###
-  module load mpi/intel-2018 
-  cd $PBS_O_WORKDIR
-  NP=`cat $PBS_NODEFILE | wc -l`
-  cat $PBS_NODEFILE > /tmp/nodefile.$$
-  mpirun -machinefile /tmp/nodefile.$$ -n $NP  EXEC
-  rm -rf /tmp/nodefile.$$
-  rm -rf /tmp/nodes.$$
-notes: the group_list argument is your project name
-```
-### 高性能集群module的使用
-```module使用
-module can be used to manage the software in this cluster. Usage as follow:
- 1. module avail  # list all software 
- 2. module load modulefiles   # load moduelfiles for special software
- 3. module unload modulefiles # unload modulefiles
- 4. module list   # list modulefiles loaded now
- 5. module switch modulefiles1 modulefiles2        # switch from modulefiles1 to modulefiles2
-```
-如想要了解更详细信息请点击[github](docs/上海交通大学物理天文学院用户手册.pdf)进入网址,查看详细的用户手册.
-
 
