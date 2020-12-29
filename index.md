@@ -6,7 +6,7 @@ This documentation is maitained and served on github with the [markdown syntax](
 
 Every user is welcome to contribute. Contributing is simple following the steps below. 
 
-1. **Click**.  To contribute,   click the [edit button](https://github.com/gravity-doc/gravity-doc.github.io/edit/master/index.md) on the upper right of the page you feel like editing. Every document page is editable. This will bring you to the source files on github. You may will need to login to github to proceed. Once logged-in, a fork of the document repository will be created under your own account, so that you can edit it in whatever way you like. 
+1. **Click**.  To contribute,   click the [edit](https://github.com/gravity-doc/gravity-doc.github.io/edit/master/index.md) button :pencil: on the upper right of the page you feel like editing. Every document page is editable. This will bring you to the source files on github. You may will need to login to github to proceed. Once logged-in, a fork of the document repository will be created under your own account, so that you can edit it in whatever way you like. 
 
 2. **Edit**.   Edit the page to contribute useful staff. Check [here](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) or the existing source pages for help with the syntax.
 
