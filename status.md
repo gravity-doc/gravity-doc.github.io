@@ -35,11 +35,13 @@ max_size=3T,used=8.3GB
 
 The default quota per account is 3T.  
 
-If you run out of quota, you can free out space by deleting some files that are no longer needed.
+If you run out of quota, you can free out space by deleting some files that are no longer needed. If no more files can be deleted, ask your group owner to allocate more disk space to you.
 
-By default, deleted files are moved to `$HOME/.local/share/Trash` to protect against accidental deletion. To empty the trash folder and free out space: 
-```bash
-rm -rf ./local/share/Trash/*
+```note
+Files deleted through the graphical desktop will be moved to Trash folder that still takes up space. You can empty the trash if this is the case, through either the desktop or on the command line:
+     
+`rm -rf ./local/share/Trash/*`
+     
 ```
 
 ### nodes 
