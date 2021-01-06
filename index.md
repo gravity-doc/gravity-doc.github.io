@@ -17,6 +17,6 @@ Every user is welcome to contribute. Contributing is simple following the steps 
 ```tip
 Your name will be honoured in the contributor list once your contributions are merged. 
 
-Feel free to try. Your edits will be reviewed before it merges to this website, so that you won't break anything! 中文内容也欢迎！
+Feel free to try. Your edits will be reviewed before getting merged to this website, so that you won't break anything! 中文内容也欢迎！
 ```
 
