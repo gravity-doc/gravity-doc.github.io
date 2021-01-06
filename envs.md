@@ -41,7 +41,7 @@ $ mdoule purge
 可以一次加载或卸载多个模块
 
 ```bash
-$ mdoule load python/python-3.8.5
+$ module load python/python-3.8.5
 $ module unload python/python-3.8.5
 ```
 
