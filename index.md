@@ -1,6 +1,6 @@
 ## [Gravity Documentation](https://gravity-doc.github.io/)
 
-This is the documentation for the Gravity Supercomputer at Department of Astronomy, SJTU.
+This is the documentation for the Gravity Supercomputer at the [Department of Astronomy](https://astro.sjtu.edu.cn), SJTU.
 
 This documentation is maitained and served on github with the [markdown syntax](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax). 
 
