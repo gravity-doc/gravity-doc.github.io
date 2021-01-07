@@ -15,7 +15,7 @@ Every user is welcome to contribute. Contributing is simple following the steps 
 4. **Submit**.   Submit a pull request so that your changes will be submitted to the upstream branch (a.k.a., this website). The administrators will review your changes and absorb them into the website. 
 
 ```tip
-Your name will be honoured in the contributor list once your contributions are merged. 
+Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged. 
 
 Feel free to try. Your edits will be reviewed before getting merged to this website, so that you won't break anything! 中文内容也欢迎！
 ```
