@@ -19,6 +19,4 @@ Your name will be honoured in the [contributor list](https://github.com/gravity-
 
 Feel free to try. Your edits will be reviewed before getting merged to this website, so that you won't break anything! 中文内容也欢迎！
 ```
-### Table of contents
-{% include list.liquid %}
 
