@@ -11,6 +11,6 @@ For example:
 qsub -l nodes=1:ppn=4,mem=8gb,walltime=12:00:00 -q interactive -I
 ```
 
-You will be logged onto the assigned node once the above job get running, and you can start to run your actual computation interactively.
+You will be logged onto the assigned node once the above job get running, and you can start to run your actual computation interactively. *Please only use interactive job when necessary and use the resource efficiently*.
 
-Reference: https://www.msi.umn.edu/content/interactive-queue-use-qsub
+Reference: [https://www.msi.umn.edu/content/interactive-queue-use-qsub](https://www.msi.umn.edu/content/interactive-queue-use-qsub)
