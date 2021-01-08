@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# Introduction
+# Hardware specification
 <img src="imgs/gravitypic.jpg" width="200" height="250"/>
 
 ## Login nodes
