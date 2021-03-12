@@ -45,5 +45,37 @@ The virtual environment *MYENV* is shown as *abc* in your jupyternotebook.
 
 <img src="../imgs/jupytervirtualenv.png" width="300">
 
+# 在计算节点运行jupyter notebook
 
+前期准备：拥有自己的conda环境，并且环境中安装配置了jupyter netobook。
+
+创建文件`touch jupyternotebook.pbs`,并编辑文件
+
+例如：
+```bash
+#PBS -N jupyternotebook
+#PBS -l nodes=1:ppn=1
+#PBS -q normal
+#PBS -V
+#PBS -S /bin/bash
+#PBS -l walltime=71:00:00 
+### Set intel environment###
+
+module load anaconda/anaconda3
+conda activate inspur03
+
+nohup jupyter notebook >jupyternotebook.file 2>&1 &
+
+sleep 6000
+```
+把`inspur03`换成自己的conda环境，`sleep 6000`过60分钟后任务结束，可以自己调节。使用`qsub ./jupyternotebook.pbs`提交脚本
+
+然后查看生成的`jupyternotebook.file`文件，可以使用`cat jupyternotebook.file | grep http`命令看到jupyter notebook运行的计算节点和端口
+```bash
+[inspur03@login02 ~]$ cat jupyternotebook.file | grep http
+[I 10:42:14.172 NotebookApp] http://gr32:18890/
+```
+然后在本地打开一个新的远程界面，输入`ssh -L 2567:gr32:18890 user@gravity.sjtu.edu.cn -fN`,(`2567`是本地端口可以自定义。`gr32:18890`是jupyter notebook自动生成的计算节点和端口，`user`是用户名，`gravity.sjtu.edu.cn`登录节点网址)
+
+打开本地浏览器输入`http://localhost:2567`就可以打开jupyter notebook了（`注意：使用http，不要使用https`）
 
