@@ -3,7 +3,7 @@ sort: 1
 ---
 
 # Hardware specification
-<img src="imgs/gravitypic.jpg" width="200" height="250"/>
+<img src="imgs/gravitypic.jpg" width="250" height="350"/> [download high-resolution version](https://github.com/gravity-doc/gravity-doc.github.io/blob/master/imgs/gravity.jpg)
 
 ## Login nodes
 - 2 login nodes **login02** (primary) and **login01** (backup)
