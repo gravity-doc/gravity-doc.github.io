@@ -31,7 +31,7 @@ sort: 1
 - computation network: Mellanox infiniband HDR configured at 100Gb/s.
 - internet: 10Gb/s connetion to the internet through campus network.
 
-# SGI information
+## SGI information
 - 1 login nodes **sgi**
   - 32x Intel Xeon E5-4620 CPU (2.60GHz, 8C)
   - 3.8T mem
