@@ -32,6 +32,11 @@ You can use `yppasswd` command on *login02* node to update your password.
 3. 密码长度至少8位
 4. 密码中至少包含字母和数字
 
+## Account for the SGI node
+
+The SGI node operates independently from the gravity cluster nodes. If you need to use it but do not already have an account, you can contact the administrator in the wechat group or by email.
+
+原SGI服务器已经接入login02，可从login02通过`ssh username@sgi`登录。注意该username为SGI上的原账户，而非gravity账号; 如有新开账户需求请在微信群或者邮件联系管理员。
 
 
 
