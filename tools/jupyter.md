@@ -79,7 +79,7 @@ sleep 6000
 
 打开本地浏览器输入`http://localhost:2567`就可以打开jupyter notebook了（`注意：使用http，不要使用https`）
 
-# 在jupyterhub关闭停止运行的python进程
+# 在jupyterhub关闭睡眠的python进程
 
 请记住关闭已经停止运行的python进程，它会消耗大量的内存，登录jupyterhub网址:[https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn),通过点击关机按钮关闭，
 如下图所述：
