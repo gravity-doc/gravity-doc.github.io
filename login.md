@@ -21,12 +21,6 @@ File transfer can be done similarly with `scp` or `rsync`. Google it for detaile
 - On Windows, you may need to install a ssh client first. 
   * Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. 
   * If you prefer a GUI client, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell.
-
-## Web-based login
-You can also login through a web browser. 
-
-Visit cluster engine [https://111.186.40.52:8443](https://111.186.40.52:8443) in your browser. Select "管理工具>集群Shell>cab16>login01 or login02", click "生成shell视图".
-
 --------
 
 # 登陆集群
