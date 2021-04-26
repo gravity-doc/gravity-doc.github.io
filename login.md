@@ -24,7 +24,7 @@ File transfer can be done similarly with `scp` or `rsync`. Google it for detaile
 
 --------
 
-# 登陆集群
+## 登陆集群
 本文将向大家介绍如何通过 SSH 远程登录到 HPC 集群上。在阅读本文档之前，您需要具备 Linux/Unix、终端、MS-DOS、SSH 远程登录的相关知识，或者您可以阅读参考资料理解这些概念。
 
 本文主要内容：
@@ -43,7 +43,7 @@ File transfer can be done similarly with `scp` or `rsync`. Google it for detaile
    * 若无法登录，请检查输入密码或确认IP地址是否正确。您可以参考故障排除和反馈，将诊断信息发送给集群管理员[hpc](https://gravity-doc.github.io/contact.html)邮箱。
 ```
 
-## 准备
+### 准备
 
 通过 SSH 登录 HPC 集群，需要在客户端输入登录节点 IP 地址（或主机名），SSH 端口，SSH 用户名和密码。账号开通后您会收到以下内容的邮件：
 
@@ -55,7 +55,7 @@ ssh YOUR_USERNAME@gravity.sjtu.edu.cn or 111.186.40.49
 
 SSH 端口为 22
 
-## Windows用户登录集群
+### Windows用户登录集群
 启动客户端 Xshell,填写登录节点地址：gravity.sjtu.edu.cn，端口号采用默认值22，然后点击连接，如下图所示：
 
 ![image](imgs/login01.png)
@@ -68,22 +68,22 @@ SSH 端口为 22
 
 其它常用windows下的ssh客户端：putty, bitvise ssh client
 
-## Linux/Unix/Mac 用户
+### Linux/Unix/Mac 用户
 Linux / Unix / Mac 用户可以使用终端中的命令行工具登录。下列语句指出了该节点的IP地址、用户名和SSH端口。
 
 ```bash
 $ ssh YOUR_USERNAME@TARGET_IP
 ```
 
-# File transfer to/from server
-## Windows 用户使用ssh传输文件
+## File transfer to/from server
+### Windows 用户使用ssh传输文件
 
 安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
 输入数据集群IP 用户名 密码和端口号，如下图所示：
 
 ![image](imgs/upload01.png)
 
-## Linux/Unix/Mac用户使用ssh传输文件
+### Linux/Unix/Mac用户使用ssh传输文件
 
 Linux/Unix/Mac 用户可以使用命令行工具在集群和您自己的计算机之间传输数据。下列语句会将文件夹data/上传到主文件夹的tmp/。
 
