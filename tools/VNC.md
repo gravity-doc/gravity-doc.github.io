@@ -48,4 +48,11 @@ Killing Xvnc process ID 555581
 例如：111.186.40.49:34
 ```
 
+```tip
+如果连接上vnc之后没有桌面，请尝试
+
+`rm ~/.vnc/xstartup`
+
+之后重新启动vncserver 。注意开启新的server前要杀掉之前的（vncserver -kill)。
+```
 
