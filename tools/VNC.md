@@ -33,7 +33,7 @@ X DISPLAY #	PROCESS ID
 
 ## 杀掉vnc端口
 
-使用命令vncserver -kill :1，可以杀死自己的vnc进程
+使用命令vncserver -kill，可以杀死自己的vnc进程
 
 ```
 [inspur@login02 ~]$ vncserver -kill :37
