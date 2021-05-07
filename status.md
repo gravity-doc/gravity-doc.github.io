@@ -4,7 +4,7 @@ sort: 4
 # Resource Monitoring
 
 ## Web interface
-You can check the status of jobs and queues through the [ClusterEngine](https://111.186.40.52:8443) webpage.
+You can check the status of jobs and queues through the [ClusterEngine](https://stat.gravity.sjtu.edu.cn) webpage.
 
 ## Command line
 The following commands provide the status of job queue system.
