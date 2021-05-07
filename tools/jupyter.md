@@ -7,7 +7,7 @@ sort: 2
 You can start your own jupyter-notebook on the login node.
 
 # Jupyter hub
-Jupyterhub is available at [https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn)
+Jupyterhub is available at [https://jupyter.gravity.sjtu.edu.cn](https://jupyter.gravity.sjtu.edu.cn)
 
 Note the "s" in "https".
 
@@ -81,7 +81,7 @@ sleep 6000
 
 # 在jupyterhub关闭睡眠的python进程
 
-请记住关闭已经停止运行的python进程，它会消耗大量的内存，登录jupyterhub网址:[https://gravity.sjtu.edu.cn](https://gravity.sjtu.edu.cn),通过点击关机按钮关闭，
+请记住关闭已经停止运行的python进程，它会消耗大量的内存，登录jupyterhub网址:[https://jupyter.gravity.sjtu.edu.cn](https://jupyter.gravity.sjtu.edu.cn),通过点击关机按钮关闭，
 如下图所述：
 
 [//]:![image](../imgs/jupyterpython.jpg)
