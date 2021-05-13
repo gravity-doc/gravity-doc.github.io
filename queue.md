@@ -16,6 +16,7 @@ sort: 5
 
 
 Special purpose queues:
+
 | Queue Name | Max number of nodes | Max walltime | Max number of jobs| Note|
 |----|----|----|----|----|
 | fat | only fat node | not limited | not limited | large shared-memory jobs|
