@@ -4,7 +4,9 @@ sort: 5
 
 # Job Queues
 
-`qstat -f -Q` shows the currently available queues and the limitations.
+`qstat -q ` shows a summary of available queues.
+
+`qstat -f -Q` shows the detailed queue configurations, which are also listed below:
 
 | Queue Name | Max number of nodes | Max walltime | Max number of jobs| Note|
 |----|----|----|----|----|
