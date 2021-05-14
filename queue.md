@@ -19,7 +19,7 @@ Special purpose queues:
 
 | Queue Name | Max number of nodes | Max walltime | Max number of jobs| Note|
 |----|----|----|----|----|
-| fat | only fat node | not limited | 72 hrs | large shared-memory jobs|
+| fat | only fat node | 72 hrs | not limited | large shared-memory jobs|
 |gpu| only gr36 node | not limited | not limited | gpu jobs|
 
 
