@@ -12,8 +12,6 @@ sort: 5
 |----|----|----|----|----|
 | normal | 20 | 72 hrs | not limited | general purpose parallel jobs|
 |small| gr33-gr36 | not limited | not limited | |
-| all | not limited | 12 hrs | 1 | for jobs exceeding 20 nodes|
-
 
 Special purpose queues:
 
