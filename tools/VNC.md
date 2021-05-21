@@ -48,11 +48,18 @@ Killing Xvnc process ID 555581
 例如：111.186.40.49:34
 ```
 
-```tip
+```tip1
 如果连接上vnc之后没有桌面，请尝试
 
 `rm ~/.vnc/xstartup`
 
 之后重新启动vncserver 。注意开启新的server前要杀掉之前的（vncserver -kill)。
+```
+```tip2
+如果登录vnc viewer时显示Authentication failure，请尝试
+
+`rm ~/.vnc/passwd`
+
+之后使用vncpasswd重新设置密码，之后再尝试连接。
 ```
 
