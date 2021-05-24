@@ -10,7 +10,7 @@ sort: 5
 
 | Queue Name | Max number of nodes | Max walltime | Max number of jobs| Note|
 |----|----|----|----|----|
-| normal | 20 | 72 hrs | not limited | general purpose parallel jobs|
+| normal | 16 | 48 hrs | not limited | general purpose parallel jobs|
 |small| gr33-gr36 | not limited | not limited | |
 
 Special purpose queues:
