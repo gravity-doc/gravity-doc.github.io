@@ -40,6 +40,6 @@ mpirun -np 4 --mca pml ucx ./a.out
 ```
 [For more details.]{https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX}
 
-## Performance limit on fat01
+## Performance issue on fat01
 
 The current hardware architecture of fat01 has a limited memory bandwidth which could become a bottleneck for memory intensive jobs. For example, for large memory (e.g., >2TB) OpenMP jobs, it may take longer to run using 48 or more cores than using 24 cores. When the memory usage of the system is high, the overall performance of the system will also degrade. One may also experience very slow IO speed under such situations. So it is advised to first do some test runs to pick an optimal number of threads to use. 
