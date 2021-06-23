@@ -28,18 +28,17 @@ To login without using your password, first generate a key on your local compute
 
 -  For Linux users:
 
-On your own computer, do
-```
-ssh-keygen
-```
-And then copy the public part of the key to the server with the following command:
-```
-ssh-copy-id user@server
-```
-(replace `user@server` with your username and our server address).
+    On your own computer, do
+    ```
+    ssh-keygen
+    ```
+    And then copy the public part of the key to the server with the following command:
+    ```
+    ssh-copy-id user@server
+    ```
+    (replace `user@server` with your username and our server address).
 
-Once this is done you can login without inputting your password.
-
+    Once this is done you can login without inputting your password.
 
 - For more information and for Windows users, please check here: https://upcloud.com/community/tutorials/use-ssh-keys-authentication/
 
