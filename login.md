@@ -40,7 +40,8 @@ To login without using your password, first generate a key on your local compute
 
     Once this is done you can login without inputting your password.
 
-- For more information and for Windows users, please check here: https://upcloud.com/community/tutorials/use-ssh-keys-authentication/
+- For more information and for Windows users, please check here: 
+    [https://upcloud.com/community/tutorials/use-ssh-keys-authentication/](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/)
 
 --------
 
