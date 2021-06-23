@@ -23,6 +23,26 @@ File transfer can be done similarly with `scp` or `rsync`. Google it for detaile
     * Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. 
     * If you prefer a GUI client, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell.
 
+## ssh-key based login
+To login without using your password, first generate a key on your local computer:
+
+-  For Linux users:
+
+On your own computer, do
+```
+ssh-keygen
+```
+And then copy the public part of the key to the server with the following command:
+```
+ssh-copy-id user@server
+```
+(replace `user@server` with your username and our server address).
+
+Once this is done you can login without inputting your password.
+
+
+- For more information and for Windows users, please check here: https://upcloud.com/community/tutorials/use-ssh-keys-authentication/
+
 --------
 
 ## 登陆集群
