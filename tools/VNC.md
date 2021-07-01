@@ -9,6 +9,7 @@ VNC is a fast tool to connect to a graphical desktop on the server.
 ## Getting started
 
 You need to create a vncserver on gravity before you can connect with vnc. 
+
 首先在服务器上使用命令vncsrver开启vnc。
 
 ```
@@ -20,14 +21,16 @@ Starting applications specified in /home/inspur/.vnc/xstartup
 Log file is /home/inspur/.vnc/login02:37.log
 ```
 
+Take a note of the port number (37 in this case). You will need to connect to this port number in your vnc client.
+
+请记住这里显示的端口号（图中是37）。
+
 ```tip
 
   You will be prompted to setup a password the first time you do this. This will be the password you use to connect to vnc. This password is separate from the ssh password.
 
   第一次开启vnc时在输入命令后会先让你设置密码，之后再使用或者开启新的端口都会使用默认密码.
 ```
-
-Take a note of the port number (37 in this case). You will need to connect to this port number in your vnc client.
 
 ### checking for running servers
 
@@ -70,6 +73,7 @@ For security reasons, you can only connect to vnc through ssh-tunnel. This can b
 
 <img src="../imgs/remmina2.png" width=400/>
 
+你可以使用喜欢的vnc客户端连到前面建立的vncserver。在客户端中输入服务器地址和vncserver端口号。由于安全原因，还需要选择打开ssh-tunnel选项。
 
 ## Trouble-shooting
 ### No desktop
