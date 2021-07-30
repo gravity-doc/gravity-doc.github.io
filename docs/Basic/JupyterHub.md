@@ -1,5 +1,6 @@
 ---
 sort: 6
+title: JupyterHub
 ---
 
 # JupyterHub

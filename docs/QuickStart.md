@@ -1,5 +1,6 @@
 ---
 sort: 1
+title: Quick Start
 ---
 ### Apply for an account 🙋‍♂️🙋‍♀️
 [Click here](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form. Wait for a day or so, then you will receive the e-mail 🥳.

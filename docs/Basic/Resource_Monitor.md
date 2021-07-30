@@ -1,5 +1,6 @@
 ---
 sort: 4
+title: Resource Monitor
 ---
 # Resource Monitor
 

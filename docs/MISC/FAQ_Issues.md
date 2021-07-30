@@ -1,3 +1,8 @@
+---
+sort: 1
+title: FAQ/Issues
+---
+
 # FAQ/Issues
 
 ```tip

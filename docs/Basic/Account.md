@@ -1,8 +1,7 @@
 ---
 sort: 1
+title: Account
 ---
-
-# Account
 
 ## Apply for an account
 

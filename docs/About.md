@@ -1,7 +1,7 @@
 ---
 sort: 2
+title: About
 ---
-
 ## Hardware
 <img src="./images/hardware.jpg" width = "300" height = "500" div align=center />
 
