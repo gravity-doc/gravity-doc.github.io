@@ -4,4 +4,4 @@ sort: 1
 
 # Basic
 
-{% include list.liquid all=true %}
+{% include list.liquid %}
