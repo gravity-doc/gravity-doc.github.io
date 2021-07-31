@@ -2,10 +2,10 @@
 sort: 1
 title: Quick Start
 ---
-### Apply for an account 🙋‍♂️🙋‍♀️
+## Apply for an account 🙋‍♂️🙋‍♀️
 [Click here](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form. Wait for a day or so, then you will receive the e-mail 🥳.
 
-### Log in to Gravity Cluster 💻
+## Log in to Gravity Cluster 💻➡️⚛️
 
 You are supposed to use **_ssh key_** to log in to Gravity, because we **DO NOT** allow password login.
 
@@ -13,7 +13,7 @@ You are supposed to use **_ssh key_** to log in to Gravity, because we **DO NOT*
 ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn
 ```
 
-### Job (PBS) 🔭
+## Job (PBS) 🔭
 
 - submit an **interactive** job
 
@@ -50,7 +50,7 @@ qstat -a
 qdel 36162  # 36162 is your jobID
 ```
 
-### Cheatsheet 📜
+## Cheatsheet 📜
 
 | **Command**                                                  | **Description**                                              |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |

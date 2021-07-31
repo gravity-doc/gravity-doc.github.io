@@ -45,4 +45,4 @@ We would appreciate it if all publications that include results generated using 
 - **本论文的计算结果得到了上海交通大学天文系高性能计算集群Gravity的支持和帮助**
 - **This work made use of the Gravity Supercomputer at the Department of Astronomy, Shanghai Jiao Tong University.**
 
-<img src="./docs/images/logo_DOA_mini.png" width = "100" height = "50" div align=right />
+<img src="./docs/images/logo_DOA_mini.png" width = "200" height = "100" div align=right />

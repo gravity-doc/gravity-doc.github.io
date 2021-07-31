@@ -26,13 +26,13 @@ title: About
 ### Storage
 
 - Inspur AS13000 parallel storage, with 17 nodes, inter-connected with a dual-10Gbps network. 
-- Usable capacity 4.2PB (raw 5.3PB, configured with 8:2 eraser code for redundacy)
+- Usable capacity 4.2PB (raw 5.3PB, configured with 8:2 eraser code for redundancy)
 - IO speed ~20GB/s.
 
 ### Network
 
 - computation network: Mellanox infiniband HDR configured at 100Gb/s.
-- internet: 10Gb/s connetion to the internet through campus network.
+- internet: 10Gb/s connection to the internet through campus network.
 
 ### SGI node 
 
@@ -42,4 +42,4 @@ The old SGI shared-memory server
   - 4TB mem
   - ddn storage, usable capacity 657TB
   - connected to login02 only through a 10Gbps cable.
-  - [accounts](https://gravity-doc.github.io/accounts.html#account-for-the-sgi-node) managed separately from gravity
+  - [accounts](https://gravity-doc.github.io/Basic/Account.html#account-for-the-sgi-node) managed separately from gravity
