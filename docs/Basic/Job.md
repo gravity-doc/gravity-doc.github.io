@@ -596,7 +596,7 @@ qdel [-W time] JOB_ID
 
 `checkjob JOB_ID` can provide the information of a pending job.
 
-## references
+## References
 
 ```note
 `qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`

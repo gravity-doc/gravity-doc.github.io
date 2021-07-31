@@ -4,7 +4,7 @@ sort: 3
 
 # Speedup Git⚡
 ## Why
-When we use `git clone`, `git pull` or whatever related to git, somehow, there is a wired phenomenon: The speed of connection is **too slow**, or we **cannot even access** https://github.com 
+When we use `git clone`, `git pull` or whatever related to git, somehow, there is a wired phenomenon: The speed of connection is **too slow**, or we **cannot even access** [Github](https://github.com)
 
 Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳   
 

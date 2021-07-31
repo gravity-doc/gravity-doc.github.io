@@ -5,7 +5,7 @@ title: Login
 
 # Login
 ```danger
-When you fail to log in, **DO NO** try many times, your IP will be **banned** 😭
+When you fail to log in, **DO NOT** try many times, your IP will be **banned** 😭
 ```
 Use the domain name **gravity.sjtu.edu.cn** or IP address to log in.
 
@@ -45,7 +45,7 @@ File transfer can be done similarly with `scp` or `rsync`. Google it for detaile
 - On Linux/Mac, you can do this directly on the command line in a shell.
 - On Windows, you may need to install a ssh client first. 
   - Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. 
-  - If you prefer a GUI client, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell.
+  - If you prefer a **GUI client**, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell. We recommend  **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)** (the best on I think😜)
 
 ## ssh-key based login
 

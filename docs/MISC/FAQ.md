@@ -12,20 +12,20 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 - What if I forgot my password?
 
   > Do not worry, contact us to change the password      
-  >
   > You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀
 
 - I can not login *Gravity* using my *ssh private key*
 
   > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your **ssh public key** and your **username**   
   > You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀    
-
-```tip
-You should use **private key** to log in to Gravity like this:
-`ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn`    
-The **public key** should be on the *Gravity* -> `~/.ssh/authorized_keys`   
-Keep your **private key** safe, it is identical to **password**!
-```
+  >
+  > ```tip
+  > You should use **private key** to log in to Gravity like this:   
+  > `ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn`    
+  > The **public key** should be on the *Gravity* -> `~/.ssh/authorized_keys`   
+  > 
+  > Keep your **private key** safe, it is identical to the **password**!
+  > ```
 
 - What if my **IP** was **banned**, so that I couldn't access **[JupyterHub](https://gravity.sjtu.edu.cn/)** or **ssh login**?
 

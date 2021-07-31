@@ -4,17 +4,15 @@ title: VNC
 ---
 
 ```note
-Considering security, *Gravity* closes ports except **22, 80, 443**. Therefore, you need *ssh tunnel* to connect other service.
+Considering security, *Gravity* closes ports except **22, 80, 443**.    
+Therefore, you need **ssh tunnel* to connect other service.
 ```
 
 ```tip
 VNC is a fast tool to connect to a graphical desktop on the server.   
 You should add **5900** to your port. That is the **real** port. For example:   
-​ ```
-  # start a VNC on Gravity
-  vncserver :66
-​ ```   
-Then, the real port VNC uses is **`66 + 5900 = 5966`**
+`vncserver :66`   
+Then, the real port VNC uses is **`66 + 5900 = 5966`**   
 When you use *SSH tunnel*, please connect to the real port, otherwise you will fail🤣
 ```
 

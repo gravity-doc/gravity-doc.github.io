@@ -8,10 +8,11 @@ title: JupyterHub
 - Jupyter-notebook/lab is the **easiest way** to coding 🥳
 - VScode is the **best editor** in the Universe 💪
 - You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎   
-Please use your *username* and *password* of *Gravity* to log in.
+Please use your *username* and *password* of *Gravity* to log in. 
+
 - [~~JupyterHub at login01~~ (*backup*)](https://gravity.sjtu.edu.cn/login01/)
 - [JupyterHub at login02 (**main**)](https://gravity.sjtu.edu.cn/login02/)
-- PS. In the **near future**, we will enable *Two-Factor Authentication (2FA)**
+- PS. In the **near future**, we will enable **Two-Factor Authentication (2FA)**🎉
 ```
 ```warning
 **DO NOT** run heavy program on login nodes ❌🙅❌

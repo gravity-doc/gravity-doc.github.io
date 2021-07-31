@@ -5,14 +5,14 @@ title: X11 Tunnel
 
 # X11 Tunnel
 ```note
-Running graphical software on Gravity with [X11 tunneling]((https://en.wikipedia.org/wiki/X_Window_System)   
+Running graphical software on Gravity with [X11 tunneling](https://en.wikipedia.org/wiki/X_Window_System)   
 Actually, sometimes using **[VNC](https://gravity-doc.github.io/Advanced/VNC.html)** is better 😜   
 X11 allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using    
-> - `eog`
-> - `display`
+- `eog`
+- `display`
 
 Or, you can even run a browser
-> - `firefox`
+- `firefox`
 ```
 
 ## Windows
@@ -23,7 +23,7 @@ For Windows users, we recommend you to use **[MobaXTerm](https://mobaxterm.mobat
 qsub -I -X -l nodes=1:ppn=72,mem=1gb,walltime=12:00:00 -q normal
 ```
 
-Then, you can run your graphical application from the compute node. 🎉
+Then, you can run your graphical application from the computing node 🎉.
 
 ## Mac
 
@@ -39,7 +39,7 @@ Once you are logged in, you can connect to an interactive compute node using the
 qsub -I -X -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
 ```
 
-Then, you can run your graphical application from the compute node.
+Then, you can run your graphical application from the computing node 🎉.
 
 ## Linux
 Just use `ssh` to log in!
@@ -53,4 +53,4 @@ Once you are connected, you can connect to an interactive compute node using the
 qsub -I -X -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
 ```
 
-Then, you can run your graphical application from the computing node.
+Then, you can run your graphical application from the computing node 🎉.

@@ -9,11 +9,11 @@ You can also **use your own environment** in *JupyterHub*
 Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or computing nodes) 👇
 ```
 
-1. Prepare your own `jupyter-notebook` (`jupter-lab`) or you can just use system's directly.
+1. Prepare your own `jupyter-notebook` (`jupter-lab`) or you can just use system's directly.   
    前期准备：拥有自己的conda环境，并且环境中安装配置了jupyter netobook；或者直接使用系统自带的
 
-2. Create a **PBS script** `jupyternotebook.pbs`, for example 🌰:
-   创建一个**PBS脚本** `jupyternotebook.pbs`，举个栗子 🌰：
+2. Create a **PBS script** `jupyternotebook.pbs`, for example 🌰:   
+   创建一个**PBS脚本** `jupyternotebook.pbs`，举个栗子 🌰：   
 
    ```
    #PBS -N notebook
@@ -35,32 +35,32 @@ Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or 
    sleep 72h
    ```
 
-3. submit your job
-   提交任务
+3. submit your job   
+   提交任务   
 
    ```bash
    qsub jupyternotebook.pbs
    ```
 
-4. connect to `jupter-lab/notebook`
-   连接至`jupter-lab/notebook` 
+4. connect to `jupter-lab/notebook`   
+   连接至`jupter-lab/notebook`    
 
-   1. Let's see which node the job is running at?
-      我们来看看任务在哪个节点上运行？
+   1. Let's see which node the job is running at?   
+      我们来看看任务在哪个节点上运行？   
 
       ```bash
       qstat -an
       ```
       
-   2. Connect to your jupyter-notebook/lab from your PC 💻
-      从你的电脑/手机/平板连接 jupyter-notebook/lab 💻
+   2. Connect to your jupyter-notebook/lab from your PC 💻   
+      从你的电脑/手机/平板连接 jupyter-notebook/lab 💻   
       
       ```bash
       ssh -CNL localhost:23333:gr33:9999 <username>@gravity.sjtu.edu.cn
       ```
       
-   3. open browser, start coding 🥳
-      打开浏览器，开始敲代码 🥳
+   3. open browser, start coding 🥳   
+      打开浏览器，开始敲代码 🥳    
       
       ```http
       http://localhost:23333
