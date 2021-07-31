@@ -1,30 +1,32 @@
 ---
 sort: 2
+title: User Software Installation
 ---
 
-# User Software Installation
+
 ```tip
-### You can use `module` to manage your own software installed
-### Also, you can just ignore `module` if you do not have **too many** tools or they do not **conflict** with each other
+You can use `module` to manage your own software installed   
+Also, you can just ignore `module` if you do not have **too many** tools or they do not **conflict** with each other
 ```
 
-## Use modules
+# Use modules
 
 Gravity provides a lot of softwares and libraries pre-installed through the `module` tool, as documented on [this page](https://gravity-doc.github.io/Software/Software-Installed.html).
 
-### Add your own modulefiles
+## Add your own modulefiles
 
-Users can create a *.modulerc* file in your home directory.  
+Users can create a `.modulerc` file in your `HOME` directory.  
 In this file, you can add new paths to your own modulefiles to the environmental variable *MODULEPATH*.
+
 ```bash
 #%Module1.0#####
-append-path MODULEPATH /home/user1/mymodulefiles
+append-path MODULEPATH /home/u/mymodulefiles
 ```
 Note that `#%Module1.0#####` is required at the first line.
 
 When you use `module` command, system can also find modulefiles in this directory.
 
-### Write your own modulefiles
+## Write your own modulefiles
 
 After installing some software, saying `FFTW-3.3.4`, you may want to create your own modulefiles for it.
 

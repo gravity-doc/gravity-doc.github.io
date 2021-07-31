@@ -3,16 +3,11 @@ sort: 1
 ---
 
 # Software Installed
+```note
 On the *Gravity*, we use **`module`** to manage software and tools.
-```bash
-module avail                   # see available software
-module list                    # see software you have loaded
-module load <software_name>    # load a software to your current shell environment
-module unload <software_name>  # unload software you don't need
 ```
 
-
-| Command                         | Description                                       |
+| **Command**                         | **Description**                                       |
 | ------------------------------- | ------------------------------------------------- |
 | `module avail`                  | see available software                            |
 | `module list`                   | see software you have loaded                      |
@@ -143,13 +138,12 @@ module load anaconda/anaconda-mamba
 Note you will have to unload any previously loaded python module if you see conflicts.
 ```tip
 [mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
-
+```
 | mamba                                  | conda                                  |
 | -------------------------------------- | -------------------------------------- |
 | mamba search emcee                     | conda search emcee                     |
 | mamba install -c conda-forge camb      | conda install -c conda-forge camb      |
 | mamba create -n myenv python=3.8 scipy | conda create -n myenv python=3.8 scipy |
-```
 
 ### conda env
 You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`

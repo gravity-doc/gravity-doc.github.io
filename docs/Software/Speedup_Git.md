@@ -6,7 +6,7 @@ sort: 3
 ## Why
 When we use `git clone`, `git pull` or whatever related to git, somehow, there is a wired phenomenon: The speed of connection is **too slow**, or we **cannot even access** https://github.com 
 
-Therefore, we provide `pgit` to solve this problem🥳   
+Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳   
 
 ## Usage
 Actually, it is **totally equal to** `git`, you can just **replace** `git` with `pgit`, that's it! 😎   
@@ -14,14 +14,17 @@ You can use it on both **login01** and **login02**.
 
 **Common usage:**
 
-```bash
-$ pgit pull
-$ pgit push
-$ pgit clone [url]
-$ pgit fetch [remote]
-$ pgit remote -v
-```
+| **Git**                  | ⚡                     |
+| -------------------- | --------------------- |
+| `git pull`           | `pgit pull`           |
+| `git push`           | `pgit push`           |
+| `git clone <url>`    | `pgit clone <url>`    |
+| `git fetch <remote>` | `pgit fetch <remote>` |
+| `git remote -v`      | `pgit remote -v`      |
+| `git xxxxxxxx`       | `pgit xxxxxxxx`       |
+
 **For example**🌰
+
 ```bash
 ╭─lalala ~ 
 ╰─$ pgit clone git@github.com:Samreay/ChainConsumer.git
