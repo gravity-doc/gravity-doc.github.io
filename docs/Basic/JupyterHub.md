@@ -3,21 +3,21 @@ sort: 6
 title: JupyterHub
 ---
 
-# JupyterHub
 ```tip
-## [JupyterHub](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨
-- jupyter-notebook/lab is the easiest way to coding 🥳
-- VScode is the best editor in the Universe 💪
-- you can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎
-We have JupyterHub on both *login01* and *login02*
+[**JupyterHub**](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨ 
+- Jupyter-notebook/lab is the **easiest way** to coding 🥳
+- VScode is the **best editor** in the Universe 💪
+- You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎   
+Please use your *username* and *password* of *Gravity* to log in.
 - [~~JupyterHub at login01~~ (*backup*)](https://gravity.sjtu.edu.cn/login01/)
 - [JupyterHub at login02 (**main**)](https://gravity.sjtu.edu.cn/login02/)
+- PS. In the **near future**, we will enable *Two-Factor Authentication (2FA)**
 ```
 ```warning
 **DO NOT** run heavy program on login nodes ❌🙅❌
 ```
 ```danger
-When you fail to log in, **DO NO** try many times, your IP will be **banned** 😭
+When you fail to log in, **DO NOT** try many times, your IP will be **banned** 😭
 ```
 1. login
 Visit [JupyterHub website](https://gravity.sjtu.edu.cn/login02), enter your *username* and *password* of **Gravity**.
@@ -36,8 +36,8 @@ You want to run your server on *login node* or *computing node*? Or, you wanna r
 ```note
 You need to wait for a while if you choose to start a server on **computing node**. If the resource is limited, it may fail.
 ```
-## Jupyter-lab (notebook)
-### Choose a kernel (environment)
+# Jupyter-lab (notebook)
+## Choose a kernel (environment)
 
 Actually, a *kernel* represents a *virtual environment*, which means you can use all of the installed packages in this environment.
 
@@ -65,7 +65,7 @@ After creating a new environment, you have to **install ipykernel** so that you 
 python -m ipykernel install --user --name myenv 
 ```
 
-### Coding
+## Coding
 
 You can use *notebook* or *text file* directly for coding. For example 🌰, double click a *notebook*, then you can see like this:
 
@@ -75,7 +75,7 @@ You can use *notebook* or *text file* directly for coding. For example 🌰, dou
 - There is a little cute panel on the top right, displaying how much CPU and memory you are using. If your memory usage exceed the limit, your process will **be killed** **(login nodes)**
 - The *auto-completion* will be activated when you open a *notebook*, which is at the bottom of your browser, you just need to press **\<TAB\>** button to use the **completion**. You need to **be patient** for the first time you open it 🤣
 
-### Close
+## Close
 
 - If you just wanna close it for now, hoping it is still running on *Gravity*, just **close your browser**.
 
@@ -85,15 +85,15 @@ You can use *notebook* or *text file* directly for coding. For example 🌰, dou
 
 ![image-20210730120814518](../images/Basic/jupyterhub-close2.png)
 
-### Tips
+## Tips
 
-- classic notebook
+### Classic Notebook
 
 If you like the traditional *jupyter-notebook*, you can just easily switch to it.
 
 ![image-20210730115539662](../images/Basic/jupyterhub-classic-notebook.png)
 
-- drag
+### Drag
 
 You can drag the sub-window to reorganize your workspace like this
 
@@ -112,41 +112,40 @@ You can open python console combined with the notebook/text file (it's helpful w
 
 ![image-20210730133917039](../images/Basic/jupyterhub-console-text.png)
 
-- data transfer
+### Data Transfer
 
 If your need to download/upload files from/to *Gravity*, there is an easiest way that you just need to **drag** whatever you need into/out the Jupyterlab.
 
 > PS. If your files are pretty large (eg. >10GB), you'd better use `scp, rsync` or other tools.
 
-- markdown
+### Markdown
 
 At *Launcher*, you can double click *Markdown file*, then right click to select **Show Markdown Preview** like this
 
 ![image-20210730141653276](../images/Basic/jupyterhub-markdown.png)
 
-
-- Python function documentation
+### Python Documentation
 
 If you are not familiar with some function or package, you can try to use **Show Contextual Help** in *Launcher*. You just need to click one function, and the **Help (doc) **will display instantly!
 
 ![image-20210730142333335](../images/Basic/jupyterhub-help.png)
 
-
-- flowchart
+### Flowchart
 
 You can click the **Diagram** at *launcher* to draw a flowchart
 
 ![image-20210730143446883](../images/Basic/jupyterhub-flowchart.png)
 
+### Git
 
-- git
-
-From the sidebar, you can find a git plugin.
+From the sidebar, you can find a [git plugin](https://github.com/jupyterlab/jupyterlab-git.
 
 > - You can use it clone, pull, push, etc.
 > - You can use *diff* in the notebook to check what changes you've made.
 
-## VScode
+![git GIF](https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif)
+
+# VScode
 
 As is well-known, *VScode* is the best editor for coding in the world 😜
 

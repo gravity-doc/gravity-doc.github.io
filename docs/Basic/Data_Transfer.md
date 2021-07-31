@@ -11,7 +11,7 @@ When one is making plots or editing codes, it might be more convenient to use
 techniques with graphical user interface support.
 
 ## Jupyter-lab/notebook
-Because of the GUI of jupyter, you can easily transfer your data, as long as your data is not too large (eg. >10G)
+Because of the GUI of jupyter, you can easily transfer your data, as long as your data is not too large (eg. <10G)
 > 1. login [JupyterHub](https://gravity.sjtu.edu.cn/)
 > 2. start a server
 > 3. **drag** your files (download or upload)
