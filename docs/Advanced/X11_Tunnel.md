@@ -1,19 +1,19 @@
 ---
 sort: 1
+title: X11 Tunnel
 ---
 
 # X11 Tunnel
-```tip
-Running graphical software on Gravity with X11 tunneling
-Actually, sometimes using **[VNC](https://gravity-doc.github.io/Advanced/SSH-tunnel.html#VNC)** is better 😜
-```
-
-One way to run graphical software on Gravity is to use [X11 tunneling](https://en.wikipedia.org/wiki/X_Window_System).
-It allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using
-
+```note
+Running graphical software on Gravity with [X11 tunneling]((https://en.wikipedia.org/wiki/X_Window_System)   
+Actually, sometimes using **[VNC](https://gravity-doc.github.io/Advanced/VNC.html)** is better 😜   
+X11 allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using    
 > - `eog`
->
 > - `display`
+
+Or, you can even run a browser
+> - `firefox`
+```
 
 ## Windows
 
