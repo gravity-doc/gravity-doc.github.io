@@ -5,7 +5,7 @@ title: Quick Start
 ## Apply for an account 🙋‍♂️🙋‍♀️
 [Click here](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form. Wait for a day or so, then you will receive the e-mail 🥳.
 
-## Log in to Gravity Cluster 💻➡️⚛️
+## Log in to Gravity Cluster 💻
 
 You are supposed to use **_ssh key_** to log in to Gravity, because we **DO NOT** allow password login.
 
