@@ -14,8 +14,8 @@ ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
 # for example 🌰
 ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
-<details>
-<summary>Also, you can set up your `~/.ssh/config`  to simplify your command 😎</summary>
+
+Also, you can set up your `~/.ssh/config`  to simplify your command 😎
 
 - Edit your `~/.ssh/config` like this:
 ```
@@ -35,8 +35,6 @@ Here we go 🎉
 ssh login01
 ssh login02
 ```
-</details>
-
 
 The default log in node is **login02**.
 One can also use login01 via the IP address **111.186.40.52**.

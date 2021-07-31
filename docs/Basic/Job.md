@@ -1,40 +1,37 @@
 ---
 sort: 3
-title: JOB
+title: Job
 ---
 
-# Job
 ```warning
-You should run your job via PBS (Torque). 
+You **should** run your job via PBS (Torque). 
 You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, they might be _crashed_.
 ```
 
-
-
-## Queues
+# Queues
 
 `qstat -q ` shows a summary of available queues.
 
 `qstat -f -Q` shows the detailed queue configurations, which are also listed below:
 
-### Ordinary queues
+## Ordinary queues
 
-| Queue name | Max number of nodes | Max walltime |      Priority       |
-| :--------: | :-----------------: | :----------: | :-----------------: |
-|   debug    |          1          |   3 hours    |        High         |
-|   small    |          3          |   72 hours   |       Medium        |
-|   normal   |         27          |   48 hours   | Low (default queue) |
+| Queue name | Max  nodes | Max time | Max mem per node |        Priority         |
+| :--------: | :--------: | :------: | :--------------: | :---------------------: |
+|  *debug*   |     1      | 3 hours  |      400 GB      |          High           |
+|  *small*   |     3      | 72 hours |      400 GB      |         Medium          |
+|  *normal*  |     27     | 48 hours |      400 GB      | Low (**default** queue) |
 
-### **Special** queues
+## **Special** queues
 
-| Queue name | Max number of nodes | Max walltime | Note                                                         |
-| :--------: | :-----------------: | :----------: | :----------------------------------------------------------- |
-|    fat     |     only fat01      |   72 hours   | **large shared-memory** jobs （mem >360GB, otherwise use normal) |
-|    gpu     |  gr01, gr02, gr36   |   72 hours   | **gpu** jobs                                                 |
+| Queue name |    Max nodes     | Max time | Max mem per node | Note                                                         |
+| :--------: | :--------------: | :------: | :--------------: | :----------------------------------------------------------- |
+|   *fat*    |    only fat01    | 72 hours |       6 TB       | **large shared-memory** jobs  (**mem >360GB**, otherwise use normal) |
+|   *gpu*    | gr01, gr02, gr36 | 72 hours |  400 GB + 32 GB  | **NVIDIA Tesla V100s** with 32GB video memory                |
 
-## Submission
+# Submission
 
-### Basic example
+## Basic example
 
 The content of an example PBS script (`example.qsub`) is provided below:
 
@@ -56,8 +53,8 @@ To submit the job,
 qsub example.qsub
 ```
 
-### More Example
-- Interactive jobs
+## More Example
+### Interactive jobs
 
 To request resources for doing something interactively, you can submit an interactive job.
 
@@ -80,10 +77,7 @@ You will be logged onto the assigned node once the above job get running, and yo
 
 Reference: [https://www.msi.umn.edu/content/interactive-queue-use-qsub](https://www.msi.umn.edu/content/interactive-queue-use-qsub)
 
-- Complete example
-<details>
-<summary>Title</summary>
-
+### Complete example
 ```bash
 #!/bin/bash
 #PBS -N My_job
@@ -104,9 +98,12 @@ mpirun -np 72 exec
 
 echo Done!
 ```
-</details>
-<details>
-<summary>The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.</summary>
+
+```tip
+The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.
+```
+
+
 
 ```bash
 PBS_VERSION=TORQUE-6.0.2
@@ -138,11 +135,10 @@ PBS_NUM_PPN=1
 PBS_NODEFILE=/opt/tsce4/torque6/share/gr32/aux//1399.login01
 PBS_O_PATH=/usr/java/jre1.8.0_151/bin:/usr/java/jre1.8.0_151/bin:/opt/tsce4/maui/sbin:/opt/tsce4/maui/bin:/opt/tsce4/torque6/bin:/opt/tsce4/torque6/sbin:/usr/local/bin:/usr/local/bin:/usr/lib64/qt-3.3/bin:/home/user1/perl5/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/opt/pdsh-2.29/bin:/opt/pdsh-2.29/sbin:.:/home/user1/.local/bin:/home/user1/bin
 ```
-</details>
 
-- Serial job
-<details>
-<summary>This sample use *gcc* to compile a *Fortran90* Hello World.</summary>
+### Serial job
+
+This sample use *gcc* to compile a *Fortran90* Hello World.
 
 ```fortran
 program testseries
@@ -178,12 +174,9 @@ module load gcc && echo $_ "LOADED"
 echo "###############################################"
 ./a.out > log
 ```
-</details>
 
-
-- Openmp job
-<details>
-<summary>This is a sample *Fortran90* program using *openmp* to parallelize a *do* loop.</summary>
+### Openmp job
+This is a sample *Fortran90* program using *openmp* to parallelize a *do* loop.
 
 ```fortran
 program testopenmp
@@ -259,12 +252,9 @@ The result shows that the *do* loop is been parallelized by 8 threads.
  loop          14 is processed by thread           6
  loop          16 is processed by thread           7
 ```
-</details>
 
-- MPI job
-<details>
-<summary>This sample shows a *MPI* parallel program in *Fortran90*.</summary>
-
+### MPI job
+This sample shows a *MPI* parallel program in *Fortran90*.
 ```fortran
 program testmpi
 use mpi
@@ -330,11 +320,9 @@ The result shows that *gr25*-*gr28* is used to finish the job, with 2 processes 
   rank   1    is run on node  gr28
   rank   5    is run on node  gr26
 ```
-</details>
 
-- Hybrid job
-<details>
-<summary>This sample *Fortran90* program use both *MPI* and *openmp*.</summary>
+### Hybrid job
+This sample *Fortran90* program use both *MPI* and *openmp*.
 
 ```fortran
 program checkhybrid
@@ -452,7 +440,7 @@ One can find that each process has more number of threads.
   rank   7  gr25  36
 ```
 
-The third sample is specifying the number of openmp threads by `OMP_NUM_THREADS` environmental variable.
+The third sample is specifying the number of `openmp` threads by `OMP_NUM_THREADS` environmental variable.
 
 ```bash
 #!/bin/sh
@@ -496,11 +484,9 @@ The result is same as the first one expect that the number of threads per proces
   rank  15  gr25  12
   rank   3  gr28  12
 ```
-</details>
 
-- GPU job
-<details>
-<summary>This sample use *nvcc* to compile a example cuda code</summary>
+### GPU job
+This sample use `nvcc` to compile a example *cuda* code
 
 ```cuda
 /* ---------------------------------------------------
@@ -568,7 +554,6 @@ Hello World From GPU!
 Hello World From GPU!
 Hello World From GPU!
 ```
-</details>
 
 
 ## PBS commands
@@ -583,13 +568,12 @@ One can submit a job via the `qsub` command.
 `[-r c]` `[-S path_list]` `[-u user_list]` `[-v variable_list]` `[-V]`
 `[-W additional_attributes]` `[-z]` `[script]`
 
-We recommend submit jobs via the job scripts, `qsub JOB_SCRIPT`.
-For job script sample, check the [samples](samples).
+We recommend submit jobs via the job scripts 👉 `qsub JOB_SCRIPT`.
+For job script sample, check the [samples](https://gravity-doc.github.io/Basic/Job.html#Submission).
 
 ### check the job status
 
-`qstat` can show the status of all the jobs in **S** column. 
-S, R, Q, C, E means 
+`qstat` can show the status of all the jobs in **S (status)** column. 
 
 ```bash
 [testuser@GRAVITY:~]:qstat
@@ -600,18 +584,19 @@ Job ID                    Name             User            Time Use S Queue
 1352.login01               run_velprof      user3           1257:36: R fat
 ```
 
-Use `qstat -u USERNAME` to show the jobs submitted by one user.
+Use `qstat -u <username>` to show the jobs submitted by one user.
 
 ### cancel a job
-
-`qdel [-W time] JOB_ID`
+```
+qdel [-W time] JOB_ID
+```
 `-W time` can specify the delay of the job cancel.  The unit is seconds.
 
 ### check pending status
 
 `checkjob JOB_ID` can provide the information of a pending job.
 
-### references
+## references
 
 ```note
 `qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
@@ -659,14 +644,10 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 -u USER    : list the jobs for USER 
 ```
 
-## References
-
 - [qsub doc](http://docs.adaptivecomputing.com/torque/4-1-3/help.htm#topics/commands/qsub.htm)
 - `man qsub`
 - `man pbs_resources`
 
-
-
-## Slurm
+# Slurm
 
 😜 Coming soon... ... ...
