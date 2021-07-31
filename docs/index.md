@@ -18,7 +18,8 @@ This doc is on [Github](https://github.com/gravity-doc/gravity-doc.github.io). F
 4. **Submit**.   Submit a **pull request** so that your changes will be submitted to the upstream branch (a.k.a., this website). The administrators will review your changes and absorb them into the website. 
   
 Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.     
-**中文内容也欢迎！🥳**   
+
+### **中文内容也欢迎！🥳**   
 ```
 ### Contents
 {% include list.liquid all=true %}
