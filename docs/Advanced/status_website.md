@@ -1,6 +1,6 @@
 ---
 sort: 4
-title: Statistics Website
+title: Status/Statistics Website
 ---
 
 # Status/Statistics Website
@@ -16,3 +16,4 @@ Replace `user ` with your username on gravity in the above command. Once this is
 https://localhost:8443
 ```
 
+Use your *username* and *password* of Gravity to log in

@@ -9,12 +9,12 @@ title: FAQ
 If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#Contact)!
 ```
 
-- What if I forgot my password?
+- What if I forgot my password? 🔐
 
   > Do not worry, contact us to change the password      
   > You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀
 
-- I can not login *Gravity* using my *ssh private key*
+- I can not login *Gravity* using my *ssh private key* 🛡️
 
   > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your [**ssh public key**](https://gravity-doc.github.io/Basic/Login.html#generate-ssh-keys) and your **username**   
   > You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀    
@@ -27,13 +27,18 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   > Keep your **private key** safe, it is identical to the **password**!
   > ```
 
-- What if my **IP** was **banned**, so that I couldn't access **[JupyterHub](https://gravity.sjtu.edu.cn/)** or **ssh login**?
+- What if my **IP** was **banned** ❌, so that I couldn't access **[JupyterHub](https://gravity.sjtu.edu.cn/)** or **ssh login**?
 
   > Contact us and tell us **your IP**
 
-- Can I extend my time of running PBS job?
+- Can I extend my time of running PBS job? ⌛
 
   > Sure! Contact us and tell us how much time you need.
+
+- I want more **Disk storage space** 💾
+
+  > 1. contact your advisor, get his/her permission
+  > 2. contact admins to increase your disk quota
 
 - My PBS job is always waiting 😤
 
@@ -49,7 +54,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 
 - `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`   
 
-  > when you ssh log in *Gravity*, sometimes it will appear such kind of warning:
+  > when you **ssh log in** *Gravity*, sometimes it will appear such kind of warning:
   >
   > ```
   > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

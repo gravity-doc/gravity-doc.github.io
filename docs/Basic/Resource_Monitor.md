@@ -7,26 +7,19 @@ title: Resource Monitor
 ## Web interface
 Considering the security 🛡️, you have to use [**SSH tunnel** to access it](https://gravity-doc.github.io/Advanced/status_website.html).
 
-## Command line
-The following commands provide the status of job queue system.
 
-### user information
+## user information
 
 ```bash
-[inspur03@login01 ~]$ finger inspur
-Login: inspur         			Name: Shiyu Tan
-Directory: /home/inspur             	Shell: /bin/bash
-Office: sytan
-Last login Thu Oct 15 09:14 (CST) on 
+[inspur03@login01 ~]$ finger lalala
+Login: lalala         			Name: LALALA
+Directory: /home/lalala         Shell: /bin/bash
+Last login Thu Oct 15 09:14 (CST) on 6.6.6.6
 No mail.
 No Plan.
 ```
 
-```tip
-More complete user information is available on login01.
-```
-
-### Disk quota
+## Disk quota
 You can use the command on **login01** or **login02**: `icfsquota username` or `icfsquota`, just like this: 
 ```bash
 [lalala@login01 ~]$ icfsquota lalala
@@ -53,7 +46,7 @@ Files deleted through the graphical desktop will be moved to Trash folder that s
      
 ```
 
-### CPU time usage and cost
+## CPU time usage and cost
 You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
 ```bash
 [lalala@login01 ~]$ cpuquota 
@@ -65,13 +58,14 @@ This month [20210501 ~ 20210531] cost:  66 ￥
 
 ######### Complete usage statistics: https://stat.gravity.sjtu.edu.cn ##########
 ```
-```note
+```tip
 Your advisor will bear the cost 🥳
 ```
 
-### nodes 
+## PBS 
 
-`pestat` provides the CPU and memory usage of all the nodes.
+1. `pestat` provides the CPU and memory usage of all nodes.   
+
 ```bash
 [testuser@GRAVITY:~]:pestat
 node	 state	 load	 pmem	 ncpu	 mem	 resi	 usrs	 tasks	 jobids/users
@@ -104,9 +98,7 @@ gr36                 free
 fat01                free
 ```
 
-### queue status
-
-`showq` provides the queue information.
+2. `showq` provides the queue information.
 ```bash
 [testuser@GRAVITY:~]:showq
 ACTIVE JOBS--------------------

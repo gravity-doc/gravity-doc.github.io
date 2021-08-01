@@ -1,6 +1,6 @@
 ---
 sort: 3
-title: Jupyter Notebook
+title: Jupyter Lab/Notebook
 ---
 
 ```tip
