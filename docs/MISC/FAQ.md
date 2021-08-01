@@ -81,7 +81,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 
   > 1. the `private key` in your hand doesn't match `public key` on *Gravity* 👇   
   >
-  >    > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your [**ssh public key**](https://gravity-doc.github.io/Basic/Login.html#generate-ssh-keys) and your **username **    
+  >    > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your [**ssh public key**](https://gravity-doc.github.io/Basic/Login.html#generate-ssh-keys) and your **username**
   >
   > 2. you just don't use `private key` at all! 👇    
   >
