@@ -127,7 +127,7 @@ deactivate
 ```
 
 
-## Anaconda
+## Conda
 
 Some users may prefer to use the anaconda python distribution.
 
@@ -140,7 +140,7 @@ Note you will have to unload any previously loaded python module if you see conf
 [mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
 ```
 
-| mamba                                    | conda                                    |
+| mamba⚡                                   | conda                                    |
 | ---------------------------------------- | ---------------------------------------- |
 | `mamba search emcee`                     | `conda search emcee`                     |
 | `mamba install -c conda-forge camb`      | `conda install -c conda-forge camb`      |
