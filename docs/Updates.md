@@ -13,7 +13,12 @@ title: Updates
 
 ## Done 🥳
 
+### 2021.8
+
+- [x] reconstruct the [*Gravity Documentation*](https://gravity-doc.github.io/)
+
 ### 2021.7
+
 - [x] [add entry of `VScode`](https://gravity-doc.github.io/Basic/JupyterHub.html#vscode) in jupyterlab, and support **C/C++, Fortran, Go, R, Julia, Python** if you choose *VScode [sys]* in Jupyterlab
 - [x] run `jupyter-lab/notebook` from both *login* and *computing nodes* via **[JupyterHub](https://gravity.sjtu.edu.cn/)**
 - [x] install **several extensions** on Jupyterlab (ie. git, drawio, execute-time, resource-monitor, jupyterlab-lsp)
