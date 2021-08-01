@@ -20,16 +20,16 @@ Please use your *username* and *password* of *Gravity* to log in.
 ```danger
 When you fail to log in, **DO NOT** try many times, your IP will be **banned** 😭
 ```
-1. login
+1. login   
 Visit [JupyterHub website](https://gravity.sjtu.edu.cn/), enter your *username* and *password* of **Gravity**.
 ![image-20210730101707938](../images/Basic/jupyterhub-login.png)
-2. start a server
+2. start a server   
 You can click the *Start My Server* button or use the *named* server below. You can create up to 3 named server and a default server.
 ![image-20210730103644241](../images/Basic/jupyterhub-start-server.png)
 ```warning
 If you use *named server*, its name **CAN NOT** contain any space!
 ```
-3. choose configuration
+3. choose configuration   
     You want to run your server on *login node* or *computing node*? Or, you wanna run it on *large node* or *small node*?
 
   > - [LOCAL] 👉 on *login nodes* (running forever)
