@@ -53,8 +53,38 @@ To submit the job,
 qsub example.qsub
 ```
 
-## More Example
-### Interactive jobs
+## Complete example
+
+> job name is `My_job`.       
+> E-mail address is `lalala@sjtu.edu.cn`.    
+> need 1 node 72 cores per node   
+> need 360GB memory `mem=360gb `  
+> need at most 48 hours   
+> make all of the output including error to `/home/lalala/code/my_output.log`   
+
+```bash
+#!/bin/bash
+#PBS -N My_job
+#PBS -m abe 
+#PBS -M lalala@sjtu.edu.cn
+#PBS -l nodes=1:ppn=72
+#PBS -l mem=360gb
+#PBS -l walltime=48:00:00
+#PBS -q normal
+#PBS -j oe
+#PBS -o /home/lalala/code/my_output.log
+
+echo running with ${PBS_NP} processes on ${PBS_NUM_NODES} nodes
+
+# run your own program!!!
+cd $PBS_O_WORKDIR
+mpirun -np 72 exec
+
+echo Done!
+```
+
+## More Examples
+### Interactive job
 
 To request resources for doing something interactively, you can submit an interactive job.
 
@@ -76,28 +106,6 @@ You will be logged onto the assigned node once the above job get running, and yo
 ```
 
 Reference: [https://www.msi.umn.edu/content/interactive-queue-use-qsub](https://www.msi.umn.edu/content/interactive-queue-use-qsub)
-
-### Complete example
-```bash
-#!/bin/bash
-#PBS -N My_job
-#PBS -m abe 
-#PBS -M lalala@sjtu.edu.cn
-#PBS -l nodes=1:ppn=72
-#PBS -l mem=360gb
-#PBS -l walltime=48:00:00
-#PBS -q normal
-#PBS -j oe
-#PBS -o /home/lalala/code/my_output.log
-
-echo running with ${PBS_NP} processes on ${PBS_NUM_NODES} nodes
-
-# run your own program!!!
-cd $PBS_O_WORKDIR
-mpirun -np 72 exec
-
-echo Done!
-```
 
 ```tip
 The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.

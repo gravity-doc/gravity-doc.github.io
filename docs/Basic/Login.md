@@ -3,11 +3,33 @@ sort: 2
 title: Login
 ---
 
-# Login
 ```danger
-When you fail to log in, **DO NOT** try many times, your IP will be **banned** 😭
+When you **fail** to log in, **DO NOT** try many times, your IP will be **banned** 😭
 ```
-Use the domain name **gravity.sjtu.edu.cn** or IP address to log in.
+
+## Generate ssh keys
+
+```note
+Considering the security🛡️, Gravity dose **NOT** allow to log in with *password*, you have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+```
+
+No matter you are using Linux/Windows/Mac, just open a terminal
+```bash
+ssh-keygen
+# Enter
+# Enter
+# Enter
+```
+Then you will get two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
+
+After you send `id_rsa.pub` [to us using E-mail](https://gravity-doc.github.io/#contact), wait for a while, you can use your `id_rsa` (*private key*) to log in Gravity🥳
+
+## Log in
+
+Use the domain name **gravity.sjtu.edu.cn** or **111.186.40.49** to log in.
+
+> - login01: ~~111.186.40.52~~ **(backup)**
+> - login02: **111.186.40.49 (main)**
 
 ```sh
 ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
@@ -15,60 +37,42 @@ ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
 ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
-Also, you can set up your `~/.ssh/config`  to simplify your command 😎
+```tip
+You can set up your `~/.ssh/config` to **simplify** your command 😎   
+```
 
-- Edit your `~/.ssh/config` like this:
+Edit your `~/.ssh/config` like this:      
+
 ```
 Host login01
-    HostName <login01_IP_address>
+    HostName 111.186.40.52
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_For_Gravity
 Host login02
-    HostName <login02_IP_address>
+    HostName 111.186.40.49
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_rsa_For_Gravity
 ```
-Here we go 🎉
+Here we go 🎉      
 ```sh
 ssh login01
 ssh login02
 ```
 
-The default log in node is **login02**.
+### Linux/Mac
 
-File transfer can be done similarly with `scp` or `rsync`. Google it for detailed documentation.
+On Linux/Mac, you can log in Gravity directly in the *shell*
 
-## Linux/Mac/Windows
+> `ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn`
 
-- On Linux/Mac, you can do this directly on the command line in a shell.
-- On Windows, you may need to install a ssh client first. 
-  - Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command. 
-  - If you prefer a **GUI client**, there are many available such as the [bitwise ssh client](https://www.bitvise.com/ssh-client-download) or [putty](https://www.ssh.com/ssh/putty/download) or Xshell. We recommend  **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)** (the best on I think😜)
+### Windows
 
-## ssh-key based login
-
-To login without using your password, first generate a key on your local computer:
-
-- For Linux users:
-  On your own computer, do
-  
-  ```
-  ssh-keygen
-  ```
-  And then copy the public part of the key to the server with the following command:
-  
-  ```
-  ssh-copy-id user@server
-  ```
-  
-  (replace `user@server` with your username and our server address).   
-  
-  Once this is done you can login without inputting your password.
-  
-- For more information and for Windows users, please check here: 
-  [https://upcloud.com/community/tutorials/use-ssh-keys-authentication/](https://upcloud.com/community/tutorials/use-ssh-keys-authentication/)
+On Windows, you may need to install a ssh client first.    
+- Windows 10 now comes with a default ssh client already installed. To use it, open windows `cmd` or powershell (type `cmd` or `powershell` in the windows search box next to the windows menu) and then you can use the ssh command.     
+- If you prefer a **GUI client**, there are many available software such as the [Bitvise](https://www.bitvise.com/ssh-client-download) or [Putty](https://www.ssh.com/ssh/putty/download) or [Xshell](https://www.netsarang.com/en/xshell/).      
+- We recommend  **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)** (the best one I think😜)      
 
 
 ## 登陆集群
@@ -123,29 +127,6 @@ Linux / Unix / Mac 用户可以使用终端中的命令行工具登录。下列�
 
 ```bash
 $ ssh YOUR_USERNAME@TARGET_IP
-```
-
-## File transfer to/from server
-
- ### Windows 用户使用ssh传输文件
-
-安装 Filezilla 软件后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
-输入数据集群IP 用户名 密码和端口号，如下图所示：
-
-<img src="../images/Basic/Login__04_filezilla.png" width = "600" height = "400" div align=center />
-
-### Linux/Unix/Mac用户使用ssh传输文件
-
-Linux/Unix/Mac 用户可以使用命令行工具在集群和您自己的计算机之间传输数据。下列语句会将文件夹data/上传到主文件夹的tmp/。
-
-```bash
-$ scp -r data/ YOUR_USERNAME@TARGET_IP:tmp/
-```
-
-下列语句会将主文件夹的data.out下载到本地当前工作目录中。
-
-```bash
-$ scp YOUR_USERNAME@TARGET_IP:data.out ./
 ```
 
 

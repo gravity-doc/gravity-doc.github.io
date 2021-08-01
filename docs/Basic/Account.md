@@ -3,14 +3,14 @@ sort: 1
 title: Account
 ---
 
-## Apply for an account
-
-Use  [this link](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to apply
-
 ```warning
 请仔细阅读[用户协议](https://notes.sjtu.edu.cn/s/ZF46PNYoF#)，并征求导师同意。
 Please make sure you have read the [user policy](https://notes.sjtu.edu.cn/s/ZF46PNYoF#), and get consent of your sponsor/supervisor before application.
 ```
+
+## Apply for an account
+
+Use  [this link](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to apply
 
 ## Password
 
@@ -31,8 +31,12 @@ You can use `yppasswd` command on *login02* node to update your password.
 3. 密码长度至少8位
 4. 密码中至少包含字母和数字
 
-## Account for the SGI node
+## Account of the SGI
+
+```tip
+注意该username为SGI上的原账户，而非gravity账号; 如有新开账户需求请**征得导师同意后**在微信群或者邮件联系管理员。
+```
 
 The **SGI** node operates *independently* from the **Gravity cluster**. If you need to use it but do not already have an account, you can contact the administrator after **getting the consent of your supervisor/sponsor**. Then, you can use `ssh username@sgi` on *login02* to access **SGI**
 
-原SGI服务器已经接入login02，可从login02通过`ssh username@sgi`登录。注意该username为SGI上的原账户，而非gravity账号; 如有新开账户需求请**征得导师同意后**在微信群或者邮件联系管理员。
+原SGI服务器已经接入login02，可从login02通过`ssh username@sgi`登录。

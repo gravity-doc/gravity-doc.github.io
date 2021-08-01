@@ -16,8 +16,28 @@ Because of the GUI of jupyter, you can easily transfer your data, as long as you
 > 2. start a server
 > 3. **drag** your files (download or upload)
 
-## scp and rsync
+![image-20210801101248053](../images/Basic/DataTransfer-jupyterlab.png)
 
+## Filezilla
+[安装 Filezilla 软件](https://filezilla-project.org/)后，可以双击打开该软件，按照下图进行设置，完成后单击快速链接或者回车可以登录ftp 站点。
+输入数据集群IP 用户名 密码和端口号，如下图所示：
+
+<img src="../images/Basic/Login__04_filezilla.png" width = "600" height = "400" div align=center />
+
+## scp and rsync
+Linux/Unix/Mac 用户可以使用命令行工具在集群和您自己的计算机之间传输数据。下列语句会将文件夹`data/`上传到主文件夹的`tmp/`。
+
+```bash
+$ scp -r data/ YOUR_USERNAME@TARGET_IP:tmp/
+```
+
+下列语句会将主文件夹的data.out下载到本地当前工作目录中。
+
+```bash
+$ scp YOUR_USERNAME@TARGET_IP:data.out ./
+```
+
+In a word 👇
 ```bash
 # copy local file to Gravity
 scp -i your_ssh_key ~/local_file username@gravity.sjtu.edu.cn:/home/username/remote_file

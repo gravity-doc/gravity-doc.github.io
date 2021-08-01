@@ -19,8 +19,8 @@ Your name will be honoured in the [contributor list](https://github.com/gravity-
 
 You can contact us via
 
-- [gravity-hpc@sjtu.edu.cn](mailto:gravity-hpc@sjtu.edu.cn)
-- **WeChat** group
+- [gravity-hpc@sjtu.edu.cn ](mailto:gravity-hpc@sjtu.edu.cn) 📧
+- **WeChat** group 💬
 
 If you need
 
