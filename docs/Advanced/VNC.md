@@ -5,7 +5,7 @@ title: VNC
 
 ```note
 Considering security, *Gravity* closes ports except **22, 80, 443**.    
-Therefore, you need **ssh tunnel* to connect other service.
+Therefore, you need **ssh tunnel** to connect other service.
 ```
 
 ```tip

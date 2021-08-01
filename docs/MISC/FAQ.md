@@ -3,11 +3,11 @@ sort: 1
 title: FAQ
 ---
 
+# FAQ
+
 ```note
 If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#Contact)!
 ```
-
-# FAQ
 
 - What if I forgot my password?
 

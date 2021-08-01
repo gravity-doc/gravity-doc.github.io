@@ -5,7 +5,7 @@ title: Jupyter Notebook
 
 ```tip
 We recommend you to use [*JupyterHub*](https://gravity-doc.github.io/Basic/JupyterHub.html), it's more easier and convenient 😜   
-You can also **use your own environment** in *JupyterHub*   
+You can also **use your own environment** in [*JupyterHub*](https://gravity-doc.github.io/Basic/JupyterHub.html)   
 Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or computing nodes) 👇
 ```
 
@@ -45,8 +45,8 @@ Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or 
 4. connect to `jupter-lab/notebook`   
    连接至`jupter-lab/notebook`    
 
-   1. Let's see which node the job is running at?   
-      我们来看看任务在哪个节点上运行？   
+   1. Let's see which node the job is running at? (assume *gr33*)    
+      我们来看看任务在哪个节点上运行？（假设是*gr33*）     
 
       ```bash
       qstat -an
@@ -56,7 +56,7 @@ Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or 
       从你的电脑/手机/平板连接 jupyter-notebook/lab 💻   
       
       ```bash
-      ssh -CNL localhost:23333:gr33:9999 <username>@gravity.sjtu.edu.cn
+      ssh -i <your_ssh_key> -CNL localhost:23333:gr33:9999 <username>@gravity.sjtu.edu.cn
       ```
       
    3. open browser, start coding 🥳   

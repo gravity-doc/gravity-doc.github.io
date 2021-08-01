@@ -139,11 +139,13 @@ Note you will have to unload any previously loaded python module if you see conf
 ```tip
 [mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
 ```
+
 | mamba                                  | conda                                  |
 | -------------------------------------- | -------------------------------------- |
 | mamba search emcee                     | conda search emcee                     |
 | mamba install -c conda-forge camb      | conda install -c conda-forge camb      |
 | mamba create -n myenv python=3.8 scipy | conda create -n myenv python=3.8 scipy |
+
 
 ### conda env
 You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`
