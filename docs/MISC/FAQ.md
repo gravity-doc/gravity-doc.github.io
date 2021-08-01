@@ -16,7 +16,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 
 - I can not login *Gravity* using my *ssh private key*
 
-  > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your **ssh public key** and your **username**   
+  > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your [**ssh public key**](https://gravity-doc.github.io/Basic/Login.html#generate-ssh-keys) and your **username**   
   > You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀    
   >
   > ```tip
@@ -46,3 +46,43 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   > Check your **error file** and **output file** such as `xxx.e<JOBID>` and `xxx.o<JOBID>`   
   >
   > Also, you can run your program on the login nodes first to test.
+
+- `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`   
+
+  > when you ssh log in *Gravity*, sometimes it will appear such kind of warning:
+  >
+  > ```
+  > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  > @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @
+  > @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  > IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+  > Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+  > It is also possible that the RSA host key has just been changed.
+  > The fingerprint for the RSA key sent by the remote host is
+  > 08:98:a9:cc:f8:37:20:6b:b4:b1:6c:3a:15:b9:a9:92.
+  > Please contact your system administrator.
+  > Add correct host key in /home/lalala/.ssh/known_hosts to get rid of this message.
+  > Offending key in /home/lalala/.ssh/known_hosts:2
+  > RSA host key for gravity.sjtu.edu.cn has changed and you have requested strict checking.
+  > Host key verification failed.
+  > ```
+  >
+  > Don't worry, just delete the **specific row** of `~/.ssh/known_hosts` and everything will be OK      
+  >
+  > From the *Warning*，you can see `Offending key in /home/lalala/.ssh/known_hosts:2`, so we just need to remove the **2nd row**.    
+
+- `binary file can not be executed` 👉 [issue of conda](https://gravity-doc.github.io/MISC/Issues.html/#Conda)   
+
+  > I am *so sorry* to tell you that your whole **CONDA** installation is destroyed. Cause this is a tricky bug🐛, we cannot fix it 😭.        
+  >
+  > You should re-install your conda, and **never** install/update any package on **login01**.
+
+- `Permission denied (publickey,gssapi-keyex,gssapi-with-mic)`    
+
+  > 1. the `private key` in your hand doesn't match `public key` on *Gravity* 👇   
+  >
+  >    > [Send an **E-mail**](mailto:gravity-hpc@sjtu.edu.cn) to us, including your [**ssh public key**](https://gravity-doc.github.io/Basic/Login.html#generate-ssh-keys) and your **username **    
+  >
+  > 2. you just don't use `private key` at all! 👇    
+  >
+  >    >  `ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn`    
