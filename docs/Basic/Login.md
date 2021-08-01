@@ -10,7 +10,7 @@ When you **fail** to log in, **DO NOT** try many times, your IP will be **banned
 ## Generate ssh keys
 
 ```note
-Considering the security🛡️, Gravity dose **NOT** allow to log in with *password*, you have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
+Considering the security🛡️, Gravity does **NOT** allow to log in with *password*, you have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
 ```
 
 No matter you are using Linux/Windows/Mac, just open a terminal
