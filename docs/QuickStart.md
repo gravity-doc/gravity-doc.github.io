@@ -80,6 +80,9 @@ qdel 36162  # 36162 is your jobID
 | `showstart <job_id>`                                         | ***when*** to start (if your job is waiting)                 |
 | `qdel <job_id>`                                              | **delete** a job                                             |
 | `qdel -p <job_id>`                                           | force to **delete** a job                                    |
+| `qselect -u $USER | xargs qdel`                              | delete all of your jobs                                      |
+| `qselect -u $USER -s Q | xargs qdel`                         | delete all of your **Queueing** jobs                         |
+| `qselect -u $USER -s R | xargs qdel`                         | delete all of your **Running** jobs                          |
 | `qhold <job_id>`                                             | **hold** a job until you release it                          |
 | `qrls <job_id>`                                              | **release** a job                                            |
 | `pestat`                                                     | every node status                                            |
