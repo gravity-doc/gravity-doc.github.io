@@ -30,12 +30,20 @@ You can click the *Start My Server* button or use the *named* server below. You 
 If you use *named server*, its name **CAN NOT** contain any space!
 ```
 3. choose configuration
-You want to run your server on *login node* or *computing node*? Or, you wanna run it on *large node* or *small node*?
+    You want to run your server on *login node* or *computing node*? Or, you wanna run it on *large node* or *small node*?
+
+  > - [LOCAL] 👉 on *login nodes* (running forever)
+  > - [MINI], [SMALL], [FAT], [GPU] 👉 *computing nodes* (**use PBS job**, time limited)
+
+
+
+![image-20210801114403295](../images/Basic/jupyterhub-choose_0.png)
+
 
 ![image-20210730104428164](../images/Basic/jupyterhub-choose.png)
 
 ```note
-You need to wait for a while if you choose to start a server on **computing node**. If the resource is limited, it may fail.
+You need to wait for a while if you choose to start a server on **computing nodes**. If the resource is limited, it may fail.
 ```
 # Jupyter-lab (notebook)
 ## Choose a kernel (environment)
