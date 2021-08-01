@@ -21,7 +21,7 @@ Please use your *username* and *password* of *Gravity* to log in.
 When you fail to log in, **DO NOT** try many times, your IP will be **banned** 😭
 ```
 1. login
-Visit [JupyterHub website](https://gravity.sjtu.edu.cn/login02), enter your *username* and *password* of **Gravity**.
+Visit [JupyterHub website](https://gravity.sjtu.edu.cn/), enter your *username* and *password* of **Gravity**.
 ![image-20210730101707938](../images/Basic/jupyterhub-login.png)
 2. start a server
 You can click the *Start My Server* button or use the *named* server below. You can create up to 3 named server and a default server.
@@ -135,7 +135,7 @@ At *Launcher*, you can double click *Markdown file*, then right click to select 
 
 ### Python Documentation
 
-If you are not familiar with some function or package, you can try to use **Show Contextual Help** in *Launcher*. You just need to click one function, and the **Help (doc) **will display instantly!
+If you are not familiar with some function or package, you can try to use **Show Contextual Help** in *Launcher*. You just need to click the function, and the **Help** (**documentation**) will display instantly!
 
 ![image-20210730142333335](../images/Basic/jupyterhub-help.png)
 
@@ -147,7 +147,7 @@ You can click the **Diagram** at *launcher* to draw a flowchart
 
 ### Git
 
-From the sidebar, you can find a [git plugin](https://github.com/jupyterlab/jupyterlab-git.
+From the sidebar, you can find a [git plugin](https://github.com/jupyterlab/jupyterlab-git).
 
 > - You can use it clone, pull, push, etc.
 > - You can use *diff* in the notebook to check what changes you've made.
