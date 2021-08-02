@@ -1,0 +1,25 @@
+title: Gravity Documentation
+
+description: Welcome everyone to contribute to this Doc!
+
+remote_theme: rundocs/jekyll-rtd-theme
+
+readme_index:
+  with_frontmatter: true
+
+author: [Gravity Admins]
+
+copyright:
+  since: 2020 # like: 2000
+  revision: false # is show the revision
+
+gems:
+  - jemoji
+
+encoding: UTF-8
+
+exclude:
+  - Makefile
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
