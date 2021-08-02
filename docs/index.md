@@ -6,7 +6,7 @@
 
 ```tip
 ### Welcome to contribute
-This doc is on [Github](https://github.com/gravity-doc/gravity-doc.github.io). Feel free to pull request. Contributing is pretty simple as following:   
+This doc is hosted on [Github](https://github.com/gravity-doc/gravity-doc.github.io). Feel free to submit a pull request. Contributing is pretty simple as following:   
 1. **Click**.  To contribute,   click the **[edit](https://github.com/gravity-doc/gravity-doc.github.io/edit/master/docs/index.md)** :pencil: on the upper right of the page you feel like editing. Every document page is **editable**. It will bring you to the source files on github. You may will need to login to github to proceed. Once logged-in, a fork of the document repository will be created under your own account, so that you can edit it in whatever way you like. 
 2. **Edit**.   Edit the page to contribute useful stuff. Check [here](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) or the existing source pages for examples in the syntax. [This page](https://rundocs.io/writng/) contains theme-related syntax.
 3. **Commit**.   Finish the editing by leaving a commit message, describing what you have done.
