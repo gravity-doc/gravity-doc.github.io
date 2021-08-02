@@ -1,14 +1,14 @@
-# [Gravity Documentation](https://gravity-doc.github.io)
-# [上海交通大学天文系Gravity集群文档](https://gravity-doc.github.io)
+## Gravity Documentation
+[上海交通大学天文系Gravity集群文档](https://gravity-doc.github.io)
 
-## This is the documentation for the **Gravity Cluster** of [Department of Astronomy](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
+This is the documentation for the **Gravity Cluster** of [Department of Astronomy](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
 
 ### Welcome to contribute
-This doc is on [Github](https://github.com/gravity-doc/gravity-doc.github.io). Feel free to pull request.    
+  This doc is on [Github](https://github.com/gravity-doc/gravity-doc.github.io). Feel free to pull request.    
 
-Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.     
+  Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.     
 
-### **中文内容也欢迎！🥳**   
+  **中文内容也欢迎！🥳**   
 
 
 ### Contact
