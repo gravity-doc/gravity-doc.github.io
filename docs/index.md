@@ -1,8 +1,5 @@
-# [Gravity Documentation](https://gravity-doc.github.io)
-
-## This is the documentation for the **Gravity Cluster** of [Department of Astronomy (DOA)](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
-
-<img src="./images/logo_DOA_large.png" width = "800" height = "100" div align=center />
+## [Gravity Documentation](https://gravity-doc.github.io)
+ This is the documentation for the **Gravity Cluster** of [Department of Astronomy (DOA)](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
 
 ```tip
 ### Welcome to contribute
@@ -35,7 +32,7 @@ We would appreciate it if all publications that include results generated using 
 
 若您在论文中使用了Gravity得到的结果，希望您能够在致谢中提到**Gravity**。例如：   
 
-- **本论文的计算结果得到了上海交通大学天文系高性能计算集群Gravity的支持和帮助**
+- **本工作的计算使用了上海交通大学天文系Gravity高性能计算集群**
 - **This work made use of the Gravity Supercomputer at the Department of Astronomy, Shanghai Jiao Tong University.**
 
-<img src="./images/logo_DOA_mini.png" width = "100" height = "50" div align=right />
+<img src="./images/logo_DOA_large.png" height = "80" div align=right />
