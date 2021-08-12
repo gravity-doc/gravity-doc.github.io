@@ -6,7 +6,7 @@ title: FAQ
 # FAQ
 
 ```note
-If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#Contact)!
+If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#contact)!
 ```
 
 - What if I forgot my password? 🔐
@@ -76,7 +76,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   >
   > From the *Warning*，you can see `Offending key in /home/lalala/.ssh/known_hosts:2`, so we just need to remove the **2nd row**.    
 
-- `binary file can not be executed` 👉 [issue of conda](https://gravity-doc.github.io/MISC/Issues.html/#Conda)   
+- `binary file can not be executed` 👉 [issue of conda](https://gravity-doc.github.io/MISC/Issues.html#conda)   
 
   > I am *so sorry* to tell you that your whole **CONDA** installation is destroyed. Cause this is a tricky bug🐛, we cannot fix it 😭.        
   >
