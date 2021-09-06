@@ -7,9 +7,9 @@ title: Login
 If you fail to login, please do not try many times. Otherwise your IP will be **banned** 😭
 ```
 
-## Passwordless login
+## Preparation
 
-Out of security considerations, Gravity does **NOT** allow login with *password*. You have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)).
+Out of security considerations, Gravity does **NOT** allow login with *password*. You have to generate a [**ssh-key**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) pair and add it to the server to login without a password. The key pair need to be generated and added once for each client computer.  
 
 ### generating a ssh-key pair
 To generate a ssh-key pair, just open a terminal and run the following command (works on Linux/Windows/Mac):
