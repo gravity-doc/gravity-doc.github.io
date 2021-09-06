@@ -4,7 +4,7 @@ title: Login
 ---
 
 ```danger
-When you **fail** to log in, **DO NOT** try many times, your IP will be **banned** 😭
+If you fail to login, please do not try many times. Otherwise your IP will be **banned** 😭
 ```
 
 ## Passwordless login
