@@ -9,9 +9,7 @@ When you **fail** to log in, **DO NOT** try many times, your IP will be **banned
 
 ## Generate ssh keys
 
-```note
-Considering the security🛡️, Gravity does **NOT** allow to log in with *password*, you have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
-```
+Out of security considerations, Gravity does **NOT** allow login with *password*. You have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)).
 
 No matter you are using Linux/Windows/Mac, just open a terminal
 ```bash
@@ -20,9 +18,16 @@ ssh-keygen
 # Enter
 # Enter
 ```
-Then you will get two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
+This you generate two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
 
-After you send `id_rsa.pub` [to us using E-mail](https://gravity-doc.github.io/#contact), wait for a while, you can use your `id_rsa` (*private key*) to log in Gravity🥳
+### adding ssh keys 
+Please send us your public key file `id_rsa.pub` [via email](https://gravity-doc.github.io/#contact), and we will add the public key to your account. After the key is added, you can use your `id_rsa` (*private key*) to log in Gravity🥳. 
+
+Alternatively, you can login to [jupyterhub](https://gravity-doc.github.io/Basic/JupyterHub.html), open a terminal, and add the content of your *public key* to `.ssh/authorized_keys` by yourself.
+
+```warn
+Please change your initial password immediately the first time you login, with the `yppasswd` command on login02.
+```
 
 ## Log in
 
