@@ -26,10 +26,7 @@ After you send `id_rsa.pub` [to us using E-mail](https://gravity-doc.github.io/#
 
 ## Log in
 
-Use the domain name **gravity.sjtu.edu.cn** or **111.186.40.49** to log in.
-
-> - login01: ~~111.186.40.52~~ **(backup)**
-> - login02: **111.186.40.49 (main)**
+Gravity has two login nodes: login01 and login02. Use the domain name **gravity.sjtu.edu.cn** (login02) or **login01.gravity.sjtu.edu.cn** (login01) to log in.
 
 ```sh
 ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
@@ -45,12 +42,12 @@ Edit your `~/.ssh/config` like this:
 
 ```
 Host login01
-    HostName 111.186.40.52
+    HostName login01.gravity.sjtu.edu.cn
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_For_Gravity
 Host login02
-    HostName 111.186.40.49
+    HostName gravity.sjtu.edu.cn
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_rsa_For_Gravity
