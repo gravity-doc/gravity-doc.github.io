@@ -25,22 +25,17 @@ Visit [JupyterHub website](https://gravity.sjtu.edu.cn/), enter your *username* 
 ![image-20210730101707938](../images/Basic/jupyterhub-login.png)
 2. start a server   
 You can click the *Start My Server* button or use the *named* server below. You can create up to 3 named server and a default server.
-![image-20210730103644241](../images/Basic/jupyterhub-start-server.png)
 ```warning
 If you use *named server*, its name **CAN NOT** contain any space!
 ```
 3. choose configuration   
     You want to run your server on *login node* or *computing node*? Or, you wanna run it on *large node* or *small node*?
 
-  > - [LOCAL] 👉 on *login nodes* (running forever)
+  > - [LOGIN] 👉 *login nodes* (running forever)
   > - [MINI], [SMALL], [FAT], [GPU] 👉 *computing nodes* (**use PBS job**, time limited)
 
 
-
-![image-20210801114403295](../images/Basic/jupyterhub-choose_0.png)
-
-
-![image-20210730104428164](../images/Basic/jupyterhub-choose.png)
+![image-20210730104428164](../images/Basic/jupyterhub-start-server.gif)
 
 ```note
 You need to wait for a while if you choose to start a server on **computing nodes**. If the resource is limited, it may fail.
@@ -50,11 +45,11 @@ You need to wait for a while if you choose to start a server on **computing node
 
 Actually, a *kernel* represents a *virtual environment*, which means you can use all of the installed packages in this environment.
 
-Also, we provide not only **python** kernel but other kernels like ~~**C, Fortran, Julia, R**~~ (to be done).
+Also, we provide not only **python** kernel but other kernels like **C, C++, Fortran, Julia, R, Go, Rust**. We have already installed many useful packages in **mamba-python3, R, Julia**.    
 
 ![image-20210730112413040](../images/Basic/jupyterhub-kernel.png)
 
-There are **2** default kernels: *mamba-python2* and *mamba-python3*, which are `Python 2.7` and `Python 3.7` respectively. 
+There are **two** default kernels: *mamba-python2* and *mamba-python3*, which are `Python 2.7` and `Python 3.7` respectively. 
 You have no right to install new package in them. Therefore, if you need to use your own packages, you can just **create a new environment** by yourself. Open a terminal, then
 
 ```bash
@@ -84,7 +79,7 @@ You can use *notebook* or *text file* directly for coding. For example 🌰, dou
 - There is a little cute panel on the top right, displaying how much CPU and memory you are using. If your memory usage exceed the limit, your process will **be killed** **(login nodes)**
 - The *auto-completion* will be activated when you open a *notebook*, which is at the bottom of your browser, you just need to press **\<TAB\>** button to use the **completion**. You need to **be patient** for the first time you open it 🤣
 
-## Close
+## Shutdown
 
 - If you just wanna close it for now, hoping it is still running on *Gravity*, just **close your browser**.
 
@@ -98,7 +93,7 @@ You can use *notebook* or *text file* directly for coding. For example 🌰, dou
 
 ### Classic Notebook
 
-If you like the traditional *jupyter-notebook*, you can just easily switch to it.
+If you prefer the **traditional** *jupyter-notebook*, you can easily switch to it.
 
 ![image-20210730115539662](../images/Basic/jupyterhub-classic-notebook.png)
 
@@ -167,7 +162,7 @@ Here, wo provide two options:
 
 > - *VScode [sys]*: You cannot install any plugin on it, however, in my opinion, it is enough to use. We have already installed many plugins and configured it well!
 >
-> - *VScode [my]*: This is totally clean. You can install/uninstall any plugin or change any configuration on it!
+> - *VScode [my]*: This is **totally clean**. You can install/uninstall any plugin or change any configuration in it!
 
 ```tip
 1. **Only if** you stop the server from JupyterHub, can the VScode really stop.
@@ -180,6 +175,6 @@ Coding, no matter you perfer C/C++ or Julia or other language, it's easy to use
 
 ![image-20210730145603882](../images/Basic/jupyterhub-vscode-coding.png)
 
-Also, it support *notebook*
+Also, it support *jupyter-notebook*
 
 ![image-20210730145653821](../images/Basic/jupyterhub-vscode-notebook.png)
