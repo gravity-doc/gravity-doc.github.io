@@ -183,6 +183,55 @@ echo "###############################################"
 ./a.out > log
 ```
 
+### Job array
+When you need to run a series of jobs with different arguments, it is pretty useful. Because you do not need a loop any more. You can find more arguments [here](http://docs.adaptivecomputing.com/torque/6-1-1/adminGuide/Content/topics/torque/commands/qsub.htm).
+1. You can use `-t` in the shell
+
+*example.pbs* script 👇
+
+```bash
+#!/bin/bash
+#PBS -N My_job
+#PBS -l nodes=1:ppn=72
+#PBS -q normal
+
+# run your own program!!!
+python test.py $PBS_ARRAYID
+```
+run it 👇
+```shell
+qsub example.pbs -t 1-666
+```
+
+2. Another way is writing `-t` in the script
+
+*example.pbs* script 👇
+
+```bash
+#!/bin/bash
+#PBS -N My_job
+#PBS -l nodes=1:ppn=72
+#PBS -q normal
+#PBS -t 1-666
+
+# run your own program!!!
+python test.py $PBS_ARRAYID
+```
+run it 👇
+```shell
+qsub example.pbs
+```
+**`PBS_ARRAYID`** here represents the range `1-666`, which means your job will run as
+
+```bash
+python test.py 1
+python test.py 2
+python test.py 3
+...
+...
+python test.py 666
+```
+
 ### Openmp job
 This is a sample *Fortran90* program using *openmp* to parallelize a *do* loop.
 

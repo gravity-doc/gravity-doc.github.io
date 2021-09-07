@@ -6,12 +6,15 @@ title: Updates
 ## Future ✨
 
 - [ ] Two-Factor Authentication (2FA) for [**JupyterHub**](https://gravity.sjtu.edu.cn/)
-- [ ] add Julia, Go, C, Fortran kernels to *Jupyterlab*
-- [ ] make *VScode* available on computing nodes
-- [ ] container support
-- [ ] switch to Slurm (PBS will be deprecated)
+- [ ] support container
+- [ ] switch to Slurm (PBS will be **deprecated**)
 
 ## Done 🥳
+
+### 2021.9
+
+- [x] install `Julia, Go, R, Rust, C, C++, Fortran` **kernels** into *Jupyterlab* and install many useful packages in `R, Julia`
+- [x] make *VScode* available on computing nodes
 
 ### 2021.8
 
