@@ -4,32 +4,35 @@ title: Login
 ---
 
 ```danger
-When you **fail** to log in, **DO NOT** try many times, your IP will be **banned** 😭
+If you fail to login, please do not try many times. Otherwise your IP will be **banned** 😭
 ```
 
-## Generate ssh keys
+## Preparation
 
-```note
-Considering the security🛡️, Gravity does **NOT** allow to log in with *password*, you have to use [**ssh keys**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
-```
+Out of security considerations, Gravity does **NOT** allow login with *password*. You have to generate a [**ssh-key**](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) pair and add it to the server to login without a password. The key pair need to be generated and added once for each client computer.  
 
-No matter you are using Linux/Windows/Mac, just open a terminal
+### generating a ssh-key pair
+To generate a ssh-key pair, just open a terminal and run the following command (works on Linux/Windows/Mac):
 ```bash
 ssh-keygen
 # Enter
 # Enter
 # Enter
 ```
-Then you will get two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
+This will generate two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
 
-After you send `id_rsa.pub` [to us using E-mail](https://gravity-doc.github.io/#contact), wait for a while, you can use your `id_rsa` (*private key*) to log in Gravity🥳
+### adding ssh keys 
+Please send us your public key file `id_rsa.pub` [via email](https://gravity-doc.github.io/#contact), and we will add the public key to your account. After the key is added, you can use your `id_rsa` (*private key*) to log in Gravity🥳. 
+
+Alternatively, you can login to [jupyterhub](https://gravity-doc.github.io/Basic/JupyterHub.html), open a terminal, and add the content of your *public key* to `.ssh/authorized_keys` by yourself.
+
+```warning
+Please change your initial password immediately the first time you login, with the `yppasswd` command on login02.
+```
 
 ## Log in
 
-Use the domain name **gravity.sjtu.edu.cn** or **111.186.40.49** to log in.
-
-> - login01: ~~111.186.40.52~~ **(backup)**
-> - login02: **111.186.40.49 (main)**
+Gravity has two login nodes: login01 and login02. Use the domain name **gravity.sjtu.edu.cn** (login02) or **login01.gravity.sjtu.edu.cn** (login01) to log in.
 
 ```sh
 ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
@@ -45,12 +48,12 @@ Edit your `~/.ssh/config` like this:
 
 ```
 Host login01
-    HostName 111.186.40.52
+    HostName login01.gravity.sjtu.edu.cn
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_For_Gravity
 Host login02
-    HostName 111.186.40.49
+    HostName gravity.sjtu.edu.cn
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_rsa_For_Gravity
