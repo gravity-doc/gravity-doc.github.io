@@ -8,10 +8,10 @@ title: Resource Monitor
 Considering the security 🛡️, you have to use [**SSH tunnel** to access it](https://gravity-doc.github.io/Advanced/status_website.html).
 
 
-## user information
+## User information
 
 ```bash
-[inspur03@login01 ~]$ finger lalala
+[lalala@login01 ~]$ finger lalala
 Login: lalala         			Name: LALALA
 Directory: /home/lalala         Shell: /bin/bash
 Last login Thu Oct 15 09:14 (CST) on 6.6.6.6
@@ -25,7 +25,7 @@ You can use the command on **login01** or **login02**: `icfsquota username` or `
 [lalala@login01 ~]$ icfsquota lalala
 ############## Hi ༼ つ ◕_◕ ༽つ lalala Your Storage Quota Info ################
 
-Max size =  5.00TB , Used size=  4.37TB , Left size=  640.56GB 
+Max size =  5.00TB , Used size=  4.33TB , Left size=  666.00GB 
 
 ################################################################################
 ```
@@ -126,7 +126,7 @@ JOBNAME            USERNAME      STATE  PROC     WCLIMIT            QUEUETIME
 Total Jobs: 5   Active Jobs: 4   Idle Jobs: 1   Blocked Jobs: 0
 ```
 
-One can also use `qstat` and `qstat -an` to check basic and detailed queue information.
+3. One can also use `qstat` and `qstat -an` to check basic and detailed queue information.
 
 ```bash
 [testuser@GRAVITY:~]:qstat -an
