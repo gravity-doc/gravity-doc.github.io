@@ -9,8 +9,8 @@ On the *Gravity*, we use **`module`** to manage software and tools.
 
 | **Command**                         | **Description**                                       |
 | ------------------------------- | ------------------------------------------------- |
-| `module avail`                  | see available software                            |
-| `module list`                   | see software you have loaded                      |
+| `module avail / module av`      | see **available** software                        |
+| `module list`                   | see software you have **loaded**                  |
 | `module load <software_name>`   | load a software to your current shell environment |
 | `module unload <software_name>` | remove software you don't need                    |
 | `module purge`                  | remove **all** currently loaded software          |
@@ -67,7 +67,45 @@ $ mdoule list
 ```tip
 The order of the module loading matters if some of them have dependence on others.
 ```
+## Conda(Mamba)
 
+Some users may prefer to use the anaconda python distribution.
+
+```
+module load anaconda/anaconda-mamba
+```
+
+Note you will have to unload any previously loaded python module if you see conflicts.
+```tip
+[mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
+```
+
+| mamba⚡                                   | conda                                    |
+| ---------------------------------------- | ---------------------------------------- |
+| `mamba search emcee`                     | `conda search emcee`                     |
+| `mamba install -c conda-forge camb`      | `conda install -c conda-forge camb`      |
+| `mamba create -n myenv python=3.8 scipy` | `conda create -n myenv python=3.8 scipy` |
+
+
+### conda env
+You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`
+
+```
+conda create -n myenv
+source activate myenv
+```
+Note you will have to do `source activate` instead of `conda activate`.
+
+To deactive,
+```
+conda deactivate
+```
+
+To see list of env,
+
+```
+conda env list
+```
 
 
 ## Python
@@ -126,46 +164,16 @@ To exit from the virtual env, simply do
 deactivate
 ```
 
+## Axel
+[Axel](https://github.com/axel-download-accelerator/axel) is a **multi-threaded** downloader. It is faster than `wget, curl`. It supports HTTP, HTTPS, FTP and FTPS protocols.
 
-## Conda
-
-Some users may prefer to use the anaconda python distribution.
-
-```
-module load anaconda/anaconda-mamba
-```
-
-Note you will have to unload any previously loaded python module if you see conflicts.
-```tip
-[mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
+```bash
+axel -n <threads number> <file link>
+# For example 🌰, we use 8 threads to download ananconda installer
+axel -n 8 https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 ```
 
-| mamba⚡                                   | conda                                    |
-| ---------------------------------------- | ---------------------------------------- |
-| `mamba search emcee`                     | `conda search emcee`                     |
-| `mamba install -c conda-forge camb`      | `conda install -c conda-forge camb`      |
-| `mamba create -n myenv python=3.8 scipy` | `conda create -n myenv python=3.8 scipy` |
 
-
-### conda env
-You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`
-
-```
-conda create -n myenv
-source activate myenv
-```
-Note you will have to do `source activate` instead of `conda activate`.
-
-To deactive,
-```
-conda deactivate
-```
-
-To see list of env,
-
-```
-conda env list
-```
 
 ## References
 

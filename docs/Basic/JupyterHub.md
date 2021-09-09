@@ -8,7 +8,8 @@ title: JupyterHub
 - Jupyter-notebook/lab is the **easiest way** to coding 🥳
 - VScode is the **best editor** in the Universe 💪
 - You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎   
-Please use your *username* and *password* of *Gravity* to log in. 
+
+Please use your *username* and *password* of *Gravity* to log in.   
 
 - [~~JupyterHub at login01~~ (*backup*)](https://gravity.sjtu.edu.cn/login01/)
 - [JupyterHub at login02 (**main**)](https://gravity.sjtu.edu.cn/login02/)
@@ -103,11 +104,9 @@ You can drag the sub-window to reorganize your workspace like this
 
 ![image-20210730121419726](../images/Basic/jupyterhub-drag.png)
 
-Even more, you can drag the unit block of the notebook to another notebook or a console.
+Even more, you can drag the unit block of the notebook to another notebook or a console.   
 
-- console from notebook/text file
-
-You can open python console combined with the notebook/text file (it's helpful when you wanna temporarily test or debug)
+You can open python console combined with the notebook/text file (it's helpful when you wanna temporarily test or debug)   
 > - In notebook, you can drag the unit block between notebook and console
 > - In text file, you can use **Shift + Enter** to run the code in the console. Also , you can drag code from console.
 
