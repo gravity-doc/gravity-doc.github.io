@@ -221,16 +221,17 @@ When you need to run a series of jobs with different arguments, it is pretty use
    ```shell
    qsub example.pbs
    ```
-   **`PBS_ARRAYID`** here represents the range `1-666`, which means your    job will run as
-   
-   ```bash
-   python test.py 1
-   python test.py 2
-   python test.py 3
-   ...
-   ...
-   python test.py 666
-   ```
+
+**`PBS_ARRAYID`** here represents the range `1-666`, which means your    job will run as
+
+```bash
+python test.py 1
+python test.py 2
+python test.py 3
+...
+...
+python test.py 666
+```
 
 ### Openmp job
 This is a sample *Fortran90* program using *openmp* to parallelize a *do* loop.

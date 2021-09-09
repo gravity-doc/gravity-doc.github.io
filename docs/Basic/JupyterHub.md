@@ -50,23 +50,26 @@ Also, we provide not only **python** kernel but other kernels like **C, C++, For
 
 ![image-20210730112413040](../images/Basic/jupyterhub-kernel.png)
 
-There are **two** default kernels: *mamba-python2* and *mamba-python3*, which are `Python 2.7` and `Python 3.7` respectively. 
-You have no right to install new package in them. Therefore, if you need to use your own packages, you can just **create a new environment** by yourself. Open a terminal, then
+There are **two** default `Python` kernels: *mamba-python2* and *mamba-python3*, which are `Python 2.7` and `Python 3.7` respectively. 
+
+### create virtual environment
+
+You have no right to install new package in `mamba-python2, mamba-python3`. Therefore, if you need to install your own packages, you can **create a new environment** by yourself. Open a terminal, then
 
 ```bash
-module load anaconda/anaconda-mamba  # load anaconda
-source activate                      # activate base environment
-mamba create -n myenv python scicy   # create a new environment
-conda activate myenv                 # activate your own environment
-mamba install -c conda-forge camb    # install whatever you need
-conda install -c conda-forge camb    # # conda is also OK!
-pip install hmf                      # # pip is also OK!
+module load anaconda/anaconda-mamba         # load anaconda
+source activate                             # activate base environment
+mamba create -n myenv python scicy          # create a new environment
+mamba create -n myenv --clone mamba-python3 # clone an environment
+conda activate myenv                        # activate your own environment
+mamba install -c conda-forge camb           # install whatever you need | #conda install -c conda-forge camb #pip install hmf
 ```
+
+### install ipykernel
 
 After creating a new environment, you have to **install ipykernel** so that you can use it in *Jupyter-notebook/lab*
 
 ```bash
-# install ipykerne
 python -m ipykernel install --user --name myenv 
 ```
 
