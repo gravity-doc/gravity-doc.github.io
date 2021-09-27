@@ -22,7 +22,9 @@ ssh-keygen
 This will generate two files `id_rsa` (*private key*) + `id_rsa.pub` (*public key*) in your `~/.ssh` folder.
 
 ### adding ssh keys 
-Please send us your public key file `id_rsa.pub` [via email](https://gravity-doc.github.io/#contact), and we will add the public key to your account. After the key is added, you can use your `id_rsa` (*private key*) to log in Gravity🥳. 
+You will be asked to provide your public key (`id_rsa.pub`) when registering for an account. 
+
+If for some reason you failed to provide the correct key, you can send us your public key file `id_rsa.pub` [via email](https://gravity-doc.github.io/#contact), and we will add the public key to your account. After the key is added, you can use your `id_rsa` (*private key*) to log in Gravity🥳. 
 
 Alternatively, you can login to [jupyterhub](https://gravity-doc.github.io/Basic/JupyterHub.html), open a terminal, and add the content of your *public key* to `.ssh/authorized_keys` by yourself.
 
