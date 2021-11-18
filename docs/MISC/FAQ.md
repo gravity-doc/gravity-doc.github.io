@@ -9,6 +9,15 @@ title: FAQ
 If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#contact)!
 ```
 
+- I got a permission denied error when trying to login with ssh
+  
+  > This may be because 
+  > - your ip is banned (see below), 
+  > - or because you didn't use your ssh-key to login (see below), 
+  > - or because your .ssh/authorized-keys file on the server has the wrong permissions (it should not be readable by other users except yourself). Contact the admins to fix the permission in this case.
+  > 
+  > You may be able to find out more information about the issue by adding the `-vvv` option to ssh, i.e., `ssh -vvv`.
+
 - What if I forgot my password? 🔐
 
   > Do not worry, contact us to change the password      
@@ -24,7 +33,11 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   > `ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn`    
   > The **public key** should be on the *Gravity* -> `~/.ssh/authorized_keys`   
   > 
-  > Keep your **private key** safe, it is identical to the **password**!
+  > Keep your **private key** safe, it is equivalent to a **password**!
+  > ```
+
+  > ```tip
+  > You may be prompted for a passphrase when login with a ssh-key. This is the password you set-up to protect the key when generating your ssh-key. It is separate from the password you use for jupyter.
   > ```
 
 - What if my **IP** was **banned** ❌, so that I couldn't access **[JupyterHub](https://gravity.sjtu.edu.cn/)** or **ssh login**?
