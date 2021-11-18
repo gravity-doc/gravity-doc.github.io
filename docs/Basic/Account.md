@@ -18,6 +18,13 @@ You will receive an email once your account is created.
 The initial password is included.
 You can use `yppasswd` command on *login02* node to update your password.
 
+```warn
+- Please change your password immediately the first time you login to your account.
+- Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never should you provide them to anybody.
+- 请在第一次登陆后立即修改初始密码。
+- 请不要在邮件、微信等通信里向任何人提供密码。管理员维护账号也从*不会*需要你的密码。
+```
+
 ## Forget the password
 
 如果您因为种种原因忘记了密码，请发送邮件至[hpc邮箱](mailto:gravity-hpc@sjtu.edu.cn)，在邮件中注明您要重置密码的账号。如果您不是账号申请人，为了确认您的身份，请务必抄送账号申请人的邮箱。我们会在确保本次重置并非恶意重置之后完成密码重置工作，并发送邮件通知您新的密码。
