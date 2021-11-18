@@ -14,7 +14,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   > This may be because 
   > - your ip is banned (see below), 
   > - or because you didn't use your ssh-key to login (see below), 
-  > - or because your .ssh/authorized-keys file on the server has the wrong permissions (it should not be readable by other users except yourself). Contact the admins to fix the permission in this case.
+  > - or because your .ssh/authorized-keys file on the server has the wrong permissions (.ssh should have permission 700 and authorized_keys 644 or 600). Contact the admins to fix the permission in this case.
   > 
   > You may be able to find out more information about the issue by adding the `-vvv` option to ssh, i.e., `ssh -vvv`.
 
