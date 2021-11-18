@@ -18,7 +18,7 @@ You will receive an email once your account is created.
 The initial password is included.
 You can use `yppasswd` command on *login02* node to update your password.
 
-```warn
+```warning
 - Please change your password immediately the first time you login to your account.
 - Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never should you provide them to anybody.
 - 请在第一次登陆后立即修改初始密码。
