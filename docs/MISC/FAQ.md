@@ -104,3 +104,9 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
   > 2. you just don't use `private key` at all! 👇    
   >
   >    >  `ssh -i <your_ssh_key> <username>@gravity.sjtu.edu.cn`    
+- My job is running but my logfile is still empty.
+
+  This is probably because your log messages are being buffered on the computing node. You can try log into the computing node and check /var/spool/torque/spool/ to find the buffered logfile.
+  Refs: 
+  * https://guido.vonrudorff.de/2013/pbstorque-unbuffered-output-on-network-filesystems/
+  * https://serverfault.com/questions/294218/is-there-a-way-to-redirect-output-to-a-file-without-buffering-on-unix-linux
