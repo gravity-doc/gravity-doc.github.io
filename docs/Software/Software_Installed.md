@@ -66,6 +66,8 @@ $ mdoule list
 
 ```tip
 The order of the module loading matters if some of them have dependence on others.
+
+Some libraries (in particular some C++ libraries) will only work properly with the compiler that is used to compile it. These modules will have the compiler version appended to the name, such as `hdf5/1.12.1-with-cxx-fortran-gcc10.2.0`
 ```
 ## Conda(Mamba)
 
