@@ -59,8 +59,9 @@ You have no right to install new package in `mamba-python2, mamba-python3`. Ther
 ```bash
 module load anaconda/anaconda-mamba         # load anaconda
 source activate                             # activate base environment
-mamba create -n myenv python scicy          # create a new environment
-mamba create -n myenv --clone mamba-python3 # clone an environment
+mamba create -n myenv                       #create a new clean (and empty) environment
+# mamba create -n myenv python scipy          # alternatively, create a new environment, and populate it with python and scipy
+# mamba create -n myenv --clone mamba-python3 # or clone an environment
 conda activate myenv                        # activate your own environment
 mamba install -c conda-forge camb           # install whatever you need | #conda install -c conda-forge camb #pip install hmf
 ```
