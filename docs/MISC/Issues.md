@@ -20,6 +20,30 @@ The same happens when update conda from old version.
 This issue is due to incompatiblity of the **parallel file system** mounted in kernel state. 
 As a temporary workaround, we have mounted the filesystem with **NFS on login02**, so that you can use login02 for installation and update of anaconda packages. This means degraded IO performance on login02 (~700MB/s), but it should suffice common usage requirements. If high IO performance is needed interactively, use login01.
 
+## cannot open hdf5 file on login02
+When opening a hdf5 file on login02, one may sometimes run into the following error
+using python:
+```
+----> 1 f=h5py.File('snap_001.0.hdf5','r')
+IOError: Unable to open file (unable to lock file, errno = 37, error message = 'No locks available')
+```
+or using `h5ls`:
+```
+[user@login02]$ h5ls snap_001.0.hdf5 
+snap_001.0.hdf5: unable to open file
+```
+
+This is a known problem in the NFS file system on `login02`. You can switch to read the file on `login01` instead.
+
+```warning
+Alternatively, you may choose to disable hdf5 file locking before reading, by setting the environment variable `HDF5_USE_FILE_LOCKING` to `FALSE`, e.g., in bash:
+
+  `
+  export HDF5_USE_FILE_LOCKING=FALSE
+  `
+
+This will disable hdf5 file locking, but you will have to be more careful about opening files to avoid problematic access patterns (i.e.: multiple writers to the same hdf5 file) that the file locking was designed to prevent. 
+```
 ## **日志残留问题**        
 
   问题描述:当用户提交两个节点以上的任务时，就会出现日志残留问题。
