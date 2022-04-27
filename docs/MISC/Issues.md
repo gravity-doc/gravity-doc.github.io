@@ -37,7 +37,9 @@ This is a known problem in the NFS file system on `login02`. You can switch to r
 
 ```warning
 Alternatively, you may choose to disable hdf5 file locking before reading, by setting the environment variable `HDF5_USE_FILE_LOCKING` to `FALSE`, e.g., in bash:
-  `export HDF5_USE_FILE_LOCKING=FALSE`
+
+ `export HDF5_USE_FILE_LOCKING=FALSE`
+
 This will disable hdf5 file locking, but you will have to be more careful about opening files to avoid problematic access patterns (i.e.: multiple writers to the same hdf5 file) that the file locking was designed to prevent. 
 ```
 ## **日志残留问题**        
