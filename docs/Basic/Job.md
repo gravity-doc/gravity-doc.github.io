@@ -34,6 +34,40 @@ Please only request resources that you actually need. **Do not** use more than o
 
 ## Basic example
 
+
+### Serial job
+
+Suppose you have a program `test.f90` which is compiled as follows:
+
+```bash
+module load gcc
+gfortran test.f90 -o test.exe
+```
+
+A simply job submission script (`example.qsub`) is as follow.
+
+```bash
+#!/bin/sh
+#PBS -N testjob
+#PBS -l nodes=1:ppn=1
+#PBS -q normal
+
+cd $PBS_O_WORKDIR
+
+### load the modules ###
+module load gcc && echo $_ "LOADED"
+
+### RUN ###
+./test.exe 
+```
+
+To submit the job,
+
+```bash
+qsub example.qsub
+```
+
+### parallel job
 The content of an example *parallel* PBS script (`example.qsub`) is provided below:
 
 ```bash
@@ -158,44 +192,6 @@ PBS_NODEFILE=/opt/tsce4/torque6/share/gr32/aux//1399.login01
 PBS_O_PATH=/usr/java/jre1.8.0_151/bin:/usr/java/jre1.8.0_151/bin:/opt/tsce4/maui/sbin:/opt/tsce4/maui/bin:/opt/tsce4/torque6/bin:/opt/tsce4/torque6/sbin:/usr/local/bin:/usr/local/bin:/usr/lib64/qt-3.3/bin:/home/user1/perl5/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/opt/pdsh-2.29/bin:/opt/pdsh-2.29/sbin:.:/home/user1/.local/bin:/home/user1/bin
 ```
 
-### Serial job
-
-This sample use *gcc* to compile a *Fortran90* Hello World.
-
-```fortran
-program testseries
-implicit none
-
-write(*,*) 'Hello World!'
-
-endprogram testseries
-```
-
-```bash
-module load gcc
-gfortran testseries.f90
-```
-
-A simply job submission script is as follow.
-
-```bash
-#!/bin/sh
-#PBS -N testseries
-#PBS -l nodes=1:ppn=1
-#PBS -l walltime=1:00:00
-
-cd $PBS_O_WORKDIR
-
-### Set environment###
-echo "###############################################"
-echo "JOBID: " ${PBS_JOBID}
-echo "JOBNAME: " ${PBS_JOBNAME}
-module load gcc && echo $_ "LOADED"
-
-### RUN ###
-echo "###############################################"
-./a.out > log
-```
 
 ### Job array
 When you need to run a series of jobs with different arguments, it is pretty useful. Because you do not need a loop any more. You can find more arguments [here](http://docs.adaptivecomputing.com/torque/6-1-1/adminGuide/Content/topics/torque/commands/qsub.htm).
@@ -285,7 +281,7 @@ The number of threads is set to 8.
 ```bash
 #!/bin/sh
 #PBS -N testopenmp
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=8
 #PBS -l walltime=1:00:00
 
 cd $PBS_O_WORKDIR
@@ -299,7 +295,7 @@ export OMP_NUM_THREADS=8
 
 ### RUN ###
 echo "###############################################"
-mpirun -np 1 ./a.out > log
+./a.out > log
 
 ```
 
