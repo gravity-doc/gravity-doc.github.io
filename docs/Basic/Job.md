@@ -5,7 +5,8 @@ title: Job
 
 ```warning
 You **should** run your job via PBS (Torque).     
-You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, they might be _crashed_.
+You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, you might crash the system and be *banned*.
+
 Please only request resources that you actually need. **Do not** use more than or less than the number of cores you requested.
 ```
 
