@@ -89,7 +89,7 @@ To submit the job,
 qsub example.qsub
 ```
 
-```tips
+```tip
 Please only request resources that you actually need. In the above example, a full node (72 cores) is requested. However, if your job uses fewer cores, you should only request that many cores. For example
 `#PBS -l nodes=1:ppn=8`
 to request 8 cores on a single node.
