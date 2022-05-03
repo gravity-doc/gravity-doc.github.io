@@ -6,6 +6,7 @@ title: Job
 ```warning
 You **should** run your job via PBS (Torque).     
 You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, they might be _crashed_.
+Please only request resources that you actually need. **Do not** use more than or less than the number of cores you requested.
 ```
 
 # Queues
@@ -33,7 +34,7 @@ You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, they
 
 ## Basic example
 
-The content of an example PBS script (`example.qsub`) is provided below:
+The content of an example *parallel* PBS script (`example.qsub`) is provided below:
 
 ```bash
 #!/bin/bash
@@ -51,6 +52,19 @@ To submit the job,
 
 ```bash
 qsub example.qsub
+```
+
+```tips
+Please only request resources that you actually need. In the above example, a full node (72 cores) is requested. However, if your job uses fewer cores, you should only request that many cores. For example
+`#PBS -l nodes=1:ppn=8`
+to request 8 cores on a single node.
+
+If your job uses OpenMP, you should set the number of threads to match your requested cores. For example, when requesting 8 cores for an OpenMP job, remember to also put the following in your job script before your final program line:
+`export OMP_NUM_THREADS=8`
+.
+
+If you are running a serial job, please only request **one** core:
+`#PBS -l nodes=1:ppn=1`
 ```
 
 ## Complete example
