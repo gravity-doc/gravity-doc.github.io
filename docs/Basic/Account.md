@@ -3,12 +3,12 @@ sort: 1
 title: Account
 ---
 
-```warning
-请仔细阅读[用户协议](https://notes.sjtu.edu.cn/s/ZF46PNYoF#)，并征求导师同意。   
-Please make sure you have read the [user policy](https://notes.sjtu.edu.cn/s/ZF46PNYoF#), and get consent of your sponsor/supervisor before application.
-```
-
 ## Apply for an account
+
+```warning
+请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。   
+Please make sure you have read the [user policy](https://gravity-doc.github.io/Policy.html), and get consent of your sponsor/supervisor before application.
+```
 
 Use  [**this link**](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to apply
 
