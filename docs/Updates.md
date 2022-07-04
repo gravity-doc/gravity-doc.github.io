@@ -11,6 +11,7 @@ title: Updates
 ## Done 🥳
 
 ### 2022.7
+- [x] [**Gravity Homepage**](https://jupyter.gravity.sjtu.edu.cn/) is ready! 🎉🎉🎉
 - [x] enable [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login) for [**Jupyter**](https://jupyter.gravity.sjtu.edu.cn)
 - [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
 - [x] update `Jupyterhub/Jupyterlab/VScode`
@@ -18,6 +19,7 @@ title: Updates
 - [x] use *HTTP cache* to accelerate *Jupyter*
 - [x] add [**NEW Spawner** for Jupyter](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and input options when spawn server
 - [x] add [FileServer](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support upload/download/**share** files 🎉🎉🎉
+- [x] add **HTTP proxy server**, now support to **🏄‍surf the Internet** when spawn *Jupyter* server on *computing nodes*, such as `git/curl/wget`, automatically *⚡speedup* `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
 
 ### 2021.9
 
