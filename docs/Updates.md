@@ -5,11 +5,19 @@ title: Updates
 
 ## Future ✨
 
-- [ ] Two-Factor Authentication (2FA) for [**JupyterHub**](https://gravity.sjtu.edu.cn/)
 - [ ] support container
 - [ ] switch to Slurm (PBS will be **deprecated**)
 
 ## Done 🥳
+
+### 2022.7
+- [x] enable [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login) for [**Jupyter**](https://jupyter.gravity.sjtu.edu.cn)
+- [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
+- [x] update `Jupyterhub/Jupyterlab/VScode`
+- [x] new Jupyterlab extension: [GPU resource monitor](https://gravity-doc.github.io/Basic/Jupyter.html#gpu-monitor), [Diagram](https://gravity-doc.github.io/Basic/Jupyter.html#flowchart), variable inspector, github, dracula theme, 中文语言包
+- [x] use *HTTP cache* to accelerate *Jupyter*
+- [x] add [**NEW Spawner** for Jupyter](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and input options when spawn server
+- [x] add [FileServer](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support upload/download/**share** files 🎉🎉🎉
 
 ### 2021.9
 

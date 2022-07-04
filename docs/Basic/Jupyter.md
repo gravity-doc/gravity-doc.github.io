@@ -3,6 +3,11 @@ sort: 6
 title: Jupyter
 ---
 # Jupyter
+```danger
+traditional `username`+`password` method of login will be **Deprecated** in the near future!   
+
+[Please use **2FA** instead](https://gravity-doc.github.io/Basic/Login.html#web-login). 
+```
 
 ```tip
 [**JupyterHub**](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨ 
@@ -16,10 +21,11 @@ You can access *Jupyter* on our website:
 
 - PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
 ```
+
 ```warning
 **DO NOT** run heavy program on login nodes ❌🙅❌   
 
-When you fail to log in, **DO NOT** try many times, your IP will be **banned** for a period of time 😭
+If you fail to log in, **DO NOT** try many times, your IP will be **banned** for a period of time 😭
 ```
 
 

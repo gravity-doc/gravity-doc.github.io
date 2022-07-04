@@ -6,7 +6,7 @@ title: Login
 # Log in Gravity
 ```note
 We have enabled **2FA** on website, you need to install an *Authenticator app* to log in website.    
-Use `ssh` to log in only needs your **ssh privacy key**
+Use `ssh` to log in only needs your **ssh private key**
 ```
 ```danger
 If you fail to login, please do not try many times. Otherwise your IP will be **banned** for a period of time 😭
@@ -46,7 +46,7 @@ ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
 ```tip
-You can set up your `~/.ssh/config` to **simplify** your command 😎   
+You can set up your `~/.ssh/config` to **simplify** your command😎 as following:
 ```
 
 Edit your `~/.ssh/config` like this:      
@@ -100,30 +100,37 @@ We enable **Two-factor authentication (2FA)** on Gravity website, so you need to
 
 ### 2. add Gravity 2FA
 open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input your *username* + *password*
+
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
 click *Register device*
+
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 
 check your mailbox, click *Register button*
+
 <img src="../images/Basic/auth_email.png" width = "300" height = "200" div align=center />
 
 open your phone's authenticator app
+
 <img src="../images/Basic/auth_QR.png" width = "300" height = "250" div align=center />
 
 click *add* button
+
 <img src="../images/Basic/auth_add1.png" width = "180" height = "300" div align=center />
 
 *scan* QR code
+
 <img src="../images/Basic/auth_add2.png" width = "180" height = "300" div align=center />
 
 input your *Time-based one-time password (TOTP)*, enjoy! 🎉🎉🎉
+
 <img src="../images/Basic/auth_totp.png" width = "300" height = "250" div align=center />
 
 # 登陆 Gravity（中文版）
 ```note
 我们已在网站上启用*2FA*认证，您需要安装2FA应用才能够在网页端登陆   
-若您使用ssh方式登陆，则仅需ssh key
+若您使用ssh方式登陆，则仅需ssh private key私钥
 ```
 ```danger
 请勿多次失败登陆，您的IP将会被封禁一段时间 😭
@@ -162,7 +169,7 @@ ssh -i <你的私钥> <用户名>@gravity.sjtu.edu.cn
 ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
 ```tip
-您可以设置 `~/.ssh/config` 来**简化**命令 😎   
+您可以设置 `~/.ssh/config` 来**简化**命令😎，按照下方操作：    
 ```
 像这样修改文件`~/.ssh/config`：
 ```
@@ -215,22 +222,29 @@ ssh login02
 
 ### 2. 添加Gravity的二次验证
 打开 [Gravity认证页面](https://gravity.sjtu.edu.cn/auth/), 输入您的 *用户名* + *密码*
+
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
 点击 *注册设备*
+
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 
 检查您的邮箱，点击 *注册* 按钮
+
 <img src="../images/Basic/auth_email.png" width = "300" height = "200" div align=center />
 
 打开您手机上的 authenticator 应用，准备扫描二维码
+
 <img src="../images/Basic/auth_QR.png" width = "300" height = "250" div align=center />
 
 点击*加号*按钮
+
 <img src="../images/Basic/auth_add1.png" width = "180" height = "300" div align=center />
 
 点击*扫描二维码*
+
 <img src="../images/Basic/auth_add2.png" width = "180" height = "300" div align=center />
 
 输入您的 *二次验证码*, 开始征途吧！🎉🎉🎉
+
 <img src="../images/Basic/auth_totp.png" width = "300" height = "250" div align=center />

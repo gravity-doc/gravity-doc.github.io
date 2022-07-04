@@ -10,6 +10,28 @@ For transmission of large files, command lines like `scp` or `rsync` are usually
 When one is making plots or editing codes, it might be more convenient to use 
 techniques with graphical user interface support.
 
+## FileServer
+```note
+You need to `copy`/`move` your files into `~/.fileServer` to use *FileServer*.   
+
+If you need to **share massive data**, feel free to [contact admin🧙‍](https://gravity-doc.github.io/#contact)
+```
+### access
+We have enabled a **File Server** on Gravity 🎉🎉🎉
+You can access *fileserver* via:
+- https://jupyter.gravity.sjtu.edu.cn/file/
+- https://gravity.sjtu.edu.cn/file/
+
+Cause we enable **2FA**, you need to install *Authenticator App* at the first time. See [more details here](https://gravity-doc.github.io/Basic/Login.html#web-login).
+
+### properties
+File Server supports:
+- upload file
+- download file (you can use download tools, such as **multi-thread** downloader)
+- **share file** 🎉🎉🎉 (you can set **password/limiting time** of your sharing files)
+- view file
+- delete/create file
+
 ## Jupyter-lab/notebook
 Because of the GUI of jupyter, you can easily transfer your data, as long as your data is not too large (eg. <10G)
 > 1. login [JupyterHub](https://gravity.sjtu.edu.cn/)
