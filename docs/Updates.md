@@ -5,21 +5,22 @@ title: Updates
 
 ## Future ✨
 
-- [ ] support container
-- [ ] switch to Slurm (PBS will be **deprecated**)
+- [ ] support container (Singularity)
+- [ ] switch to Slurm (PBS will be **Deprecated**)
 
 ## Done 🥳
 
 ### 2022.7
 - [x] [**Gravity Homepage**](https://jupyter.gravity.sjtu.edu.cn/) is ready! 🎉🎉🎉
-- [x] enable [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login) for [**Jupyter**](https://jupyter.gravity.sjtu.edu.cn)
+- [x] add [FileServer](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support download/**share** files 🎉🎉🎉 ([File Sharing DEMO](https://jupyter.gravity.sjtu.edu.cn/demo/))
+- [x] add [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login)🔒 for our website
+- [x] add [**NEW Spawner for Jupyter**](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and **input options**
 - [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
-- [x] update `Jupyterhub/Jupyterlab/VScode`
-- [x] new Jupyterlab extension: [GPU resource monitor](https://gravity-doc.github.io/Basic/Jupyter.html#gpu-monitor), [Diagram](https://gravity-doc.github.io/Basic/Jupyter.html#flowchart), variable inspector, github, dracula theme, 中文语言包
-- [x] use *HTTP cache* to accelerate *Jupyter*
-- [x] add [**NEW Spawner** for Jupyter](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and input options when spawn server
-- [x] add [FileServer](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support upload/download/**share** files 🎉🎉🎉
-- [x] add **HTTP proxy server**, now support to **🏄‍surf the Internet** when spawn *Jupyter* server on *computing nodes*, such as `git/curl/wget`, automatically *⚡speedup* `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
+- [x] add Jupyterlab extensions: [GPU resource monitor](https://gravity-doc.github.io/Basic/Jupyter.html#gpu-monitor), [Diagram](https://gravity-doc.github.io/Basic/Jupyter.html#flowchart), variable inspector, github, dracula theme, 中文语言包, remove some kernels
+- [x] add **HTTP proxy server**, now you can **🏄‍surf the Internet** such as `git/curl/wget` when using *Jupyter/VScode* on *computing nodes*. Meanwhile, it will automatically *speedup*⚡ `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
+- [x] add **HTTP cache** to accelerate *Jupyter/VScode*
+- [x] add [**Monitor**](https://jupyter.gravity.sjtu.edu.cn/status/?theme=dark) to check Gravity status
+- [x] add [**SpeedTest**](https://jupyter.gravity.sjtu.edu.cn/speedtest/) to test connection speed between you and Gravity
 
 ### 2021.9
 

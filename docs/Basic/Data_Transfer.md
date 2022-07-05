@@ -26,12 +26,13 @@ Cause we enable **2FA**, you need to install *Authenticator App* at the first ti
 
 ### properties
 File Server supports:
-- upload file
-- download file (you can use download tools, such as **multi-thread** downloader)
 - **share file** 🎉🎉🎉 (you can set **password/limiting time** of your sharing files)
-- view file
-- delete/create file
+![share file](../images/Basic/data-share.png)
+- download file (you can use download tools, such as **multi-thread** downloader)
+![download](../images/Basic/data-download.png)
+- view file (picture/video/txt)
 
+PS. If you need to create NEW file, please use *terminal* to `remove/copy` to `~/.fileServer`, symlink `ln -s` is not allowed here❌!
 ## Jupyter-lab/notebook
 Because of the GUI of jupyter, you can easily transfer your data, as long as your data is not too large (eg. <10G)
 > 1. login [JupyterHub](https://gravity.sjtu.edu.cn/)
