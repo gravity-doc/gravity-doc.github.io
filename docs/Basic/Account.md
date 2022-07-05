@@ -19,6 +19,11 @@ The initial password is included.
 1. In terminal, you can use `yppasswd` or `passwd` to change your password.
 2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Authentication.html)
 
+```tip
+- Note that it may take a few minutes before the password change is synchronized between the terminal and the web login. 
+- 更改密码后，新的密码将会需要几分钟在terminal和web之间得到同步。
+```
+
 ```warning
 - Please change your password immediately the first time you login to your account.
 - Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never give your password to anyone.
