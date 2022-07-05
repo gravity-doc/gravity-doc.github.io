@@ -1,5 +1,6 @@
 ---
 sort: 3
+title: Proxy
 ---
 
 # Surf the Internet🏄‍

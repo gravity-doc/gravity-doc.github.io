@@ -17,7 +17,7 @@ title: Updates
 - [x] add [**NEW Spawner for Jupyter**](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and **input options**
 - [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
 - [x] add Jupyterlab extensions: [GPU resource monitor](https://gravity-doc.github.io/Basic/Jupyter.html#gpu-monitor), [Diagram](https://gravity-doc.github.io/Basic/Jupyter.html#flowchart), variable inspector, github, dracula theme, 中文语言包, remove some kernels
-- [x] add **HTTP proxy server**, now you can [**🏄‍surf the Internet**](https://gravity-doc.github.io/Software/Speedup_Git.html#surf-the-internet) such as `git/curl/wget` when using *Jupyter/VScode* on *computing nodes*. Meanwhile, it will automatically *speedup*⚡ `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
+- [x] add **HTTP proxy server**, now you can [**🏄‍surf the Internet**](https://gravity-doc.github.io/Software/Proxy.html#surf-the-internet) such as `git/curl/wget` when using *Jupyter/VScode* on *computing nodes*. Meanwhile, it will automatically *speedup*⚡ `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
 - [x] add **HTTP cache** to accelerate *Jupyter/VScode*
 - [x] add [**Monitor**](https://jupyter.gravity.sjtu.edu.cn/status/?theme=dark) to check Gravity status
 - [x] add [**SpeedTest**](https://jupyter.gravity.sjtu.edu.cn/speedtest/) to test connection speed between you and Gravity
@@ -44,7 +44,7 @@ title: Updates
 - [x] automatically **ban IP** with too many failed login attempts ( *ssh* + *JupyterHub*)   
 
 ### 2021.5
-- [x] [speedup git ⚡](https://gravity-doc.github.io/Software/Speedup_Git.html) (including `git clone, git pull, etc.`)    
+- [x] [speedup git ⚡](https://gravity-doc.github.io/Software/Proxy.html#speedup-git) (including `git clone, git pull, etc.`)    
 
 - [x] add and improve command to query CPU time (expense) and Disk usage   
   > `icfsquota`   
