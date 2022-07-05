@@ -83,20 +83,26 @@ If you do not like😒 the original terminal, here are some alternative software
 ### 1. install Authenticator app
 We enable **Two-factor authentication (2FA)** on Gravity website, so you need to install an *Authenticator* on your phone/PC. Any of the listed authenticators below (and many others) will work. You can first try to find and install one of these authenticators from the App Store of your device. Alternative, you can follow the links below to download and install one of them. 
 
-*Android* device
-- [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (can be accessed in China 🎉🎉)
-- [Authy](https://authy.cn.uptodown.com/android) (can be accessed in China 🎉🎉)
-- [LastPass Authenticator](https://lastpass-authenticator.cn.uptodown.com/android) (can be accessed in China 😆)
-- [Google Authenticator](https://authenticator.cn.uptodown.com/android) (can be accessed in China 😆)
-- [Microsoft Authenticator](https://azure-authenticator.cn.uptodown.com/android) (can be accessed in China 😆)
+#### *Android* device
+```tip
+If you cannot run *authenticator app* due to **ERROR**: **You do not have Google Services Framework installed**, please [install **Google Services Framework** here](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk).   
+
+若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+```
+
+- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/raw/DEMO/apk/Twilio_Authy_24.8.6.apk?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1MCwibG9jYWxlIjoiZW4iLCJ2aWV3TW9kZSI6Imxpc3QiLCJzaW5nbGVDbGljayI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOmZhbHNlLCJyZW5hbWUiOmZhbHNlLCJtb2RpZnkiOmZhbHNlLCJkZWxldGUiOmZhbHNlLCJzaGFyZSI6dHJ1ZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6ZmFsc2UsImhpZGVEb3RmaWxlcyI6ZmFsc2UsImRhdGVGb3JtYXQiOmZhbHNlfSwiaXNzIjoiRmlsZSBCcm93c2VyIiwiZXhwIjoxNjU3MDM4NTcyLCJpYXQiOjE2NTcwMzEzNzJ9.VLB-w97rXyOaLnd94LUp7KleEMoJGCPnpFxAdq0NhBc) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (official, can be accessed from China 🎉)
+- [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (official, but you need to access Google Play 🙄)
 - [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (official, but you need to access Google Play 🙄)
 - [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app) (official, but you need to access Google Play 🙄)
 
-*iOS* device
-- [Google Authenticator](https://apps.apple.com/cn/app/google-authenticator/id388497605) (can be accessed in China 🎉🎉)
+#### *iOS* device
+- [Google Authenticator](https://apps.apple.com/cn/app/google-authenticator/id388497605) (can be accessed in China 🎉🎉🎉)
 - [Microsoft Authenticator](https://apps.apple.com/cn/app/microsoft-authenticator/id983156458) (can be accessed in China 🎉🎉)
-- [Twilio Authy](https://apps.apple.com/cn/app/twilio-authy/id494168017) (can be accessed in China 🎉🎉)
-- [Duo Mobile](https://apps.apple.com/cn/app/duo-mobile/id422663827) (can be accessed in China 🎉🎉)
+- [Twilio Authy](https://apps.apple.com/cn/app/twilio-authy/id494168017) (can be accessed in China 🎉🎉🎉)
+- [Duo Mobile](https://apps.apple.com/cn/app/duo-mobile/id422663827) (can be accessed in China 🎉🎉🎉)
 
 ### 2. add Gravity 2FA
 open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input your *username* + *password*
@@ -205,20 +211,25 @@ ssh login02
 ### 1. 安装authenticator应用
 我们在网站上启用了二次验证（2FA），因此您需要在电脑/手机上安装软件后才能登陆。下面列出的任意一款验证器都可以满足需求，您可以尝试从自己手机的官方应用商店安装，或者从点击下面的链接下载安装：
 
-*Android* device
-- [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (中国正常访问 🎉🎉)
-- [Authy](https://authy.cn.uptodown.com/android) (中国正常访问 🎉🎉)
-- [LastPass Authenticator](https://lastpass-authenticator.cn.uptodown.com/android) (中国正常访问 😆)
-- [Google Authenticator](https://authenticator.cn.uptodown.com/android) (中国正常访问 😆)
-- [Microsoft Authenticator](https://azure-authenticator.cn.uptodown.com/android) (中国正常访问 😆)
-- [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (官方，但您需要访问 Google Play 🙄)
-- [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app) (官方，但您需要访问 Google Play 🙄)
+#### *Android* 设备
+```tip
+若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+```
 
-*iOS* device
-- [Google Authenticator](https://apps.apple.com/cn/app/google-authenticator/id388497605) (中国正常访问 🎉🎉)
-- [Microsoft Authenticator](https://apps.apple.com/cn/app/microsoft-authenticator/id983156458) (中国正常访问 🎉🎉)
-- [Twilio Authy](https://apps.apple.com/cn/app/twilio-authy/id494168017) (c中国正常访问 🎉🎉)
-- [Duo Mobile](https://apps.apple.com/cn/app/duo-mobile/id422663827) (中国正常访问 🎉🎉)
+- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/raw/DEMO/apk/Twilio_Authy_24.8.6.apk?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1MCwibG9jYWxlIjoiZW4iLCJ2aWV3TW9kZSI6Imxpc3QiLCJzaW5nbGVDbGljayI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOmZhbHNlLCJyZW5hbWUiOmZhbHNlLCJtb2RpZnkiOmZhbHNlLCJkZWxldGUiOmZhbHNlLCJzaGFyZSI6dHJ1ZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6ZmFsc2UsImhpZGVEb3RmaWxlcyI6ZmFsc2UsImRhdGVGb3JtYXQiOmZhbHNlfSwiaXNzIjoiRmlsZSBCcm93c2VyIiwiZXhwIjoxNjU3MDM4NTcyLCJpYXQiOjE2NTcwMzEzNzJ9.VLB-w97rXyOaLnd94LUp7KleEMoJGCPnpFxAdq0NhBc) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (官方, 可以在中国访问 🎉)
+- [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (官方， 但是你需要能够访问Google Play商店 🙄)
+- [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (官方， 但是你需要能够访问Google Play商店 🙄)
+- [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app) (官方， 但是你需要能够访问Google Play商店  🙄)
+
+#### *iOS* 设备
+使用AppStore直接安装即可：
+- [Google Authenticator](https://apps.apple.com/cn/app/google-authenticator/id388497605) (中国正常访问 🎉🎉🎉)
+- [Microsoft Authenticator](https://apps.apple.com/cn/app/microsoft-authenticator/id983156458) (中国正常访问 🎉🎉🎉)
+- [Twilio Authy](https://apps.apple.com/cn/app/twilio-authy/id494168017) (中国正常访问 🎉🎉🎉)
+- [Duo Mobile](https://apps.apple.com/cn/app/duo-mobile/id422663827) (中国正常访问 🎉🎉🎉)
 
 ### 2. 添加Gravity的二次验证
 打开 [Gravity认证页面](https://gravity.sjtu.edu.cn/auth/), 输入您的 *用户名* + *密码*
