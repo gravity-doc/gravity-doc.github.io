@@ -17,8 +17,7 @@ Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id
 You will receive an email once your account is created.
 The initial password is included.
 1. In terminal, you can use `yppasswd` or `passwd` to change your password.
-2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Authentication.html)
-
+2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Login.html#web-login)
 ```tip
 - Note that it may take a few minutes before the password change is synchronized between the terminal and the web login. 
 - 更改密码后，新的密码将会需要几分钟在terminal和web之间得到同步。
