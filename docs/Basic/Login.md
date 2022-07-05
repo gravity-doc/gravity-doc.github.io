@@ -92,7 +92,7 @@ If you cannot run *authenticator app* due to **ERROR**: **You do not have Google
 
 - [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
 - [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
-- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/raw/DEMO/apk/Twilio_Authy_24.8.6.apk?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1MCwibG9jYWxlIjoiZW4iLCJ2aWV3TW9kZSI6Imxpc3QiLCJzaW5nbGVDbGljayI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOmZhbHNlLCJyZW5hbWUiOmZhbHNlLCJtb2RpZnkiOmZhbHNlLCJkZWxldGUiOmZhbHNlLCJzaGFyZSI6dHJ1ZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6ZmFsc2UsImhpZGVEb3RmaWxlcyI6ZmFsc2UsImRhdGVGb3JtYXQiOmZhbHNlfSwiaXNzIjoiRmlsZSBCcm93c2VyIiwiZXhwIjoxNjU3MDM4NTcyLCJpYXQiOjE2NTcwMzEzNzJ9.VLB-w97rXyOaLnd94LUp7KleEMoJGCPnpFxAdq0NhBc) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Twilio_Authy_24.8.6.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (official, can be accessed from China 🎉)
 - [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (official, but you need to access Google Play 🙄)
 - [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (official, but you need to access Google Play 🙄)
@@ -218,7 +218,7 @@ ssh login02
 
 - [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
 - [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
-- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/raw/DEMO/apk/Twilio_Authy_24.8.6.apk?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1MCwibG9jYWxlIjoiZW4iLCJ2aWV3TW9kZSI6Imxpc3QiLCJzaW5nbGVDbGljayI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOmZhbHNlLCJjcmVhdGUiOmZhbHNlLCJyZW5hbWUiOmZhbHNlLCJtb2RpZnkiOmZhbHNlLCJkZWxldGUiOmZhbHNlLCJzaGFyZSI6dHJ1ZSwiZG93bmxvYWQiOnRydWV9LCJjb21tYW5kcyI6W10sImxvY2tQYXNzd29yZCI6ZmFsc2UsImhpZGVEb3RmaWxlcyI6ZmFsc2UsImRhdGVGb3JtYXQiOmZhbHNlfSwiaXNzIjoiRmlsZSBCcm93c2VyIiwiZXhwIjoxNjU3MDM4NTcyLCJpYXQiOjE2NTcwMzEzNzJ9.VLB-w97rXyOaLnd94LUp7KleEMoJGCPnpFxAdq0NhBc) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Twilio_Authy_24.8.6.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (官方, 可以在中国访问 🎉)
 - [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (官方， 但是你需要能够访问Google Play商店 🙄)
 - [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (官方， 但是你需要能够访问Google Play商店 🙄)

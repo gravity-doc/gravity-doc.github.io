@@ -4,8 +4,15 @@ title: Status/Statistics Website
 ---
 
 # Status/Statistics Website
-You can check the status of jobs and queues through the [~~ClusterEngine~~](https://stat.gravity.sjtu.edu.cn) webpage. For security reasons, currently the webpage is only accessible through a ssh tunnel.
+- check your **cost/Job history** on this website.
+- view computing nodes **resource status**
 
+## Web access
+[open link here](https://gravity.sjtu.edu.cn/inspur/) → log in → log in again
+
+PS. Maybe you do not have permission to access this webpage, then try to use `SSH Tunnel` as following 👇
+
+## SSH tunnel access
 1. Use *ssh tunnel* to connect to the port `8443` of *Gravity login01*
 
    ```
@@ -14,10 +21,10 @@ You can check the status of jobs and queues through the [~~ClusterEngine~~](http
    ssh -i ~/.ssh/id_rsa_Gravity -CNL 8443:localhost:8443 lalala@login01.gravity.sjtu.edu.cn
    ```
 
-2. Open browser, visit
+2. Open your browser (Firefox/Chrome/Edge), visit
 
    ```http
-   https://localhost:8443
+   http://localhost:8443
    ```
 
-3. Use your *username* **+** *password* of Gravity to log in
+3. Input your *username* **+** *password*
