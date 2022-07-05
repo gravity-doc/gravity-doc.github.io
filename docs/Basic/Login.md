@@ -81,7 +81,7 @@ If you do not like😒 the original terminal, here are some alternative software
    
 ## Web login
 ### 1. install Authenticator app
-We enable **Two-factor authentication (2FA)** on Gravity website, so you need to install *Authenticator* on your phone/PC:
+We enable **Two-factor authentication (2FA)** on Gravity website, so you need to install an *Authenticator* on your phone/PC. Any of the listed authenticators below (and many others) will work. You can first try to find and install one of these authenticators from the App Store of your device. Alternative, you can follow the links below to download and install one of them. 
 
 *Android* device
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (can be accessed in China 🎉🎉)
@@ -203,7 +203,7 @@ ssh login02
 
 ## Web登陆
 ### 1. 安装authenticator应用
-我们在网站上启用了二次验证（2FA），因此您需要在电脑/手机上安装软件后才能登陆：
+我们在网站上启用了二次验证（2FA），因此您需要在电脑/手机上安装软件后才能登陆。下面列出的任意一款验证器都可以满足需求，您可以尝试从自己手机的官方应用商店安装，或者从点击下面的链接下载安装：
 
 *Android* device
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (中国正常访问 🎉🎉)
