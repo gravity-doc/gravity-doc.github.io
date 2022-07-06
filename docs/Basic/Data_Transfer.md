@@ -15,6 +15,8 @@ techniques with graphical user interface support.
 You need to `copy`/`move` your files into `~/.fileServer` to use *FileServer*.   
 
 If you need to **share massive data**, feel free to [contact admin🧙‍](https://gravity-doc.github.io/#contact)
+
+This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
 ```
 
 ### access
