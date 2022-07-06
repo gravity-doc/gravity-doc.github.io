@@ -3,7 +3,7 @@ sort: 1
 title: Quick Start
 ---
 ## Apply for an account 🙋‍♂️🙋‍♀️
-Follows the instructions [here](https://gravity-doc.github.io/Basic/Account.html) to apply for an account. Make sure you read the instructions and user policies before applying. Wait for a day or so, then you will receive the e-mail 🥳.
+Follow the instructions [here](https://gravity-doc.github.io/Basic/Account.html) to apply for an account. Make sure you read the instructions and user policies before applying. Wait for a day or so, then you will receive the e-mail 🥳.
 
 ## Log in to Gravity Cluster 💻
 
