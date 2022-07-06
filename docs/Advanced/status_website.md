@@ -15,7 +15,7 @@ PS. Maybe you do not have permission to access this webpage, then try to use `SS
 ## SSH tunnel access
 1. Use *ssh tunnel* to connect to the port `8443` of *Gravity login01*
 
-   ```
+   ```bash
    ssh -i <your_ssh_key> -CNL 8443:localhost:8443 <username>@login01.gravity.sjtu.edu.cn
    # For example 🌰
    ssh -i ~/.ssh/id_rsa_Gravity -CNL 8443:localhost:8443 lalala@login01.gravity.sjtu.edu.cn

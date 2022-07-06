@@ -21,6 +21,7 @@ No Plan.
 
 ## Disk quota
 You can use the command on **login01** or **login02**: `icfsquota username` or `icfsquota`, just like this: 
+
 ```bash
 [lalala@login01 ~]$ icfsquota lalala
 ############## Hi ༼ つ ◕_◕ ༽つ lalala Your Storage Quota Info ################
@@ -31,6 +32,7 @@ Max size =  5.00TB , Used size=  4.33TB , Left size=  666.00GB
 ```
 
 The default quota per account is `3T`.  
+
 ```note
 If you cannot run `icfsquota` successfully😅, please check your permissions setting of `$HOME` foler.   
 `chmod 755 $HOME`   
@@ -48,6 +50,7 @@ Files deleted through the graphical desktop will be moved to Trash folder that s
 
 ## CPU time usage and cost
 You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
+
 ```bash
 [lalala@login01 ~]$ cpuquota 
 ##################### Hi ༼ つ ◕_◕ ༽つ lalala Your Cost #########################
@@ -58,6 +61,7 @@ This month [20210501 ~ 20210531] cost:  66 ￥
 
 ######### Complete usage statistics: https://stat.gravity.sjtu.edu.cn ##########
 ```
+
 ```tip
 Your advisor will bear the cost 🥳
 ```
@@ -83,8 +87,8 @@ gr36	 free 	 63.96*	 385382	  72	 417382	  76529 	 69/1 	   1 	 [1276:user3]
 fat01	 free 	 192.02* 6191128  192	 6223128  1284016 	 1/1 	   1 	 [1340:user4]
 ```
 
-
 PBS job management provides `pbsnodes -l all` to check whether the nodes is free or occupied.
+
 ```bash
 [testuser@GRAVITY:~]:pbsnodes -l all
 gr01                 free
@@ -99,6 +103,7 @@ fat01                free
 ```
 
 2. `showq` provides the queue information.
+
 ```bash
 [testuser@GRAVITY:~]:showq
 ACTIVE JOBS--------------------
@@ -126,7 +131,7 @@ JOBNAME            USERNAME      STATE  PROC     WCLIMIT            QUEUETIME
 Total Jobs: 5   Active Jobs: 4   Idle Jobs: 1   Blocked Jobs: 0
 ```
 
-3. One can also use `qstat` and `qstat -an` to check basic and detailed queue information.
+1. One can also use `qstat` and `qstat -an` to check basic and detailed queue information.
 
 ```bash
 [testuser@GRAVITY:~]:qstat -an

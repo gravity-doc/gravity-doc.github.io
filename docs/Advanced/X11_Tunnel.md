@@ -43,6 +43,7 @@ Then, you can run your graphical application from the computing node 🎉.
 
 ## Linux
 Just use `ssh` to log in!
+
 ```bash
 ssh -X -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
 ```

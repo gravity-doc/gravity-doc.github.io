@@ -22,6 +22,7 @@ In this file, you can add new paths to your own modulefiles to the environmental
 #%Module1.0#####
 append-path MODULEPATH /home/u/mymodulefiles
 ```
+
 Note that `#%Module1.0#####` is required at the first line.
 
 When you use `module` command, system can also find modulefiles in this directory.
@@ -33,6 +34,7 @@ After installing some software, saying `FFTW-3.3.4`, you may want to create your
 First, you should create a folder named *FFTW* inside your own modulefiles path (*/home/user1/mymodulefiles/FFTW* in this case).
 Second, create a file named *3.3.4*.
 Add the following content to this file.
+
 ```bash
 #%Module1.0#####################################################################
 ##
@@ -66,6 +68,7 @@ prepend-path      CPATH             $root/include
 prereq softA
 conflict softB
 ```
+
 Again, the first line is required.
 
 `module-whatis` sets the content when you use `module whatis` shows.

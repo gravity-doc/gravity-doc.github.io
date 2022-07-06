@@ -20,6 +20,7 @@ On the *Gravity*, we use **`module`** to manage software and tools.
 **Gravity** provides **module environment** to manage frequently used softwares and libraries.  
 
 Use `module avail` to check the available softwares/libraries.
+
 ```bash
 [testuser@GRAVITY:~]:module avail
 
@@ -47,6 +48,7 @@ Use `module unload ABC` to unload one specific module.  `module purge` can be us
 module purge/load/unload/list:完整的模块工作流程
 
 在开始新作业之前，先卸载所有已加载的模块是一个好习惯。
+
 ```bash
 $ mdoule purge
 ```
@@ -69,15 +71,17 @@ The order of the module loading matters if some of them have dependence on other
 
 Some libraries (in particular some C++ libraries) will only work properly with the compiler that is used to compile it. These modules will have the compiler version appended to the name, such as `hdf5/1.12.1-with-cxx-fortran-gcc10.2.0`
 ```
+
 ## Conda(Mamba)
 
 Some users may prefer to use the anaconda python distribution.
 
-```
+```bash
 module load anaconda/anaconda-mamba
 ```
 
 Note you will have to unload any previously loaded python module if you see conflicts.
+
 ```tip
 [mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
 ```
@@ -92,20 +96,22 @@ Note you will have to unload any previously loaded python module if you see conf
 ### conda env
 You can also use virtual env with anaconda, but the command is slightly different. To create and activate `myenv`
 
-```
+```bash
 conda create -n myenv
 source activate myenv
 ```
+
 Note you will have to do `source activate` instead of `conda activate`.
 
 To deactive,
-```
+
+```bash
 conda deactivate
 ```
 
 To see list of env,
 
-```
+```bash
 conda env list
 ```
 
@@ -115,25 +121,26 @@ conda env list
 There is a system default python installation available if you do not load any module, which may already be able to meet your requirements. If you run into problems, you can try switching to another python module.
 
 To see available python modules, use 
-```
+
+```bash
 module av python
 ```
 
 To load a specific python module, for example python-2.7.15, do
 
-```
+```bash
 module load python/python-2.7.15
 ```
 
 The system python modules already have the common python packages preconfigured. To see a list of already installed packages, do
 
-```
+```bash
 pip list
 ```
 
 If you need to install additional python packages, for example, `iminuit`, the easiest way is to use
 
-```
+```bash
 pip install --user iminuit
 ```
 
@@ -143,7 +150,7 @@ In some situations you may need different versions of a package that cannot be i
 
 To create a virtual env named `myenv`,
 
-```
+```bash
 virtualenv myenv
 ```
 By default this will create an "virtual environment" under `myenv/` in your current directory. 
@@ -154,15 +161,16 @@ Currently the `virtualenv` command only works for python2. For python3 users, af
 ```
 
 Once this is done, you can activate it by
-```
+
+```bash
 source myenv/bin/activate
 ```
 
-Once this is activated, you are now switched to a fresh python environment with only the most essential python packages visible to you. You can check the available packages by `pip list`. You can install new packages with ```pip install```. Note you no longer need to use ```--user``` for installing in a virtualenv.
+Once this is activated, you are now switched to a fresh python environment with only the most essential python packages visible to you. You can check the available packages by `pip list`. You can install new packages with `pip install`. Note you no longer need to use `--user` for installing in a virtualenv.
 
 To exit from the virtual env, simply do
 
-```
+```bash
 deactivate
 ```
 
@@ -174,8 +182,6 @@ axel -n <threads number> <file link>
 # For example 🌰, we use 8 threads to download ananconda installer
 axel -n 8 https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 ```
-
-
 
 ## References
 

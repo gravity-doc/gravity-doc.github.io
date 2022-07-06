@@ -46,7 +46,7 @@ Take a note of the port number (37 in this case). You will need to connect to th
 If you forget your port number, you can find it using `vncserver -list` on gravity:
 使用命令`vncserver -list`可以查看vnc开启的端口:
 
-```
+```bash
 [inspur@login02 ~]$ vncserver -list
 
 TigerVNC server sessions:
@@ -55,6 +55,7 @@ X DISPLAY #	PROCESS ID
 :34		541452
 :37		555581
 ```
+
 The above output shows you have two servers running on port 34 and 37 respectively.
 
 - terminating the server
@@ -63,7 +64,7 @@ You can terminate the server once you no longer need it, to release resources to
 
 使用命令vncserver -kill，可以终止自己的vncserver进程
 
-```
+```bash
 [inspur@login02 ~]$ vncserver -kill :37
 Killing Xvnc process ID 555581
 ```
@@ -89,12 +90,12 @@ For security reasons, you can only connect to vnc through ssh-tunnel. This can b
 If you do not see a graphical desktop after connecting, you can remove your xstartup file and restart the server.
 如果连接上vnc之后没有桌面，请尝试
 
-```
+```bash
 rm ~/.vnc/xstartup
 ```
 之后重新启动vncserver:
 
-```
+```bash
 vncserver -kill :37
 vncserver
 ```
@@ -105,7 +106,7 @@ First check if you have ssh-tunnel enabled. Then check if you used the right vnc
 
 如果登录vnc viewer时显示Authentication failure，请检查是否开启了ssh-tunnel。如果还有问题，表示密码错误，如果忘记密码，请尝试
 
-```
+```bash
 rm ~/.vnc/passwd
 ```
 

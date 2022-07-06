@@ -15,7 +15,7 @@ Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or 
 2. Create a **PBS script** `jupyternotebook.pbs`, for example 🌰:   
    创建一个**PBS脚本** `jupyternotebook.pbs`，举个栗子 🌰：   
 
-   ```
+   ```bash
    #PBS -N notebook
    #PBS -l nodes=1:ppn=1
    #PBS -l walltime=72:00:00 

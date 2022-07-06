@@ -44,9 +44,11 @@ input *username* + *password* + *TOTP*
 ## Usage
 ### start a server   
 click *Start My Server* or *Named Servers* 
+
 ```warning
 If you use *Named Servers*, its name **CAN NOT** contain any space😢!
 ```
+
 choose one *Job queue*
 > - [LOGIN] 👉 *login nodes* (forever)
 > - [SMALL], [FAT], [GPU] 👉 *computing nodes* (time limited)
@@ -70,29 +72,35 @@ So, if there is **no package** you want or you want to **create your own kernel*
 
 ### Create kernel
 load conda module
+
 ```bash
 module load anaconda/conda-4.12.0
 ```
 
 activate base environment (or other environment you like)
+
 ```bash
 source activate
 ```
 
 create a new environment
+
 ```bash
 conda create -n myenv  # or ⚡ mamba create -n myenv
 ```
 
 install packages you like
+
 ```bash
 conda install -c conda-forge camb ipykernel # or ⚡ mamba install -c conda-forge camb ipykernel
 ```
 
 install ipykernel (so that we can use this environment in *Jupyter*)
+
 ```bash
 python -m ipykernel install --user --name myenv 
 ```
+
 Now, refresh your *Jupyter*, enjoy 🎉
 
 ### Shutdown Jupyter
@@ -193,6 +201,7 @@ Here, wo provide two options:
 1. **Only if** you stop the server from JupyterHub, can the VScode really stop.
 2. It's better to use **Chrome** or **Edge** rather than ~~Firefox~~.
 ```
+
 Start *VScode* from *Jupyterlab*, double click 
 ![image-20210730145322829](../images/Basic/jupyterhub-vscode-click.png)
 

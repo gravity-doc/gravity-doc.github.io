@@ -8,6 +8,7 @@ title: Login
 We have enabled **2FA** on website, you need to install an *Authenticator app* to log in website.    
 Use `ssh` to log in only needs your **ssh private key**
 ```
+
 ```danger
 If you fail to login, please do not try many times. Otherwise your IP will be **banned** for a period of time 😭
 ```
@@ -17,12 +18,14 @@ If you fail to login, please do not try many times. Otherwise your IP will be **
 
 generate a [*ssh-key*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) pair   
 open a terminal (Linux/Windows/Mac):
+
 ```bash
 ssh-keygen
 # Enter
 # Enter
 # Enter
 ```
+
 It will generate two files:
 - `id_rsa` (*private key*)
 - `id_rsa.pub` (*public key*)
@@ -65,6 +68,7 @@ Host login02
 ```
 
 Here we go 🥳      
+
 ```bash
 ssh login01
 ssh login02
@@ -81,7 +85,8 @@ If you do not like😒 the original terminal, here are some alternative software
    
 ## Web login
 ### 1. install Authenticator app
-We enable **Two-factor authentication (2FA)** on Gravity website, so you need to install an *Authenticator* on your phone/PC. Any of the listed authenticators below (and many others) will work. You can first try to find and install one of these authenticators from the App Store of your device. Alternative, you can follow the links below to download and install one of them. 
+We enable **Two-factor authentication (2FA)** on Gravity website, so you need to install an *Authenticator* on your phone/PC.    
+Any of the listed authenticators below (and many others) will work. You can first try to find and install one of these authenticators from the App Store of your device. Alternative, you can follow the links below to download and install one of them. 
 
 #### *Android* device
 ```tip
@@ -135,11 +140,12 @@ input your *Time-based one-time password (TOTP)*, enjoy! 🎉🎉🎉
 
 # 登陆 Gravity（中文版）
 ```note
-我们已在网站上启用*2FA*认证，您需要安装2FA应用才能够在网页端登陆   
+我们已在网站上启用*2FA*认证，您需要安装2FA应用才能够在网页端登陆    
 若您使用ssh方式登陆，则仅需ssh private key私钥
 ```
+
 ```danger
-请勿多次失败登陆，您的IP将会被封禁一段时间 😭
+请勿多次失败登陆，您的IP将会被封禁一段时间 😭   
 ```
 ## SSH登陆
 
@@ -147,12 +153,14 @@ input your *Time-based one-time password (TOTP)*, enjoy! 🎉🎉🎉
 
 生成 [ssh key](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)  
 打开终端（Linux/Windows/Mac）：
+
 ```bash
 ssh-keygen
 # 回车
 # 回车
 # 回车
 ```
+
 这将会生成两个文件：
 - `id_rsa` (*私钥*)
 - `id_rsa.pub` (*公钥*)
@@ -174,10 +182,13 @@ ssh -i <你的私钥> <用户名>@gravity.sjtu.edu.cn
 # 举个栗子 🌰
 ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
+
 ```tip
 您可以设置 `~/.ssh/config` 来**简化**命令😎，按照下方操作：    
 ```
+
 像这样修改文件`~/.ssh/config`：
+
 ```
 Host login01
     HostName login01.gravity.sjtu.edu.cn
@@ -192,6 +203,7 @@ Host login02
 ```
 
 搞定！ 🥳 
+
 ```bash
 ssh login01
 ssh login02
@@ -209,7 +221,8 @@ ssh login02
 
 ## Web登陆
 ### 1. 安装authenticator应用
-我们在网站上启用了二次验证（2FA），因此您需要在电脑/手机上安装软件后才能登陆。下面列出的任意一款验证器都可以满足需求，您可以尝试从自己手机的官方应用商店安装，或者从点击下面的链接下载安装：
+我们在网站上启用了二次验证（2FA），因此您需要在电脑/手机上安装软件后才能登陆。
+下面列出的任意一款验证器都可以满足需求，您可以尝试从自己手机的官方应用商店安装，或者从点击下面的链接下载安装：
 
 #### *Android* 设备
 ```tip

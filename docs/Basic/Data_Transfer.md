@@ -16,6 +16,7 @@ You need to `copy`/`move` your files into `~/.fileServer` to use *FileServer*.
 
 If you need to **share massive data**, feel free to [contact admin🧙‍](https://gravity-doc.github.io/#contact)
 ```
+
 ### access
 We have enabled a **File Server** on Gravity 🎉🎉🎉
 You can access *fileserver* via:
@@ -61,6 +62,7 @@ $ scp YOUR_USERNAME@TARGET_IP:data.out ./
 ```
 
 In a word 👇
+
 ```bash
 # copy local file to Gravity
 scp -i your_ssh_key ~/local_file username@gravity.sjtu.edu.cn:/home/username/remote_file
@@ -76,15 +78,18 @@ Gravity provides file access via SFTP.
 One can use any file manager or FTP client that supports SFTP.
 
 For example, one can open "dolphin" (file manager) on Linux and enter the following path in the location bar
-```
+
+```bash
 sftp://username@gravity.sjtu.edu.cn/home/username
 # replace `username` with your own user name
 ```
+
 The system will mount it as a remote directory.
 One can use this directory just as local directories.
 
 If you are too lazy to enter password at every mounting, you can copy his SSH key to the server
-```
+
+```bash
 ssh-copy-id username@gravity.sjtu.edu.cn
 ```
 
@@ -93,13 +98,17 @@ ssh-copy-id username@gravity.sjtu.edu.cn
 
 Another popular way to mount a remote directory is to use SSHFS.
 One can create a directory in his computer, e.g.,
-```
+
+```bash
 mkdir ~/mnt/gravity
 ```
+
 and mount the server as following,
-```
+
+```bash
 sshfs username@gravity.sjtu.edu.cn/home/username ~/mnt/gravity -o auto_cache,reconnect,follow_symlinks -o Compression=no -o Ciphers=aes128-ctr
 ```
+
 One may change these options for his own purpose.
 
 It seems SFTP has better performance than SSHFS.

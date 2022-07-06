@@ -139,7 +139,7 @@ To request resources for doing something interactively, you can submit an intera
 
 For example:
 
-```
+```bash
 qsub -l nodes=1:ppn=4,mem=8gb,walltime=12:00:00 -q normal -I
 ```
 
@@ -159,8 +159,6 @@ Reference: [https://www.msi.umn.edu/content/interactive-queue-use-qsub](https://
 ```tip
 The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.
 ```
-
-
 
 ```bash
 PBS_VERSION=TORQUE-6.0.2
@@ -193,7 +191,6 @@ PBS_NODEFILE=/opt/tsce4/torque6/share/gr32/aux//1399.login01
 PBS_O_PATH=/usr/java/jre1.8.0_151/bin:/usr/java/jre1.8.0_151/bin:/opt/tsce4/maui/sbin:/opt/tsce4/maui/bin:/opt/tsce4/torque6/bin:/opt/tsce4/torque6/sbin:/usr/local/bin:/usr/local/bin:/usr/lib64/qt-3.3/bin:/home/user1/perl5/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/ibutils/bin:/opt/pdsh-2.29/bin:/opt/pdsh-2.29/sbin:.:/home/user1/.local/bin:/home/user1/bin
 ```
 
-
 ### Job array
 When you need to run a series of jobs with different arguments, it is pretty useful. Because you do not need a loop any more. You can find more arguments [here](http://docs.adaptivecomputing.com/torque/6-1-1/adminGuide/Content/topics/torque/commands/qsub.htm).
 1. You can use `-t` in the shell
@@ -209,8 +206,10 @@ When you need to run a series of jobs with different arguments, it is pretty use
    # run your own program!!!
    python test.py $PBS_ARRAYID
    ```
+
    run it 👇
-   ```shell
+
+   ```bash
    qsub example.pbs -t 1-666
    ```
 
@@ -228,8 +227,10 @@ When you need to run a series of jobs with different arguments, it is pretty use
    # run your own program!!!
    python test.py $PBS_ARRAYID
    ```
+
    run it 👇
-   ```shell
+
+   ```bash
    qsub example.pbs
    ```
 
@@ -324,6 +325,7 @@ The result shows that the *do* loop is been parallelized by 8 threads.
 
 ### MPI job
 This sample shows a *MPI* parallel program in *Fortran90*.
+
 ```fortran
 program testmpi
 use mpi

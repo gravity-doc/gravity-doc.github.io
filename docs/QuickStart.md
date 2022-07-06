@@ -9,7 +9,7 @@ Follows the instructions [here](https://gravity-doc.github.io/Basic/Account.html
 
 You are supposed to use **_ssh key_** to log in to Gravity, because we **DO NOT** allow password login.
 
-```sh
+```bash
 ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn
 ```
 
@@ -17,7 +17,7 @@ ssh -i ~/.ssh/id_rsa_For_Gravity username@gravity.sjtu.edu.cn
 
 - submit an **interactive** job
 
-```sh
+```bash
 qsub -I -l nodes=1:ppn=72,walltime=48:00:00 -q normal
 ```
 
@@ -25,7 +25,7 @@ qsub -I -l nodes=1:ppn=72,walltime=48:00:00 -q normal
 
 create _a file_ `myjob.pbs` like this:
 
-```sh
+```bash
 #!/bin/bash
 #PBS -N My_job
 #PBS -m abe
@@ -38,14 +38,16 @@ cd $PBS_O_WORKDIR
 # run your own program!!!
 python test.py
 ```
-  then, submit it!
-```sh
+
+then, submit it!
+
+```bash
 qsub myjob.pbs
 ```
 
 - **check**/**delete** job
 
-```sh
+```bash
 qstat -a
 qdel 36162  # 36162 is your jobID
 ```

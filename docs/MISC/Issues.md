@@ -14,6 +14,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 - You can use `pip install` instead   
 - You can go to *login02* to use `conda/mamba`   
 ```
+
 ## **Conda**   
 One recieves '**binary file can not be executed**' after installing of Anaconda latest version (2020-05). 
 The same happens when update conda from old version.
@@ -23,11 +24,14 @@ As a temporary workaround, we have mounted the filesystem with **NFS on login02*
 ## hdf5 file open failure on login02
 When opening a hdf5 file on login02, one may sometimes run into the following error
 using python:
+
 ```
 ----> 1 f=h5py.File('snap_001.0.hdf5','r')
 IOError: Unable to open file (unable to lock file, errno = 37, error message = 'No locks available')
 ```
+
 or using `h5ls`:
+
 ```
 [user@login02]$ h5ls snap_001.0.hdf5 
 snap_001.0.hdf5: unable to open file
@@ -42,6 +46,7 @@ Alternatively, you may choose to disable hdf5 file locking before reading, by se
 
 This will disable hdf5 file locking, but you will have to be more careful about opening files to avoid problematic access patterns (i.e.: multiple writers to the same hdf5 file) that the file locking was designed to prevent. 
 ```
+
 ## **日志残留问题**        
 
   问题描述:当用户提交两个节点以上的任务时，就会出现日志残留问题。
@@ -50,6 +55,7 @@ This will disable hdf5 file locking, but you will have to be more careful about 
   [inspur@login02 gr01]$ cat inspur-test-3.e2619
   cgdelete: cannot remove group 'gr28.2619.login01': No such file or directory
   ```
+
   此问题涉及内核模块cgroup，不会影响作业的正常运行，用户遇到该问题可暂时忽略，目前仍在定位问题。
 
 - **compiler/intel-2020 module无法使用的问题**     
@@ -64,9 +70,11 @@ This will disable hdf5 file locking, but you will have to be more careful about 
 ## **openmpi-4.0.4**     
 High version *openmpi* use UCX (Unified Communication X) as the default pml (Physical Markup Language).
 You need to specify this in the running command.
+
 ```bash
 mpirun -np 4 --mca pml ucx ./a.out
 ```
+
 [see more](https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX)
 
 ## **performance issue on fat01**   
