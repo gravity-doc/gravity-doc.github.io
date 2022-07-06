@@ -3,14 +3,16 @@ sort: 1
 title: Account
 ---
 
-## Apply for an account
+# Gravity Account
 
-```warning
-请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。   
+## Apply a NEW Account
+```note
+请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。  
+
 Please make sure you have read the [user policy](https://gravity-doc.github.io/Policy.html), and get consent of your sponsor/supervisor before application.
 ```
 
-Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form, we will send an e-mail to you after a while.
+Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form, we will send an e-mail📧 to you after a while.
 
 ## Change password
 
@@ -19,18 +21,20 @@ The initial password is included.
 1. In terminal, you can use `yppasswd` or `passwd` to change your password.
 2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Login.html#web-login)
 ```tip
-- Note that it may take a few minutes before the password change is synchronized between the terminal and the web login. 
+- Note that it may take a few minutes before the password change is synchronized between the terminal and the web login.    
+
 - 更改密码后，新的密码将会需要几分钟在terminal和web之间得到同步。
 ```
 
 ```warning
 - Please change your password immediately the first time you login to your account.
-- Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never give your password to anyone.
+- Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never give your password to anyone.   
+
 - 请在第一次登陆后立即修改初始密码。
 - 请不要在邮件、微信等通信里向任何人提供密码。管理员维护账号也从**不会**需要你的密码。
 ```
 
-## Forget the password
+## Forgot password
 
 If you forget your password, don't worry!
 
@@ -50,12 +54,23 @@ If you forget your password, don't worry!
 3. 密码长度至少8位
 4. 密码中至少包含字母和数字
 
-## Account of the SGI
+## Change Email📧
+If you want to change your email📧, please [contact us](https://gravity-doc.github.io/#contact), provide your **username** and **NEW email**.
 
-```tip
-注意该username为SGI上的原账户，而非gravity账号; 如有新开账户需求请**征得导师同意后**在微信群或者邮件联系管理员。
+# SGI Account
+
+```note
+注意该`username`为**SGI**上的原账户，而非gravity账号; 如有新开账户需求请**征得导师同意后**在微信群或者邮件联系管理员。   
+
+The **SGI** node operates *independently* from the **Gravity cluster**. If you need to use it but do not already have an account, you can contact the administrator after **getting the consent of your supervisor/sponsor**. 
 ```
 
-The **SGI** node operates *independently* from the **Gravity cluster**. If you need to use it but do not already have an account, you can contact the administrator after **getting the consent of your supervisor/sponsor**. Then, you can use `ssh username@sgi` on *login02* to access **SGI**
+On *login02*, log in to *SGI*
+```bash
+ssh username@sgi
+```
 
-原SGI服务器已经接入login02，可从login02通过`ssh username@sgi`登录。
+在*login02*节点，登陆*SGI*
+```bash
+ssh username@sgi
+```
