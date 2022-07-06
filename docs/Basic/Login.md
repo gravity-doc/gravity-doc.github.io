@@ -5,8 +5,9 @@ title: Login
 
 # Log in Gravity
 ```note
-We have enabled **2FA** on website, you need to install an *Authenticator app* to log in website.    
-Use `ssh` to log in only needs your **ssh private key**
+For enhanced security, we have enabled **2 Factor Authentication (2FA)** on web login. You need to install an *Authenticator app* to log into the web interface.    
+
+Using `ssh` to log in only requires your **ssh private key** as before.
 ```
 ```danger
 If you fail to login, please do not try many times. Otherwise your IP will be **banned** for a period of time 😭
