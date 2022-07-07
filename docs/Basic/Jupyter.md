@@ -182,9 +182,11 @@ From the sidebar, you can find a [Git extension](https://github.com/jupyterlab/j
 ![git GIF](https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif)
 
 For example🌰, I wanna clone the `pyccl` repo
+
 ```link
 https://github.com/LSSTDESC/CCL
 ```
+
 Click the *Git* button → *Clone a Repository*
 ![git](../images/Basic/git-clone.png)
 

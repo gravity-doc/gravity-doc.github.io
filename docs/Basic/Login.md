@@ -91,14 +91,14 @@ Any of the listed authenticators below (and many others) will work. You can firs
 
 #### *Android* device
 ```tip
-If you cannot run *authenticator app* due to **ERROR**: **You do not have Google Services Framework installed**, please [install **Google Services Framework** here](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk).   
+If you cannot run *authenticator app* due to **ERROR**: **You do not have Google Services Framework installed**, please [install **Google Services Framework** here](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk).   
 
-若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
 ```
 
-- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
-- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
-- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Twilio_Authy_24.8.6.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Google_Authenticator_5.20R3.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Microsoft_Authenticator_6.2206.3973.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Twilio_Authy_24.8.6.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (official, can be accessed from China 🎉)
 - [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (official, but you need to access Google Play 🙄)
 - [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (official, but you need to access Google Play 🙄)
@@ -227,12 +227,12 @@ ssh login02
 
 #### *Android* 设备
 ```tip
-若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
 ```
 
-- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Google_Authenticator_5.20R3.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
-- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Microsoft_Authenticator_6.2206.3973.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
-- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/chCb0t8o/apk/Twilio_Authy_24.8.6.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Google_Authenticator_5.20R3.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Microsoft_Authenticator_6.2206.3973.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
+- [Twilio Authy](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Twilio_Authy_24.8.6.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
 - [Duo Mobile](https://dl.duosecurity.com/DuoMobile-latest.apk) (官方, 可以在中国访问 🎉)
 - [LastPass Authenticator](https://play.google.com/store/apps/details?id=com.lastpass.authenticator) (官方， 但是你需要能够访问Google Play商店 🙄)
 - [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) (官方， 但是你需要能够访问Google Play商店 🙄)
