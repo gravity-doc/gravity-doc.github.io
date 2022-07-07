@@ -163,24 +163,73 @@ If you are not familiar with some function or package, you can try to use **Show
 
 ![image-20210730142333335](../images/Basic/jupyterhub-help.png)
 
-### Flowchart
+### Diagram
 
 You can click the **Diagram** at *launcher* to draw a flowchart
+![open a diagram](../images/Basic/jupyter-diagram-open.png)
 
+There are many templates
 ![image-20210730143446883](../images/Basic/jupyterhub-flowchart.png)
 
 ### Git
 
-From the sidebar, you can find a [git plugin](https://github.com/jupyterlab/jupyterlab-git).
+From the sidebar, you can find a [Git extension](https://github.com/jupyterlab/jupyterlab-git).
 
-> - You can use it clone, pull, push, etc.
-> - You can use *diff* in the notebook to check what changes you've made.
+- You can use it clone, pull, push, etc.
+- You can use *diff* in the notebook to check what changes you've made.
+- You can use it on *Login nodes* and *Computing nodes*
 
 ![git GIF](https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif)
 
-### GPU Monitor
-From sidebar, you can find a **GPU dashboard** which can monitor GPU resource usage
-![gpu](../images/Basic/jupyter-resource.png)
+For example🌰, I wanna clone the `pyccl` repo
+```link
+https://github.com/LSSTDESC/CCL
+```
+Click the *Git* button → *Clone a Repository*
+![git](../images/Basic/git-clone.png)
+
+Input the link `https://github.com/LSSTDESC/CCL.git`
+![git](../images/Basic/git-input.png)
+
+Success!!!
+![git open](../images/Basic/git-open.png)
+
+### Resource Monitor
+From sidebar, you can find a **GPU dashboard** button
+![monitor button](../images/Basic/jupyter-resource.png)
+
+You can monitor the **real-time**  resource usage
+![monitor view](../images/Basic/monitor-resource.png)
+
+### HDF5 Viewer
+You can open and explore **HDF5 files** in JupyterLab.
+
+Here is a `hdf5` file, you can click on it
+![hdf5 file](../images/Basic/hdf5-file.png)
+
+Then you will see this panel, showing the data
+![hdf5 open](../images/Basic/hdf5-select.png)
+
+You can explore the data, and even **filter** it!
+![hdf5 filter](../images/Basic/hdf5-view.png)
+
+### Variable Inspector
+You can **right-click** your notebook, select `Open Variable Inspector`
+![variable open](../images/Basic/variable-click.png)
+
+It will open a sub-window showing current variables
+![variable view](../images/Basic/variable-view.png)
+
+### TAB Selection
+when coding, you can use `<TAB>` to view the sub-function, and
+- `<Shift>+<TAB>` upside
+- `<TAB>` downside
+
+![tab](../images/Basic/tab.png)
+
+### Chinese
+You can also change the language to Chinese(中文)
+![chinese](../images/Basic/chinese.png)
 
 # VScode
 
