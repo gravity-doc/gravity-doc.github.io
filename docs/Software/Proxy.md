@@ -7,9 +7,11 @@ title: Proxy
 You can access Internet on *computing nodes* when using *Jupyter/VScode*.
 ## 1. Spawn a server
 open [our website](https://jupyter.gravity.sjtu.edu.cn/) → click *Jupyter* button → *log in* → *start my server*
+
 ![start](../images/Basic/jupyterhub-start-server.png)
 
 select a job queue → input resource setting → Start
+
 ![spawn](../images/Basic/jupyter_select.png)
 
 ## 2. Enjoy

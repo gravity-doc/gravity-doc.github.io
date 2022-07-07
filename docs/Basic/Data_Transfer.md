@@ -28,12 +28,15 @@ You can access *fileserver* via:
 Cause we enable **2FA**, you need to install *Authenticator App* at the first time. See [more details here](https://gravity-doc.github.io/Basic/Login.html#web-login).
 
 ### properties
-File Server supports:
-- **share file** 🎉🎉🎉 (you can set **password/limiting time** of your sharing files)
+1. **share file** 🎉🎉🎉 (you can set **password/limiting time** of your sharing files)
+
 ![share file](../images/Basic/data-share.png)
-- download file (you can use download tools, such as **multi-thread** downloader)
+
+2. download file (you can use download tools, such as **multi-thread** downloader)
+
 ![download](../images/Basic/data-download.png)
-- view file (picture/video/txt)
+
+3. view files (picture/video/txt)
 
 PS. If you need to create NEW file, please use *terminal* to `remove/copy` to `~/.fileServer`, symlink `ln -s` is not allowed here❌!
 ## Jupyter-lab/notebook

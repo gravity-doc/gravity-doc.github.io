@@ -35,10 +35,12 @@ Visit website:
 - https://jupyter.gravity.sjtu.edu.cn
 
 click *Jupyter* button
+
 ![login](../images/Basic/index.png)
 
 input *username* + *password* + *TOTP*   
 [more details about authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
+
 ![login](../images/Basic/auth_login_2fa.png)
 
 ## Usage
@@ -56,6 +58,7 @@ choose one *Job queue*
 ![select](../images/Basic/jupyterhub-start-server.gif)
 
 configure resource you want
+
 ![input](../images/Basic/jupyter_select.png)
 
 ### Start kernel
@@ -122,6 +125,7 @@ If you prefer the **traditional jupyter-notebook**, it is faster than *JupyterLa
 
 ### Retrolab
 *retrolab* is **Retro Style** of *JupyterLab*, it is faster than *Jupyterlab* 
+
 ![Retrolab](../images/Basic/jupyterhub-retrolab1.png)
 
 It maintains most of properties of *Jupyterlab*. more like a modern *Jupyter-notebook*.
@@ -166,9 +170,11 @@ If you are not familiar with some function or package, you can try to use **Show
 ### Diagram
 
 You can click the **Diagram** at *launcher* to draw a flowchart
+
 ![open a diagram](../images/Basic/jupyter-diagram-open.png)
 
 There are many templates
+
 ![image-20210730143446883](../images/Basic/jupyterhub-flowchart.png)
 
 ### Git
@@ -188,38 +194,48 @@ https://github.com/LSSTDESC/CCL
 ```
 
 Click the *Git* button → *Clone a Repository*
+
 ![git](../images/Basic/git-clone.png)
 
 Input the link `https://github.com/LSSTDESC/CCL.git`
+
 ![git](../images/Basic/git-input.png)
 
 Success!!!
+
 ![git open](../images/Basic/git-open.png)
 
 ### Resource Monitor
 From sidebar, you can find a **GPU dashboard** button
+
 ![monitor button](../images/Basic/jupyter-resource.png)
 
 You can monitor the **real-time**  resource usage
+
 ![monitor view](../images/Basic/monitor-resource.png)
 
 ### HDF5 Viewer
 You can open and explore **HDF5 files** in JupyterLab.
 
 Here is a `hdf5` file, you can click on it
+
 ![hdf5 file](../images/Basic/hdf5-file.png)
 
 Then you will see this panel, showing the data
+
 ![hdf5 open](../images/Basic/hdf5-select.png)
 
 You can explore the data, and even **filter** it!
+
 ![hdf5 filter](../images/Basic/hdf5-view.png)
 
 ### Variable Inspector
 You can **right-click** your notebook, select `Open Variable Inspector`
+
 ![variable open](../images/Basic/variable-click.png)
 
 It will open a sub-window showing current variables
+
 ![variable view](../images/Basic/variable-view.png)
 
 ### TAB Selection
@@ -231,6 +247,7 @@ when coding, you can use `<TAB>` to view the sub-function, and
 
 ### Chinese
 You can also change the language to Chinese(中文)
+
 ![chinese](../images/Basic/chinese.png)
 
 # VScode
@@ -254,6 +271,7 @@ Here, wo provide two options:
 ```
 
 Start *VScode* from *Jupyterlab*, double click 
+
 ![image-20210730145322829](../images/Basic/jupyterhub-vscode-click.png)
 
 Coding, no matter you perfer C/C++ or Julia or other language, it's easy to use
