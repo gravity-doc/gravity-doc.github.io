@@ -4,8 +4,8 @@ title: Jupyter Lab/Notebook
 ---
 
 ```tip
-We recommend you to use [*JupyterHub*](https://gravity-doc.github.io/Basic/JupyterHub.html), it's more easier and convenient 😜   
-You can also **use your own environment** in [*JupyterHub*](https://gravity-doc.github.io/Basic/JupyterHub.html)   
+We recommend you to use [*JupyterHub*](https://gravity-doc.github.io/Basic/Jupyter.html), it's more easier and convenient 😜   
+You can also **use your own environment** in [*JupyterHub*](https://gravity-doc.github.io/Basic/Jupyter.html)   
 Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or computing nodes) 👇
 ```
 

@@ -103,7 +103,7 @@ install ipykernel (so that we can use this environment in *Jupyter*)
 python -m ipykernel install --user --name myenv 
 ```
 
-Now, refresh your *Jupyter*, enjoy 🎉
+Now, refresh your *Jupyter*, and you should be able to see your newly configured kernel. Select it for your notebook. enjoy 🎉
 
 ### Shutdown Jupyter
 
