@@ -31,7 +31,6 @@ If you fail to log in, **DO NOT** try many times, your IP will be **banned** for
 
 ## Login   
 Visit website:
-- https://gravity.sjtu.edu.cn
 - https://jupyter.gravity.sjtu.edu.cn
 
 click *Jupyter* button
@@ -244,6 +243,25 @@ when coding, you can use `<TAB>` to view the sub-function, and
 - `<TAB>` downside
 
 ![tab](../images/Basic/tab.png)
+
+### Text Coding
+Open/create a text file `*.py`
+
+![py-create](../images/Basic/python-txt-open.png)
+
+Connect text file with a *kernel* (you can even connect a running *kernel*)
+**`right click`** → **Create Console for Editor**
+
+![py-open](../images/Basic/python-txt-click.png)
+
+Now, this text file is more like a *notebook*.
+Use **`<Shift+Enter>`** to run code selected
+
+![py-run](../images/Basic/python-txt-run.png)
+
+Use **`<TAB>`** to select *sub-function* etc.
+
+![py-select](../images/Basic/python-txt-tab.png)
 
 ### Chinese
 You can also change the language to Chinese(中文)
