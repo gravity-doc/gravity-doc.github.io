@@ -263,6 +263,12 @@ Use **`<TAB>`** to select *sub-function* etc.
 
 ![py-select](../images/Basic/python-txt-tab.png)
 
+### Adjust Sidebar
+If you feel the sidebar has too many icons, **DO NOT worry**, let's change their place!
+You can *right-click* the icon on the sidebar → *switch*, it will go to the right-side!
+
+![sidebar](../images/Basic/jupyter-sidebar.png)
+
 ### Chinese
 You can also change the language to Chinese(中文)
 
