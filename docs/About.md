@@ -9,13 +9,13 @@ title: System Specs
 
 - 2 login nodes **login02** (primary) and **login01** (backup)
   - 2x Intel Gold 6240 CPU（2.6GHz, 18C)
-  - 192G memory
+  - 187G memory
 
 ### Computing nodes
 
 - 36 compute nodes **gr01** ~ **gr36**
   - each node has 4x Intel Gold 6240 CPU (2.6GHz, 18C), 72 cores in total
-  - each node has 384G memory
+  - each node has 374G memory
 
 - 1 fat node **fat01**
   - 8x Intel Platinum 8268 CPU（2.9GHz，24C), 192 cores total

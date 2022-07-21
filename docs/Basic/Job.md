@@ -20,16 +20,16 @@ Please only request resources that you actually need. **Do not** use more than o
 
 | Queue name | Max  nodes | Max time | Max mem per node |        Priority         |
 | :--------: | :--------: | :------: | :--------------: | :---------------------: |
-|  *debug*   |     1      | 3 hours  |      400 GB      |          High           |
-|  *small*   |     3      | 72 hours |      400 GB      |         Medium          |
-|  *normal*  |     27     | 48 hours |      400 GB      | Low (**default** queue) |
+|  *debug*   |     1      | 3 hours  |      376 GB      |          High           |
+|  *small*   |     3      | 72 hours |      376 GB      |         Medium          |
+|  *normal*  |     27     | 48 hours |      376 GB      | Low (**default** queue) |
 
 ## **Special** queues
 
 | Queue name |    Max nodes     | Max time | Max mem per node | Note                                                         |
 | :--------: | :--------------: | :------: | :--------------: | :----------------------------------------------------------- |
 |   *fat*    |    only fat01    | 72 hours |       6 TB       | **large shared-memory** jobs  (**mem >360GB**, otherwise use normal) |
-|   *gpu*    | gr01, gr02, gr36 | 72 hours |  400 GB + 32 GB  | **NVIDIA Tesla V100s** with 32GB video memory                |
+|   *gpu*    | gr01, gr02, gr36 | 72 hours |  376 GB + 32 GB  | **NVIDIA Tesla V100s** with 32GB video memory                |
 
 # Submission
 

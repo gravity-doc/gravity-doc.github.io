@@ -110,6 +110,9 @@ If you cannot run *authenticator app* due to **ERROR**: **You do not have Google
 - [Twilio Authy](https://apps.apple.com/cn/app/twilio-authy/id494168017) (can be accessed in China 🎉🎉🎉)
 - [Duo Mobile](https://apps.apple.com/cn/app/duo-mobile/id422663827) (can be accessed in China 🎉🎉🎉)
 
+#### Desktop
+- [Authy](https://authy.com/download/) has desktop versions for windows, mac and linux.
+
 ### 2. add Gravity 2FA
 open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input your *username* + *password*
 
