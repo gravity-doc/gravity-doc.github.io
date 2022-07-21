@@ -176,6 +176,18 @@ There are many templates
 
 ![image-20210730143446883](../images/Basic/jupyterhub-flowchart.png)
 
+### Visual Python
+[*visualpython*](https://visualpython.ai/) is a **Python code generator**. You just need to click some buttons to generate codes you want, such as data visualization, machine learning etc. ([*GIF example*](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/image_video/Visual_Python_2.2.8.gif?inline=true))
+Because it **only** supports **Classic notebook** for now, we need to open *Classic* in *Jupyterlab*
+
+![open-classic](../images/Basic/jupyter-classic-open.png)
+
+Click the orange button at top
+
+![open-visualpython](../images/Basic/jupyter-visual-open.png)
+
+Enjoy coding 🥳
+
 ### Git
 
 From the sidebar, you can find a [Git extension](https://github.com/jupyterlab/jupyterlab-git).

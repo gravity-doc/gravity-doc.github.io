@@ -20,7 +20,7 @@ Or, you can even run a browser
 For Windows users, we recommend you to use **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)**. It comes with built-in X11 support, so you don't need to do any extra steps. Just [login Gravity](https://gravity-doc.github.io/Basic/Login.html). Once you are connected, you can connect to an interactive compute node using the -X switch, for example 🌰
 
 ```bash
-qsub -I -X -l nodes=1:ppn=72,mem=1gb,walltime=12:00:00 -q normal
+qsub -I -X -v DISPLAY -l nodes=1:ppn=72,mem=1gb,walltime=12:00:00 -q normal
 ```
 
 Then, you can run your graphical application from the computing node 🎉.
@@ -36,7 +36,7 @@ ssh -Y -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
 Once you are logged in, you can connect to an interactive compute node using the -X switch, for example
 
 ```bash
-qsub -I -X -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
+qsub -I -X -v DISPLAY -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
 ```
 
 Then, you can run your graphical application from the computing node 🎉.
@@ -51,7 +51,7 @@ ssh -X -i <your_ssh_key> <username>@gravity.sjtu.edu.cn
 Once you are connected, you can connect to an interactive compute node using the -X switch, for example
 
 ```bash
-qsub -I -X -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
+qsub -I -X -v DISPLAY -l nodes=1:ppn=36,mem=100gb,walltime=12:00:00 -q normal
 ```
 
 Then, you can run your graphical application from the computing node 🎉.
