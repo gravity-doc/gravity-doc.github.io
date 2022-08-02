@@ -91,6 +91,12 @@ create a new environment
 conda create -n myenv  # or ⚡ mamba create -n myenv
 ```
 
+activate your own environment
+
+```bash
+conda activate myenv
+```
+
 install packages you like
 
 ```bash

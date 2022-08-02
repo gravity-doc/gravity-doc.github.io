@@ -18,18 +18,18 @@ Please only request resources that you actually need. **Do not** use more than o
 
 ## Ordinary queues
 
-| Queue name | Max  nodes | Max time | Max mem per node |        Priority         |
-| :--------: | :--------: | :------: | :--------------: | :---------------------: |
-|  *debug*   |     1      | 3 hours  |      376 GB      |          High           |
-|  *small*   |     3      | 72 hours |      376 GB      |         Medium          |
-|  *normal*  |     27     | 48 hours |      376 GB      | Low (**default** queue) |
+| Queue name | Max  nodes | Max time | Max memory per node |        Priority         |
+| :--------: | :--------: | :------: | :-----------------: | :---------------------: |
+|  *debug*   |     1      | 3 hours  |       376 GB        |          High           |
+|  *small*   |     3      | 72 hours |       376 GB        |         Medium          |
+|  *normal*  |     18     | 48 hours |       376 GB        | Low (**default queue**) |
 
 ## **Special** queues
 
-| Queue name |    Max nodes     | Max time | Max mem per node | Note                                                         |
-| :--------: | :--------------: | :------: | :--------------: | :----------------------------------------------------------- |
-|   *fat*    |    only fat01    | 72 hours |       6 TB       | **large shared-memory** jobs  (**mem >360GB**, otherwise use normal) |
-|   *gpu*    | gr01, gr02, gr36 | 72 hours |  376 GB + 32 GB  | **NVIDIA Tesla V100s** with 32GB video memory                |
+| Queue name |             Node             | Max time | Max memory per node  | Note                                                                                                                     |
+| :--------: | :--------------------------: | :------: | :------------------: | :----------------------------------------------------------------------------------------------------------------------- |
+|   *gpu*    | gr01<br>gr02<br>gr03<br>gr04 | 72 hours |        376 GB        | **NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla A100 (80G)** |
+|   *fat*    |    gr35<br>gr36<br>fat01     | 72 hours | 754GB<br>3TB<br>6 TB | **large shared-memory** jobs  (**mem > 360GB**)                                                                          |
 
 # Submission
 
@@ -602,6 +602,7 @@ A simply job submission script is as follow.
 #PBS -N testgpu
 #PBS -q gpu
 #PBS -l nodes=1:ppn=72
+#PBS -W x=GRES:gpu at 1
 #PBS -l walltime=1:00:00
 
 cd $PBS_O_WORKDIR
@@ -659,12 +660,12 @@ Use `qstat -u <username>` to show the jobs submitted by one user.
 
 ### cancel job
 
-| Command                              | Description                                                  |
-| ------------------------------------ | ------------------------------------------------------------ |
-| `qdel [-W time] JOB_ID`              | `-W time` can specify the delay of the job cancel.  The unit is seconds. |
-| `qselect -u $USER | xargs qdel`      | Delete all of your jobs                                      |
-| `qselect -u $USER -s Q | xargs qdel` | Delete all of your **Queueing** jobs                         |
-| `qselect -u $USER -s R | xargs qdel` | Delete all of your **Running** jobs                          |
+| Command                 | Description                                                              |
+| ----------------------- | ------------------------------------------------------------------------ |
+| `qdel [-W time] JOB_ID` | `-W time` can specify the delay of the job cancel.  The unit is seconds. |
+| `qselect -u $USER       | xargs qdel`                                                              | Delete all of your jobs              |
+| `qselect -u $USER -s Q  | xargs qdel`                                                              | Delete all of your **Queueing** jobs |
+| `qselect -u $USER -s R  | xargs qdel`                                                              | Delete all of your **Running** jobs  |
 
 
 
