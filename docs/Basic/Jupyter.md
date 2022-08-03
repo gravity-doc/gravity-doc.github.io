@@ -4,9 +4,9 @@ title: Jupyter
 ---
 # Jupyter
 ```danger
-[OLD Jupyter](https://gravity.sjtu.edu.cn/)'s `username`+`password` method of login will be **Deprecated** in the near future!   
+[OLD Jupyter](https://gravity.sjtu.edu.cn/)'s `username`+`password` login method will be **Deprecated** in the near future!   
 
-[Please use [NEW Jupyter](https://jupyter.gravity.sjtu.edu.cn/)'s **2FA** instead](https://gravity-doc.github.io/Basic/Login.html#web-login). 
+Please use [NEW Jupyter](https://jupyter.gravity.sjtu.edu.cn/)'s [**2FA**](https://gravity-doc.github.io/Basic/Login.html#web-login) login method now
 ```
 
 ```tip
