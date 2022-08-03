@@ -4,9 +4,9 @@ title: Jupyter
 ---
 # Jupyter
 ```danger
-traditional `username`+`password` method of login will be **Deprecated** in the near future!   
+[OLD Jupyter](https://gravity.sjtu.edu.cn/)'s `username`+`password` method of login will be **Deprecated** in the near future!   
 
-[Please use **2FA** instead](https://gravity-doc.github.io/Basic/Login.html#web-login). 
+[Please use [NEW Jupyter](https://jupyter.gravity.sjtu.edu.cn/)'s **2FA** instead](https://gravity-doc.github.io/Basic/Login.html#web-login). 
 ```
 
 ```tip
@@ -16,8 +16,8 @@ traditional `username`+`password` method of login will be **Deprecated** in the 
 - You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎     
 
 You can access *Jupyter* on our website:   
-- https://gravity.sjtu.edu.cn
-- https://jupyter.gravity.sjtu.edu.cn
+- [Old Jupyter](https://gravity.sjtu.edu.cn) (will be **deprecated** soon)
+- [New Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
 
 - PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
 ```
