@@ -200,7 +200,7 @@ When you need to run a series of jobs with different arguments, it is pretty use
    ```bash
    #!/bin/bash
    #PBS -N My_job
-   #PBS -l nodes=1:ppn=72
+   #PBS -l nodes=1:ppn=1
    #PBS -q normal
    
    # run your own program!!!
@@ -220,9 +220,9 @@ When you need to run a series of jobs with different arguments, it is pretty use
    ```bash
    #!/bin/bash
    #PBS -N My_job
-   #PBS -l nodes=1:ppn=72
+   #PBS -l nodes=1:ppn=1
    #PBS -q normal
-   #PBS -t 1-666
+   #PBS -t 1-666%5
    
    # run your own program!!!
    python test.py $PBS_ARRAYID
@@ -233,6 +233,7 @@ When you need to run a series of jobs with different arguments, it is pretty use
    ```bash
    qsub example.pbs
    ```
+   The optional `%5` in the `-t` parameter specifies a maximum of 5 jobs to be allowed running simultaneously. 
 
 **`PBS_ARRAYID`** here represents the range `1-666`, which means your    job will run as
 
