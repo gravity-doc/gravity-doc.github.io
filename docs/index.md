@@ -37,6 +37,6 @@ We would appreciate it if all publications that include results generated using 
 - **This work made use of the Gravity Supercomputer at the Department of Astronomy, Shanghai Jiao Tong University.**
 
 ### Publications powered by Gravity:
-- https://ui.adsabs.harvard.edu/search/q=%3D%20full%3A%22gravity%20supercomputer%22&sort=date%20desc%2C%20bibcode%20desc&p_=0
+- [on NASA ADS](https://ui.adsabs.harvard.edu/search/q=%3D%20full%3A%22gravity%20supercomputer%22&sort=date%20desc%2C%20bibcode%20desc&p_=0)
 
 <img src="./images/logo_DOA_large.png" height = "80" div align=right />
