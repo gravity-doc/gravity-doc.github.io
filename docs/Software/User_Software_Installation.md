@@ -83,3 +83,5 @@ Note that the order matters if in the environmental variables there exist multip
 `prereq` can set the dependence.  In this case, you can not load this module if *softA* has not been loaded.
 
 `conflict` specifies the module that conflict with this one.  You can not load this module if *softB* has been loaded.
+
+Reference: [module-file](https://modules.readthedocs.io/en/stable/modulefile.html#)
