@@ -61,19 +61,7 @@ If you want to change your email📧, please [contact us](https://gravity-doc.gi
 
 # SGI Account
 
-```note
-注意该`username`为**SGI**上的原账户，而非gravity账号; 如有新开账户需求请**征得导师同意后**在微信群或者邮件联系管理员。   
-
-The **SGI** node operates *independently* from the **Gravity cluster**. If you need to use it but do not already have an account, you can contact the administrator after **getting the consent of your supervisor/sponsor**. 
-```
-
-On *login02*, log in to *SGI*
-
-```bash
-ssh username@sgi
-```
-
-在*login02*节点，登陆*SGI*
+**new**: sgi account has been unified with gravity. From the two login nodes, you can ssh to `sgi` directly:
 
 ```bash
 ssh username@sgi
