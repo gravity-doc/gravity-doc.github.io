@@ -34,6 +34,7 @@ title: System Specs
 - computation network: Mellanox infiniband HDR configured at 100Gb/s
 - internet: 10Gb/s connection to the internet through campus network
 
+
 ### SGI node 
 
 The old SGI shared-memory server 
@@ -41,5 +42,5 @@ The old SGI shared-memory server
   - 32x Intel Xeon E5-4620 CPU (2.60GHz, 8C), total 256 cores
   - 4TB mem
   - ddn storage, usable capacity 657TB
-  - connected to login02 only through a 10Gbps cable
-  - [accounts](https://gravity-doc.github.io/Basic/Account.html#account-of-the-sgi) managed separately from gravity
+  - connected to login02 through a 10Gbps cable, and to gravity through IB.
+  - **new**: sgi account have been unified with gravity. On the login nodes, you can directly `ssh sgi`. Note the sgi environment is different from gravity, with different operating system (Suse linux enterprise 12) and different softwares installed.
