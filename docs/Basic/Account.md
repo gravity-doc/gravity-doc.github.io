@@ -64,5 +64,5 @@ If you want to change your email📧, please [contact us](https://gravity-doc.gi
 **new**: sgi account has been unified with gravity. From the two login nodes, you can ssh to `sgi` directly:
 
 ```bash
-ssh username@sgi
+ssh sgi
 ```
