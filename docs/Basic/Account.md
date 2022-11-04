@@ -3,8 +3,6 @@ sort: 1
 title: Account
 ---
 
-# Gravity Account
-
 ## Apply for a NEW Account
 ```note
 请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。  
@@ -59,7 +57,7 @@ If you forget your password, don't worry!
 ## Change Email📧
 If you want to change your email📧, please [contact us](https://gravity-doc.github.io/#contact), provide your **username** and **NEW email**.
 
-# SGI Account
+## SGI Account
 
 **new**: sgi account has been unified with gravity. From the two login nodes, you can ssh to `sgi` directly:
 
