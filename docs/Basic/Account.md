@@ -5,7 +5,7 @@ title: Account
 
 # Gravity Account
 
-## Apply a NEW Account
+## Apply for a NEW Account
 ```note
 请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。  
 
