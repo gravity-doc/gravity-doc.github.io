@@ -116,6 +116,7 @@ Now, refresh your *Jupyter*, and you should be able to see your newly configured
   The kernel name is also displayed in the top right corner of your notebook. To see the exact path for this environment:
 
   `import sys`
+  
   `sys.executable`
 
   This will show the path of the python executable for the current notebook.
