@@ -111,6 +111,18 @@ python -m ipykernel install --user --name myenv
 
 Now, refresh your *Jupyter*, and you should be able to see your newly configured kernel. Select it for your notebook. enjoy 🎉
 
+```tip
+
+  The kernel name is also displayed in the top right corner of your notebook. To see the exact path for this environment:
+
+  ```python
+    import sys
+    sys.executable
+  ```
+
+  This will show the path of the python executable for the current notebook.
+```
+
 ### Shutdown Jupyter
 
 - If you want to close it **temporarily**, hoping it is still running on *Gravity*, just **close your browser**.
