@@ -10,7 +10,14 @@ title: Updates
 
 ## Done 🥳
 
+### 2022.11
+
+- [x] **SGI** can access Gravity **Home** Directory at `/gravity/home`
+- [x] **SGI** can access the Internet directly now 🏄‍
+- [x] **SGI** has a disk quota for each user, which is [**10G+1TB**](https://gravity-doc.github.io/Basic/Resource_Monitor.html#disk-quota)
+
 ### 2022.7
+
 - [x] [**Gravity Homepage**](https://jupyter.gravity.sjtu.edu.cn/) is ready! 🎉🎉🎉
 - [x] add [**FileServer**](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support download/**share** files 🎉🎉🎉 ([File Sharing DEMO](https://gravity.sjtu.edu.cn/demo/))
 - [x] add [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login)🔒 for our website

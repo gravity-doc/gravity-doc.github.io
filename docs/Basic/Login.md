@@ -77,11 +77,14 @@ ssh login02
 
 If you do not like😒 the original terminal, here are some alternative softwares:
 - *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (Windows)
+- *[WindTerm](https://github.com/kingToolbox/WindTerm)* (Windows)(**open source**)
 - *[Xshell](https://www.netsarang.com/en/xshell/)*  (Windows)
 - *[Putty](https://www.ssh.com/ssh/putty/download)*  (Windows)
 - *[Bitvise](https://www.bitvise.com/ssh-client-download)* (Windows)
 - *[Termius](https://termius.com/)* (Mac/Linux/Windows/Android/iOS)
 - *[FinalShell](https://www.hostbuf.com/t/988.html)* (Mac/Linux/Windows)
+- *[PortX](https://portx.online/zh/)* (Mac/Linux/Windows)
+- *[Tabby](https://tabby.sh/)* (Mac/Linux/Windows)(**open source**)
 - *[iTerm](https://iterm2.com/)* (Mac)
    
 ## Web login
