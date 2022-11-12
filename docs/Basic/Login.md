@@ -76,16 +76,18 @@ ssh login02
 ```
 
 If you do not like😒 the original terminal, here are some alternative softwares:
-- *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (Windows)
-- *[WindTerm](https://github.com/kingToolbox/WindTerm)* (Windows)(**open source**)
-- *[Xshell](https://www.netsarang.com/en/xshell/)*  (Windows)
-- *[Putty](https://www.ssh.com/ssh/putty/download)*  (Windows)
-- *[Bitvise](https://www.bitvise.com/ssh-client-download)* (Windows)
-- *[Termius](https://termius.com/)* (Mac/Linux/Windows/Android/iOS)
-- *[FinalShell](https://www.hostbuf.com/t/988.html)* (Mac/Linux/Windows)
-- *[PortX](https://portx.online/zh/)* (Mac/Linux/Windows)
-- *[Tabby](https://tabby.sh/)* (Mac/Linux/Windows)(**open source**)
-- *[iTerm](https://iterm2.com/)* (Mac)
+- *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (**Windows**)
+- *[Xshell](https://www.netsarang.com/en/xshell/)*  (**Windows**)
+- *[Putty](https://www.ssh.com/ssh/putty/download)*  (**Windows**)
+- *[Bitvise](https://www.bitvise.com/ssh-client-download)* (**Windows**)
+- *[Termius](https://termius.com/)* (**Mac/Linux/Windows/Android/iOS**)
+- *[FinalShell](https://www.hostbuf.com/t/988.html)* (**Mac/Linux/Windows**)
+- *[PortX](https://portx.online/zh/)* (**Mac/Linux/Windows**)
+- *[WindTerm](https://github.com/kingToolbox/WindTerm)* (**Mac/Linux/Windows**) (🎉**open source**🎉)
+- *[Tabby](https://tabby.sh/)* (**Mac/Linux/Windows**) (🎉**open source**🎉)
+- *[iTerm](https://iterm2.com/)* (**Mac**)
+- *[JuiceSSH](https://apkpure.com/juicessh-ssh-client/com.sonelli.juicessh)* (**Android**)
+- *[Termux](https://github.com/termux/termux-app)* (**Android**) (🎉**open source**🎉)
    
 ## Web login
 ### 1. install Authenticator app
@@ -217,13 +219,18 @@ ssh login02
 ```
 
 若您不喜欢😒原生的终端，这里有可选的软件：
-- *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (Windows)
-- *[Xshell](https://www.netsarang.com/en/xshell/)*  (Windows)
-- *[Putty](https://www.ssh.com/ssh/putty/download)*  (Windows)
-- *[Bitvise](https://www.bitvise.com/ssh-client-download)* (Windows)
-- *[Termius](https://termius.com/)* (Mac/Linux/Windows/Android/iOS)
-- *[FinalShell](https://www.hostbuf.com/t/988.html)* (Mac/Linux/Windows)
-- *[iTerm](https://iterm2.com/)* (Mac)
+- *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (**Windows**)
+- *[Xshell](https://www.netsarang.com/en/xshell/)*  (**Windows**)
+- *[Putty](https://www.ssh.com/ssh/putty/download)*  (**Windows**)
+- *[Bitvise](https://www.bitvise.com/ssh-client-download)* (**Windows**)
+- *[Termius](https://termius.com/)* (**Mac/Linux/Windows/Android/iOS**)
+- *[FinalShell](https://www.hostbuf.com/t/988.html)* (**Mac/Linux/Windows**)
+- *[PortX](https://portx.online/zh/)* (**Mac/Linux/Windows**)
+- *[WindTerm](https://github.com/kingToolbox/WindTerm)* (**Mac/Linux/Windows**) (🎉**open source**🎉)
+- *[Tabby](https://tabby.sh/)* (**Mac/Linux/Windows**) (🎉**open source**🎉)
+- *[iTerm](https://iterm2.com/)* (**Mac**)
+- *[JuiceSSH](https://apkpure.com/juicessh-ssh-client/com.sonelli.juicessh)* (**Android**)
+- *[Termux](https://github.com/termux/termux-app)* (**Android**) (🎉**open source**🎉)
 
 
 ## Web登陆
