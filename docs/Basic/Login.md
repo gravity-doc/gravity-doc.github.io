@@ -276,3 +276,20 @@ ssh login02
 输入您的 *二次验证码*, 开始征途吧！🎉🎉🎉
 
 <img src="../images/Basic/auth_totp.png" width = "300" height = "250" div align=center />
+
+# SGI login
+
+```tip
+1. **SGI** is a **standalone** machine, and it has a different OS and disk system.   
+2. **SGI** use *slurm* rather than *pbs* as the job scheduler.   
+   
+**NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
+```
+
+You cannot access **SGI** directly, you need to log in **Gravity** first, then on login nodes, use:
+
+```bash
+ssh sgi
+```
+
+Here we go 🎉

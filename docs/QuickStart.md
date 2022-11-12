@@ -65,13 +65,16 @@ qdel 36162  # 36162 is your jobID
 | `scp -r -i your_ssh_key local_folder username@gravity.sjtu.edu.cn:remote_folder` | copy local folder to Gravity                                 |
 | `scp -i your_ssh_key username@gravity.sjtu.edu.cn:remote_file local_file ` | copy Gravity file to local                                   |
 | `scp -r -i your_ssh_key username@gravity.sjtu.edu.cn:remote_folder local_folder` | copy Gravity folder to local                                 |
-| `rsync -avP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" local_file username@gravity.sjtu.edu.cn:remote_file` | copy local files/folder to Gravity                           |
-| `rsync -avP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" username@gravity.sjtu.edu.cn:remote_file local_file` | copy Gravity files/folder to local                           |
+| `rsync -avP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" local_file username@gravity.sjtu.edu.cn:remote_file` | copy local files/folder to Gravity (**check time&size**, faster) |
+| `rsync -avP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" username@gravity.sjtu.edu.cn:remote_file local_file` | copy Gravity files/folder to local (**check time&size**, faster) |
+| `rsync -acvP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" local_file username@gravity.sjtu.edu.cn:remote_file` | copy local files/folder to Gravity (**check MD5**, slower) |
+| `rsync -acvP -e "ssh -i ~/.ssh/id_rsa_For_Gravity" username@gravity.sjtu.edu.cn:remote_file local_file` | copy Gravity files/folder to local (**check MD5**, slower) |
 | `wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh` | download file                                                |
 | `curl -O https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh` | download file                                                |
 | `axel -n 8 https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh` | ⚡ download file using **multi-threads** (8 threads)          |
 | `qsub -I -l nodes=1:ppn=72,walltime=48:00:00 -q normal`      | submit an **interactive** job to _normal queue_              |
 | `qsub -I -l nodes=gr06:ppn=72,walltime=48:00:00 -q normal`   | submit an **interactive** job to _normal queue_, specifically, use **gr06** node |
+| `qsub -I -X -v DISPLAY -l nodes=1:ppn=72,walltime=12:00:00 -q normal` | submit an **interactive** job to _normal queue_, use **X11** to show **GUI** |
 | `qsub myjob.pbs`                                             | submit a batch job                                           |
 | `qstat -a`                                                   | jobs status                                                  |
 | `qstat -n`                                                   | jobs status (see which node you are using)                   |
@@ -89,22 +92,31 @@ qdel 36162  # 36162 is your jobID
 | `qrls <job_id>`                                              | **release** a job                                            |
 | `pestat`                                                     | every node status                                            |
 | `showq`                                                      | overview of nodes                                            |
+| `sbatch job.slurm`                                           | submit a batch job (*slurm*)                                 |
+| `squeue`                                                     | check job state (*slurm*)                                    |
+| `scancel <Job ID>`                                           | cancel job (*slurm*)                                         |
+| `sattach <Job ID>`                                           | **connect** to standard input/output/error streams of job (*slurm*) |
+| `sinfo`                                                      | overview of nodes (*slurm*)                                  |
 | `module av`                                                  | modules **available**                                        |
 | `module list`                                                | modules loaded                                               |
 | `module load anaconda/anaconda-mamba`                        | **load** module                                              |
 | `module unload anaconda/anaconda-mamba`                      | **unload** module                                            |
+| `module purge`                                               | **unload all** modules                                       |
 | `conda env list`                                             | see conda environment                                        |
 | `conda activate <env_name>`                                  | activate environment                                         |
 | `conda deactivate`                                           | deactivate environment                                       |
 | `conda create -n myenv python=3.7 matplotlib scipy astropy`  | create a virtual environment                                 |
+| `conda create -n new_env --clone old_env`                    | clone `new_env` from `old_env`                               |
 | `conda search emcee`                                         | search package                                               |
 | `conda install -c conda-forge emcee`                         | install package                                              |
 | `mamba create -n myenv python=3.7 matplotlib scipy astropy`  | ⚡ create a virtual environment                               |
+| `mamba create -n new_env --clone old_env`                    | ⚡ clone `new_env` from `old_env`                             |
 | `mamba search emcee`                                         | ⚡ search package                                             |
 | `mamba install -c conda-forge emcee`                         | ⚡ install package                                            |
-| `python -m ipykernel install --user --name <name_you_like>`  | **install ipykernel** so that you can use it in Jupyter notebook/lab |
-| `python -u test.py`                                          | run python script **without buffering** (no stdout and stderr buffer) |
-| `icfsquota <username>`                                       | disk usage and quota                                         |
+| `python -m ipykernel install --user --name <name_you_like>`  | **install ipykernel** so that you can use it in **Jupyter** notebook/lab |
+| `python -u test.py`                                          | run python script **without buffering** (no stdout and stderr buffer)    |
+| `icfsquota <username>`                                       | disk usage and quota **(Gravity)**                           |
+| `quota -ls`                                                  | disk usage and quota **(SGI)**                               |
 | `cpuquota`                                                   | CPU hours and **expense**                                    |
 | `finger <username>`                                          | user info                                                    |
 | `passwd`                                                     | change password                                              |
@@ -116,11 +128,14 @@ qdel 36162  # 36162 is your jobID
 | `ps aux | grep python`                                       | process info including string: *python*                      |
 | `ps -eo pid,tty,user,command,lstart,etime | grep <username>` | **my own** processes info                                    |
 | `kill -9 <PID>`                                              | **kill** the process using its PID                           |
+| `pkill -u <username>`                                        | **kill all** processes belonging to *username*               |
 | `tail -f My_PBS_Job.log`                                     | see the file output **in time**                              |
 | `git clone https://github.com/numpy/numpy.git`               | clone a repository                                           |
-| `pgit clone https://github.com/numpy/numpy.git`              | ⚡ clone a repository                                         |
 | `git pull`                                                   | pull                                                         |
+| `pgit clone https://github.com/numpy/numpy.git`              | ⚡ clone a repository                                         |
 | `pgit pull`                                                  | ⚡ pull                                                       |
-| `eog`                                                        | view images                                                  |
-| `display`                                                    | view images                                                  |
+| `eog`                                                        | view **images**                                              |
+| `display`                                                    | view **images**                                              |
+| `curl -4 ip.p3terx.com`                                      | check my **IP**                                              |
+| `curl myip.ipip.net`                                         | check my **IP**                                              |
 

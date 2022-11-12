@@ -48,6 +48,25 @@ Files deleted through the graphical desktop will be moved to Trash folder that s
      
 ```
 
+You can use the command on **SGI**, `quota -ls` like this
+
+```bash
+# lalala in ~ [18:53:10] 
+$ quota -ls
+Disk quotas for user lalala (uid 666): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+/dev/mapper/system-home
+                  7876M      0K  10240M            105k       0       0        
+/dev/mapper/SFA7700X-vol1
+                    10G      0K   1024G           1771k       0       0   
+```
+
+Each account has a default quota of 
+- **10GB** at `/home/username`
+- **1TB** at `/mnt/ddnfs/data_users/username`
+
+Gravity **Home Directory** is mounted at `/gravity/home`  
+
 ## CPU time usage and cost
 You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
 

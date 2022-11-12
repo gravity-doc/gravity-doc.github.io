@@ -59,8 +59,23 @@ If you want to change your email📧, please [contact us](https://gravity-doc.gi
 
 ## SGI Account
 
-**new**: sgi account has been unified with gravity. From the two login nodes, you can ssh to `sgi` directly:
+```tip
+1. **SGI** is a **standalone** machine, and it has a different OS and disk system.     
+2. **SGI** use *slurm* rather than *pbs* as the job scheduler.    
+
+**NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
+```
+
+You cannot access **SGI** directly, you need to log in **Gravity** first, then on login nodes, use:
 
 ```bash
 ssh sgi
 ```
+
+Each account has a default quota of 
+- **10GB** at `/home/username`
+- **1TB** at `/mnt/ddnfs/data_users/username`
+
+Gravity **Home Directory** is mounted at `/gravity/home`   
+
+You can use `quota -ls` to check your disk quota and usage.   

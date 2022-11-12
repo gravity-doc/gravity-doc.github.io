@@ -727,5 +727,51 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 - `man pbs_resources`
 
 # Slurm
+```tip
+*Slurm* is only available on **SGI** server!
+```
 
-😜 Coming soon... ... ...
+## examples
+### basic
+create a job script `job.slurm` with the following content:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=test 
+#SBATCH -n 16           # CPU cores
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+echo "Start running ... ..."
+
+# run your own program!!!
+sleep 10s
+
+echo "Job is done!"
+```
+
+Then, we can **submit** the job:
+
+```bash
+sbatch job.slurm
+```
+
+## commands
+
+```bash
+# submit a job
+sbatch job.slurm
+
+# check job status
+squeue
+
+# cancel a job
+scancel JOB_ID
+
+# attach to a job (connect to the input/output/error stream)
+sattach JOB_ID
+
+# view the queue info
+sinfo
+```
