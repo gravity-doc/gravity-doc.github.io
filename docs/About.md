@@ -24,7 +24,8 @@ title: System Specs
   - sgi: 256 cores, 4TB mem (see below)
   
 - 4 GPU nodes **gr01-gr04**
-  - each node has 1 *NVIDIA Tesla V100s PCIe 32 GB card*, together with 4X Intel Gold 6240 CPU (2.6GHz,18C)
+  - gr01-03: each node has 1 *NVIDIA Tesla V100s PCIe 32 GB card*, together with 4X Intel Gold 6240 CPU (2.6GHz,18C)
+  - gr04: Nvidia Tesla A100 (80GB) card
 
 ### Storage
 
