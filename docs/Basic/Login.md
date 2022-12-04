@@ -75,6 +75,7 @@ ssh login01
 ssh login02
 ```
 
+### Software
 If you do not like😒 the original terminal, here are some alternative softwares:
 - *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (**Windows**)
 - *[Xshell](https://www.netsarang.com/en/xshell/)*  (**Windows**)
@@ -123,7 +124,7 @@ open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input 
 
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
-click *Register device*
+click *Register device* (choose **One-Time Pssword** method!!!)
 
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 
@@ -218,6 +219,7 @@ ssh login01
 ssh login02
 ```
 
+### 软件
 若您不喜欢😒原生的终端，这里有可选的软件：
 - *[MobaXTerm](https://mobaxterm.mobatek.net/download.html)* (**Windows**)
 - *[Xshell](https://www.netsarang.com/en/xshell/)*  (**Windows**)
@@ -263,7 +265,7 @@ ssh login02
 
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
-点击 *注册设备*
+点击 *注册设备* （选择**One-Time password**方式！！！）
 
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 
