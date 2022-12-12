@@ -124,7 +124,7 @@ open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input 
 
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
-click *Register device* (choose **One-Time Pssword** method!!!)
+click *Register device* (choose **One-Time Password** method!!!)
 
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 
@@ -265,7 +265,7 @@ ssh login02
 
 <img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
 
-点击 *注册设备* （选择**One-Time password**方式！！！）
+点击 *注册设备* （选择**One-Time Password**方式！！！）
 
 <img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
 

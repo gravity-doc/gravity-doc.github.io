@@ -4,7 +4,12 @@ title: Proxy
 ---
 
 # Surf the Internet🏄‍
-You can access Internet on *computing nodes* when using *Jupyter/VScode*.
+
+```tip
+- On [**Gravity Web**](https://jupyter.gravity.sjtu.edu.cn/), you can access the Internet🏄‍ when using **Jupyter/VScode** on **login/computing nodes**   
+- We will speed up🚀 your **git** connection automatically
+```
+
 ## 1. Spawn a server
 open [our website](https://jupyter.gravity.sjtu.edu.cn/) → click *Jupyter* button → *log in* → *start my server*
 
@@ -22,14 +27,23 @@ For example🌰:
 ![proxy](../images/Basic/jupyter-proxy.png)
 
 # Speedup Git⚡
-## Why
+
+```tip
+When using **terminal**, you can use `pgit` to speed up🚀 your `git` connection
+```
+
+## 1. Why
 When we use `git clone`, `git pull` or whatever related to git, somehow, there is a wired phenomenon: The speed of connection is **too slow**, or we **cannot even access** [Github](https://github.com)
 
 Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳   
 
-## Usage
-Actually, it is **totally equal to** `git`, you can just **replace** `git` with `pgit`, that's it! 😎   
-You can use it on both **login01** and **login02**. 
+## 2. Usage
+### pgit
+
+```tip
+On **login01/login02**, `pgit` **==** `git`😎    
+P.S. `pgit` means **proxy git**
+```
 
 **Common usage:**
 
@@ -43,10 +57,11 @@ You can use it on both **login01** and **login02**.
 | `git xxxxxxxx`       | `pgit xxxxxxxx`       |
 
 **For example**🌰
+let us use `pgit` to clone this repo `https://github.com/Samreay/ChainConsumer.git` 👇
 
 ```bash
 ╭─lalala ~ 
-╰─$ pgit clone git@github.com:Samreay/ChainConsumer.git
+╰─$ pgit clone https://github.com/Samreay/ChainConsumer.git
 ################## Here we go! ༼ つ ◕_◕ ༽つ ####################
 Cloning into 'ChainConsumer'...
 remote: Enumerating objects: 2797, done.
@@ -55,6 +70,39 @@ Receiving objects: 100% (2797/2797), 17.84 MiB | 3.04 MiB/s, done.
 Resolving deltas: 100% (1788/1788), done.
 ```
 
+### http_proxy
+If you prefer to set environment variables, you can use `http_proxy` and `https_proxy` to speed up🚀 your **Github** connection.
+
+```bash
+# set http proxy
+export http_proxy=http://login02:6666
+export https_proxy=http://login02:6666
+
+# git setting
+git config --global http.proxy $http_proxy
+git config --global https.proxy $http_proxy
+git config --global core.sshCommand 'ssh -o "ProxyCommand=ncat -v --proxy-type socks5 --proxy login02:6666 %h %p"'
+```
+
+Let us **check** our connection
+
+```bash
+# check curl
+curl -v github.com
+
+# check clone repo
+git clone https://github.com/Samreay/ChainConsumer.git
+```
+
+If you want to **cancel** the proxy, you can use `unset` command
+
+```bash
+unset {http,https}_proxy
+git config --global --unset http.proxy https.proxy
+git config --global --unset https.proxy
+git config --global --unset core.sshCommand
+```
+
 ```warning
-Attention! There is **NO warranty**! But we will try our best to maintain this service😊
+**Attention!** There is **NO warranty**! But we will try our best to maintain this service😊
 ```
