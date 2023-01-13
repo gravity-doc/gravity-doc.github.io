@@ -29,8 +29,8 @@ title: System Specs
 
 ### Storage
 
-- Inspur AS13000 parallel storage, with 17 nodes, inter-connected with a dual-10Gbps network
-- Usable capacity 4.2PB (raw 5.3PB, configured with 8:2 eraser code for redundancy)
+- Inspur AS13000 parallel storage, with 20 nodes, inter-connected with a dual-10Gbps network
+- Usable capacity 4.9PB (raw 6.3PB, configured with 8:2 eraser code for redundancy)
 - IO speed ~20GB/s
 
 ### Network
