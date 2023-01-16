@@ -20,7 +20,7 @@ In this file, you can add new paths to your own modulefiles to the environmental
 
 ```bash
 #%Module1.0#####
-append-path MODULEPATH /home/u/mymodulefiles
+append-path MODULEPATH /home/user1/mymodulefiles
 ```
 
 Note that `#%Module1.0#####` is required at the first line.
