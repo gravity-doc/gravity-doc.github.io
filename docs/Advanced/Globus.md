@@ -16,7 +16,7 @@ wget https://downloads.globus.org/globus-connect-personal/linux/stable/globuscon
 ```
 
 2. Extract the files from the downloaded tarball.
-```
+```bash
 $ tar xzf globusconnectpersonal-latest.tgz
 $ cd globusconnectpersonal-x.y.z
 ```
