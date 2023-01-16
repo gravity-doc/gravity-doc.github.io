@@ -37,14 +37,16 @@ Input this code in your terminal, type the name for this Endpoint (Gravity2 in t
 
 <img src="../images/Advanced/globus-setup3.png" width = "600" div align=center />
 
-Check whether the Endpoint is correctly appeared in your Globus Endpoint Collections.
-
-5. Run Globus personal without GUI
+4. Run Globus personal without GUI.
 ```bash
 ./globusconnectpersonal -start &
 ```
 
-6. Stop Globus personal
+Check whether the Endpoint is correctly appeared in your Globus Endpoint Collections.
+
+<img src="../images/Advanced/globus-setup4.png" width = "600" div align=center />
+
+5. Stop Globus personal.
 Please close your Globus personal when your transfer task is end, for safety and resources saving reason.
 ```bash
 globusconnectpersonal -stop
