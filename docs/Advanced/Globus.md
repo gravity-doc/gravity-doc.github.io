@@ -26,12 +26,15 @@ $ cd globusconnectpersonal-x.y.z
 ```bash
  ./globusconnectpersonal -setup
 ```
+
 <img src="../images/Advanced/globus-setup1.png" width = "600" div align=center />
 
 A long link will be provided.  Copy and open the above link in your browser.  After sign in your globus account, an authorization code will be provided.
+
 <img src="../images/Advanced/globus-setup2.png" width = "600" div align=center />
 
 Input this code in your terminal, type the name for this Endpoint (Gravity2 in the above case) and finish the setup.
+
 <img src="../images/Advanced/globus-setup3.png" width = "600" div align=center />
 
 Check whether the Endpoint is correctly appeared in your Globus Endpoint Collections.
