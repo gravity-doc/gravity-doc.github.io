@@ -53,4 +53,4 @@ globusconnectpersonal -stop
 ```
 
 ### Notes
-Gravity login nodes do not support graphic tools, thus the prerequists in the gra
+Gravity login nodes do not support graphic tools, thus the prerequists listed in the Globus documentation (Tcl/Tk installed) is not required.
