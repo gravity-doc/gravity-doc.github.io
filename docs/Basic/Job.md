@@ -10,13 +10,13 @@ You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, you 
 Please only request resources that you actually need. **Do not** use more than or less than the number of cores you requested.
 ```
 
-# Queues
+## Queues
 
 `qstat -q ` shows a summary of available queues.
 
 `qstat -f -Q` shows the detailed queue configurations, which are also listed below:
 
-## Ordinary queues
+- **Ordinary queues**
 
 | Queue name | Max  nodes | Max time | Max memory per node |        Priority         |
 | :--------: | :--------: | :------: | :-----------------: | :---------------------: |
@@ -24,14 +24,12 @@ Please only request resources that you actually need. **Do not** use more than o
 |  *small*   |     3      | 72 hours |       376 GB        |         Medium          |
 |  *normal*  |     18     | 48 hours |       376 GB        | Low (**default queue**) |
 
-## **Special** queues
+- **Special queues**
 
 | Queue name |             Node             | Max time | Max memory per node  | Note                                                                                                                     |
 | :--------: | :--------------------------: | :------: | :------------------: | :----------------------------------------------------------------------------------------------------------------------- |
 |   *gpu*    | gr01<br>gr02<br>gr03<br>gr04 | 72 hours |        376 GB        | **NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla V100 (32G)**<br>**NVIDIA Tesla A100 (80G)** |
 |   *fat*    |    gr35<br>gr36<br>fat01     | 72 hours | 754GB<br>3TB<br>6 TB | **large shared-memory** jobs  (**mem > 360GB**)                                                                          |
-
-# Submission
 
 ## Basic example
 
@@ -674,7 +672,7 @@ Use `qstat -u <username>` to show the jobs submitted by one user.
 
 `checkjob JOB_ID` can provide the information of a pending job.
 
-## References
+### References
 
 ```note
 `qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
@@ -726,13 +724,12 @@ nodes=N:ppn=M     ：define number of nodes N and processes per node M.
 - `man qsub`
 - `man pbs_resources`
 
-# Slurm
+## Slurm
 ```tip
 *Slurm* is only available on **SGI** server!
 ```
 
-## examples
-### basic
+### examples
 create a job script `job.slurm` with the following content:
 
 ```bash
@@ -757,7 +754,7 @@ Then, we can **submit** the job:
 sbatch job.slurm
 ```
 
-## commands
+### commands
 
 ```bash
 # submit a job

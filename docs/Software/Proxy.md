@@ -3,14 +3,14 @@ sort: 3
 title: Proxy
 ---
 
-# Surf the Internet🏄‍
+## Surf the Internet🏄‍
 
 ```tip
 - On [**Gravity Web**](https://jupyter.gravity.sjtu.edu.cn/), you can access the Internet🏄‍ when using **Jupyter/VScode** on **login/computing nodes**   
 - We will speed up🚀 your **git** connection automatically
 ```
 
-## 1. Spawn a server
+### 1. Spawn a server
 open [our website](https://jupyter.gravity.sjtu.edu.cn/) → click *Jupyter* button → *log in* → *start my server*
 
 ![start](../images/Basic/jupyterhub-start-server.png)
@@ -19,26 +19,26 @@ select a job queue → input resource setting → Start
 
 ![spawn](../images/Basic/jupyter_select.png)
 
-## 2. Enjoy
+### 2. Enjoy
 You can use `git/wget/curl etc.` to access the Internet.
 
 For example🌰:
 
 ![proxy](../images/Basic/jupyter-proxy.png)
 
-# Speedup Git⚡
+## Speedup Git⚡
 
 ```tip
 When using **terminal**, you can use `pgit` to speed up🚀 your `git` connection
 ```
 
-## 1. Why
+### 1. Why
 When we use `git clone`, `git pull` or whatever related to git, somehow, there is a wired phenomenon: The speed of connection is **too slow**, or we **cannot even access** [Github](https://github.com)
 
 Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳   
 
-## 2. Usage
-### pgit
+### 2. Usage
+#### pgit
 
 ```tip
 On **login01/login02**, `pgit` **==** `git`😎    
@@ -70,7 +70,7 @@ Receiving objects: 100% (2797/2797), 17.84 MiB | 3.04 MiB/s, done.
 Resolving deltas: 100% (1788/1788), done.
 ```
 
-### http_proxy
+#### http_proxy
 If you prefer to set environment variables, you can use `http_proxy` and `https_proxy` to speed up🚀 your **Github** connection.
 
 ```bash
@@ -98,7 +98,7 @@ If you want to **cancel** the proxy, you can use `unset` command
 
 ```bash
 unset {http,https}_proxy
-git config --global --unset http.proxy https.proxy
+git config --global --unset http.proxy
 git config --global --unset https.proxy
 git config --global --unset core.sshCommand
 ```

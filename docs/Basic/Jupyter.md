@@ -312,18 +312,13 @@ As is well-known, *VScode* is the best editor for coding in the world 😜
 > 3. 💯 support C/C++, Fortran, R, Go, Julia, Python etc.
 > 4. 😎 install any extension you like, **customize** your own vscode!
 
-Here, wo provide two options:
-
-> - *VScode [sys]*: You cannot install any plugin on it, however, in my opinion, it is enough to use. We have already installed many plugins and configured it well!
->
-> - *VScode [my]*: This is **totally clean**. You can install/uninstall any plugin or change any configuration in it!
-
 ```tip
 1. **Only if** you stop the server from JupyterHub, can the VScode really stop.
 2. It's better to use **Chrome** or **Edge** rather than ~~Firefox~~.
 ```
 
-Start *VScode* from *Jupyterlab*, double click 
+## Start
+Start a *Jupyter Server*, click the *VScode* button
 
 ![image-20210730145322829](../images/Basic/jupyterhub-vscode-click.png)
 
@@ -331,6 +326,44 @@ Coding, no matter you perfer C/C++ or Julia or other language, it's easy to use
 
 ![image-20210730145603882](../images/Basic/jupyterhub-vscode-coding.png)
 
-Also, it supports *jupyter-notebook*
+Also, it **supports** *jupyter-notebook*
 
 ![image-20210730145653821](../images/Basic/jupyterhub-vscode-notebook.png)
+
+## Install Extensions
+You can click *extension* button on the left, then **search** and **install** any *extension* you like! 😊
+
+![search-extension](../images/Basic/vscode-extension-search.png)
+
+If you cannot find the extension you want, you can download the `vsix` file from [*marketplace*](https://marketplace.visualstudio.com/), then install it manually.
+
+For example, we wanna install the *copilot* extension, use **`Ctrl+Shift+P`** to open the command panel, then type **`vsix`**, press `Enter`
+
+![search-vsix](../images/Basic/vscode-extension-search-vsix.png)
+
+We have downloaded some useful (I guess🥰) extensions at `/opt/tools/vscode-extensions`:
+> - Black Formatter
+> - Cmake Tools
+> - Dracula Theme
+> - Gather
+> - Python
+> - Pylance
+> - Jupyter
+> - Jupyter Powertoys
+> - GitLens
+> - Git Graph
+> - VScode Great Icons
+> - Code Runner
+> - chatGPT中文版
+> - Github Copilot
+> - Github Copilot Labs
+> - Markdown All in One
+> - YAML
+> - VScode 中文语言包
+
+so we just enter this path: `/opt/tools/vscode-extensions`, select *copilot* or anything you like.
+
+![vscode-install-vsix](../images/Basic/vscode-extension-vsix-install.png)
+
+Now, enjoy your coding 🥳
+
