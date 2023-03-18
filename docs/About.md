@@ -7,25 +7,24 @@ title: System Specs
 
 ### Login nodes
 
-- 2 login nodes **login02** (primary) and **login01** (backup)
-  - 2x Intel Gold 6240 CPU（2.6GHz, 18C)
-  - 187G memory
+- 2 *login* nodes: **login02** (primary) + **login01** (backup)
+  - **36** cores (2x Intel Gold 6240 CPU, 2.6GHz, 18C) 
+  - **187GB** memory
 
 ### Computing nodes
 
-- 36 compute nodes **gr01** ~ **gr36**
-  - each node has 4x Intel Gold 6240 CPU (2.6GHz, 18C), 72 cores in total
-  - each node has 374G memory
+- 4 *GPU* nodes **gr01 ~ gr04**
+  - gr01~gr03: **72** cores + **374GB** memory + NVIDIA Tesla **V100 (32GB)**
+  - gr04: **72** cores + **374GB** memory + Nvidia Tesla **A100 (80GB)**
 
-- 4 fat nodes
-  - fat01: 8x Intel Platinum 8268 CPU（2.9GHz，24C), 192 cores total; 6TB memory
-  - fat02 (gr36): 72Cores, 3TB mem
-  - fat03 (gr35): 72Cores, 768GB mem
-  - sgi: 256 cores, 4TB mem (see below)
-  
-- 4 GPU nodes **gr01-gr04**
-  - gr01-03: each node has 1 *NVIDIA Tesla V100s PCIe 32 GB card*, together with 4X Intel Gold 6240 CPU (2.6GHz,18C)
-  - gr04: Nvidia Tesla A100 (80GB) card
+- 30 *normal* nodes **gr05 ~ gr34**
+  - **72** cores + **374GB** memory (4x Intel Gold 6240 CPU 2.6GHz, 18C)
+
+- 4 *fat* nodes
+  - fat03 (gr35): **72** cores + **768GB** memory (4x Intel Gold 6240 CPU 2.6GHz, 18C)
+  - fat02 (gr36): **72** cores + **3TB** memory (4x Intel Gold 6240 CPU 2.6GHz, 18C)
+  - fat01: **192** cores + **6TB** memory (8x Intel Platinum 8268 CPU, 2.9GHz, 24C)
+  - sgi: **256** cores + **4TB** memory (details below)
 
 ### Storage
 
