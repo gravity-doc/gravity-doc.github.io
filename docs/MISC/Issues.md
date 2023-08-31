@@ -75,6 +75,23 @@ You need to specify this in the running command.
 mpirun -np 4 --mca pml ucx ./a.out
 ```
 
+You may run into error/warning messages regarding openib, such as 
+```
+By default, for Open MPI 4.0 and later, infiniband ports on a device
+are not used by default.  The intent is to use UCX for these devices.
+You can override this policy by setting the btl_openib_allow_ib MCA parameter
+to true.
+
+WARNING: There was an error initializing an OpenFabrics device.
+[login02:780991] 3 more processes have sent help message help-mpi-btl-openib.txt / ib port not selected
+[login02:780991] 3 more processes have sent help message help-mpi-btl-openib.txt / error in device init
+```
+These are because the openmpi has been configured with the deprecated openib (which is nowadays superceded by openfabric). To avoid these messages, you can disable openib when using mpirun,
+```bash
+mpirun -np 4 --mca btl "^openib" ./a.out
+```
+
+
 [see more](https://github.com/openucx/ucx/wiki/OpenMPI-and-OpenSHMEM-installation-with-UCX)
 
 ## **performance issue on fat01**   
