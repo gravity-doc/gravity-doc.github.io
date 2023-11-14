@@ -90,7 +90,7 @@ Note you will have to unload any previously loaded python module if you see conf
 | ---------------------------------------- | ---------------------------------------- |
 | `mamba search emcee`                     | `conda search emcee`                     |
 | `mamba install -c conda-forge camb`      | `conda install -c conda-forge camb`      |
-| `mamba create -n myenv python=3.8 scipy` | `conda create -n myenv python=3.8 scipy` |
+| `mamba create -n myenv python=3.9 scipy` | `conda create -n myenv python=3.9 scipy` |
 
 
 ### conda env

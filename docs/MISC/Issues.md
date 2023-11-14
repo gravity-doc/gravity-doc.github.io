@@ -12,7 +12,7 @@ If there is **NO** solution of your problem, feel free to [contact us](https://g
 ```danger
 **NEVER EVER** install/update any package at *login01* using `conda/mamba`. Otherwise, your whole conda environment will be destroyed!   
 - You can use `pip install` instead   
-- You can go to *login02* to use `conda/mamba`   
+- You can go to *login02* to use `conda/mamba install/create`   
 ```
 
 ## **Conda**   
