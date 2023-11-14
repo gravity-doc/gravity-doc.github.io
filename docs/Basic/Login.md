@@ -17,25 +17,58 @@ If you fail to login, please do not try many times. Otherwise your IP will be **
 ## SSH login
 ### 1. generate `ssh-key`
 
-generate a [*ssh-key*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) pair   
-open a terminal (Linux/Windows/Mac):
+To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), open a terminal (*Linux/Windows/Mac*) (it is recommended to set a *passphrase* for your *private key*, more secure😊):
 
 ```bash
-ssh-keygen
-# Enter
-# Enter
-# Enter
+➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
+
+# Output👇
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/lalala/.ssh/id_rsa): /home/lalala/.ssh/id_rsa_Gravity
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/lalala/.ssh/id_rsa_Gravity.
+Your public key has been saved in /home/lalala/.ssh/id_rsa_Gravity.pub.
+The key fingerprint is:
+SHA256:mEt03Uprv0FxxxxxxxxxxxxxxxxxS2y6M/9U lalala@Gravity
+The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|         . .     |
+|      . . o . .  |
+|     . + . o o o.|
+|      + S + . =*=|
+|     . . . + *oB*|
+|      .   . Xo++E|
+|           +.+B+B|
+|            ..+@*|
++----[SHA256]-----+
 ```
 
 It will generate two files:
-- `id_rsa` (*private key*)
-- `id_rsa.pub` (*public key*)
+- `id_rsa_Gravity` (*private key*)
+    ```
+    -----BEGIN RSA PRIVATE KEY-----
+    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+    ...   
+    ...   
+    ...   
+    ...  
+    -----END RSA PRIVATE KEY-----
+    ```
+
+- `id_rsa_Gravity.pub` (*public key*)
+    ```
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcjFKepF608tQHKbrBJWSrUapb/cqFqJUNbCpqQT5UTzCY2j5CjlpNdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg3eHlDAVaM5nlP2Rk+z+7CG0lzcpH7BERKIQ== lalala@Gravity
+    ```
+
 
 ### 2. add `public key` to Gravity
-You will be asked to provide your *public key* (`id_rsa.pub`) when registering. If everything is OK, skip this step.   
-If you need to add `pub-key` manually:
-- use *Jupyter's* *terminal* to add `id_rsa.pub` to `~/.ssh/authorized_keys`
-- send the `pub-key` [via email📧 to us](https://gravity-doc.github.io/#contact), we will help you.
+You will be asked to provide your *public key* (`id_rsa_Gravity.pub`) when registering. If everything is OK, skip this step.   
+There are **two ways** to add (*append*) `public key`:
+- use *Jupyter's* *terminal* to **append** `id_rsa_Gravity.pub` to `~/.ssh/authorized_keys`
+- send the `id_rsa_Gravity.pub` and your `username` [via email📧](https://gravity-doc.github.io/#contact), we will help you to add it
 
 ### 3. log in
 
@@ -44,35 +77,42 @@ Gravity has two login nodes:
 - *login02* [ **gravity.sjtu.edu.cn** ] (main)
 
 ```bash
-ssh -i <your_ssh_public_key> <username>@gravity.sjtu.edu.cn
+ssh -i <your_ssh_private_key> <username>@gravity.sjtu.edu.cn
+
 # for example 🌰
 ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
 ```tip
 You can set up your `~/.ssh/config` to **simplify** your command😎 as following:
-```
 
 Edit your `~/.ssh/config` like this:      
 
-```
-Host login01
-    HostName login01.gravity.sjtu.edu.cn
-    User lalala
-    Port 22
-    IdentityFile ~/.ssh/id_For_Gravity
-Host login02
-    HostName gravity.sjtu.edu.cn
-    User lalala
-    Port 22
-    IdentityFile ~/.ssh/id_rsa_For_Gravity
-```
+    ```
+    Host login01
+        HostName login01.gravity.sjtu.edu.cn
+        User lalala
+        Port 22
+        IdentityFile ~/.ssh/id_For_Gravity
+    Host login02
+        HostName gravity.sjtu.edu.cn
+        User lalala
+        Port 22
+        IdentityFile ~/.ssh/id_rsa_For_Gravity
+    ```
+
+Add your private key to local ssh-agent:   
+
+    ```bash
+    ssh-add ~/.ssh/id_rsa_For_Gravity
+    ```
 
 Here we go 🥳      
 
-```bash
-ssh login01
-ssh login02
+    ```bash
+    ssh login01
+    ssh login02
+    ```
 ```
 
 ### Software
@@ -161,26 +201,59 @@ input your *Time-based one-time password (TOTP)*, enjoy! 🎉🎉🎉
 
 ### 1. 生成 ssh key 密钥对
 
-生成 [ssh key](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)  
-打开终端（Linux/Windows/Mac）：
+要生成 [*ssh密钥*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)) ，请
+打开终端（Linux/Windows/Mac）(推荐为私钥设置*passphrase*，更安全😊):
 
 ```bash
-ssh-keygen
-# 回车
-# 回车
-# 回车
+➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
+
+# 输出👇
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/lalala/.ssh/id_rsa): /home/lalala/.ssh/id_rsa_Gravity
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/lalala/.ssh/id_rsa_Gravity.
+Your public key has been saved in /home/lalala/.ssh/id_rsa_Gravity.pub.
+The key fingerprint is:
+SHA256:mEt03Uprv0FxxxxxxxxxxxxxxxxxS2y6M/9U lalala@Gravity
+The key's randomart image is:
++---[RSA 4096]----+
+|                 |
+|         . .     |
+|      . . o . .  |
+|     . + . o o o.|
+|      + S + . =*=|
+|     . . . + *oB*|
+|      .   . Xo++E|
+|           +.+B+B|
+|            ..+@*|
++----[SHA256]-----+
 ```
 
 这将会生成两个文件：
 - `id_rsa` (*私钥*)
+    ```
+    -----BEGIN RSA PRIVATE KEY-----
+    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+    ...   
+    ...   
+    ...   
+    ...  
+    -----END RSA PRIVATE KEY-----
+    ```
+
 - `id_rsa.pub` (*公钥*)
+    ```
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcjFKepF608tQHKbrBJWSrUapb/cqFqJUNbCpqQT5UTzCY2j5CjlpNdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg3eHlDAVaM5nlP2Rk+z+7CG0lzcpH7BERKIQ== lalala@Gravity
+    ```
 
 ### 2. 将`公钥`添加至Gravity
-在注册账号时，您已经提供了公钥，若一切正常，则忽略此步骤。
+因为在注册账号时，您已经提供了公钥，所以若一切正常，请忽略此步骤。
 
-若您想要手动添加公钥：
-- 使用*Jupyter*的终端，将公钥`id_rsa.pub`添加至`~/.ssh/authorized_keys`即可
-- 将公钥`id_rsa.pub`通过[邮件发送](https://gravity-doc.github.io/#contact)给我们，我们将帮您添加。
+有**两种方式**添加公钥：
+- 使用*Jupyter*的终端，将公钥`id_rsa_Gravity.pub`添加至`~/.ssh/authorized_keys`即可
+- 将公钥`id_rsa_Gravity.pub`通过[邮件发送](https://gravity-doc.github.io/#contact)给我们，我们将帮您添加。
 
 ### 3. 登陆
 Gravity拥有两个登陆节点：
