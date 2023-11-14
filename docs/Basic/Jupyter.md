@@ -163,7 +163,7 @@ source /etc/profile.d/modules.sh
 module load gsl/2.5
 
 # set environment variable
-export LD_LIBRARY_PATH=/home/lalala/mylib:/home/.local/fftw/lib
+export LD_LIBRARY_PATH=/home/lalala/mylib:/home/.local/fftw/lib:$LD_LIBRARY_PATH
 
 # go on ... (start ipython) DO NOT delete the last line!!!
 exec "$@"
