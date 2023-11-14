@@ -90,7 +90,7 @@ You can set up your `~/.ssh/config` to **simplify** your command😎 as followin
 Edit your `~/.ssh/config` like this:      
 ```
 
-    ```
+```
 Host login01
     HostName login01.gravity.sjtu.edu.cn
     User lalala
@@ -101,20 +101,20 @@ Host login02
     User lalala
     Port 22
     IdentityFile ~/.ssh/id_rsa_Gravity
-    ```
+```
 
 Add your private key to local ssh-agent:   
 
-    ```bash
+```bash
 ssh-add ~/.ssh/id_rsa_Gravity
-    ```
+```
 
 Here we go 🥳      
 
-    ```bash
+```bash
 ssh login01
 ssh login02
-    ```
+```
 
 
 ### Software
