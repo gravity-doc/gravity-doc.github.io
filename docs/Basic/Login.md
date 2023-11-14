@@ -47,21 +47,22 @@ The key's randomart image is:
 
 It will generate two files:
 - `id_rsa_Gravity` (*private key*)
-    ```
-    -----BEGIN RSA PRIVATE KEY-----
-    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
-    W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
-    ...   
-    ...   
-    ...   
-    ...  
-    -----END RSA PRIVATE KEY-----
-    ```
+  ```
+-----BEGIN RSA PRIVATE KEY-----
+W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+W/3KhaiVDWwqakE+SnqRetPLUBym6wSVkq1Gqym6wSVkq1GqW/3Kh   
+...   
+...   
+...   
+...  
+-----END RSA PRIVATE KEY-----
+  ```
 
 - `id_rsa_Gravity.pub` (*public key*)
-    ```
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcjFKepF608tQHKbrBJWSrUapb/cqFqJUNbCpqQT5UTzCY2j5CjlpNdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg3eHlDAVaM5nlP2Rk+z+7CG0lzcpH7BERKIQ== lalala@Gravity
-    ```
+  ```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcjFKepF608tQHKbrBJWSrUapb/cqFqJUNbCpqQT5UTzCY2j5CjlpNdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxg3eHlDAVaM5nlP2Rk+z+7CG0lzcpH7BERKIQ== lalala@Gravity
+  ```
+
 
 
 ### 2. add `public key` to Gravity
@@ -80,40 +81,41 @@ Gravity has two login nodes:
 ssh -i <your_ssh_private_key> <username>@gravity.sjtu.edu.cn
 
 # for example 🌰
-ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
+ssh -i /home/lalala/.ssh/id_rsa_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
 ```tip
-You can set up your `~/.ssh/config` to **simplify** your command😎 as following:
+You can set up your `~/.ssh/config` to **simplify** your command😎 as following:   
 
 Edit your `~/.ssh/config` like this:      
+```
 
     ```
-    Host login01
-        HostName login01.gravity.sjtu.edu.cn
-        User lalala
-        Port 22
-        IdentityFile ~/.ssh/id_For_Gravity
-    Host login02
-        HostName gravity.sjtu.edu.cn
-        User lalala
-        Port 22
-        IdentityFile ~/.ssh/id_rsa_For_Gravity
+Host login01
+    HostName login01.gravity.sjtu.edu.cn
+    User lalala
+    Port 22
+    IdentityFile ~/.ssh/id_rsa_Gravity
+Host login02
+    HostName gravity.sjtu.edu.cn
+    User lalala
+    Port 22
+    IdentityFile ~/.ssh/id_rsa_Gravity
     ```
 
 Add your private key to local ssh-agent:   
 
     ```bash
-    ssh-add ~/.ssh/id_rsa_For_Gravity
+ssh-add ~/.ssh/id_rsa_Gravity
     ```
 
 Here we go 🥳      
 
     ```bash
-    ssh login01
-    ssh login02
+ssh login01
+ssh login02
     ```
-```
+
 
 ### Software
 If you do not like😒 the original terminal, here are some alternative softwares:
@@ -263,7 +265,7 @@ Gravity拥有两个登陆节点：
 ```bash
 ssh -i <你的私钥> <用户名>@gravity.sjtu.edu.cn
 # 举个栗子 🌰
-ssh -i /home/lalala/.ssh/id_rsa_For_Gravity lalala@gravity.sjtu.edu.cn
+ssh -i /home/lalala/.ssh/id_rsa_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
 ```tip
@@ -277,12 +279,12 @@ Host login01
     HostName login01.gravity.sjtu.edu.cn
     User lalala
     Port 22
-    IdentityFile ~/.ssh/id_For_Gravity
+    IdentityFile ~/.ssh/id_rsa_Gravity
 Host login02
     HostName gravity.sjtu.edu.cn
     User lalala
     Port 22
-    IdentityFile ~/.ssh/id_rsa_For_Gravity
+    IdentityFile ~/.ssh/id_rsa_Gravity
 ```
 
 搞定！ 🥳 
