@@ -99,17 +99,17 @@ qdel 36162  # 36162 is your jobID
 | `sinfo`                                                      | overview of nodes (*slurm*)                                  |
 | `module av`                                                  | modules **available**                                        |
 | `module list`                                                | modules loaded                                               |
-| `module load anaconda/anaconda-mamba`                        | **load** module                                              |
-| `module unload anaconda/anaconda-mamba`                      | **unload** module                                            |
+| `module load anaconda/anaconda/conda-4.12.0`                        | **load** module                                              |
+| `module unload anaconda/anaconda/conda-4.12.0`                      | **unload** module                                            |
 | `module purge`                                               | **unload all** modules                                       |
 | `conda env list`                                             | see conda environment                                        |
 | `conda activate <env_name>`                                  | activate environment                                         |
 | `conda deactivate`                                           | deactivate environment                                       |
-| `conda create -n myenv python=3.7 matplotlib scipy astropy`  | create a virtual environment                                 |
+| `conda create -n myenv python=3.9 matplotlib scipy astropy`  | create a virtual environment                                 |
 | `conda create -n new_env --clone old_env`                    | clone `new_env` from `old_env`                               |
 | `conda search emcee`                                         | search package                                               |
 | `conda install -c conda-forge emcee`                         | install package                                              |
-| `mamba create -n myenv python=3.7 matplotlib scipy astropy`  | ⚡ create a virtual environment                               |
+| `mamba create -n myenv python=3.9 matplotlib scipy astropy`  | ⚡ create a virtual environment                               |
 | `mamba create -n new_env --clone old_env`                    | ⚡ clone `new_env` from `old_env`                             |
 | `mamba search emcee`                                         | ⚡ search package                                             |
 | `mamba install -c conda-forge emcee`                         | ⚡ install package                                            |
