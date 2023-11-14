@@ -3,11 +3,6 @@ sort: 6
 title: Jupyter
 ---
 # Jupyter
-```danger
-[OLD Jupyter](https://gravity.sjtu.edu.cn/)'s `username`+`password` login method will be **Deprecated** in the near future!   
-
-Please use [NEW Jupyter](https://jupyter.gravity.sjtu.edu.cn/)'s [**2FA**](https://gravity-doc.github.io/Basic/Login.html#web-login) login method now
-```
 
 ```tip
 [**JupyterHub**](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨ 
@@ -16,22 +11,23 @@ Please use [NEW Jupyter](https://jupyter.gravity.sjtu.edu.cn/)'s [**2FA**](https
 - You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎     
 
 You can access *Jupyter* on our website:   
-- [Old Jupyter](https://gravity.sjtu.edu.cn) (will be **deprecated** soon)
-- [New Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
+- [Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
 
 - PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
 ```
 
 ```warning
-**DO NOT** run heavy program on login nodes ❌🙅❌   
+**DO NOT** run heavy program on *login nodes* ❌🙅❌   
 
-If you fail to log in, **DO NOT** try many times, your IP will be **banned** for a period of time 😭
+If you fail to log in, **DO NOT** try many times, your IP will **be banned** for a period of time 😭
 ```
 
 
 ## Login   
 Visit website:
-- https://jupyter.gravity.sjtu.edu.cn
+```http
+https://jupyter.gravity.sjtu.edu.cn
+```
 
 click *Jupyter* button
 
@@ -62,69 +58,157 @@ configure resource you want
 
 ### Start kernel
 we provide some kernels, installed many useful packages 🎉
-- Python2.7
-- Python3.7
-- Julia
-- R
+- *Python2.7 (sys)* (`/opt/conda/conda-4.12.0/envs/python2`)
+- *Python3.7 (sys)* (`/opt/conda/conda-4.12.0/envs/python3`)
+- *Julia (sys)*
+- *R (sys)*
 
 ![kernels](../images/Basic/jupyterhub-kernel.png)
 
 You have no permission to install new package in system kernels.
 So, if there is **no package** you want or you want to **create your own kernel**, do as following:
 
-### Create kernel
-load conda module
+### Create new environment/kernel
+load anaconda
 
 ```bash
-module load anaconda/conda-4.12.0
-```
-
-activate base environment (or other environment you like)
-
-```bash
-source activate
+module load anaconda/conda-4.12.0 && source activate
 ```
 
 create a new environment
 
 ```bash
-conda create -n myenv  # or ⚡ mamba create -n myenv
+conda create -n myenv  
+# or use mamba, it's much faster ⚡⚡⚡
+mamba create -n myenv
 ```
 
-activate your own environment
+activate your own environment, here named `myenv`
 
 ```bash
 conda activate myenv
 ```
 
-install packages you like
+install packages you want, here we install `camb` and `ipykernel`
 
 ```bash
-conda install -c conda-forge camb ipykernel # or ⚡ mamba install -c conda-forge camb ipykernel
+conda install -c conda-forge camb ipykernel
+# or use mamba, it's much faster ⚡⚡⚡ 
+mamba install -c conda-forge camb ipykernel
 ```
 
-install ipykernel (so that we can use this environment in *Jupyter*)
+install ipykernel (so that we can use this environment/kernel in *Jupyter*)
 
 ```bash
 python -m ipykernel install --user --name myenv 
 ```
 
-Now, refresh your *Jupyter*, and you should be able to see your newly configured kernel. Select it for your notebook. enjoy 🎉
+Now, refresh your *Jupyter*, and you can see your newly configured kernel. Select it for your notebook. enjoy 🎉
 
 ```tip
 
   The kernel name is also displayed in the top right corner of your notebook. To see the exact path for this environment:
 
-  `import sys`
+  `import sys`   
   
-  `sys.executable`
+  `sys.executable`   
 
   This will show the path of the python executable for the current notebook.
 ```
 
+### Clone environment/kernel
+If you wanna clone an existing environment, you can do as following:   
+For example, we wanna clone *Python3.7 (sys)* (`/opt/conda/conda-4.12.0/envs/python3`) to `myenv`   
+
+```bash
+# load anaconda
+module load anaconda/conda-4.12.0 && source activate
+
+# clone environment
+conda create -n myenv --clone /opt/conda/conda-4.12.0/envs/python3
+# or use mamba, it's much faster ⚡⚡⚡
+mamba create -n myenv --clone /opt/conda/conda-4.12.0/envs/python3
+
+# activate environment
+conda activate myenv
+
+# install ipykernel
+python -m ipykernel install --user --name myenv 
+```
+
+Now, refresh your *Jupyter*, and you can see your newly configured kernel. Select it for your notebook. enjoy 🎉
+
+### Set environment variables
+If your package needs some environment variables, like `LD_LIBRARY_PATH`, you need to edit the `kernel.json` file.   
+For example🌰, we wanna set `LD_LIBRARY_PATH=/home/lalala/mylib:/home/.local/fftw/lib` and `module load gsl/2.5` for `myenv` environment/kernel   
+
+First, we need to create a `helper_myenv.sh` script, which will be called by `kernel.json`.
+
+```bash
+# create a script and give it execution permission
+touch ~/.local/helper_myenv.sh && chmod +x ~/.local/helper_myenv.sh
+# edit it with vim
+vim ~/.local/helper_myenv.sh
+```
+
+copy the following code to `helper_myenv.sh`, and save it
+
+```bash
+#!/bin/bash
+
+# activate module command
+source /etc/profile.d/modules.sh
+
+# load what you need or change environment variable
+module load gsl/2.5
+
+# set environment variable
+export LD_LIBRARY_PATH=/home/lalala/mylib:/home/.local/fftw/lib
+
+# go on ... (start ipython) DO NOT delete the last line!!!
+exec "$@"
+```
+
+Next, we need to call this script in `~/.local/share/jupyter/kernels/myenv/kernel.json`, we **only need** to add one line below `"argv": [`.  Remember to use **absolute path** of `helper_myenv.sh`!
+
+
+This is the original `kernel.json` file👇
+
+```json
+{
+ "display_name": "myenv", 
+ "language": "python", 
+ "argv": [
+  "/home/lalala/.conda/envs/myenv/bin/python",
+  "-m", 
+  "ipykernel_launcher", 
+  "-f", 
+  "{connection_file}"
+ ]
+}
+```
+
+This is the modified `kernel.json` file👇
+
+```json
+{
+ "display_name": "myenv", 
+ "language": "python", 
+ "argv": [
+  "/home/lalala/.local/helper_myenv.sh",
+  "/home/lalala/.conda/envs/myenv/bin/python",
+  "-m", 
+  "ipykernel_launcher", 
+  "-f", 
+  "{connection_file}"
+ ]
+}
+```
+
+Now, refresh your *Jupyter*, and your `myenv` kernel will have the environment variables you set. enjoy 🎉
 ### Shutdown Jupyter
 
-- If you want to close it **temporarily**, hoping it is still running on *Gravity*, just **close your browser**.
+- If you want to close it **temporarily**, hoping it is still running background on *Gravity*, just **close your browser**.
 
 - If you want to shutdown it **permanently**, click **File -> Hub Control Panel -> Stop My server**
 
@@ -134,7 +218,7 @@ Now, refresh your *Jupyter*, and you should be able to see your newly configured
 
 ## Tips
 
-### Classic Notebook (too old)
+### Classic Notebook (old but fast)
 If you prefer the **traditional jupyter-notebook**, it is faster than *JupyterLab*.
 
 ![classic notebook](../images/Basic/jupyterhub-classic-notebook.png)
