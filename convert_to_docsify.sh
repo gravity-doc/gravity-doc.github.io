@@ -36,7 +36,7 @@ process_markdown() {
         /^```(danger|warning|note|tip)[[:space:]]*$/! {
             s/^[>-][[:space:]]*//
             s/^[[:digit:]]+\.*//
-            /^$/d
+            /^[[:space:]]*$/d
         }
         s/^```(danger|warning)[[:space:]]*$/!> \*\*Important\*\*⚠️/
         s/^```(note|tip)[[:space:]]*$/?> \*\*Tip\*\*💡/
