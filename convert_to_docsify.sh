@@ -22,11 +22,17 @@ else
     mv "$source_file" "$target_file"
 fi
 
-# Delete start part of the file using awk
-find . -type f -name "*.md" -exec awk '/^---$/ { p = !p; next } !p' {} > {}.tmp && mv {}.tmp {} \;
+# Function to process markdown files
+process_markdown() {
+    echo "Processing $1"
+    # remove part of "--- ... ---"
+    sed -i '/^---$/,/^---$/d' "$1"
+    # convert HTML image to markdown image
+    sed -i 's|<img src="[^"]*/images/\([^"]*\)" .* />|![\1](\0)|g' "$1"
+}
 
-# # Convert images path using sed
-# find . -type f -name "*.md" -exec sed -i 's|\.\./images/\(.*\.png\)|./images/\1|g' {} +
+# Process markdown files using find and process_markdown function
+find . -type f -name "*.md" -exec bash -c 'process_markdown "$0"' {} \;
 
 # Build Docker image of docsify
 if [ -d "docs" ] && [ "$(id -u)" = "0" ]; then
@@ -36,3 +42,5 @@ if [ -d "docs" ] && [ "$(id -u)" = "0" ]; then
 else
     echo "docs directory does not exist or you are not root"
 fi
+
+echo "Done"
