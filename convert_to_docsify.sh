@@ -31,6 +31,8 @@ process_markdown() {
     sed -i 's|<img src="[^"]*/images/\([^"]*\)" .* />|![\1](\0)|g' "$1"
 }
 
+export -f process_markdown
+
 # Process markdown files using find and process_markdown function
 find . -type f -name "*.md" -exec bash -c 'process_markdown "$0"' {} \;
 
