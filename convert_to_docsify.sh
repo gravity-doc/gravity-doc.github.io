@@ -25,16 +25,24 @@ fi
 # Function to process markdown files
 process_markdown() {
     echo "Processing $1"
-    # remove part of "--- ... ---"
+    # Remove part of "--- ... ---"
     sed -i '/^---[[:space:]]*$/,/^---[[:space:]]*$/d' "$1"
-    # convert HTML image to markdown image
+
+    # Convert HTML image to markdown image
     sed -i 's|<img src="\(.*\)/\([^"/]*\)"[^>]*>|![\2](\1/\2)|g' "$1"
-    
+
     # Convert danger, warning, note, and tip blocks
-    sed -i -e '/^```[[:space:]]*danger[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*danger[[:space:]]*$/!>\*\*Important\*\*\n/; t; }' \
-           -e '/^```[[:space:]]*warning[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*warning[[:space:]]*$/!>\*\*Important\*\*\n/; t; }' \
-           -e '/^```[[:space:]]*note[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*note[[:space:]]*$/?>\*\*Important\*\*\n/; t; }' \
-           -e '/^```[[:space:]]*tip[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*tip[[:space:]]*$/?>\*\*Tip\*\*\n/; t; }' "$1"
+    sed -i -E -e '/^```(danger|warning|note|tip)[[:space:]]*$/,/^```[[:space:]]*$/ {
+        /^```(danger|warning|note|tip)[[:space:]]*$/! {
+            s/^[>-][[:space:]]*//
+            s/^[[:digit:]]+\.*//
+            /^$/d
+        }
+        s/^```(danger|warning)[[:space:]]*$/!> \*\*Important\*\*⚠️/
+        s/^```(note|tip)[[:space:]]*$/?> \*\*Tip\*\*💡/
+        s/```[[:space:]]*$//
+        t
+    }' "$1"
 }
 
 export -f process_markdown
