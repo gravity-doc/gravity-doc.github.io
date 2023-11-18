@@ -11,6 +11,13 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     exit 1
 fi
 
+# switch to docsify branch
+git checkout docsify
+# undo any changes
+git checkout .
+# pull latest changes
+git pull
+
 source_file="docs/index.md"
 target_file="docs/README.md"
 
