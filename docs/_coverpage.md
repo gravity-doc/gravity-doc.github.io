@@ -1,5 +1,4 @@
-<img src="./images/logo_DOA_large.png" width="600">   
+<img src="images/logo_DOA_large.png" width="600">   
 
-[Gravity Home](https://jupyter.gravity.sjtu.edu.cn/)
-
+[GitHub](https://github.com/gravity-doc/gravity-doc.github.io)
 [Get started](/README.md)
