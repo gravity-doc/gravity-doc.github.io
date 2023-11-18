@@ -28,45 +28,13 @@ process_markdown() {
     # remove part of "--- ... ---"
     sed -i '/^---[[:space:]]*$/,/^---[[:space:]]*$/d' "$1"
     # convert HTML image to markdown image
-    sed -i 's|<img src="[^"]*/images/\([^"]*\)" .* />|![\1](\0)|g' "$1"
+    sed -i 's|<img src="\(.*\)/\([^"/]*\)"[^>]*>|![\2](\1/\2)|g' "$1"
+    
     # Convert danger, warning, note, and tip blocks
-    awk '/^```danger$/,/^```$/ {
-        if ($0 == "```danger```") {
-            print "  ?> **Important**"
-            next
-        }
-        if ($0 != "```") {
-            print "  >", substr($0, 5)
-        }
-    }
-    /^```warning$/,/^```$/ {
-        if ($0 == "```warning```") {
-            print "  ?> **Important**"
-            next
-        }
-        if ($0 != "```") {
-            print "  >", substr($0, 5)
-        }
-    }
-    /^```note$/,/^```$/ {
-        if ($0 == "```note```") {
-            print "  ?> **Important**"
-            next
-        }
-        if ($0 != "```") {
-            print "  >", substr($0, 5)
-        }
-    }
-    /^```tip$/,/^```$/ {
-        if ($0 == "```tip```") {
-            print "  !> **Tip**"
-            next
-        }
-        if ($0 != "```") {
-            print "  >", substr($0, 5)
-        }
-    }
-    { print }' "$1" > "$1.tmp" && mv "$1.tmp" "$1"
+    sed -i -e '/^```[[:space:]]*danger[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*danger[[:space:]]*$/!>\*\*Important\*\*\n/; t; }' \
+           -e '/^```[[:space:]]*warning[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*warning[[:space:]]*$/!>\*\*Important\*\*\n/; t; }' \
+           -e '/^```[[:space:]]*note[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*note[[:space:]]*$/?>\*\*Important\*\*\n/; t; }' \
+           -e '/^```[[:space:]]*tip[[:space:]]*$/,/^```[[:space:]]*$/ { s/^```[[:space:]]*tip[[:space:]]*$/?>\*\*Tip\*\*\n/; t; }' "$1"
 }
 
 export -f process_markdown
