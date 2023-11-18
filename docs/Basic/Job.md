@@ -640,7 +640,7 @@ One can submit a job via the `qsub` command.
 `[-W additional_attributes]` `[-z]` `[script]`
 
 We recommend submit jobs via the job scripts 👉 `qsub JOB_SCRIPT`.
-For job script sample, check the [samples](https://gravity-doc.github.io/Basic/Job.html#Submission).
+For job script sample, check the [samples](/Basic/Job?id=basic-example).
 
 ### check the job status
 

@@ -74,7 +74,7 @@ You will be asked to provide your *public key* (`id_rsa_Gravity.pub`) when regis
 There are **two ways** to add (*append*) `public key`:
 
 - use *Jupyter's* *terminal* to **append** `id_rsa_Gravity.pub` to `~/.ssh/authorized_keys`
-- send the `id_rsa_Gravity.pub` and your `username` [via email📧](https://gravity-doc.github.io/#contact), we will help you to add it
+- send the `id_rsa_Gravity.pub` and your `username` [via email📧](/?id=contact), we will help you to add it
 
 ### 3. log in
 
@@ -276,7 +276,7 @@ The key's randomart image is:
 有**两种方式**添加公钥：
 
 - 使用*Jupyter*的终端，将公钥`id_rsa_Gravity.pub`添加至`~/.ssh/authorized_keys`即可
-- 将公钥`id_rsa_Gravity.pub`通过[邮件发送](https://gravity-doc.github.io/#contact)给我们，我们将帮您添加。
+- 将公钥`id_rsa_Gravity.pub`通过[邮件发送](/?id=contact)给我们，我们将帮您添加。
 
 ### 3. 登陆
 

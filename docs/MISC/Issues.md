@@ -6,7 +6,7 @@ title: Issues
 # Issues
 
 ```note
-If there is **NO** solution of your problem, feel free to [contact us](https://gravity-doc.github.io/#Contact)!
+If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
 ```
 
 ```danger

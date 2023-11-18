@@ -6,7 +6,7 @@ title: X11 Tunnel
 # X11 Tunnel
 ```note
 Running graphical software on Gravity with [X11 tunneling](https://en.wikipedia.org/wiki/X_Window_System)   
-Actually, sometimes using **[VNC](https://gravity-doc.github.io/Advanced/VNC.html)** is better 😜   
+Actually, sometimes using **[VNC](/Advanced/VNC)** is better 😜   
 X11 allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using    
 - `eog`
 - `display`
@@ -17,7 +17,7 @@ Or, you can even run a browser
 
 ## Windows
 
-For Windows users, we recommend you to use **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)**. It comes with built-in X11 support, so you don't need to do any extra steps. Just [login Gravity](https://gravity-doc.github.io/Basic/Login.html). Once you are connected, you can connect to an interactive compute node using the -X switch, for example 🌰
+For Windows users, we recommend you to use **[MobaXTerm](https://mobaxterm.mobatek.net/download.html)**. It comes with built-in X11 support, so you don't need to do any extra steps. Just [login Gravity](/Basic/Login). Once you are connected, you can connect to an interactive compute node using the -X switch, for example 🌰
 
 ```bash
 qsub -I -X -v DISPLAY -l nodes=1:ppn=72,mem=1gb,walltime=12:00:00 -q normal

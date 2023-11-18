@@ -1,4 +1,4 @@
-## [Gravity Documentation](https://gravity-doc.github.io)
+## [Gravity Documentation](/README.md)
  This is the documentation for the **Gravity Cluster** of [Department of Astronomy (DOA)](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
 
 ```tip

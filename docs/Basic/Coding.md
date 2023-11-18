@@ -12,7 +12,7 @@ title: Coding
 You can access *Jupyter* on our website:   
 - [Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
 
-- PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
+- PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](/Basic/Login?id=web-login)
 ```
 
 ```warning
@@ -36,7 +36,7 @@ click *Jupyter* button
 ![login](../images/Basic/index.png)
 
 input *username* + *password* + *TOTP*   
-[more details about authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
+[more details about authentication](/Basic/Login?id=web-login)
 
 ![login](../images/Basic/auth_login_2fa.png)
 

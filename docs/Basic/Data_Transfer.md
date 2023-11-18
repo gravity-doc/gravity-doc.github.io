@@ -14,7 +14,7 @@ techniques with graphical user interface support.
 ```note
 You need to `copy`/`move` your files into `~/.fileServer` to use *FileServer*.   
 
-If you need to **share massive data**, feel free to [contact admin🧙‍](https://gravity-doc.github.io/#contact)
+If you need to **share massive data**, feel free to [contact admin🧙‍](/?id=contact)
 
 This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
 ```
@@ -25,7 +25,7 @@ You can access *fileserver* via:
 - https://jupyter.gravity.sjtu.edu.cn/file/
 - https://gravity.sjtu.edu.cn/file/
 
-Cause we enable **2FA**, you need to install *Authenticator App* at the first time. See [more details here](https://gravity-doc.github.io/Basic/Login.html#web-login).
+Cause we enable **2FA**, you need to install *Authenticator App* at the first time. See [more details here](/Basic/Login?id=web-login).
 
 ### properties
 1. **share file** 🎉🎉🎉 (you can set **password/limiting time** of your sharing files)

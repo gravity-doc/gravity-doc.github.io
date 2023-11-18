@@ -11,7 +11,7 @@ Also, you can just ignore `module` if you do not have **too many** tools or they
 
 # Use modules
 
-Gravity provides a lot of softwares and libraries pre-installed through the `module` tool, as documented on [this page](https://gravity-doc.github.io/Software/Software-Installed.html).
+Gravity provides a lot of softwares and libraries pre-installed through the `module` tool, as documented on [this page](/Software/Software_Installed).
 
 ## Add your own modulefiles
 

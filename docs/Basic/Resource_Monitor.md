@@ -2,10 +2,12 @@
 sort: 4
 title: Resource Monitor
 ---
-# Resource Monitor
 
 ## Web interface
-Considering the security 🛡️, you have to use [**SSH tunnel** to access it](https://gravity-doc.github.io/Advanced/status_website.html).
+
+- You can access the [*Inspur Management Web*](https://gravity.sjtu.edu.cn/inspur/) to check your Job status/history and resource usage.
+
+- You can also use [**SSH tunnel** to access it](/Advanced/status_website?id=ssh-tunnel-access).
 
 
 ## User information
@@ -20,6 +22,7 @@ No Plan.
 ```
 
 ## Disk quota
+
 You can use the command on **login01** or **login02**: `icfsquota username` or `icfsquota`, just like this: 
 
 ```bash
@@ -62,12 +65,14 @@ Disk quotas for user lalala (uid 666):
 ```
 
 Each account has a default quota of 
+
 - **10GB** at `/home/username`
 - **1TB** at `/mnt/ddnfs/data_users/username`
 
 Gravity **Home Directory** is mounted at `/gravity/home`  
 
 ## CPU time usage and cost
+
 You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
 
 ```bash

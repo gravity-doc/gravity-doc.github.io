@@ -5,9 +5,9 @@ title: Account
 
 ## Apply for a NEW Account
 ```note
-请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。  
+请仔细阅读[用户协议](/Policy)，并征求导师同意。  
 
-Please make sure you have read the [user policy](https://gravity-doc.github.io/Policy.html), and get consent of your sponsor/supervisor before application.
+Please make sure you have read the [user policy](/Policy), and get consent of your sponsor/supervisor before application.
 ```
 
 Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form, we will send an e-mail📧 to you after a while.
@@ -16,8 +16,9 @@ Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id
 
 You will receive an email once your account is created.
 The initial password is included.
+
 1. In terminal, you can use `yppasswd` or `passwd` to change your password.
-2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Login.html#web-login)
+2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](/Basic/Login?id=web-login)
 
 
 ```tip
@@ -55,7 +56,7 @@ If you forget your password, don't worry!
 4. 密码中至少包含字母和数字
 
 ## Change Email📧
-If you want to change your email📧, please [contact us](https://gravity-doc.github.io/#contact), provide your **username** and **NEW email**.
+If you want to change your email📧, please [contact us](/?id=contact), provide your **username** and **NEW email**.
 
 ## SGI Account
 
@@ -73,6 +74,7 @@ ssh sgi
 ```
 
 Each account has a default quota of 
+
 - **10GB** at `/home/username`
 - **1TB** at `/mnt/ddnfs/data_users/username`
 
