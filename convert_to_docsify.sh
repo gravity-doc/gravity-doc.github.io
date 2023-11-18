@@ -26,9 +26,47 @@ fi
 process_markdown() {
     echo "Processing $1"
     # remove part of "--- ... ---"
-    sed -i '/^---$/,/^---$/d' "$1"
+    sed -i '/^---[[:space:]]*$/,/^---[[:space:]]*$/d' "$1"
     # convert HTML image to markdown image
     sed -i 's|<img src="[^"]*/images/\([^"]*\)" .* />|![\1](\0)|g' "$1"
+    # Convert danger, warning, note, and tip blocks
+    awk '/^```danger$/,/^```$/ {
+        if ($0 == "```danger```") {
+            print "  ?> **Important**"
+            next
+        }
+        if ($0 != "```") {
+            print "  >", substr($0, 5)
+        }
+    }
+    /^```warning$/,/^```$/ {
+        if ($0 == "```warning```") {
+            print "  ?> **Important**"
+            next
+        }
+        if ($0 != "```") {
+            print "  >", substr($0, 5)
+        }
+    }
+    /^```note$/,/^```$/ {
+        if ($0 == "```note```") {
+            print "  ?> **Important**"
+            next
+        }
+        if ($0 != "```") {
+            print "  >", substr($0, 5)
+        }
+    }
+    /^```tip$/,/^```$/ {
+        if ($0 == "```tip```") {
+            print "  !> **Tip**"
+            next
+        }
+        if ($0 != "```") {
+            print "  >", substr($0, 5)
+        }
+    }
+    { print }' "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
 
 export -f process_markdown
