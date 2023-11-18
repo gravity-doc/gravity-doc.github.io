@@ -27,10 +27,12 @@
         repo: 'https://github.com/gravity-doc/gravity-doc.github.io/',
         logo: 'https://git.gravity.sjtu.edu.cn/gravity-hpc/gravity-doc/-/raw/master/docs/images/logo_DOA_mini.png',
         search: {
+            maxAge: 2592000000,
             paths: 'auto',
             placeholder: 'Search / 搜索关键词',
             noData: 'No results / 无结果 ╥﹏╥...',
-            depth: 2
+            depth: 6,
+            hideOtherSidebarContent: true
         },
         busuanzi: true,
         count:{
@@ -43,15 +45,15 @@
 
   </script>
   <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script> -->
   <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
 
   <!-- latex -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script> -->
 
   <!-- 图像缩放 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
@@ -59,8 +61,9 @@
   <!-- 文档内页目录 -->
   <!-- <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script> -->
 
-  <!-- python 内联代码 -->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
 
   <!-- busuanzi统计 -->
   <script src="https://unpkg.com/docsify-busuanzi@1.0.1/dist/docsify-busuanzi.min.js"></script>
