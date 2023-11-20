@@ -5,8 +5,14 @@ title: Updates
 
 ## Future ✨
 
-- [ ] support container (Singularity)
-- [ ] switch to Slurm (PBS will be **Deprecated**)
+- [ ] support container (*Singularity* + *Kubernetes*)
+  - [ ] migrate the entire Jupyter to Kubernetes
+- [ ] switch to Slurm (*PBS* will be **Deprecated**)
+  - [ ] enable resource limit on computing nodes (use `cgroup`)
+- [ ] update *NIS* to *LDAP* authentication (*NIS* will be **Deprecated**)
+  - [ ] Automatically handle new user registration and verification
+- [ ] enable **load-balancing** for Gravity website
+- [ ] add **real-time monitoring** and **alarm** for sensitive files modification
 
 ## Done 🥳
 
