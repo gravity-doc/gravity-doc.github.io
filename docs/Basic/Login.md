@@ -17,10 +17,15 @@ If you fail to login, please do not try many times. Otherwise your IP will be **
 
 ### 1. generate `ssh-key`
 
-To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), open a terminal (*Linux/Windows/Mac*) (it is recommended to set a *passphrase* for your *private key*, more secure😊):
+To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), open a terminal (*Linux/Windows/Mac*) 
 
 ```bash
 ➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
+
+```tip
+You will be asked to input a passphrase when generating your key.
+It is highly recommended to use an non-empty passphrase.
+``` 
 
 # Output👇
 Generating public/private rsa key pair.
