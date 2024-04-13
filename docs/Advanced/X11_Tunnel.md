@@ -1,19 +1,14 @@
----
-sort: 1
-title: X11 Tunnel
----
 
 # X11 Tunnel
-```note
-Running graphical software on Gravity with [X11 tunneling](https://en.wikipedia.org/wiki/X_Window_System)   
-Actually, sometimes using **[VNC](/Advanced/VNC)** is better 😜   
-X11 allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using    
-- `eog`
-- `display`
-
-Or, you can even run a browser
-- `firefox`
-```
+> [!NOTE]
+> Running graphical software on Gravity with [X11 tunneling](https://en.wikipedia.org/wiki/X_Window_System)   
+> Actually, sometimes using **[VNC](/Advanced/VNC)** is better 😜   
+> X11 allows you to run a **graphical application** on the *login* or *computing node*, and to control it from your local computer. For example, you can **view images** in the *Gravity* using    
+> `eog`
+> `display`
+> Or, you can even run a browser
+> `firefox`
+> 
 
 ## Windows
 

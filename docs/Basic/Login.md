@@ -1,17 +1,12 @@
----
-sort: 2
-title: Login
----
 
-```note
-For enhanced security, we have enabled **2 Factor Authentication (2FA)** on web login. You need to install an *Authenticator app* to log into the web interface.    
+> [!NOTE]
+> For enhanced security, we have enabled **2 Factor Authentication (2FA)** on web login. You need to install an *Authenticator app* to log into the web interface.    
+> Using `ssh` to log in only requires your **ssh private key** as before.
+> 
 
-Using `ssh` to log in only requires your **ssh private key** as before.
-```
-
-```danger
-If you fail to login, please do not try many times. Otherwise your IP will be **banned** for a period of time 😭
-```
+> [!ATTENTION]
+> If you fail to login, please do not try many times. Otherwise your IP will be **banned** for a period of time 😭
+> 
 
 ## SSH login
 
@@ -22,10 +17,10 @@ To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE
 ```bash
 ➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
 
-```tip
-You will be asked to input a passphrase when generating your key.
-It is highly recommended to use an non-empty passphrase.
-``` 
+> [!TIP]
+> You will be asked to input a passphrase when generating your key.
+> It is highly recommended to use an non-empty passphrase.
+> 
 
 # Output👇
 Generating public/private rsa key pair.
@@ -95,11 +90,10 @@ ssh -i <your_ssh_private_key> <username>@gravity.sjtu.edu.cn
 ssh -i /home/lalala/.ssh/id_rsa_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
-```tip
-You can set up your `~/.ssh/config` to **simplify** your command😎 as following:   
-
-Edit your `~/.ssh/config` like this:      
-```
+> [!TIP]
+> You can set up your `~/.ssh/config` to **simplify** your command😎 as following:   
+> Edit your `~/.ssh/config` like this:      
+> 
 
 ```bash
 Host login01
@@ -154,11 +148,10 @@ Any of the listed authenticators below (and many others) will work. You can firs
 
 #### *Android* device
 
-```tip
-If you cannot run *authenticator app* due to **ERROR**: **You do not have Google Services Framework installed**, please [install **Google Services Framework** here](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk).   
-
-若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
-```
+> [!TIP]
+> If you cannot run *authenticator app* due to **ERROR**: **You do not have Google Services Framework installed**, please [install **Google Services Framework** here](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk).   
+> 若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+> 
 
 - [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Google_Authenticator_5.20R3.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
 - [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Microsoft_Authenticator_6.2206.3973.apk) (stored on Gravity, can be accessed from anywhere 🎉🎉🎉)
@@ -183,42 +176,42 @@ If you cannot run *authenticator app* due to **ERROR**: **You do not have Google
 
 open [Gravity Authentication webpage](https://gravity.sjtu.edu.cn/auth/), input your *username* + *password*
 
-<img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
+![auth_login.png](../images/Basic/auth_login.png)
 
 click *Register device* (choose **One-Time Password** method!!!)
 
-<img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
+![auth_add_device.png](../images/Basic/auth_add_device.png)
 
 check your mailbox, click *Register button*
 
-<img src="../images/Basic/auth_email.png" width = "300" height = "200" div align=center />
+![auth_email.png](../images/Basic/auth_email.png)
 
 open your phone's authenticator app
 
-<img src="../images/Basic/auth_QR.png" width = "300" height = "250" div align=center />
+![auth_QR.png](../images/Basic/auth_QR.png)
 
 click *add* button
 
-<img src="../images/Basic/auth_add1.png" width = "180" height = "300" div align=center />
+![auth_add1.png](../images/Basic/auth_add1.png)
 
 *scan* QR code
 
-<img src="../images/Basic/auth_add2.png" width = "180" height = "300" div align=center />
+![auth_add2.png](../images/Basic/auth_add2.png)
 
 input your *Time-based one-time password (TOTP)*, enjoy! 🎉🎉🎉
 
-<img src="../images/Basic/auth_totp.png" width = "300" height = "250" div align=center />
+![auth_totp.png](../images/Basic/auth_totp.png)
 
 # 登陆 Gravity（中文版）
 
-```note
-我们已在网站上启用*2FA*认证，您需要安装2FA应用才能够在网页端登陆    
-若您使用ssh方式登陆，则仅需ssh private key私钥
-```
+> [!NOTE]
+> 我们已在网站上启用*2FA*认证，您需要安装2FA应用才能够在网页端登陆    
+> 若您使用ssh方式登陆，则仅需ssh private key私钥
+> 
 
-```danger
-请勿多次失败登陆，您的IP将会被封禁一段时间 😭   
-```
+> [!ATTENTION]
+> 请勿多次失败登陆，您的IP将会被封禁一段时间 😭   
+> 
 
 ## SSH登陆
 
@@ -296,9 +289,9 @@ ssh -i <你的私钥> <用户名>@gravity.sjtu.edu.cn
 ssh -i /home/lalala/.ssh/id_rsa_Gravity lalala@gravity.sjtu.edu.cn
 ```
 
-```tip
-您可以设置 `~/.ssh/config` 来**简化**命令😎，按照下方操作：    
-```
+> [!TIP]
+> 您可以设置 `~/.ssh/config` 来**简化**命令😎，按照下方操作：    
+> 
 
 像这样修改文件`~/.ssh/config`：
 
@@ -349,9 +342,9 @@ ssh login02
 
 #### *Android* 设备
 
-```tip
-若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
-```
+> [!TIP]
+> 若您无法运行认证器应用，**报错**提示：**您未安装谷歌框架**，请[在这里安装**Google Services Framework**](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/%E8%B0%B7%E6%AD%8C%E6%A1%86%E6%9E%B6_%E5%AE%89%E8%A3%85%E5%99%A8.apk)
+> 
 
 - [Google Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Google_Authenticator_5.20R3.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
 - [Microsoft Authenticator](https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/apk/Microsoft_Authenticator_6.2206.3973.apk) (存储在Gravity，可以从任何地方访问 🎉🎉🎉)
@@ -373,40 +366,39 @@ ssh login02
 
 打开 [Gravity认证页面](https://gravity.sjtu.edu.cn/auth/), 输入您的 *用户名* + *密码*
 
-<img src="../images/Basic/auth_login.png" width = "300" height = "250" div align=center />
+![auth_login.png](../images/Basic/auth_login.png)
 
 点击 *注册设备* （选择**One-Time Password**方式！！！）
 
-<img src="../images/Basic/auth_add_device.png" width = "300" height = "250" div align=center />
+![auth_add_device.png](../images/Basic/auth_add_device.png)
 
 检查您的邮箱，点击 *注册* 按钮
 
-<img src="../images/Basic/auth_email.png" width = "300" height = "200" div align=center />
+![auth_email.png](../images/Basic/auth_email.png)
 
 打开您手机上的 authenticator 应用，准备扫描二维码
 
-<img src="../images/Basic/auth_QR.png" width = "300" height = "250" div align=center />
+![auth_QR.png](../images/Basic/auth_QR.png)
 
 点击*加号*按钮
 
-<img src="../images/Basic/auth_add1.png" width = "180" height = "300" div align=center />
+![auth_add1.png](../images/Basic/auth_add1.png)
 
 点击*扫描二维码*
 
-<img src="../images/Basic/auth_add2.png" width = "180" height = "300" div align=center />
+![auth_add2.png](../images/Basic/auth_add2.png)
 
 输入您的 *二次验证码*, 开始征途吧！🎉🎉🎉
 
-<img src="../images/Basic/auth_totp.png" width = "300" height = "250" div align=center />
+![auth_totp.png](../images/Basic/auth_totp.png)
 
 ## SGI login
 
-```tip
-1. **SGI** is a **standalone** machine, and it has a different OS and disk system.   
-2. **SGI** use *slurm* rather than *pbs* as the job scheduler.   
-   
-**NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
-```
+> [!TIP]
+>  **SGI** is a **standalone** machine, and it has a different OS and disk system.   
+>  **SGI** use *slurm* rather than *pbs* as the job scheduler.   
+> **NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
+> 
 
 You cannot access **SGI** directly, you need to log in **Gravity** first, then on login nodes, use:
 

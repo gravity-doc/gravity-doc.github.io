@@ -1,13 +1,9 @@
----
-sort: 1
-title: FAQ
----
 
 # FAQ
 
-```tip
-If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
-```
+> [!TIP]
+> If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
+> 
 
 ## Permission denied
 
@@ -38,9 +34,9 @@ What if I lost my *ssh-key*? 🛡️
 
 PS. You'd better use **@sjtu.edu.cn**, so that we can recognize who you really are 👀    
 
-```tip
-You may be prompted for a passphrase when login with a ssh-key. This is the password you set-up to protect the key when generating your ssh-key. It is **different** from the password you use for jupyter.
-```
+> [!TIP]
+> You may be prompted for a passphrase when login with a ssh-key. This is the password you set-up to protect the key when generating your ssh-key. It is **different** from the password you use for jupyter.
+> 
 
 ## IP banned
 

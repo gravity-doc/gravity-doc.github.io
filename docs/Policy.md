@@ -1,7 +1,3 @@
----
-sort: 3
-title: Policy
----
 
 # 上海交通大学天文系Gravity超算使用管理方法（试行）
 

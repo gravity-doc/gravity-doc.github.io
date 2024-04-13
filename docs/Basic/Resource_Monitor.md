@@ -1,7 +1,3 @@
----
-sort: 4
-title: Resource Monitor
----
 
 ## Web interface
 
@@ -36,20 +32,18 @@ Max size =  5.00TB , Used size=  4.33TB , Left size=  666.00GB
 
 The default quota per account is `3T`.  
 
-```note
-If you cannot run `icfsquota` successfully😅, please check your permissions setting of `$HOME` foler.   
-`chmod 755 $HOME`   
-So that you can run `icfsquota`🥳
-```
+> [!NOTE]
+> If you cannot run `icfsquota` successfully😅, please check your permissions setting of `$HOME` foler.   
+> `chmod 755 $HOME`   
+> So that you can run `icfsquota`🥳
+> 
 
 If you run out of quota, you can free out space by deleting some files that are no longer needed. If no more files can be deleted, ask your group owner to allocate more disk space to you.
 
-```note
-Files deleted through the graphical desktop will be moved to Trash folder that still takes up space. You can empty the trash if this is the case, through either the desktop or on the command line:
-     
-`rm -rf ./local/share/Trash/*`
-     
-```
+> [!NOTE]
+> Files deleted through the graphical desktop will be moved to Trash folder that still takes up space. You can empty the trash if this is the case, through either the desktop or on the command line:
+> `rm -rf ./local/share/Trash/*`
+> 
 
 You can use the command on **SGI**, `quota -ls` like this
 
@@ -86,9 +80,9 @@ This month [20210501 ~ 20210531] cost:  66 ￥
 ######### Complete usage statistics: https://stat.gravity.sjtu.edu.cn ##########
 ```
 
-```tip
-Your advisor will bear the cost 🥳
-```
+> [!TIP]
+> Your advisor will bear the cost 🥳
+> 
 
 ## PBS 
 

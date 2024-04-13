@@ -1,13 +1,9 @@
----
-sort: 2
-title: User Software Installation
----
 
 
-```tip
-You can use `module` to manage your own software installed   
-Also, you can just ignore `module` if you do not have **too many** tools or they do not **conflict** with each other
-```
+> [!TIP]
+> You can use `module` to manage your own software installed   
+> Also, you can just ignore `module` if you do not have **too many** tools or they do not **conflict** with each other
+> 
 
 # Use modules
 

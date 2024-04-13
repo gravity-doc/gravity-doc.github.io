@@ -1,13 +1,9 @@
----
-sort: 3
-title: Jupyter Lab/Notebook
----
 
-```tip
-We recommend you to use [*JupyterHub*](/Basic/Coding.html), it's more easier and convenient 😜   
-You can also **use your own environment** in [*JupyterHub*](/Basic/Coding?id=create-new-environmentkernel)   
-Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or computing nodes) 👇
-```
+> [!TIP]
+> We recommend you to use [*JupyterHub*](/Basic/Coding.html), it's more easier and convenient 😜   
+> You can also **use your own environment** in [*JupyterHub*](/Basic/Coding?id=create-new-environmentkernel)   
+> Here, we introduce how to connect *jupyter-notebook/lab* on *Gravity* (login or computing nodes) 👇
+> 
 
 1. Prepare your own `jupyter-notebook` (`jupter-lab`) or just use system's module   
    前期准备：拥有自己的conda环境，并且环境中安装配置了jupyter netobook；或者直接使用系统自带的

@@ -1,21 +1,17 @@
----
-sort: 6
-title: Gitlab
----
 
-```note
-There is a *self-hosted* **Gitlab** instance at **Gravity**: [https://git.gravity.sjtu.edu.cn](https://git.gravity.sjtu.edu.cn)
-```
+> [!NOTE]
+> There is a *self-hosted* **Gitlab** instance at **Gravity**: [https://git.gravity.sjtu.edu.cn](https://git.gravity.sjtu.edu.cn)
+> 
 
 ## Login
 
 [Open Gitlab on browser](https://git.gravity.sjtu.edu.cn/), there are **two ways** to login:
 
 1. Your *Gravity* username and password
-    <img src="../images/Advanced/gitlab-passwd-login.png" height = "200" div align=center />
+    ![gitlab-passwd-login.png](../images/Advanced/gitlab-passwd-login.png)
 2. Use *Authelia* authorization at bottom of login page
-    <img src="../images/Advanced/gitlab-authelia-login.png" height = "200" div align=center />
-    <img src="../images/Advanced/gitlab-authelia-confirm.png" height = "200" div align=center />
+    ![gitlab-authelia-login.png](../images/Advanced/gitlab-authelia-login.png)
+    ![gitlab-authelia-confirm.png](../images/Advanced/gitlab-authelia-confirm.png)
 
 
 ## SSH Access

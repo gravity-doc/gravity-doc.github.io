@@ -1,19 +1,15 @@
----
-sort: 2
-title: Issues
----
 
 # Issues
 
-```note
-If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
-```
+> [!NOTE]
+> If there is **NO** solution of your problem, feel free to [contact us](/?id=contact)!
+> 
 
-```danger
-**NEVER EVER** install/update any package at *login01* using `conda/mamba`. Otherwise, your whole conda environment will be destroyed!   
-- You can use `pip install` instead   
-- You can go to *login02* to use `conda/mamba install/create`   
-```
+> [!ATTENTION]
+> **NEVER EVER** install/update any package at *login01* using `conda/mamba`. Otherwise, your whole conda environment will be destroyed!   
+> You can use `pip install` instead   
+> You can go to *login02* to use `conda/mamba install/create`   
+> 
 
 ## **Conda**   
 One recieves '**binary file can not be executed**' after installing of Anaconda latest version (2020-05). 
@@ -39,13 +35,11 @@ snap_001.0.hdf5: unable to open file
 
 This is a known problem in the NFS file system on `login02`. You can switch to read the file on `login01` instead.
 
-```warning
-Alternatively, you may choose to disable hdf5 file locking before reading, by setting the environment variable `HDF5_USE_FILE_LOCKING` to `FALSE`, e.g., in bash:
-
- `export HDF5_USE_FILE_LOCKING=FALSE`
-
-This will disable hdf5 file locking, but you will have to be more careful about opening files to avoid problematic access patterns (i.e.: multiple writers to the same hdf5 file) that the file locking was designed to prevent. 
-```
+> [!WARNING]
+> Alternatively, you may choose to disable hdf5 file locking before reading, by setting the environment variable `HDF5_USE_FILE_LOCKING` to `FALSE`, e.g., in bash:
+>  `export HDF5_USE_FILE_LOCKING=FALSE`
+> This will disable hdf5 file locking, but you will have to be more careful about opening files to avoid problematic access patterns (i.e.: multiple writers to the same hdf5 file) that the file locking was designed to prevent. 
+> 
 
 ## **日志残留问题**        
 

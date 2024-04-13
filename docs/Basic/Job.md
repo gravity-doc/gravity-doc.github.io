@@ -1,14 +1,23 @@
----
-sort: 3
-title: Job
----
 
-```warning
-You **should** run your job via PBS (Torque).     
-You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, you might crash the system and be *banned*.
+> [!WARNING]
+> You **should** run your job via PBS (Torque).     
+> You can **ONLY** do some **simple** jobs on the **login nodes**, otherwise, you might crash the system and be *banned*.
+> Please only request resources that you actually need. **Do not** use more than or less than the number of cores you requested.
+> 
 
-Please only request resources that you actually need. **Do not** use more than or less than the number of cores you requested.
-```
+> [!TIP]
+> Here are some useful commands for you to manage your jobs.   
+>
+> 
+> | command    | explanation     |
+> | :--------: | :--------: |
+> |  `qstat -tan`   |     view all of the jobs in details      |
+> |  `qstat -tan \| grep <username>`   |     view all of the jobs in details of *\<username\>*      |
+> |  `pestat`  |     view all of nodes status     |
+> |  `showq`  |     summary of running/waiting jobs     |
+> |  `qsub -I -q debug -l nodes=1:ppn=72  `  |    submit an interactive job     |
+> |  `qsub pbsJob.sh`  |    submit a job via script     |
+
 
 ## Queues
 
@@ -87,18 +96,16 @@ To submit the job,
 qsub example.qsub
 ```
 
-```tip
-Please only request resources that you actually need. In the above example, a full node (72 cores) is requested. However, if your job uses fewer cores, you should only request that many cores. For example
-`#PBS -l nodes=1:ppn=8`
-to request 8 cores on a single node.
-
-If your job uses OpenMP, you should set the number of threads to match your requested cores. For example, when requesting 8 cores for an OpenMP job, remember to also put the following in your job script before your final program line:
-`export OMP_NUM_THREADS=8`
-.
-
-If you are running a serial job, please only request **one** core:
-`#PBS -l nodes=1:ppn=1`
-```
+> [!TIP]
+> Please only request resources that you actually need. In the above example, a full node (72 cores) is requested. However, if your job uses fewer cores, you should only request that many cores. For example
+> `#PBS -l nodes=1:ppn=8`
+> to request 8 cores on a single node.
+> If your job uses OpenMP, you should set the number of threads to match your requested cores. For example, when requesting 8 cores for an OpenMP job, remember to also put the following in your job script before your final program line:
+> `export OMP_NUM_THREADS=8`
+> .
+> If you are running a serial job, please only request **one** core:
+> `#PBS -l nodes=1:ppn=1`
+> 
 
 ## Complete example
 
@@ -143,20 +150,17 @@ qsub -l nodes=1:ppn=4,mem=8gb,walltime=12:00:00 -q normal -I
 
 You will be logged onto the assigned node once the above job get running, and you can start to run your actual computation interactively. 
 
-```warning
-- Please use the system responsibly and only start an interactive job when necessary. 
-
-- Do not use more resources than requested, otherwise you might affect other jobs or crash the node.
-
-- CPU time will be charged in the same way as normal jobs. Remember to log out of the computing node to end the interactive job. 
-
-```
+> [!WARNING]
+> Please use the system responsibly and only start an interactive job when necessary. 
+> Do not use more resources than requested, otherwise you might affect other jobs or crash the node.
+> CPU time will be charged in the same way as normal jobs. Remember to log out of the computing node to end the interactive job. 
+> 
 
 Reference: [https://www.msi.umn.edu/content/interactive-queue-use-qsub](https://www.msi.umn.edu/content/interactive-queue-use-qsub)
 
-```tip
-The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.
-```
+> [!TIP]
+> The following PBS environment variable list is output by `env | grep PBS`, which maybe useful in your scripts.
+> 
 
 ```bash
 PBS_VERSION=TORQUE-6.0.2
@@ -674,60 +678,60 @@ Use `qstat -u <username>` to show the jobs submitted by one user.
 
 ### References
 
-```note
-`qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
-`[-I]` `[-j join]` `[-k keep]` `[-l resource_list]` `[-m mail_options]`
-`[-M user_list]` `[-N name]` `[-o path]` `[-p priority]` `[-q destination]`
-`[-r c]` `[-S path_list]` `[-u user_list]` `[-v variable_list]` `[-V]`
-`[-W additional_attributes]` `[-z]` `[script]`  
--a  date_time ： delay the job with time [[[[CC]YY]MM]DD]hhmm[.SS]    
--c  interval   ： 定义作业的检查点间隔，如果机器不支持检查点，则忽略此选项。  
--C  directive_prefix ：treat all lines begin with directive_prefix as qsub option. Otherwise, qsub option begins with '#PBS'
--e  path     ：specify error file  
--I           ：interactive  
--j  join     ：join output and error file. 
--l  resource_list  ： define resource list as follow       
-walltime=N         ： wall time in unit of second, or in the form of hh:mm:ss       
-mem=N[K|M|G][B|W]：define memory usage      
-nodes=N:ppn=M     ：define number of nodes N and processes per node M.  
--m  mail_options ：mail_option为a：作业abort时给用户发信；为b：作业开始运行发信；为e：作业结束运行时发信。若无此选项，默认为a。  
--M  user_list    ： mail addresss  
--N  name         ： jobname, less than 15 characters.   
--o  path         ： specify output file  
--p  priority     ： adjust priority, [-1024，1023]，default 0.  
--q  destination  ： specify which queue to use
--r  y|n          ： 指明作业是否可运行，y为可运行，n为不可运行。  
--S  shell        ： specify the SHELL to use, full path.    
--u  user_list    ： specify the user to run the job  
--v  variable_list ： specify the environment variable list to export to this job.   
--V                ： export all environment variable to this job.    
--W  additional_attributes  ：   
--z               ： do not show JOB_ID information after submission  
-```
+> [!NOTE]
+> `qsub` `[-a date_time]` `[-c interval]` `[-C directive_prefix]` `[-e path]`
+> `[-I]` `[-j join]` `[-k keep]` `[-l resource_list]` `[-m mail_options]`
+> `[-M user_list]` `[-N name]` `[-o path]` `[-p priority]` `[-q destination]`
+> `[-r c]` `[-S path_list]` `[-u user_list]` `[-v variable_list]` `[-V]`
+> `[-W additional_attributes]` `[-z]` `[script]`  
+> a  date_time ： delay the job with time [[[[CC]YY]MM]DD]hhmm[.SS]    
+> c  interval   ： 定义作业的检查点间隔，如果机器不支持检查点，则忽略此选项。  
+> C  directive_prefix ：treat all lines begin with directive_prefix as qsub option. Otherwise, qsub option begins with '#PBS'
+> e  path     ：specify error file  
+> I           ：interactive  
+> j  join     ：join output and error file. 
+> l  resource_list  ： define resource list as follow       
+> walltime=N         ： wall time in unit of second, or in the form of hh:mm:ss       
+> mem=N[K|M|G][B|W]：define memory usage      
+> nodes=N:ppn=M     ：define number of nodes N and processes per node M.  
+> m  mail_options ：mail_option为a：作业abort时给用户发信；为b：作业开始运行发信；为e：作业结束运行时发信。若无此选项，默认为a。  
+> M  user_list    ： mail addresss  
+> N  name         ： jobname, less than 15 characters.   
+> o  path         ： specify output file  
+> p  priority     ： adjust priority, [-1024，1023]，default 0.  
+> q  destination  ： specify which queue to use
+> r  y|n          ： 指明作业是否可运行，y为可运行，n为不可运行。  
+> S  shell        ： specify the SHELL to use, full path.    
+> u  user_list    ： specify the user to run the job  
+> v  variable_list ： specify the environment variable list to export to this job.   
+> V                ： export all environment variable to this job.    
+> W  additional_attributes  ：   
+> z               ： do not show JOB_ID information after submission  
+> 
 
-```note
-`qstat` `[-f JOB_ID]` `[-a]` `[-i]` `[-n]` `[-s]` `[-R]` `[-Q [QUEUE]]` `[-q]` `[-B]` `[-u USER]`  
--f JOB_ID : specify the job  
--a        : list all the jobs  
--i        : list all non-running jobs 
--r        : list all the running jobs  
--n        : list the nodes assigned to jobs  
--s         : 列出队列管理员与scheduler所提供的建议  
--R         : 列出磁盘预留信息  
--Q [QUEUE] : list queue status
--q [QUEUE] : list queue status 
--B         : list PBS Server information 
--u USER    : list the jobs for USER 
-```
+> [!NOTE]
+> `qstat` `[-f JOB_ID]` `[-a]` `[-i]` `[-n]` `[-s]` `[-R]` `[-Q [QUEUE]]` `[-q]` `[-B]` `[-u USER]`  
+> f JOB_ID : specify the job  
+> a        : list all the jobs  
+> i        : list all non-running jobs 
+> r        : list all the running jobs  
+> n        : list the nodes assigned to jobs  
+> s         : 列出队列管理员与scheduler所提供的建议  
+> R         : 列出磁盘预留信息  
+> Q [QUEUE] : list queue status
+> q [QUEUE] : list queue status 
+> B         : list PBS Server information 
+> u USER    : list the jobs for USER 
+> 
 
 - [qsub doc](http://docs.adaptivecomputing.com/torque/4-1-3/help.htm#topics/commands/qsub.htm)
 - `man qsub`
 - `man pbs_resources`
 
 ## Slurm
-```tip
-*Slurm* is only available on **SGI** server!
-```
+> [!TIP]
+> *Slurm* is only available on **SGI** server!
+> 
 
 ### examples
 create a job script `job.slurm` with the following content:
@@ -735,10 +739,10 @@ create a job script `job.slurm` with the following content:
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name=test 
-#SBATCH -n 16           # CPU cores
-#SBATCH --output=%j.out
-#SBATCH --error=%j.err
+#SBATCH --job-name=test  
+#SBATCH -t 1-24:00:00    # 1 day and 24 hours
+#SBATCH -n 16            # 16 CPU cores
+#SBATCH --output=lalala-%x.%j.log
 
 echo "Start running ... ..."
 

@@ -1,25 +1,18 @@
----
-sort: 6
-title: Coding
----
 
-```tip
-[**JupyterHub**](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨ 
-- Jupyter-notebook/lab is the **easiest way** to coding 🥳
-- VScode is the **best editor** in the Universe 💪
-- You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎     
+> [!TIP]
+> [**JupyterHub**](https://jupyterhub.readthedocs.io/) is an entry to access jupyter-notebook/lab or other service ✨ 
+> Jupyter-notebook/lab is the **easiest way** to coding 🥳
+> VScode is the **best editor** in the Universe 💪
+> You can use jupyter-notebook/lab or VScode on **both login and computing nodes** 😎     
+> You can access *Jupyter* on our website:   
+> [Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
+> PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](/Basic/Login?id=web-login)
+> 
 
-You can access *Jupyter* on our website:   
-- [Jupyter](https://jupyter.gravity.sjtu.edu.cn) (needs **2FA**)
-
-- PS. We have enabled **Two-Factor Authentication (2FA)**🎉🎉🎉 More details are [Gravity Authentication](/Basic/Login?id=web-login)
-```
-
-```warning
-**DO NOT** run heavy program on *login nodes* ❌🙅❌   
-
-If you fail to log in, **DO NOT** try many times, your IP will **be banned** for a period of time 😭
-```
+> [!WARNING]
+> **DO NOT** run heavy program on *login nodes* ❌🙅❌   
+> If you fail to log in, **DO NOT** try many times, your IP will **be banned** for a period of time 😭
+> 
 
 ## Jupyter
 
@@ -44,9 +37,9 @@ input *username* + *password* + *TOTP*
 
 click *Start My Server* or *Named Servers* 
 
-```warning
-If you use *Named Servers*, its name **CAN NOT** contain any space😢!
-```
+> [!WARNING]
+> If you use *Named Servers*, its name **CAN NOT** contain any space😢!
+> 
 
 choose one *Job queue*
 
@@ -111,16 +104,12 @@ python -m ipykernel install --user --name myenv
 
 Now, refresh your *Jupyter*, and you can see your newly configured kernel. Select it for your notebook. enjoy 🎉
 
-```tip
-
-  The kernel name is also displayed in the top right corner of your notebook. To see the exact path for this environment:
-
-  `import sys`   
-  
-  `sys.executable`   
-
-  This will show the path of the python executable for the current notebook.
-```
+> [!TIP]
+>   The kernel name is also displayed in the top right corner of your notebook. To see the exact path for this environment:
+>   `import sys`   
+>   `sys.executable`   
+>   This will show the path of the python executable for the current notebook.
+> 
 
 ### Clone environment/kernel
 
@@ -415,10 +404,10 @@ As is well-known, *VScode* is the best editor for coding in the world 😜
 > 3. 💯 support C/C++, Fortran, R, Go, Julia, Python etc.
 > 4. 😎 install any extension you like, **customize** your own vscode!
 
-```tip
-1. **Only if** you stop the server from JupyterHub, can the VScode really stop.
-2. It's better to use **Chrome** or **Edge** rather than ~~Firefox~~.
-```
+> [!TIP]
+>  **Only if** you stop the server from JupyterHub, can the VScode really stop.
+>  It's better to use **Chrome** or **Edge** rather than ~~Firefox~~.
+> 
 
 ### Start
 
@@ -525,7 +514,7 @@ Click *SSH TARGETS* button, then click *login02* or *login01* or *computing*, en
 
 ## PyCharm (remote)
 
-```tip
-**PyCharm** is a powerful IDE for Python. The professional version also supports **remote** mode. So you can run your code on *Gravity*.   
-Setting is similar to *VScode (remote)*, you can refer to it.
-```
+> [!TIP]
+> **PyCharm** is a powerful IDE for Python. The professional version also supports **remote** mode. So you can run your code on *Gravity*.   
+> Setting is similar to *VScode (remote)*, you can refer to it.
+> 

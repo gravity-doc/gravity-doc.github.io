@@ -1,7 +1,3 @@
----
-sort: 4
-title: Updates
----
 
 ## Future ✨
 

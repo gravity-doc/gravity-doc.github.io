@@ -36,4 +36,4 @@ We would appreciate it if all publications that include results generated using 
 - **本工作的计算使用了上海交通大学天文系Gravity高性能计算集群**
 - **This work made use of the Gravity Supercomputer at the Department of Astronomy, Shanghai Jiao Tong University.**
 
-<img src="./docs/images/logo_DOA_large.png" height = "80" div align=right />
+![logo_DOA_large.png](./docs/images/logo_DOA_large.png)

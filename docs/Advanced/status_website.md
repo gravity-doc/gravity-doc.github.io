@@ -1,7 +1,3 @@
----
-sort: 4
-title: Status/Statistics Website
----
 
 # Status/Statistics Website
 - check your **cost/Job history** on this website.
