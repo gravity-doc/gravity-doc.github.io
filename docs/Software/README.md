@@ -1,6 +1,3 @@
----
-sort: 3
----
 
 # Software
 

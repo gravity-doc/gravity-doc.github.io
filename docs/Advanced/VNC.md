@@ -1,20 +1,16 @@
----
-sort: 2
-title: VNC
----
 
-```note
-Considering security, *Gravity* closes ports except **22, 80, 443**.    
-Therefore, you need **ssh tunnel** to connect other service.
-```
+> [!NOTE]
+> Considering security, *Gravity* closes ports except **22, 80, 443**.    
+> Therefore, you need **ssh tunnel** to connect other service.
+> 
 
-```tip
-VNC is a fast tool to connect to a graphical desktop on the server.   
-You should add **5900** to your port. That is the **real** port. For example:   
-`vncserver :66`   
-Then, the real port VNC uses is **`66 + 5900 = 5966`**   
-When you use *SSH tunnel*, please connect to the real port, otherwise you will fail🤣
-```
+> [!TIP]
+> VNC is a fast tool to connect to a graphical desktop on the server.   
+> You should add **5900** to your port. That is the **real** port. For example:   
+> `vncserver :66`   
+> Then, the real port VNC uses is **`66 + 5900 = 5966`**   
+> When you use *SSH tunnel*, please connect to the real port, otherwise you will fail🤣
+> 
 
 ## Getting started
 
@@ -35,11 +31,10 @@ Take a note of the port number (37 in this case). You will need to connect to th
 
 请记住这里显示的端口号（图中是37）。
 
-```tip
-  You will be prompted to setup a password the first time you do this. This will be the password you use to connect to vnc. This password is separate from the ssh password.
-
-  第一次开启vnc时在输入命令后会先让你设置密码，之后再使用或者开启新的端口都会使用默认密码.
-```
+> [!TIP]
+>   You will be prompted to setup a password the first time you do this. This will be the password you use to connect to vnc. This password is separate from the ssh password.
+>   第一次开启vnc时在输入命令后会先让你设置密码，之后再使用或者开启新的端口都会使用默认密码.
+> 
 
 - checking for running servers
 
@@ -77,11 +72,11 @@ You will need to use a vnc client to connect to your server. On Linux, you can u
 
 In Remmina, select "new connection". In protocol, select VNC. In the Basic tab, fill in the server address and vncserver port, your username and vnc password. 
 
-<img src="../images/Advanced/VNC_1.png" width=400/>
+![VNC_1.png](../images/Advanced/VNC_1.png)
 
 For security reasons, you can only connect to vnc through ssh-tunnel. This can be done in the "SSH Tunnel" tab. Select "Enable SSH tunnel", input your username, and select Public key authentication.
 
-<img src="../images/Advanced/VNC_2.png" width=400/>
+![VNC_2.png](../images/Advanced/VNC_2.png)
 
 你可以使用喜欢的vnc客户端连到前面建立的vncserver。在客户端中输入服务器地址和vncserver端口号。由于安全原因，还需要选择打开ssh-tunnel选项。
 

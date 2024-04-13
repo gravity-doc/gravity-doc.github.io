@@ -1,14 +1,9 @@
----
-sort: 1
-title: Account
----
 
 ## Apply for a NEW Account
-```note
-请仔细阅读[用户协议](https://gravity-doc.github.io/Policy.html)，并征求导师同意。  
-
-Please make sure you have read the [user policy](https://gravity-doc.github.io/Policy.html), and get consent of your sponsor/supervisor before application.
-```
+> [!NOTE]
+> 请仔细阅读[用户协议](/Policy)，并征求导师同意。  
+> Please make sure you have read the [user policy](/Policy), and get consent of your sponsor/supervisor before application.
+> 
 
 Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id=-f5HFYhWBkCG2kSQ-Sc_lW_CRAlVS3tEtz1OEMF6VRNUMUNLOUVOSFhSMTJSTzJSUVozQldJVlRDUy4u) to fill out the form, we will send an e-mail📧 to you after a while.
 
@@ -16,23 +11,22 @@ Use  [👉**this link**👈](https://forms.office.com/Pages/ResponsePage.aspx?id
 
 You will receive an email once your account is created.
 The initial password is included.
+
 1. In terminal, you can use `yppasswd` or `passwd` to change your password.
-2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](https://gravity-doc.github.io/Basic/Login.html#web-login)
+2. In web, you can change password by clicking *Reset password?* to change your password. More details are here 👉 [**2FA Authentication**](/Basic/Login?id=web-login)
 
 
-```tip
-- Note that it may take a few minutes before the password change is synchronized between the terminal and the web login.    
+> [!TIP]
+> Note that it may take a few minutes before the password change is synchronized between the terminal and the web login.    
+> 更改密码后，新的密码将会需要几分钟在terminal和web之间得到同步。
+> 
 
-- 更改密码后，新的密码将会需要几分钟在terminal和web之间得到同步。
-```
-
-```warning
-- Please change your password immediately the first time you login to your account.
-- Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never give your password to anyone.   
-
-- 请在第一次登陆后立即修改初始密码。
-- 请不要在邮件、微信等通信里向任何人提供密码。管理员维护账号也从**不会**需要你的密码。
-```
+> [!WARNING]
+> Please change your password immediately the first time you login to your account.
+> Never write your password explicitly to others, in emails or chats. The administrators will never ask you for your password and never give your password to anyone.   
+> 请在第一次登陆后立即修改初始密码。
+> 请不要在邮件、微信等通信里向任何人提供密码。管理员维护账号也从**不会**需要你的密码。
+> 
 
 ## Forgot password
 
@@ -55,16 +49,15 @@ If you forget your password, don't worry!
 4. 密码中至少包含字母和数字
 
 ## Change Email📧
-If you want to change your email📧, please [contact us](https://gravity-doc.github.io/#contact), provide your **username** and **NEW email**.
+If you want to change your email📧, please [contact us](/?id=contact), provide your **username** and **NEW email**.
 
 ## SGI Account
 
-```tip
-1. **SGI** is a **standalone** machine, and it has a different OS and disk system.     
-2. **SGI** use *slurm* rather than *pbs* as the job scheduler.    
-
-**NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
-```
+> [!TIP]
+>  **SGI** is a **standalone** machine, and it has a different OS and disk system.     
+>  **SGI** use *slurm* rather than *pbs* as the job scheduler.    
+> **NEW**: **SGI** account is the same as **Gravity** account, you can use the same username and password to log in both **SGI** and **Gravity**.
+> 
 
 You cannot access **SGI** directly, you need to log in **Gravity** first, then on login nodes, use:
 
@@ -73,6 +66,7 @@ ssh sgi
 ```
 
 Each account has a default quota of 
+
 - **10GB** at `/home/username`
 - **1TB** at `/mnt/ddnfs/data_users/username`
 

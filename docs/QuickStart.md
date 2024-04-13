@@ -1,9 +1,5 @@
----
-sort: 1
-title: Quick Start
----
 ## Apply for an account 🙋‍♂️🙋‍♀️
-Follow the instructions [here](https://gravity-doc.github.io/Basic/Account.html) to apply for an account. Make sure you read the instructions and user policies before applying. Wait for a day or so, then you will receive the e-mail 🥳.
+Follow the instructions [here](/Basic/Account) to apply for an account. Make sure you read the instructions and user policies before applying. Wait for a day or so, then you will receive the e-mail 🥳.
 
 ## Log in to Gravity Cluster 💻
 
@@ -85,9 +81,9 @@ qdel 36162  # 36162 is your jobID
 | `showstart <job_id>`                                         | ***when*** to start (if your job is waiting)                 |
 | `qdel <job_id>`                                              | **delete** a job                                             |
 | `qdel -p <job_id>`                                           | force to **delete** a job                                    |
-| `qselect -u $USER | xargs qdel`                              | delete all of your jobs                                      |
-| `qselect -u $USER -s Q | xargs qdel`                         | delete all of your **Queueing** jobs                         |
-| `qselect -u $USER -s R | xargs qdel`                         | delete all of your **Running** jobs                          |
+| `qselect -u $USER \| xargs qdel`                              | delete all of your jobs                                      |
+| `qselect -u $USER -s Q \| xargs qdel`                         | delete all of your **Queueing** jobs                         |
+| `qselect -u $USER -s R \| xargs qdel`                         | delete all of your **Running** jobs                          |
 | `qhold <job_id>`                                             | **hold** a job until you release it                          |
 | `qrls <job_id>`                                              | **release** a job                                            |
 | `pestat`                                                     | every node status                                            |
@@ -125,8 +121,8 @@ qdel 36162  # 36162 is your jobID
 | `top -u <username>`                                          | my processes info                                            |
 | `htop`                                                       | processes info (beautiful)                                   |
 | `htop -u <username>`                                         | my processes info (beautiful)                                |
-| `ps aux | grep python`                                       | process info including string: *python*                      |
-| `ps -eo pid,tty,user,command,lstart,etime | grep <username>` | **my own** processes info                                    |
+| `ps aux \| grep python`                                       | process info including string: *python*                      |
+| `ps -eo pid,tty,user,command,lstart,etime \| grep <username>` | **my own** processes info                                    |
 | `kill -9 <PID>`                                              | **kill** the process using its PID                           |
 | `pkill -u <username>`                                        | **kill all** processes belonging to *username*               |
 | `tail -f My_PBS_Job.log`                                     | see the file output **in time**                              |

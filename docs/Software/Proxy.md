@@ -1,14 +1,10 @@
----
-sort: 3
-title: Proxy
----
 
 ## Surf the Internet🏄‍
 
-```tip
-- On [**Gravity Web**](https://jupyter.gravity.sjtu.edu.cn/), you can access the Internet🏄‍ when using **Jupyter/VScode** on **login/computing nodes**   
-- We will speed up🚀 your **git** connection automatically
-```
+> [!TIP]
+> On [**Gravity Web**](https://jupyter.gravity.sjtu.edu.cn/), you can access the Internet🏄‍ when using **Jupyter/VScode** on **login/computing nodes**   
+> We will speed up🚀 your **git** connection automatically
+> 
 
 ### 1. Spawn a server
 
@@ -30,9 +26,9 @@ For example🌰:
 
 ## Speedup Git⚡
 
-```tip
-When using **terminal**, you can use `pgit` to speed up🚀 your `git` connection
-```
+> [!TIP]
+> When using **terminal**, you can use `pgit` to speed up🚀 your `git` connection
+> 
 
 ### 1. Why
 
@@ -44,10 +40,10 @@ Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳
 
 #### pgit
 
-```tip
-On **login01/login02**, `pgit` **==** `git`😎    
-P.S. `pgit` means **proxy git**
-```
+> [!TIP]
+> On **login01/login02**, `pgit` **==** `git`😎    
+> P.S. `pgit` means **proxy git**
+> 
 
 **Common usage:**
 
@@ -109,6 +105,6 @@ git config --global --unset https.proxy
 git config --global --unset core.sshCommand
 ```
 
-```warning
-**Attention!** There is **NO warranty**! But we will try our best to maintain this service😊
-```
+> [!WARNING]
+> **Attention!** There is **NO warranty**! But we will try our best to maintain this service😊
+> 

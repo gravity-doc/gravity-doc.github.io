@@ -1,11 +1,8 @@
----
-sort: 1
----
 
 # Software Installed
-```note
-On the *Gravity*, we use **`module`** to manage software and tools.
-```
+> [!NOTE]
+> On the *Gravity*, we use **`module`** to manage software and tools.
+> 
 
 | **Command**                         | **Description**                                       |
 | ------------------------------- | ------------------------------------------------- |
@@ -66,11 +63,10 @@ $ module unload python/python-3.8.5
 $ mdoule list
 ```
 
-```tip
-The order of the module loading matters if some of them have dependence on others.
-
-Some libraries (in particular some C++ libraries) will only work properly with the compiler that is used to compile it. These modules will have the compiler version appended to the name, such as `hdf5/1.12.1-with-cxx-fortran-gcc10.2.0`
-```
+> [!TIP]
+> The order of the module loading matters if some of them have dependence on others.
+> Some libraries (in particular some C++ libraries) will only work properly with the compiler that is used to compile it. These modules will have the compiler version appended to the name, such as `hdf5/1.12.1-with-cxx-fortran-gcc10.2.0`
+> 
 
 ## Conda(Mamba)
 
@@ -82,9 +78,9 @@ module load anaconda/anaconda-mamba
 
 Note you will have to unload any previously loaded python module if you see conflicts.
 
-```tip
-[mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
-```
+> [!TIP]
+> [mamba](https://mamba.readthedocs.io/en/latest/) is almost the same with [conda](https://docs.conda.io/projects/conda/en/latest/commands.html), but much super faster⚡! For example 🌰:
+> 
 
 | mamba⚡                                   | conda                                    |
 | ---------------------------------------- | ---------------------------------------- |
@@ -155,10 +151,10 @@ virtualenv myenv
 ```
 By default this will create an "virtual environment" under `myenv/` in your current directory. 
 
-```warning
-Currently the `virtualenv` command only works for python2. For python3 users, after loading the python3 module, you can create the virtualenv by 
-`python3 -m venv myenv`
-```
+> [!WARNING]
+> Currently the `virtualenv` command only works for python2. For python3 users, after loading the python3 module, you can create the virtualenv by 
+> `python3 -m venv myenv`
+> 
 
 Once this is done, you can activate it by
 

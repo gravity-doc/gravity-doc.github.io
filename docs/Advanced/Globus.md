@@ -1,7 +1,3 @@
----
-sort: 5
-title: Globus
----
 
 # Globus
 [Globus](https://www.globus.org) is quite popular to transfer large scientific data.
@@ -27,15 +23,15 @@ Here we provide the routine to install Globus personal version.  You can also ch
   ./globusconnectpersonal -setup
   ```
 
-  <img src="../images/Advanced/globus-setup1.png" width = "600" div align=center />
+  ![globus-setup1.png](../images/Advanced/globus-setup1.png)
 
   A long link will be provided.  Copy and open the above link in your browser.  After sign in your globus account, an authorization code will be provided.
 
-  <img src="../images/Advanced/globus-setup2.png" width = "600" div align=center />
+  ![globus-setup2.png](../images/Advanced/globus-setup2.png)
 
   Input this code in your terminal, type the name for this Endpoint (Gravity2 in the above case) and finish the setup.
 
-  <img src="../images/Advanced/globus-setup3.png" width = "600" div align=center />
+  ![globus-setup3.png](../images/Advanced/globus-setup3.png)
 
 5. Run Globus personal without GUI.
   ```bash
@@ -44,7 +40,7 @@ Here we provide the routine to install Globus personal version.  You can also ch
 
   Check whether the Endpoint is correctly appeared in your Globus Endpoint Collections.
 
-  <img src="../images/Advanced/globus-setup4.png" width = "600" div align=center />
+  ![globus-setup4.png](../images/Advanced/globus-setup4.png)
 
 6. Stop Globus personal.
   Please close your Globus personal when your transfer task is end, for safety and resources saving reason.

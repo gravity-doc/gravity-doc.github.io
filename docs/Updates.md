@@ -1,28 +1,35 @@
----
-sort: 4
-title: Updates
----
 
 ## Future ✨
 
-- [ ] support container (Singularity)
-- [ ] switch to Slurm (PBS will be **Deprecated**)
+- [ ] support container (*Singularity* + *Kubernetes*)
+  - [ ] migrate the entire Jupyter to Kubernetes
+- [ ] switch to Slurm (*PBS* will be **Deprecated**)
+  - [ ] enable resource limit on computing nodes (use `cgroup`)
+- [ ] update *NIS* to *LDAP* authentication (*NIS* will be **Deprecated**)
+  - [ ] Automatically handle new user registration and verification
+- [ ] enable **load-balancing** for Gravity website
+- [ ] add **real-time monitoring** and **alarm** for sensitive files modification
 
 ## Done 🥳
+
+### 2023.11
+
+- [x] self-hosted [*Gitlab*](https://git.gravity.sjtu.edu.cn/) ([how to use](/Advanced/Gitlab))
+- [x] self-hosted [*Gravity Documentation*](https://gravity.sjtu.edu.cn/doc/)
 
 ### 2022.11
 
 - [x] **SGI** can access Gravity **Home** Directory at `/gravity/home`
 - [x] **SGI** can access the Internet directly now 🏄‍
-- [x] **SGI** has a disk quota for each user, which is [**10G+1TB**](https://gravity-doc.github.io/Basic/Resource_Monitor.html#disk-quota)
+- [x] **SGI** has a disk quota for each user, which is [**10G+1TB**](/Basic/Resource_Monitor?id=disk-quota)
 
 ### 2022.7
 
 - [x] [**Gravity Homepage**](https://jupyter.gravity.sjtu.edu.cn/) is ready! 🎉🎉🎉
-- [x] add [**FileServer**](https://gravity-doc.github.io/Basic/Data_Transfer.html#FileServer), support download/**share** files 🎉🎉🎉 ([File Sharing DEMO](https://gravity.sjtu.edu.cn/demo/))
-- [x] add [**Two-Factor Authentication (2FA)**](https://gravity-doc.github.io/Basic/Login.html#web-login)🔒 for our website
-- [x] add [**NEW Spawner for Jupyter**](https://gravity-doc.github.io/Basic/Jupyter.html#start-a-server), now you can select and **input options**
-- [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](https://gravity-doc.github.io/Basic/Login.html#web-login)
+- [x] add [**FileServer**](/Basic/Data_Transfer?id=fileserver), support download/**share** files 🎉🎉🎉 ([File Sharing DEMO](https://gravity.sjtu.edu.cn/demo/))
+- [x] add [**Two-Factor Authentication (2FA)**](/Basic/Login?id=web-login)🔒 for our website
+- [x] add [**NEW Spawner for Jupyter**](Coding?id=start-a-server), now you can select and **input options**
+- [x] support **change password** / **reset password**(if you forgot your password) on [Gravity Authentication](/Basic/Account?id=change-password)
 - [x] NEW in *Jupyter*: [resource monitor](https://gravity-doc.github.io/Basic/Jupyter.html#resource-monitor), [Diagram](https://gravity-doc.github.io/Basic/Jupyter.html#diagram), [Variable Inspector](https://gravity-doc.github.io/Basic/Jupyter.html#variable-inspector), [**HDF5 viewer**](https://gravity-doc.github.io/Basic/Jupyter.html#hdf5-viewer), [**`<TAB>` selection**](https://gravity-doc.github.io/Basic/Jupyter.html#tab-selection), [Retrolab](https://gravity-doc.github.io/Basic/Jupyter.html#retrolab), *dracula* theme, [中文语言包](https://gravity-doc.github.io/Basic/Jupyter.html#chinese). Remove some unused kernels
 - [x] add **HTTP proxy server**, now you can [**🏄‍surf the Internet**](https://gravity-doc.github.io/Software/Proxy.html#surf-the-internet) such as `git/curl/wget` when using *Jupyter/VScode* on *computing nodes*. Meanwhile, it will automatically *speedup*⚡ `git clone/pull/push` from/to **Github** **[ NO WARRANTY ]**
 - [x] add **HTTP cache** to accelerate *Jupyter/VScode*

@@ -1,11 +1,9 @@
----
-sort: 4
-title: Resource Monitor
----
-# Resource Monitor
 
 ## Web interface
-Considering the security 🛡️, you have to use [**SSH tunnel** to access it](https://gravity-doc.github.io/Advanced/status_website.html).
+
+- You can access the [*Inspur Management Web*](https://gravity.sjtu.edu.cn/inspur/) to check your Job status/history and resource usage.
+
+- You can also use [**SSH tunnel** to access it](/Advanced/status_website?id=ssh-tunnel-access).
 
 
 ## User information
@@ -20,6 +18,7 @@ No Plan.
 ```
 
 ## Disk quota
+
 You can use the command on **login01** or **login02**: `icfsquota username` or `icfsquota`, just like this: 
 
 ```bash
@@ -33,20 +32,18 @@ Max size =  5.00TB , Used size=  4.33TB , Left size=  666.00GB
 
 The default quota per account is `3T`.  
 
-```note
-If you cannot run `icfsquota` successfully😅, please check your permissions setting of `$HOME` foler.   
-`chmod 755 $HOME`   
-So that you can run `icfsquota`🥳
-```
+> [!NOTE]
+> If you cannot run `icfsquota` successfully😅, please check your permissions setting of `$HOME` foler.   
+> `chmod 755 $HOME`   
+> So that you can run `icfsquota`🥳
+> 
 
 If you run out of quota, you can free out space by deleting some files that are no longer needed. If no more files can be deleted, ask your group owner to allocate more disk space to you.
 
-```note
-Files deleted through the graphical desktop will be moved to Trash folder that still takes up space. You can empty the trash if this is the case, through either the desktop or on the command line:
-     
-`rm -rf ./local/share/Trash/*`
-     
-```
+> [!NOTE]
+> Files deleted through the graphical desktop will be moved to Trash folder that still takes up space. You can empty the trash if this is the case, through either the desktop or on the command line:
+> `rm -rf ./local/share/Trash/*`
+> 
 
 You can use the command on **SGI**, `quota -ls` like this
 
@@ -62,12 +59,14 @@ Disk quotas for user lalala (uid 666):
 ```
 
 Each account has a default quota of 
+
 - **10GB** at `/home/username`
 - **1TB** at `/mnt/ddnfs/data_users/username`
 
 Gravity **Home Directory** is mounted at `/gravity/home`  
 
 ## CPU time usage and cost
+
 You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
 
 ```bash
@@ -81,9 +80,9 @@ This month [20210501 ~ 20210531] cost:  66 ￥
 ######### Complete usage statistics: https://stat.gravity.sjtu.edu.cn ##########
 ```
 
-```tip
-Your advisor will bear the cost 🥳
-```
+> [!TIP]
+> Your advisor will bear the cost 🥳
+> 
 
 ## PBS 
 

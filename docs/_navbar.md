@@ -1,0 +1,3 @@
+- [Cheatsheet](/QuickStart?id=cheatsheet-📜)
+- [Gravity Home](https://jupyter.gravity.sjtu.edu.cn/)
+- [Department of Astronomy (SJTU)](http://astro.sjtu.edu.cn/)

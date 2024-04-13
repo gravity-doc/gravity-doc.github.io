@@ -1,7 +1,3 @@
----
-sort: 3
-title: Policy
----
 
 # 上海交通大学天文系Gravity超算使用管理方法（试行）
 
@@ -37,7 +33,8 @@ title: Policy
 
 ### 五．软件
 
-服务器已安装部分开源软件和正版软件(https://gravity-doc.github.io/Software/Software_Installed.html)，若用户有其他需求，可在用户目录中自行安装或提出申请由管理员安装到系统仓库。
+服务器已安装部分[开源软件和正版软件](/Software/Software_Installed)
+若用户有其他需求，[可在用户目录中自行安装](/Software/User_Software_Installation)或提出申请由管理员安装到系统仓库。
 
 用户应当自觉尊重知识产权，不在服务器上安装、复制或传播盗版软件。
 
