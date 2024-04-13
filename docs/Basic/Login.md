@@ -16,12 +16,14 @@ To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE
 
 ```bash
 ➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
+```
 
 > [!TIP]
-> You will be asked to input a passphrase when generating your key.
-> It is highly recommended to use an non-empty passphrase.
+> You will be asked to input a passphrase when generating your key.   
+> It is **highly recommended** to use an non-empty passphrase.
 > 
 
+```bash
 # Output👇
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/lalala/.ssh/id_rsa): /home/lalala/.ssh/id_rsa_Gravity
