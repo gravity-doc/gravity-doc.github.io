@@ -44,9 +44,12 @@ process_markdown() {
             s/^[>-][[:space:]]*//
             s/^[[:digit:]]+\.*//
             /^[[:space:]]*$/d
+            s/^/> /
         }
-        s/^```(danger|warning)[[:space:]]*$/!> \*\*Important\*\*⚠️/
-        s/^```(note|tip)[[:space:]]*$/?> \*\*Tip\*\*💡/
+        s/^```(tip)[[:space:]]*$/> [!TIP]/
+        s/^```(note)[[:space:]]*$/> [!NOTE]/
+        s/^```(warning)[[:space:]]*$/> [!WARNING]/
+        s/^```(danger)[[:space:]]*$/> [!ATTENTION]/
         s/```[[:space:]]*$//
         t
     }' "$1"

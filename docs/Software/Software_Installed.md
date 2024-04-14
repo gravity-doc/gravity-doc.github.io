@@ -5,7 +5,7 @@
 > 
 
 | **Command**                         | **Description**                                       |
-| ------------------------------- | ------------------------------------------------- |
+| :-------------------------------: | :-------------------------------------------------: |
 | `module avail / module av`      | see **available** software                        |
 | `module list`                   | see software you have **loaded**                  |
 | `module load <software_name>`   | load a software to your current shell environment |
@@ -83,7 +83,7 @@ Note you will have to unload any previously loaded python module if you see conf
 > 
 
 | mamba⚡                                   | conda                                    |
-| ---------------------------------------- | ---------------------------------------- |
+| :----------------------------------------: | :----------------------------------------: |
 | `mamba search emcee`                     | `conda search emcee`                     |
 | `mamba install -c conda-forge camb`      | `conda install -c conda-forge camb`      |
 | `mamba create -n myenv python=3.9 scipy` | `conda create -n myenv python=3.9 scipy` |

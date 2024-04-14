@@ -48,7 +48,7 @@ Therefore, we provide `pgit` (*proxy git*) to solve this problem🥳
 **Common usage:**
 
 | **Git**                  | ⚡                     |
-| -------------------- | --------------------- |
+| :--------------------: | :---------------------: |
 | `git pull`           | `pgit pull`           |
 | `git push`           | `pgit push`           |
 | `git clone <url>`    | `pgit clone <url>`    |

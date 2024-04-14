@@ -1,23 +1,29 @@
-## [Gravity Documentation](/README.md)
+# [Gravity Documentation](/README.md)
  This is the documentation for the **Gravity Cluster** of [Department of Astronomy (DOA)](http://astro.sjtu.edu.cn/en/) at [Shanghai Jiao Tong University (SJTU)](https://www.sjtu.edu.cn/).
 
 > [!TIP]
-> ### Welcome to contribute
-> This doc is hosted on [Github](https://github.com/gravity-doc/gravity-doc.github.io). Feel free to submit a pull request. Contributing is pretty simple as following:   
->  **Click**.  To contribute,   click the **[edit](https://github.com/gravity-doc/gravity-doc.github.io/edit/master/docs/index.md)** :pencil: on the upper right of the page you feel like editing. Every document page is **editable**. It will bring you to the source files on github. You may will need to login to github to proceed. Once logged-in, a fork of the document repository will be created under your own account, so that you can edit it in whatever way you like. 
->  **Edit**.   Edit the page to contribute useful stuff. Check [here](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax) or the existing source pages for examples in the syntax. [This page](https://rundocs.io/writng/) contains theme-related syntax.
->  **Commit**.   Finish the editing by leaving a commit message, describing what you have done.
->  **Submit**.   Submit a **pull request** so that your changes will be submitted to the upstream branch (a.k.a., this website). The administrators will review your changes and absorb them into the website. 
-> Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.     
-> ### **中文内容也欢迎！🥳**   
+> - You can start from the [QuickStart here](/QuickStart)   
+> - [CheatSheet here](/QuickStart?id=cheatsheet-📜) contains many useful commands   
+> - Remember to acknowledge Gravity in your publications 👉  [Acknowledging Gravity Cluster](/?id=acknowledging-gravity-cluster)   
+> - ❌**Never**❌ use `conda create/install` on *login01/computing nodes*, it will **destroy** the environment. You can only use it on **login02**. (see [more details here](/MISC/Issues?id=conda))
+>
+
+> [!NOTE]
+> ## Welcome to contribute
+>
+> - Feel free to contribute to this documentation by submitting a pull request here 👉 [gravity-doc](https://github.com/gravity-doc/gravity-doc.github.io)    
+> - Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.       
 > 
+> ### **中文内容也欢迎！🥳**   
+>
+
 ## Contact
 
 You can contact us via
 
 - [gravity-hpc@sjtu.edu.cn ](mailto:gravity-hpc@sjtu.edu.cn) 📧
 - **WeChat** group 💬
-- Administrators: Yihe Wang, Yu Yu, Jiaxin Han
+- **Admin**🧙‍: *Junjie Zhao, Yihe Wang, Yu Yu, Jiaxin Han*
 
 if you need
 

@@ -664,11 +664,11 @@ Use `qstat -u <username>` to show the jobs submitted by one user.
 ### cancel job
 
 | Command                 | Description                                                              |
-| ----------------------- | ------------------------------------------------------------------------ |
+| :-----------------------: | :------------------------------------------------------------------------: |
 | `qdel [-W time] JOB_ID` | `-W time` can specify the delay of the job cancel.  The unit is seconds. |
-| `qselect -u $USER       | xargs qdel`                                                              | Delete all of your jobs              |
-| `qselect -u $USER -s Q  | xargs qdel`                                                              | Delete all of your **Queueing** jobs |
-| `qselect -u $USER -s R  | xargs qdel`                                                              | Delete all of your **Running** jobs  |
+| `qselect -u $USER       \| xargs qdel`                                                              | Delete all of your jobs              |
+| `qselect -u $USER -s Q  \| xargs qdel`                                                              | Delete all of your **Queueing** jobs |
+| `qselect -u $USER -s R  \| xargs qdel`                                                              | Delete all of your **Running** jobs  |
 
 
 
