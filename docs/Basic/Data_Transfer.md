@@ -10,9 +10,9 @@ techniques with graphical user interface support.
 To use *FileServer*, `copy`/`move` your shared files into your `~/.fileServer` folder.   
 
 If you need to **share massive data**, feel free to [contact admin🧙‍](/?id=contact).
-```note
-This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
-```
+> [!note]
+> This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
+>
 
 ### access
 We have enabled a **File Server** on Gravity 🎉🎉🎉
