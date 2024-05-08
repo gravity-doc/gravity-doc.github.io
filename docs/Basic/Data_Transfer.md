@@ -7,11 +7,12 @@ When one is making plots or editing codes, it might be more convenient to use
 techniques with graphical user interface support.
 
 ## FileServer
-> [!NOTE]
-> You need to `copy`/`move` your files into `~/.fileServer` to use *FileServer*.   
-> If you need to **share massive data**, feel free to [contact admin🧙‍](/?id=contact)
-> This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
-> 
+To use *FileServer*, `copy`/`move` your shared files into your `~/.fileServer` folder.   
+
+If you need to **share massive data**, feel free to [contact admin🧙‍](/?id=contact).
+```note
+This service is provided for sharing data on gravity to your collaborators. Please do not abuse it to share your personal/non-academic files.
+```
 
 ### access
 We have enabled a **File Server** on Gravity 🎉🎉🎉
