@@ -12,7 +12,7 @@
 > | command    | explanation     |
 > | :--------: | :--------: |
 > |  `qstat -tan`   |     view all of the jobs in details      |
-> |  `qstat -tan \| grep <username>`   |     view all of the jobs in details of *\<username\>*      |
+> |  `qstat -tan -u <username>`   |     view all of the jobs in details of *\<username\>*      |
 > |  `pestat`  |     view all of nodes status     |
 > |  `showq`  |     summary of running/waiting jobs     |
 > |  `qsub -I -q debug -l nodes=1:ppn=72  `  |    submit an interactive job     |
@@ -559,7 +559,148 @@ The result is same as the first one expect that the number of threads per proces
   rank   3  gr28  12
 ```
 
+### cpus-per-task
+
+> [!TIP]
+> Like `--cpus-per-task=[count]` in *Slurm*, we can use **a little trick** to achieve the same effect in *PBS*.   
+> It is useful when you use *MPI+OpenMP* hybrid parallelization, or you want to control the number of CPUs per MPI process.   
+> 
+
+This is full example of a *MPI* job.
+
+> 1. load the necessary modules
+> 2. compile the *C++* code
+> 3. generate a new *NODEFILE* with each node repeated **cpus_per_task** times
+> 4. run the job
+
+Here, we use `cpus_per_task=[count]` to specify the number of CPUs per MPI process.
+
+```bash
+#!/bin/bash
+#PBS -N MPI_task_example
+#PBS -l nodes=3:ppn=8
+#PBS -l walltime=1:00:00
+#PBS -q small
+#PBS -j oe
+#PBS -o pbs_${PBS_JOBNAME}_${PBS_JOBID}.log
+
+############## Prepare the environment ##############
+module purge && module load compiler/intel-2018 mpi/intel-2018
+
+# check the environment variables
+echo
+echo "PATH is"
+echo "$PATH"
+echo "LD_LIBRARY_PATH is"
+echo "$LD_LIBRARY_PATH"
+echo
+
+# Change to the directory from which the job was submitted
+cd $PBS_O_WORKDIR
+
+############## Compile the MPI program ##############
+# generate temporary C++ file
+cat <<LALALA > mpi_test.cpp
+#include <stdio.h>
+#include <mpi.h>
+int main(int argc, char** argv){
+    int process_rank, size_Of_Cluster;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
+    MPI_Comm_rank(MPI_COMM_WORLD, &process_rank);
+
+    printf("Hi, I come from process %d of %d... ...\\n", process_rank, size_Of_Cluster);
+
+    MPI_Finalize();
+    return 0;
+}
+LALALA
+sleep 10s
+
+# Compile the C++ file
+if ! mpiicc mpi_test.cpp -o mpi_test.exe; then
+    echo "Compilation failed!"
+    exit 1
+fi
+sleep 10s && echo "Executable file generated: $(ls -lh mpi_test.exe)"
+echo
+
+
+################# Prepare the nodefile #################
+# Manually set cpu-per-task
+cpus_per_task=2
+
+# Get number of nodes
+nodes=$(sort -u $PBS_NODEFILE | wc -l)
+
+# Calculate processors per node (ppn)
+ppn=$(sort $PBS_NODEFILE | uniq -c | awk '{print $1}' | sort -nu | tail -n 1)
+
+# Ensure cpus_per_task does not exceed ppn
+if [ "$cpus_per_task" -gt "$ppn" ]; then
+    echo "cpus_per_task cannot exceed ppn ($ppn)"
+    exit 1
+fi
+
+# Generate a new node file with each node repeated z times
+new_nodefile=$PBS_O_WORKDIR/new_nodefile
+awk -v z=$((ppn / cpus_per_task)) '{
+    for (i = 0; i < z; i++) {
+        print $0
+    }
+}' $PBS_NODEFILE > $new_nodefile
+
+# Calculate the total number of processes
+total_tasks=$((nodes * (ppn / cpus_per_task)))
+
+################# Run the MPI program #################
+echo "Running with ${total_tasks} processes on ${nodes} nodes with cpu-per-task = ${cpus_per_task}"
+time_start=$(date +%s)
+echo "******************** START **********************"
+
+# Run the MPI program
+if ! mpirun -np $total_tasks -f $new_nodefile ./mpi_test.exe; then
+    echo "MPI run failed!"
+    exit 1
+fi
+
+echo "********************* END ***********************"
+time_end=$(date +%s)
+interval=$(( (time_end - time_start) / 60 ))
+echo "Time used: $interval minutes"
+```
+
+The output log shows that the job is running with 12 processes on 3 nodes, with 2 CPUs per task.
+
+```bash
+PATH is
+xxxxxx
+LD_LIBRARY_PATH is
+xxxxxx
+
+Executable file generated: -rwxr-xr-x 1 lalala 23K mpi_test.exe
+
+Running with 12 processes on 3 nodes with cpu-per-task = 2
+******************** START **********************
+Hi, I come from process 0 of 12... ...
+Hi, I come from process 1 of 12... ...
+Hi, I come from process 2 of 12... ...
+Hi, I come from process 3 of 12... ...
+Hi, I come from process 4 of 12... ...
+Hi, I come from process 5 of 12... ...
+Hi, I come from process 6 of 12... ...
+Hi, I come from process 7 of 12... ...
+Hi, I come from process 8 of 12... ...
+Hi, I come from process 9 of 12... ...
+Hi, I come from process 10 of 12... ...
+Hi, I come from process 11 of 12... ...
+********************* END ***********************
+Time used: 0 minutes
+```
+
 ### GPU job
+
 This sample use `nvcc` to compile a example *cuda* code
 
 ```cuda
