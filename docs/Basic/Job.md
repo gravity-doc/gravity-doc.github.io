@@ -595,62 +595,74 @@ echo "LD_LIBRARY_PATH is"
 echo "$LD_LIBRARY_PATH"
 echo
 
-# Change to the directory from which the job was submitted
+################# Prepare MPI C++ exe #################
+prepare_C++_exe() {
 cd $PBS_O_WORKDIR
-
-############## Compile the MPI program ##############
-# generate temporary C++ file
+# generate C++ file
 cat <<LALALA > mpi_test.cpp
 #include <stdio.h>
 #include <mpi.h>
+#include <unistd.h>
+#include <limits.h>
+
 int main(int argc, char** argv){
+    sleep(100);
     int process_rank, size_Of_Cluster;
+    char hostname[HOST_NAME_MAX];
+    char username[LOGIN_NAME_MAX];
 
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &size_Of_Cluster);
     MPI_Comm_rank(MPI_COMM_WORLD, &process_rank);
+    gethostname(hostname, HOST_NAME_MAX);
+    getlogin_r(username, LOGIN_NAME_MAX);
 
-    printf("Hi, I come from process %d of %d... ...\\n", process_rank, size_Of_Cluster);
+    printf("Hi, dear %s, I'm from process %d of %d on host %s...\\n", username, process_rank, size_Of_Cluster, hostname);
 
     MPI_Finalize();
     return 0;
 }
 LALALA
-sleep 10s
-
 # Compile the C++ file
 if ! mpiicc mpi_test.cpp -o mpi_test.exe; then
     echo "Compilation failed!"
     exit 1
 fi
-sleep 10s && echo "Executable file generated: $(ls -lh mpi_test.exe)"
+echo "Executable file generated: $(ls -lh mpi_test.exe)"
 echo
-
+}
+prepare_C++_exe
 
 ################# Prepare the nodefile #################
-# Manually set cpu-per-task
-cpus_per_task=2
-
-# Get number of nodes
-nodes=$(sort -u $PBS_NODEFILE | wc -l)
-
-# Calculate processors per node (ppn)
-ppn=$(sort $PBS_NODEFILE | uniq -c | awk '{print $1}' | sort -nu | tail -n 1)
-
+prepare_nodefile() {
 # Ensure cpus_per_task does not exceed ppn
 if [ "$cpus_per_task" -gt "$ppn" ]; then
     echo "cpus_per_task cannot exceed ppn ($ppn)"
     exit 1
 fi
-
-# Generate a new node file with each node repeated z times
-new_nodefile=$PBS_O_WORKDIR/new_nodefile
-awk -v z=$((ppn / cpus_per_task)) '{
-    for (i = 0; i < z; i++) {
-        print $0
-    }
-}' $PBS_NODEFILE > $new_nodefile
-
+# Create new_nodefile if it doesn't exist
+if [ ! -f "$new_nodefile" ]; then
+    awk -v z=$((ppn / cpus_per_task)) '{
+        node_count[$0]++
+    } END {
+        for (node in node_count) {
+            for (i = 0; i < z; i++) {
+                print node
+            }
+        }
+    }' $PBS_NODEFILE > $new_nodefile
+fi
+sleep 3s
+}
+# Manually set cpus-per-task here!!!
+cpus_per_task=2
+# Get number of nodes
+nodes=$(sort -u $PBS_NODEFILE | wc -l)
+# Calculate processors per node (ppn)
+ppn=$(sort $PBS_NODEFILE | uniq -c | awk '{print $1}' | sort -nu | tail -n 1)
+new_nodefile=$PBS_O_WORKDIR/new_nodefile_${PBS_JOBID}.txt
+prepare_nodefile
+export PBS_NODEFILE=$new_nodefile
 # Calculate the total number of processes
 total_tasks=$((nodes * (ppn / cpus_per_task)))
 
@@ -659,8 +671,10 @@ echo "Running with ${total_tasks} processes on ${nodes} nodes with cpu-per-task 
 time_start=$(date +%s)
 echo "******************** START **********************"
 
+cd $PBS_O_WORKDIR
+
 # Run the MPI program
-if ! mpirun -np $total_tasks -hostfile $new_nodefile ./mpi_test.exe; then
+if ! mpirun -np $total_tasks ./mpi_test.exe; then
     echo "MPI run failed!"
     exit 1
 fi
@@ -683,20 +697,20 @@ Executable file generated: -rwxr-xr-x 1 lalala 23K mpi_test.exe
 
 Running with 12 processes on 3 nodes with cpu-per-task = 2
 ******************** START **********************
-Hi, I come from process 0 of 12... ...
-Hi, I come from process 1 of 12... ...
-Hi, I come from process 2 of 12... ...
-Hi, I come from process 3 of 12... ...
-Hi, I come from process 4 of 12... ...
-Hi, I come from process 5 of 12... ...
-Hi, I come from process 6 of 12... ...
-Hi, I come from process 7 of 12... ...
-Hi, I come from process 8 of 12... ...
-Hi, I come from process 9 of 12... ...
-Hi, I come from process 10 of 12... ...
-Hi, I come from process 11 of 12... ...
+Hi, dear lalala, I'm from process 3 of 12 on host gr33...
+Hi, dear lalala, I'm from process 11 of 12 on host gr30...
+Hi, dear lalala, I'm from process 10 of 12 on host gr30...
+Hi, dear lalala, I'm from process 1 of 12 on host gr33...
+Hi, dear lalala, I'm from process 0 of 12 on host gr33...
+Hi, dear lalala, I'm from process 9 of 12 on host gr30...
+Hi, dear lalala, I'm from process 2 of 12 on host gr33...
+Hi, dear lalala, I'm from process 8 of 12 on host gr30...
+Hi, dear lalala, I'm from process 5 of 12 on host gr34...
+Hi, dear lalala, I'm from process 7 of 12 on host gr34...
+Hi, dear lalala, I'm from process 6 of 12 on host gr34...
+Hi, dear lalala, I'm from process 4 of 12 on host gr34...
 ********************* END ***********************
-Time used: 0 minutes
+Time used: 1 minutes
 ```
 
 ### GPU job
