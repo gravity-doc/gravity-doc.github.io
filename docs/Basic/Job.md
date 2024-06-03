@@ -596,7 +596,7 @@ echo "$LD_LIBRARY_PATH"
 echo
 
 ################# Prepare MPI C++ exe #################
-prepare_C++_exe() {
+prepare_C_exe() {
 cd $PBS_O_WORKDIR
 # generate C++ file
 cat <<LALALA > mpi_test.cpp
@@ -606,7 +606,6 @@ cat <<LALALA > mpi_test.cpp
 #include <limits.h>
 
 int main(int argc, char** argv){
-    sleep(100);
     int process_rank, size_Of_Cluster;
     char hostname[HOST_NAME_MAX];
     char username[LOGIN_NAME_MAX];
@@ -631,7 +630,7 @@ fi
 echo "Executable file generated: $(ls -lh mpi_test.exe)"
 echo
 }
-prepare_C++_exe
+prepare_C_exe
 
 ################# Prepare the nodefile #################
 prepare_nodefile() {
