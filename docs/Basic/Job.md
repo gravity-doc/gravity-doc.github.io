@@ -660,7 +660,7 @@ time_start=$(date +%s)
 echo "******************** START **********************"
 
 # Run the MPI program
-if ! mpirun -np $total_tasks -f $new_nodefile ./mpi_test.exe; then
+if ! mpirun -np $total_tasks -hostfile $new_nodefile ./mpi_test.exe; then
     echo "MPI run failed!"
     exit 1
 fi
