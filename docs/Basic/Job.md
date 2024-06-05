@@ -561,18 +561,23 @@ The result is same as the first one expect that the number of threads per proces
 
 ### cpus-per-task
 
+
+
 > [!TIP]
 > Like `--cpus-per-task=[count]` in *Slurm*, we can use **a little trick** to achieve the same effect in *PBS*.   
 > It is useful when you use *MPI+OpenMP* hybrid parallelization, or you want to control the number of CPUs per MPI process.   
 > 
 
-This is full example of a *MPI* job.
+#### cpus-per-task (C++ example)
+
+This is a **full example** of *MPI* job with *C++*.
 
 > 1. load the necessary modules
-> 2. compile the *C++* code
+> 2. create and compile the *C++* code
 > 3. generate a new *NODEFILE* with each node repeated **cpus_per_task** times
 > 4. run the job
 
+First, let use create a new *PBS* script `example_mpi_task_C.sh`.   
 Here, we use `cpus_per_task=[count]` to specify the number of CPUs per MPI process.
 
 ```bash
@@ -633,37 +638,11 @@ echo
 prepare_C_exe
 
 ################# Prepare the nodefile #################
-prepare_nodefile() {
-# Ensure cpus_per_task does not exceed ppn
-if [ "$cpus_per_task" -gt "$ppn" ]; then
-    echo "cpus_per_task cannot exceed ppn ($ppn)"
-    exit 1
-fi
-# Create new_nodefile if it doesn't exist
-if [ ! -f "$new_nodefile" ]; then
-    awk -v z=$((ppn / cpus_per_task)) '{
-        node_count[$0]++
-    } END {
-        for (node in node_count) {
-            for (i = 0; i < z; i++) {
-                print node
-            }
-        }
-    }' $PBS_NODEFILE > $new_nodefile
-fi
-sleep 3s
-}
-# Manually set cpus-per-task here!!!
+# manually set the number of cpus per task here!!!
 cpus_per_task=2
-# Get number of nodes
-nodes=$(sort -u $PBS_NODEFILE | wc -l)
-# Calculate processors per node (ppn)
-ppn=$(sort $PBS_NODEFILE | uniq -c | awk '{print $1}' | sort -nu | tail -n 1)
-new_nodefile=$PBS_O_WORKDIR/new_nodefile_${PBS_JOBID}.txt
-prepare_nodefile
+source /opt/sharing/cpus-per-task.sh
+read -r total_tasks nodes cpus_per_task new_nodefile <<< $(prepare_nodefile ${cpus_per_task})
 export PBS_NODEFILE=$new_nodefile
-# Calculate the total number of processes
-total_tasks=$((nodes * (ppn / cpus_per_task)))
 
 ################# Run the MPI program #################
 echo "Running with ${total_tasks} processes on ${nodes} nodes with cpu-per-task = ${cpus_per_task}"
@@ -671,12 +650,7 @@ time_start=$(date +%s)
 echo "******************** START **********************"
 
 cd $PBS_O_WORKDIR
-
-# Run the MPI program
-if ! mpirun -np $total_tasks ./mpi_test.exe; then
-    echo "MPI run failed!"
-    exit 1
-fi
+mpirun -np $total_tasks ./mpi_test.exe
 
 echo "********************* END ***********************"
 time_end=$(date +%s)
@@ -684,7 +658,13 @@ interval=$(( (time_end - time_start) / 60 ))
 echo "Time used: $interval minutes"
 ```
 
-The output log shows that the job is running with 12 processes on 3 nodes, with 2 CPUs per task.
+Then, let us submit the job.
+
+```bash
+qsub example_mpi_task_C.sh
+```
+
+The **output log** shows that the job is running with 12 processes on 3 nodes, with 2 CPUs per task.
 
 ```bash
 PATH is
@@ -710,6 +690,144 @@ Hi, dear lalala, I'm from process 6 of 12 on host gr34...
 Hi, dear lalala, I'm from process 4 of 12 on host gr34...
 ********************* END ***********************
 Time used: 1 minutes
+```
+
+#### cpus-per-task (Python example)
+
+This is a **full example** of *MPI* job with *Python* in the real world.
+
+> 1. create a *Python* script, which is parallelized by *MPI*.
+> 2. load the necessary modules
+> 3. generate a new *NODEFILE* with each node repeated **cpus_per_task** times
+> 4. run the job
+
+First, let us create a new *Python* script `example_mock_HEALPix_map_MPI.py`.
+
+> - we use `schwimmbad` to easily parallelize the job using `MPIPool()`.
+> - we use `healpy` to generate a mock HEALPix map according to the power spectrum `cl`.
+> - we will mock the HEALPix map under different `nside`.
+
+```python
+"""MPI parallel run [ mock HEALPix map under different nside ]"""
+
+import socket
+import sys
+
+import healpy as hp
+import numpy as np
+from mpi4py import MPI
+from schwimmbad import MPIPool
+
+
+def mock_map_from_cl(cl, nside):
+    return hp.sphtfunc.synfast(cl, nside)
+
+
+def parallel_wrapper(args):
+    print(f"Hi, I am Rank {rank} from node: {socket.gethostname()}")
+    return mock_map_from_cl(*args)
+
+
+def save_maps(maps):
+    # save the mock maps if you like
+    pass
+
+
+def main(pool):
+    root_map = np.random.rand(12 * 64**2)  # a random HEALPix map
+    root_cl = hp.anafast(root_map)  # compute the power spectrum
+    mock_nside = np.arange(
+        start=64, stop=1024 + 1, step=64
+    )  # different nside we need to mock
+    args = list(
+        zip(
+            [root_cl] * mock_nside.size,  # power spectrum
+            mock_nside,  # different nside we need to mock
+        )
+    )
+    mock_maps = pool.map(parallel_wrapper, args)
+
+    pool.close()
+    save_maps(mock_maps)
+    return
+
+
+if __name__ == "__main__":
+    comm = MPI.COMM_WORLD
+    rank = comm.Get_rank()
+    pool = MPIPool(comm=comm)
+    if not pool.is_master():
+        pool.wait()
+        sys.exit(0)
+    main(pool)
+
+```
+
+Second, we create a new *PBS* script `example_mock_HEALPix_map_MPI.sh`.   
+Here, we use `cpus_per_task=[count]` to specify the number of CPUs per MPI process.   
+
+```bash
+#!/bin/bash
+#PBS -N MPI_task_example
+#PBS -l nodes=3:ppn=8
+#PBS -l walltime=10:00
+#PBS -q small
+#PBS -j oe
+#PBS -o pbs_${PBS_JOBNAME}_${PBS_JOBID}.log
+
+############## Prepare the environment ##############
+module purge && module load anaconda/conda-4.12.0 && source activate python3
+
+################# Prepare the nodefile #################
+# manually set the number of cpus per task here!!!
+cpus_per_task=4
+source /opt/sharing/cpus-per-task.sh
+read -r total_tasks nodes cpus_per_task new_nodefile <<< $(prepare_nodefile ${cpus_per_task})
+export PBS_NODEFILE=$new_nodefile
+
+################# Run the MPI program #################
+echo "Running with ${total_tasks} processes on ${nodes} nodes with cpu-per-task = ${cpus_per_task}"
+time_start=$(date +%s)
+echo "******************** START **********************"
+
+cd $PBS_O_WORKDIR
+mpirun -np $total_tasks python -u example_mock_HEALPix_map_MPI.py
+
+echo "********************* END ***********************"
+time_end=$(date +%s)
+interval=$(( (time_end - time_start) / 60 ))
+echo "Time used: $interval minutes"
+```
+
+Then, let us submit the job.
+
+```bash
+qsub example_mock_HEALPix_map_MPI.sh
+```
+
+Finally, you will see the output log shows that the job is running with 6 processes on 3 nodes, with 4 CPUs per task.
+
+```bash
+Running with 6 processes on 3 nodes with cpu-per-task = 4
+******************** START **********************
+Hi, I am Rank 1 from node: gr33
+Hi, I am Rank 2 from node: gr34
+Hi, I am Rank 3 from node: gr34
+Hi, I am Rank 4 from node: gr31
+Hi, I am Rank 5 from node: gr31
+Hi, I am Rank 1 from node: gr33
+Hi, I am Rank 2 from node: gr34
+Hi, I am Rank 3 from node: gr34
+Hi, I am Rank 1 from node: gr33
+Hi, I am Rank 5 from node: gr31
+Hi, I am Rank 4 from node: gr31
+Hi, I am Rank 2 from node: gr34
+Hi, I am Rank 1 from node: gr33
+Hi, I am Rank 3 from node: gr34
+Hi, I am Rank 5 from node: gr31
+Hi, I am Rank 4 from node: gr31
+********************* END ***********************
+Time used: 0 minutes
 ```
 
 ### GPU job
