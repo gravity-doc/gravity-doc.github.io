@@ -589,16 +589,16 @@ Here, we use `cpus_per_task=[count]` to specify the number of CPUs per MPI proce
 #PBS -j oe
 #PBS -o pbs_${PBS_JOBNAME}_${PBS_JOBID}.log
 
+############## Set the number of cpus per task ##############
+cpus_per_task=2
+
 ############## Prepare the environment ##############
 module purge && module load compiler/intel-2018 mpi/intel-2018
-
-# check the environment variables
-echo
-echo "PATH is"
-echo "$PATH"
-echo "LD_LIBRARY_PATH is"
-echo "$LD_LIBRARY_PATH"
-echo
+export OMP_NUM_THREADS=${cpus_per_task}
+export OPENBLAS_NUM_THREADS=${cpus_per_task}
+export MKL_NUM_THREADS=${cpus_per_task}
+export VECLIB_MAXIMUM_THREADS=${cpus_per_task}
+export NUMEXPR_NUM_THREADS=${cpus_per_task}
 
 ################# Prepare MPI C++ exe #################
 prepare_C_exe() {
@@ -638,8 +638,6 @@ echo
 prepare_C_exe
 
 ################# Prepare the nodefile #################
-# manually set the number of cpus per task here!!!
-cpus_per_task=2
 source /opt/sharing/cpus-per-task.sh
 read -r total_tasks nodes cpus_per_task new_nodefile <<< $(prepare_nodefile ${cpus_per_task})
 export PBS_NODEFILE=$new_nodefile
@@ -775,12 +773,18 @@ Here, we use `cpus_per_task=[count]` to specify the number of CPUs per MPI proce
 #PBS -j oe
 #PBS -o pbs_${PBS_JOBNAME}_${PBS_JOBID}.log
 
+############## Set the number of cpus per task ##############
+cpus_per_task=4
+
 ############## Prepare the environment ##############
 module purge && module load anaconda/conda-4.12.0 && source activate python3
+export OMP_NUM_THREADS=${cpus_per_task}
+export OPENBLAS_NUM_THREADS=${cpus_per_task}
+export MKL_NUM_THREADS=${cpus_per_task}
+export VECLIB_MAXIMUM_THREADS=${cpus_per_task}
+export NUMEXPR_NUM_THREADS=${cpus_per_task}
 
 ################# Prepare the nodefile #################
-# manually set the number of cpus per task here!!!
-cpus_per_task=4
 source /opt/sharing/cpus-per-task.sh
 read -r total_tasks nodes cpus_per_task new_nodefile <<< $(prepare_nodefile ${cpus_per_task})
 export PBS_NODEFILE=$new_nodefile
