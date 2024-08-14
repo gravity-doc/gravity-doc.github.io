@@ -9,373 +9,389 @@
   <meta name="keywords" content="sjtu,doa,astronomy,hpc,cluster,jupyter,documentation">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <script>
-    // copy from https://cdn.jsdelivr.net/gh/muicss/johnnydepp@0.1.4/dist/depp.js
-    // Github repo: https://github.com/muicss/johnnydepp
-    // - download multi-file dependencies asynchronously
-    // - load files in parallel 
-    // - avoid duplicate loads
-    if (!this.depp) (function (doc, ev) {
-      // define global object
-      depp = (function () {
-        /**
-       * Global dependencies.
-       * @global {Object} document - DOM
-       */
+    /**
+     * copy from Github repo: https://github.com/kubetail-org/loadjs
+     * Global dependencies.
+     * @global {Object} document - DOM
+     */
 
-        var depp = {},  // library singleton object
-          _devnull = function () { },
-          _bundleDefs = {},
-          _callbackQueue = {},
-          _resultCache = {},
-          _fetchCache = {},
-          _config = {};
+    var devnull = function () { },
+      bundleIdCache = {},
+      bundleResultCache = {},
+      bundleCallbackQueue = {};
 
 
-        /**
-         * Throw error.
-         * @param {string} error - Error string
-         */
-        function throwError(error) {
-          throw new Error('Depp Error: ' + error);
+    /**
+     * Subscribe to bundle load event.
+     * @param {string[]} bundleIds - Bundle ids
+     * @param {Function} callbackFn - The callback function
+     */
+    function subscribe(bundleIds, callbackFn) {
+      // listify
+      bundleIds = bundleIds.push ? bundleIds : [bundleIds];
+
+      var depsNotFound = [],
+        i = bundleIds.length,
+        numWaiting = i,
+        fn,
+        bundleId,
+        r,
+        q;
+
+      // define callback function
+      fn = function (bundleId, pathsNotFound) {
+        if (pathsNotFound.length) depsNotFound.push(bundleId);
+
+        numWaiting--;
+        if (!numWaiting) callbackFn(depsNotFound);
+      };
+
+      // register callback
+      while (i--) {
+        bundleId = bundleIds[i];
+
+        // execute callback if in result cache
+        r = bundleResultCache[bundleId];
+        if (r) {
+          fn(bundleId, r);
+          continue;
         }
 
+        // add to callback queue
+        q = bundleCallbackQueue[bundleId] = bundleCallbackQueue[bundleId] || [];
+        q.push(fn);
+      }
+    }
 
-        /**
-         * De-reference bundles.
-         * @param {string[]} bundleList - List of bundles
-         * @param {object} ancestors - Set of previously processed bundles
-         */
-        function dereferenceBundles(bundleList, ancestors) {
-          ancestors = ancestors || [];
 
-          var undefinedBundles = [], paths = [];
+    /**
+     * Publish bundle load event.
+     * @param {string} bundleId - Bundle id
+     * @param {string[]} pathsNotFound - List of files not found
+     */
+    function publish(bundleId, pathsNotFound) {
+      // exit if id isn't defined
+      if (!bundleId) return;
 
-          bundleList.forEach(function (bundleName) {
-            // check ancestors
-            if (ancestors.indexOf(bundleName) >= 0) throwError("Circular reference");
+      var q = bundleCallbackQueue[bundleId];
 
-            // update undefinedBundles list
-            if (!(bundleName in _bundleDefs)) {
-              return undefinedBundles.push('#' + bundleName);
-            }
+      // cache result
+      bundleResultCache[bundleId] = pathsNotFound;
 
-            // add paths
-            _bundleDefs[bundleName].forEach(function (path) {
-              if (path[0] == '#') {
-                // dereference nested bundle
-                var a = ancestors.slice();
-                a.push(bundleName);
-                a = dereferenceBundles([path.slice(1)], a);
+      // exit if queue is empty
+      if (!q) return;
 
-                // update paths and undefinedBundles
-                undefinedBundles = undefinedBundles.concat(a[0]);
-                paths = paths.concat(a[1]);
-              } else {
-                // update paths
-                paths.push(path);
-              }
-            });
-          });
+      // empty callback queue
+      while (q.length) {
+        q[0](bundleId, pathsNotFound);
+        q.splice(0, 1);
+      }
+    }
 
-          return [undefinedBundles, paths];
+
+    /**
+     * Execute callbacks.
+     * @param {Object or Function} args - The callback args
+     * @param {string[]} depsNotFound - List of dependencies not found
+     */
+    function executeCallbacks(args, depsNotFound) {
+      // accept function as argument
+      if (args.call) args = { success: args };
+
+      // success and error callbacks
+      if (depsNotFound.length) (args.error || devnull)(depsNotFound);
+      else (args.success || devnull)(args);
+    }
+
+
+    /**
+     * Load individual file.
+     * @param {string} path - The file path
+     * @param {Function} callbackFn - The callback function
+     */
+    function loadFile(path, callbackFn, args, numTries) {
+      var doc = document,
+        async = args.async,
+        maxTries = (args.numRetries || 0) + 1,
+        beforeCallbackFn = args.before || devnull,
+        pathname = path.replace(/[\?|#].*$/, ''),
+        pathStripped = path.replace(/^(css|img|module|nomodule)!/, ''),
+        isLegacyIECss,
+        hasModuleSupport,
+        e;
+
+      numTries = numTries || 0;
+
+      if (/(^css!|\.css$)/.test(pathname)) {
+        // css
+        e = doc.createElement('link');
+        e.rel = 'stylesheet';
+        e.href = pathStripped;
+
+        // tag IE9+
+        isLegacyIECss = 'hideFocus' in e;
+
+        // use preload in IE Edge (to detect load errors)
+        if (isLegacyIECss && e.relList) {
+          isLegacyIECss = 0;
+          e.rel = 'preload';
+          e.as = 'style';
         }
+      } else if (/(^img!|\.(png|gif|jpg|svg|webp)$)/.test(pathname)) {
+        // image
+        e = doc.createElement('img');
+        e.src = pathStripped;
+      } else {
+        // javascript
+        e = doc.createElement('script');
+        e.src = pathStripped;
+        e.async = async === undefined ? true : async;
 
+        // handle es modules
+        // modern browsers:
+        //   module: add to dom with type="module"
+        //   nomodule: call success() callback without adding to dom
+        // legacy browsers:
+        //   module: call success() callback without adding to dom
+        //   nomodule: add to dom with default type ("text/javascript")
+        hasModuleSupport = 'noModule' in e;
+        if (/^module!/.test(pathname)) {
+          if (!hasModuleSupport) return callbackFn(path, 'l');
+          e.type = "module";
+        } else if (/^nomodule!/.test(pathname) && hasModuleSupport) return callbackFn(path, 'l');
+      }
 
-        /**
-         * Execute callback function after bundles get defined.
-         * @param {string[]} bundleList - List of bundle names
-         * @param {Function} callbackFn - The callback function
-         */
-        function onBundlesReady(bundleList, callbackFn) {
-          var x = dereferenceBundles(bundleList);
+      e.onload = e.onerror = e.onbeforeload = function (ev) {
+        var result = ev.type[0];
 
-          if (x[0].length) {
-            subscribe(x[0], function () { onBundlesReady(bundleList, callbackFn); });
-          } else {
-            callbackFn(x[1]);
+        // treat empty stylesheets as failures to get around lack of onerror
+        // support in IE9-11
+        if (isLegacyIECss) {
+          try {
+            if (!e.sheet.cssText.length) result = 'e';
+          } catch (x) {
+            // sheets objects created from load errors don't allow access to
+            // `cssText` (unless error is Code:18 SecurityError)
+            if (x.code != 18) result = 'e';
           }
         }
 
+        // handle retries in case of load failure
+        if (result == 'e') {
+          // increment counter
+          numTries += 1;
 
-        /**
-         * Subscribe to multi-event list.
-         * @param {string[]} events - List of events
-         * @param {Function} callbackFn - The callback function
-         */
-        function subscribe(events, callbackFn) {
-          var i = events.length,
-            numWaiting = i,
-            fn,
-            event,
-            x;
-
-          // execute callback and exit if event list is empty
-          if (i == 0) return callbackFn();
-
-          // define callback function
-          fn = function (event, exitEarly) {
-            // execute error callback when first error is encountered
-            if (exitEarly) return callbackFn(event);
-
-            // execute success callback after all events have returned successfully
-            numWaiting--;
-            if (!numWaiting) callbackFn();
-          };
-
-          // register callback
-          while (i--) {
-            event = events[i];
-
-            // execute callback if in result cache
-            if (event in _resultCache) {
-              fn(event, _resultCache[event]);
-              continue;
-            }
-
-            // add to callback queue
-            x = _callbackQueue[event] = _callbackQueue[event] || [];
-            x.push(fn);
+          // exit function and try again
+          if (numTries < maxTries) {
+            return loadFile(path, callbackFn, args, numTries);
           }
+        } else if (e.rel == 'preload' && e.as == 'style') {
+          // activate preloaded stylesheets
+          return e.rel = 'stylesheet'; // jshint ignore:line
         }
 
+        // execute callback
+        callbackFn(path, result, ev.defaultPrevented);
+      };
 
-        /**
-         * Publish event.
-         * @param {string} event - The event name
-         * @param {string[]} result - The event result ('s' or 'e')
-         */
-        function publish(event, result) {
-          var q = _callbackQueue[event];
+      // add to document (unless callback returns `false`)
+      if (beforeCallbackFn(path, e) !== false) doc.head.appendChild(e);
+    }
 
-          // cache result
-          _resultCache[event] = result;
 
-          // exit if queue is empty
-          if (!q) return;
+    /**
+     * Load multiple files.
+     * @param {string[]} paths - The file paths
+     * @param {Function} callbackFn - The callback function
+     */
+    function loadFiles(paths, callbackFn, args) {
+      // listify paths
+      paths = paths.push ? paths : [paths];
 
-          // empty callback queue
-          while (q.length) {
-            q[0](event, result);
-            q.splice(0, 1);
-          }
+      var numWaiting = paths.length,
+        x = numWaiting,
+        pathsNotFound = [],
+        fn,
+        i;
+
+      // define callback function
+      fn = function (path, result, defaultPrevented) {
+        // handle error
+        if (result == 'e') pathsNotFound.push(path);
+
+        // handle beforeload event. If defaultPrevented then that means the load
+        // will be blocked (ex. Ghostery/ABP on Safari)
+        if (result == 'b') {
+          if (defaultPrevented) pathsNotFound.push(path);
+          else return;
         }
 
+        numWaiting--;
+        if (!numWaiting) callbackFn(pathsNotFound);
+      };
 
-        /**
-         * Load individual file.
-         * @param {string} path - The file path
-         * @param {Function} callbackFn - The callback function
-         */
-        function loadFile(path, callbackFn) {
-          var doc = document,
-            beforeCallbackFn = _config.before || _devnull,
-            pathStripped = path.replace(/^(css|img|module)!/, ''),
-            isLegacyIECss,
-            e;
+      // load scripts
+      for (i = 0; i < x; i++) loadFile(paths[i], fn, args);
+    }
 
-          if (/(^css!|\.css$)/.test(path)) {
-            // css
-            e = doc.createElement('link');
-            e.rel = 'stylesheet';
-            e.href = pathStripped;
 
-            // tag IE9+
-            isLegacyIECss = 'hideFocus' in e;
+    /**
+     * Initiate script load and register bundle.
+     * @param {(string|string[])} paths - The file paths
+     * @param {(string|Function|Object)} [arg1] - The (1) bundleId or (2) success
+     *   callback or (3) object literal with success/error arguments, numRetries,
+     *   etc.
+     * @param {(Function|Object)} [arg2] - The (1) success callback or (2) object
+     *   literal with success/error arguments, numRetries, etc.
+     */
+    function loadjs(paths, arg1, arg2) {
+      var bundleId,
+        args;
 
-            // use preload in IE Edge (to detect load errors)
-            if (isLegacyIECss && e.relList) {
-              isLegacyIECss = 0;
-              e.rel = 'preload';
-              e.as = 'style';
-            }
-          } else if (/(^img!|\.(png|gif|jpg|svg)$)/.test(path)) {
-            // image
-            e = doc.createElement('img');
-            e.src = pathStripped;
-          } else {
-            // javascript
-            e = doc.createElement('script');
-            e.src = pathStripped;
-            e.async = false;
+      // bundleId (if string)
+      if (arg1 && arg1.trim) bundleId = arg1;
 
-            // module
-            if (/^module!/.test(path)) e.type = "module";
-          }
+      // args (default is {})
+      args = (bundleId ? arg2 : arg1) || {};
 
-          e.onload = e.onerror = e.onbeforeload = function (ev) {
-            var result = ev.type[0];
-
-            // treat empty stylesheets as failures to get around lack of onerror
-            // support in IE9-11
-            if (isLegacyIECss) {
-              try {
-                if (!e.sheet.cssText.length) result = 'e';
-              } catch (x) {
-                // sheets objects created from load errors don't allow access to
-                // `cssText` (unless error is Code:18 SecurityError)
-                if (x.code != 18) result = 'e';
-              }
-            }
-
-            // handle beforeload. If defaultPrevented then that means the load will be
-            // blocked (e.g. Ghostery/ABP on Safari)
-            if (result == 'b') {
-              if (ev.defaultPrevented) result = 'e';
-              else return;
-            }
-
-            // activate preloaded stylesheets
-            if (result != 'e' && e.rel == 'preload' && e.as == 'style') {
-              return e.rel = 'stylesheet'; // jshint ignore: line
-            }
-
-            // execute callback
-            callbackFn(path, result == 'e');
-          };
-
-          // execute before callback
-          beforeCallbackFn(path, e);
-
-          // add to document
-          doc.head.appendChild(e);
+      // throw error if bundle is already defined
+      if (bundleId) {
+        if (bundleId in bundleIdCache) {
+          throw "LoadJS";
+        } else {
+          bundleIdCache[bundleId] = true;
         }
+      }
 
+      function loadFn(resolve, reject) {
+        loadFiles(paths, function (pathsNotFound) {
+          // execute callbacks
+          executeCallbacks(args, pathsNotFound);
 
-        /**
-         * Define dependency bundles.
-         * @param {Object} bundleDefs - Bundle definitions
-         */
-        depp.define = function define(inputDefs) {
-          var paths;
-
-          // copy bundle defs
-          for (var bundleName in inputDefs) {
-            // throw error if bundle is already defined
-            if (bundleName in _bundleDefs) throwError("Bundle already defined");
-
-            paths = inputDefs[bundleName];
-
-            // listify and add to cache
-            _bundleDefs[bundleName] = paths.push ? paths : [paths];
-
-            // publish bundle definition event
-            publish('#' + bundleName);
+          // resolve Promise
+          if (resolve) {
+            executeCallbacks({ success: resolve, error: reject }, pathsNotFound);
           }
-        };
+
+          // publish bundle load event
+          publish(bundleId, pathsNotFound);
+        }, args);
+      }
+
+      if (args.returnPromise) return new Promise(loadFn);
+      else loadFn();
+    }
 
 
-        /**
-         * Configure library.
-         * @param {Object} newVals - New configuration values
-         */
-        depp.config = function (newVals) {
-          for (var k in newVals) _config[k] = newVals[k];
-        };
+    /**
+     * Execute callbacks when dependencies have been satisfied.
+     * @param {(string|string[])} deps - List of bundle ids
+     * @param {Object} args - success/error arguments
+     */
+    loadjs.ready = function ready(deps, args) {
+      // subscribe to bundle load event
+      subscribe(deps, function (depsNotFound) {
+        // execute callbacks
+        executeCallbacks(args, depsNotFound);
+      });
+
+      return loadjs;
+    };
 
 
-        /**
-         * Register callbacks and trigger onetime-only download (if necessary).
-         * @param {string or string[]} bundleList - List of bundle names
-         * @param {Function} successFn - Success callback
-         * @param {Function} errorFn - Error callback
-         */
-        depp.require = function require(bundleList, successFn, errorFn) {
-          // listify
-          bundleList = bundleList.push ? bundleList : [bundleList];
-
-          // load files after bundles get defined
-          onBundlesReady(bundleList, function (paths) {
-            // subscribe to file load events
-            subscribe(paths, function (firstPathNotFound) {
-              if (firstPathNotFound) (errorFn || _devnull)(firstPathNotFound);
-              else (successFn || _devnull)();
-            });
-
-            // trigger file downloads
-            paths.forEach(function (path) {
-              var filename = path.split('/').pop();
-
-              // skip if file has already been fetched, run successFn and return
-              if (filename in _fetchCache || path in _fetchCache) {
-                (successFn || _devnull)();
-                return;
-              }
-
-              // update fetch cache
-              _fetchCache[path] = true;
-              _fetchCache[filename] = true;
-
-              // load file and publish result
-              loadFile(path, publish);
-            });
-          });
-        };
+    /**
+     * Manually satisfy bundle dependencies.
+     * @param {string} bundleId - The bundle id
+     */
+    loadjs.done = function done(bundleId) {
+      publish(bundleId, []);
+    };
 
 
-        /**
-         * Manually register a bundle load
-         * @param {string} bundleName - The bundle name
-         */
-        depp.done = function done(bundleName) {
-          // override bundle definition
-          _bundleDefs[bundleName] = [];
-
-          // publish definition event
-          publish('#' + bundleName);
-        };
+    /**
+     * Reset loadjs dependencies statuses
+     */
+    loadjs.reset = function reset() {
+      bundleIdCache = {};
+      bundleResultCache = {};
+      bundleCallbackQueue = {};
+    };
 
 
-        /**
-         * Check if bundle has already been defined
-         * @param {string} bundleName - The bundle name
-         */
-        depp.isDefined = function isDefined(bundleName) {
-          return bundleName in _bundleDefs;
-        };
+    /**
+     * Determine if bundle has already been defined
+     * @param String} bundleId - The bundle id
+     */
+    loadjs.isDefined = function isDefined(bundleId) {
+      return bundleId in bundleIdCache;
+    };
 
+    /**
+     * Our own loadSameFile function
+     * avoid the same file loaded multiple times
+     * try to load the same file [bundleID] from different sources [bundlePaths]
+     * start from the first path, if failed, try the next one
+     * @param {string} bundleID - The bundle id
+     * @param {string[]} bundlePaths - The file paths array of the same file
+     */
+    function loadSameFile(bundleID, bundlePaths) {
+      // get the first path
+      var path = bundlePaths.shift();
 
-        /**
-         * Reset dependency trackers and bundle definitions
-         */
-        depp.reset = function reset() {
-          _bundleDefs = {};
-          _callbackQueue = {};
-          _resultCache = {};
-          _fetchCache = {};
-          _config = {};
-        };
+      // // start loading
+      // loadjs(path, bundleID, {
+      //   async: true,
+      //   numRetries: 1,
+      //   returnPromise: false,
+      // });
 
+      // // check if the file is loaded successfully, if not, try the next path
+      // loadjs.ready(bundleID, {
+      //   success: function () {
+      //     console.log('[GOOD] ' + path + ' loaded');
+      //   },
+      //   error: function (depsNotFound) {
+      //     console.log('[ERROR] ' + path + ' failed to load');
+      //     delete bundleIdCache[bundleID];
+      //     delete bundleResultCache[bundleID];
+      //     delete bundleCallbackQueue[bundleID];
+      //     if (bundlePaths.length) {
+      //       loadSameFile(bundleID, bundlePaths);
+      //     }
+      //   },
+      // });
 
-        // export
-        return depp;
-
-      })();
-
-      // dispatch load event
-      ev = doc.createEvent('HTMLEvents');
-      if (ev.initEvent) ev.initEvent('depp-load', false, false);
-      else ev = new Event('depp-load');
-      doc.dispatchEvent(ev);
-    })(document);
-
-
+      loadjs(path, bundleID, { returnPromise: true })
+        .then(function () {
+          console.log('[GOOD] ' + path + ' loaded');
+        })
+        .catch(function (pathsNotFound) {
+          console.log('[ERROR] ' + path + ' failed to load');
+          delete bundleIdCache[bundleID];
+          delete bundleResultCache[bundleID];
+          delete bundleCallbackQueue[bundleID];
+          if (bundlePaths.length) {
+            loadSameFile(bundleID, bundlePaths);
+          }
+        });
+    }
   </script>
+
   <script>
-    depp.define({
-      'darklight_css': [
-        "css!https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/style.min.css",
-        "css!https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/style.min.css",
-        "css!//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css",
-      ],
-      'DOA_logo': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/logo_DOA_mini.png",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/logo_DOA_mini.png",
-      ],
-    });
-    depp.require(['darklight_css', 'DOA_logo'], function () {
-      console.log('CSS & logo loaded.');
-    });
+    // loading CSS stylesheets and images
+    const darklight_css = [
+      "css!https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/style.min.css",
+      "css!https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/style.min.css",
+      "css!//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css",
+    ];
+    const DOA_logo = [
+      "img!https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/logo_DOA_mini.png",
+      "img!https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/logo_DOA_mini.png",
+    ];
+    loadSameFile('darklight_css', darklight_css);
+    loadSameFile('DOA_logo', DOA_logo);
   </script>
+
   <style>
     nav.app-nav li ul {
       min-width: 100px;
@@ -391,6 +407,7 @@
 
 <body>
   <div id="app">Loading (/≧▽≦)/... ...</div>
+
   <script>
     window.$docsify = {
       alias: {
@@ -438,81 +455,104 @@
     }
 
   </script>
+
   <script>
-    depp.define({
-      'docsify': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
-        "//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.js",
-      ],
-      'alerts': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
-        "//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1/dist/docsify-plugin-flexible-alerts.min.js",
-      ],
-      'darkTheme': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
-        "//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js",
-      ],
-      'search': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
-        "//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js",
-      ],
-      'copyCode': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
-        "//cdn.jsdelivr.net/npm/docsify-copy-code@3.0.0/dist/docsify-copy-code.min.js",
-      ],
-      'zoomImage': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
-        "//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js",
-      ],
-      'pagination': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
-        "//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js",
-      ],
-      'bash': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
-        "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js",
-      ],
-      'markdown': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
-        "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js",
-      ],
-      'json': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
-        "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js",
-      ],
-      'python': [
-        "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
-        "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
-        "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js",
-      ]
+    // loading JS files
+    const JSdocsify = [
+      // "https://baidu.com/docsify.js",
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
+      "//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.js",
+    ];
+    const JSalerts = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
+      "//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1/dist/docsify-plugin-flexible-alerts.min.js",
+    ];
+    const JSdarkTheme = [
+      // "https://baidu.com/index.min.js",
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
+      "//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js",
+    ];
+    const JSsearch = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
+      "//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js",
+    ];
+    const JScopyCode = [
+      // "https://baidu.com/docsify-copy-code.min.js",
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
+      "//cdn.jsdelivr.net/npm/docsify-copy-code@3.0.0/dist/docsify-copy-code.min.js",
+    ];
+    const JSzoomImage = [
+      // "https://baidu.com/zoom-image.min.js",
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
+      "//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js",
+    ];
+    const JSpagination = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
+      "//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js",
+    ];
+    const JSbash = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
+      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js",
+    ];
+    const JSmarkdown = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
+      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js",
+    ];
+    const JSjson = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
+      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js",
+    ];
+    const JSpython = [
+      "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
+      "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
+      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js",
+    ];
+
+    var thePromise = new Promise(function (resolve, reject) {
+      resolve();
     });
-    depp.require(['alerts', 'darkTheme', 'copyCode', 'zoomImage', 'pagination'], function () {
-      console.log('dark theme & plugins loaded.');
+
+    thePromise.then(function () {
+      loadSameFile('JSdarkTheme', JSdarkTheme);
+      loadSameFile('JSalerts', JSalerts);
+      loadSameFile('JScopyCode', JScopyCode);
+      loadSameFile('JSzoomImage', JSzoomImage);
+      loadSameFile('JSpagination', JSpagination);
+    }).then(function () {
+      loadjs.ready(['JSdarkTheme', 'JSalerts', 'JScopyCode', 'JSzoomImage', 'JSpagination'], {
+        success: function () {
+          loadSameFile('JSdocsify', JSdocsify);
+          loadSameFile('JSsearch', JSsearch);
+        },
+        error: function (depsNotFound) {
+          // setTimeout(function () {
+          //   loadSameFile('JSdocsify', JSdocsify);
+          //   loadSameFile('JSsearch', JSsearch);
+          // }, 50);
+          loadSameFile('JSdocsify', JSdocsify);
+          loadSameFile('JSsearch', JSsearch);
+        },
+      });
     });
+    setTimeout(function () {
+      loadSameFile('JSbash', JSbash);
+      loadSameFile('JSmarkdown', JSmarkdown);
+      loadSameFile('JSjson', JSjson);
+      loadSameFile('JSpython', JSpython);
+    }, 1500);
 
   </script>
 
-  <script>
-    depp.require(['docsify', 'search'], function () {
-      console.log('Docsify self & search loaded.');
-    });
-  </script>
-
-  <script>
-    depp.require(['bash', 'markdown', 'json', 'python'], function () {
-      console.log('Prism loaded.');
-    });
-  </script>
 </body>
 
 </html>
