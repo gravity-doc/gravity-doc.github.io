@@ -361,7 +361,7 @@
       //   },
       // });
 
-      loadjs(path, bundleID, { returnPromise: true })
+      return loadjs(path, bundleID, { returnPromise: true })
         .then(function () {
           console.log('[GOOD] ' + path + ' loaded');
         })
@@ -371,7 +371,7 @@
           delete bundleResultCache[bundleID];
           delete bundleCallbackQueue[bundleID];
           if (bundlePaths.length) {
-            loadSameFile(bundleID, bundlePaths);
+            return loadSameFile(bundleID, bundlePaths);
           }
         });
     }
@@ -476,6 +476,7 @@
       "//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js",
     ];
     const JSsearch = [
+      // "https://baidu.com/search.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
       "//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js",
@@ -498,6 +499,7 @@
       "//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js",
     ];
     const JSbash = [
+      // "https://baidu.com/prism-bash.min.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
       "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js",
@@ -518,38 +520,35 @@
       "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js",
     ];
 
-    var thePromise = new Promise(function (resolve, reject) {
-      resolve();
-    });
-
-    thePromise.then(function () {
-      loadSameFile('JSdarkTheme', JSdarkTheme);
-      loadSameFile('JSalerts', JSalerts);
-      loadSameFile('JScopyCode', JScopyCode);
-      loadSameFile('JSzoomImage', JSzoomImage);
-      loadSameFile('JSpagination', JSpagination);
-    }).then(function () {
-      loadjs.ready(['JSdarkTheme', 'JSalerts', 'JScopyCode', 'JSzoomImage', 'JSpagination'], {
-        success: function () {
-          loadSameFile('JSdocsify', JSdocsify);
-          loadSameFile('JSsearch', JSsearch);
-        },
-        error: function (depsNotFound) {
-          // setTimeout(function () {
-          //   loadSameFile('JSdocsify', JSdocsify);
-          //   loadSameFile('JSsearch', JSsearch);
-          // }, 50);
-          loadSameFile('JSdocsify', JSdocsify);
-          loadSameFile('JSsearch', JSsearch);
-        },
+    Promise.allSettled(
+      [
+        loadSameFile('JSdarkTheme', JSdarkTheme),
+        loadSameFile('JSalerts', JSalerts),
+        loadSameFile('JScopyCode', JScopyCode),
+        loadSameFile('JSzoomImage', JSzoomImage),
+        loadSameFile('JSpagination', JSpagination),
+      ])
+      .then(function () {
+        return Promise.allSettled(
+          [
+            loadSameFile('JSdocsify', JSdocsify),
+            loadSameFile('JSsearch', JSsearch),
+          ]
+        );
+      })
+      .then(function () {
+        return Promise.allSettled(
+          [
+            loadSameFile('JSbash', JSbash),
+            loadSameFile('JSmarkdown', JSmarkdown),
+            loadSameFile('JSjson', JSjson),
+            loadSameFile('JSpython', JSpython),
+          ]
+        );
+      })
+      .catch(function (error) {
+        console.error('One or more files failed to load:', error);
       });
-    });
-    setTimeout(function () {
-      loadSameFile('JSbash', JSbash);
-      loadSameFile('JSmarkdown', JSmarkdown);
-      loadSameFile('JSjson', JSjson);
-      loadSameFile('JSpython', JSpython);
-    }, 1500);
 
   </script>
 
