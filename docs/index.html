@@ -539,30 +539,21 @@
     function loadTheFastFile(urls) {
       return Promise.race(urls.map((url) => fetch(url)))
         .then(function (response) {
-          // check nectwork response
           if (response.ok) {
-            // check if the script has been loaded already
-            var currentUrl = response.url;
-            var filename = currentUrl.split('/').pop();
-            var scripts = document.querySelectorAll('script[src$="' + filename + '"]');
-            if (scripts.length > 0) {
-              console.log('[TEST] Script has been loaded: ' + scripts[0].src + ' currentUrl: ' + currentUrl);
-              throw new Error('Network response was ok, but the script has been loaded.');
-            }
-            console.log('[TEST] Loading: ' + currentUrl);
-            return response.headers.get('content-type').includes('application/javascript') ? currentUrl : response.text();
+            console.log('[INFO] Loading: ' + response.url);
+            return response.blob();
           }
           throw new Error('Network response was not ok.');
         })
-        .then((script) => {
-          // Load the script
+        .then((blob) => {
           const scriptElement = document.createElement('script');
-          scriptElement.src = script;
+          const url = URL.createObjectURL(blob);
+          scriptElement.src = url;
           document.head.appendChild(scriptElement);
         })
         .catch((error) => console.error(error));
     }
-
+    
     Promise.allSettled(
       [
         loadTheFastFile(JSdarkTheme),
