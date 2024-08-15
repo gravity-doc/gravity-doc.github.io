@@ -455,100 +455,173 @@
     }
 
   </script>
-
   <script>
     // loading JS files
     const JSdocsify = [
       // "https://baidu.com/docsify.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify.js",
-      "//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.js",
+      "https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.js",
     ];
     const JSalerts = [
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-plugin-flexible-alerts.min.js",
-      "//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1/dist/docsify-plugin-flexible-alerts.min.js",
+      "https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1/dist/docsify-plugin-flexible-alerts.min.js",
     ];
     const JSdarkTheme = [
       // "https://baidu.com/index.min.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/index.min.js",
-      "//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js",
+      "https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js",
     ];
     const JSsearch = [
       // "https://baidu.com/search.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/search.js",
-      "//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js",
+      "https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js",
     ];
     const JScopyCode = [
       // "https://baidu.com/docsify-copy-code.min.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-copy-code.min.js",
-      "//cdn.jsdelivr.net/npm/docsify-copy-code@3.0.0/dist/docsify-copy-code.min.js",
+      "https://cdn.jsdelivr.net/npm/docsify-copy-code@3.0.0/dist/docsify-copy-code.min.js",
     ];
     const JSzoomImage = [
       // "https://baidu.com/zoom-image.min.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/zoom-image.min.js",
-      "//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js",
+      "https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js",
     ];
     const JSpagination = [
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/docsify-pagination.min.js",
-      "//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js",
+      "https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js",
     ];
     const JSbash = [
       // "https://baidu.com/prism-bash.min.js",
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-bash.min.js",
-      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js",
+      "https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js",
     ];
     const JSmarkdown = [
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-markdown.min.js",
-      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js",
+      "https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js",
     ];
     const JSjson = [
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-json.min.js",
-      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js",
+      "https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js",
     ];
     const JSpython = [
       "https://gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
       "https://jupyter.gravity.sjtu.edu.cn/file/api/public/dl/bjEJwMgn/JS_cache/prism-python.min.js",
-      "//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js",
+      "https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js",
     ];
+
+    const originalFetch = window.fetch;
+
+    window.fetch = function (input, init) {
+      const url = new URL(input);
+      const currentHostname = location.hostname;
+
+      if (currentHostname === url.hostname || url.hostname.includes('cdn')) {
+        return originalFetch(input, init);
+      } else {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject(new Error('Blocked request: ' + input));
+          }, 10000);
+        });
+      }
+    };
+
+    function loadTheFastFile(urls) {
+      return Promise.race(urls.map((url) => fetch(url)))
+        .then(function (response) {
+          // check nectwork response
+          if (response.ok) {
+            // check if the script has been loaded already
+            var currentUrl = response.url;
+            var filename = currentUrl.split('/').pop();
+            var scripts = document.querySelectorAll('script[src$="' + filename + '"]');
+            if (scripts.length > 0) {
+              console.log('[TEST] Script has been loaded: ' + scripts[0].src + ' currentUrl: ' + currentUrl);
+              throw new Error('Network response was ok, but the script has been loaded.');
+            }
+            console.log('[TEST] Loading: ' + currentUrl);
+            return response.headers.get('content-type').includes('application/javascript') ? currentUrl : response.text();
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then((script) => {
+          // Load the script
+          const scriptElement = document.createElement('script');
+          scriptElement.src = script;
+          document.head.appendChild(scriptElement);
+        })
+        .catch((error) => console.error(error));
+    }
 
     Promise.allSettled(
       [
-        loadSameFile('JSdarkTheme', JSdarkTheme),
-        loadSameFile('JSalerts', JSalerts),
-        loadSameFile('JScopyCode', JScopyCode),
-        loadSameFile('JSzoomImage', JSzoomImage),
-        loadSameFile('JSpagination', JSpagination),
+        loadTheFastFile(JSdarkTheme),
+        loadTheFastFile(JSalerts),
+        loadTheFastFile(JScopyCode),
+        loadTheFastFile(JSzoomImage),
+        loadTheFastFile(JSpagination),
       ])
       .then(function () {
         return Promise.allSettled(
           [
-            loadSameFile('JSdocsify', JSdocsify),
-            loadSameFile('JSsearch', JSsearch),
+            loadTheFastFile(JSdocsify),
+            loadTheFastFile(JSsearch),
           ]
         );
       })
       .then(function () {
         return Promise.allSettled(
           [
-            loadSameFile('JSbash', JSbash),
-            loadSameFile('JSmarkdown', JSmarkdown),
-            loadSameFile('JSjson', JSjson),
-            loadSameFile('JSpython', JSpython),
+            loadTheFastFile(JSbash),
+            loadTheFastFile(JSmarkdown),
+            loadTheFastFile(JSjson),
+            loadTheFastFile(JSpython),
           ]
         );
       })
       .catch(function (error) {
         console.error('One or more files failed to load:', error);
       });
+
+    // Promise.allSettled(
+    //   [
+    //     loadSameFile('JSdarkTheme', JSdarkTheme),
+    //     loadSameFile('JSalerts', JSalerts),
+    //     loadSameFile('JScopyCode', JScopyCode),
+    //     loadSameFile('JSzoomImage', JSzoomImage),
+    //     loadSameFile('JSpagination', JSpagination),
+    //   ])
+    //   .then(function () {
+    //     return Promise.allSettled(
+    //       [
+    //         loadSameFile('JSdocsify', JSdocsify),
+    //         // loadSameFile('JSsearch', JSsearch),
+    //       ]
+    //     );
+    //   })
+    //   .then(function () {
+    //     return Promise.allSettled(
+    //       [
+    //         loadSameFile('JSbash', JSbash),
+    //         loadSameFile('JSmarkdown', JSmarkdown),
+    //         loadSameFile('JSjson', JSjson),
+    //         loadSameFile('JSpython', JSpython),
+    //       ]
+    //     );
+    //   })
+    //   .catch(function (error) {
+    //     console.error('One or more files failed to load:', error);
+    //   });
 
   </script>
 
