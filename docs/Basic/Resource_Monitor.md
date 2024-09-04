@@ -77,7 +77,7 @@ This year  [20210101 ~ 20210531] cost:  6666 ￥
 This month [20210501 ~ 20210531] CPU time (hour): 666
 This month [20210501 ~ 20210531] cost:  66 ￥
 
-######### Complete usage statistics: https://stat.gravity.sjtu.edu.cn ##########
+#### Complete usage statistics: https://jupyter.gravity.sjtu.edu.cn/inspur/ #####
 ```
 
 > [!TIP]

@@ -210,12 +210,12 @@
         loadFastestResource(JScopyCode),
         loadFastestResource(JSzoomImage),
         loadFastestResource(JSpagination),
+        loadFastestResource(JSsearch),
       ])
       .then(function () {
         return Promise.allSettled(
           [
             loadFastestResource(JSdocsify),
-            loadFastestResource(JSsearch),
           ]
         );
       })
