@@ -15,7 +15,7 @@
 To generate a [*ssh-key pair*](https://wiki.archlinux.org/title/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)), open a terminal (*Linux/Windows/Mac*) 
 
 ```bash
-➜  ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
+ssh-keygen -t rsa -b 4096 -C "lalala@Gravity"
 ```
 
 > [!TIP]
