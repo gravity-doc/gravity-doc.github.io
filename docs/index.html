@@ -14,7 +14,7 @@
       const url = new URL(input);
       const currentHostname = location.hostname;
 
-      if (currentHostname === url.hostname || url.hostname.includes('cdn')) {
+      if (currentHostname === url.hostname || url.hostname.includes('cdn') || currentHostname.includes('gravity-doc')) {
         return originalFetch(input, init);
       } else {
         return new Promise((resolve, reject) => {
