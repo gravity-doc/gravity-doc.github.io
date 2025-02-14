@@ -23,7 +23,7 @@ You can contact us via
 
 - [gravity-hpc@sjtu.edu.cn ](mailto:gravity-hpc@sjtu.edu.cn) 📧
 - **WeChat** group 💬
-- **Admin**🧙‍: *Junjie Zhao, Yihe Wang, Yu Yu, Jiaxin Han*
+- **Admin**🧙‍: *Junjie Zhao, Yu Yu, Jiaxin Han*
 
 if you need
 
