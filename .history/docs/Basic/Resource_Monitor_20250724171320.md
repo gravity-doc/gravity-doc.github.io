@@ -65,40 +65,24 @@ Each account has a default quota of
 
 Gravity **Home Directory** is mounted at `/gravity/home`  
 
-## CPU Time Usage and Computation Charge
+## CPU time usage and cost
 
-The welcome message has been updated to display your **pending bill for the current season** (every 6 months), calculated at the correct rate of **0.04 RMB per CPU hour**.  
-If you log in now, you will see your **accumulated charge since the beginning of the current half year**.
-
-
-If you want to check your usage statistics for **the entire year**, you can do 
-
-```bash
-cpuquota
-```
-
-and it will show, by default, your computation fee since the beginning of this year. You can also run `cpuquota username` to check another user's usage, or use `cpuquota -h` to see more options.
-
-Note you can always view detailed cputime history on   
-👉 https://jupyter.gravity.sjtu.edu.cn/inspur  
-> ⚠️ the price showed was still counted at **0.1RMB/cpuhour** for jobs before 2025/07, and only new jobs are counted at the new price, so you can ignore the **price column** there and only look at the **cputime** there.
-
-Example output of `cpuquota`:
+You can use `cpuquota` or `cpuquota username` on **login01** or **login02**, just like this:   
 
 ```bash
 [lalala@login01 ~]$ cpuquota 
 ##################### Hi ༼ つ ◕_◕ ༽つ lalala Your Cost #########################
 
-This year  [20210101 ~ 20210531] cost(￥):  6666  
+This year  [20210101 ~ 20210531] cost:  6666 ￥ 
 This month [20210501 ~ 20210531] CPU time (hour): 666
-This month [20210501 ~ 20210531] cost(￥):  66 
+This month [20210501 ~ 20210531] cost:  66 ￥
 
 #### Complete usage statistics: https://jupyter.gravity.sjtu.edu.cn/inspur/ #####
 ```
 
-> [!TIP]  
+> [!TIP]
 > Your advisor will bear the cost 🥳
-
+> 
 
 ## PBS 
 
