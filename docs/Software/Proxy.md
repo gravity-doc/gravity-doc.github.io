@@ -2,7 +2,7 @@ The login nodes have direct access to the internet, while the computing nodes do
 
 ## 1. Enable proxy on a computing node
 
-We have setup a clash proxy on login02 which can be used to relay traffic between computing nodes and the internet. 
+We have setup a clash proxy service on login02 which can be used to relay traffic between computing nodes and the internet. 
 
 The proxy also automatically speeds up slow connections to blocked/throttled websites overseas such as GitHub. 
 
