@@ -1,17 +1,14 @@
-
-## Surf the Internet🏄‍
-
 The login nodes have direct access to the internet, while the computing nodes do not. To access internet on a computing node, you can use one of the two options below. 
 
-### 1. Use our proxy service from a computing node
+## 1. Enable proxy on a computing node
 
 We have setup a clash proxy on login02 which can be used to relay traffic between computing nodes and the internet. 
 
 The proxy also automatically speeds up slow connections to blocked/throttled websites overseas such as GitHub. 
 
-#### Enable Proxy
+### Enable Proxy
 
-1. Run the following commands on a computing node, or within your job script
+1. To use it, run the following commands on a computing node, or within your job script
 
     ```bash
     source /opt/sharing/proxy.sh
@@ -33,7 +30,7 @@ This will set various environment variables (`HTTP_PROXY/HTTPS_PROXY` etc.) whic
 > - If you need to download **a large amount of data (> 100GB)** *from overseas*, you can [contact admin](?id=contact) to **speed up**⚡ your connection.
     
 
-#### Disable Proxy
+### Disable Proxy
 
   Run the following command to disable the proxy when you no longer need it:
 
@@ -41,7 +38,7 @@ This will set various environment variables (`HTTP_PROXY/HTTPS_PROXY` etc.) whic
     proxyoff
     ```
 
-### 2. Access computing nodes through Jupyter
+## 2. Automatic proxy within Jupyter
 
 The proxy service is automatically enabled for servers spawned on our JupyterHub.
 
