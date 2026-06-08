@@ -1,3 +1,7 @@
+- [🤖 Ask GravityAI](https://gravity.sjtu.edu.cn/ai)
+
+---
+
 - [Quick start](/QuickStart.md)
 
 - Basic
