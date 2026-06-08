@@ -11,10 +11,11 @@
 > [!NOTE]
 > ## Welcome to contribute
 >
-> - Feel free to contribute to this documentation by submitting a pull request here 👉 [gravity-doc](https://github.com/gravity-doc/gravity-doc.github.io)    
-> - Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.       
-> 
-> ### **中文内容也欢迎！🥳**   
+> - Feel free to contribute to this documentation by submitting a pull request here 👉 [gravity-doc](https://github.com/gravity-doc/gravity-doc.github.io)
+> - See the [contribution guide](/Contributing.md) for the current workflow and the files you usually need to edit.
+> - Your name will be honoured in the [contributor list](https://github.com/gravity-doc/gravity-doc.github.io/graphs/contributors) once your contributions are merged.
+>
+> ### **中文内容也欢迎！🥳**
 >
 
 ## Contact

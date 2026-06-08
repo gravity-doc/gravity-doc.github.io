@@ -27,6 +27,7 @@
 
 - [FAQ](/MISC/FAQ.md)
 - [Issues](/MISC/Issues.md)
+- [Contributing](/Contributing.md)
 - [Cluster info](/About.md)
 - [Policy](/Policy.md)
 - [Changelog](/Updates.md)
