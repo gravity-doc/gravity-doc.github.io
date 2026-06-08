@@ -1,3 +1,4 @@
 - [Cheatsheet](/QuickStart?id=cheatsheet-📜)
+- [AI Documentation](https://gravity.sjtu.edu.cn/ai)
 - [Gravity Home](https://jupyter.gravity.sjtu.edu.cn/)
 - [Department of Astronomy (SJTU)](http://astro.sjtu.edu.cn/)
