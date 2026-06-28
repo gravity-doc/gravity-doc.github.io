@@ -6,7 +6,6 @@
 > - [AI chat here](https://gravity.sjtu.edu.cn/ai) for guided questions and faster discovery   
 > - [CheatSheet here](/QuickStart?id=cheatsheet-📜) contains many useful commands   
 > - Remember to acknowledge Gravity in your publications 👉  [Acknowledging Gravity Cluster](/?id=acknowledging-gravity-cluster)   
-> - ❌**Never**❌ use `conda create/install` on *login01/computing nodes*, it will **destroy** the environment. You can only use it on **login02**. (see [more details here](/MISC/Issues?id=conda))
 >
 
 > [!NOTE]

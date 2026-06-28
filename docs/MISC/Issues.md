@@ -6,16 +6,26 @@
 > 
 
 > [!ATTENTION]
-> **NEVER EVER** install/update any package at *login01* using `conda/mamba`. Otherwise, your whole conda environment will be destroyed!   
-> You can use `pip install` instead   
-> You can go to *login02* to use `conda/mamba install/create`   
+> `conda/mamba install/create` can be used on **both `login01` and `login02`**.
+> The key requirement is that you **do not overwrite or remove the cluster-provided `~/.condarc`**, which makes Conda use **soft links** instead of the default hard links.
 > 
 
 ## **Conda**   
-One recieves '**binary file can not be executed**' after installing of Anaconda latest version (2020-05). 
-The same happens when update conda from old version.
-This issue is due to incompatiblity of the **parallel file system** mounted in kernel state. 
-As a temporary workaround, we have mounted the filesystem with **NFS on login02**, so that you can use login02 for installation and update of anaconda packages. This means degraded IO performance on login02 (~700MB/s), but it should suffice common usage requirements. If high IO performance is needed interactively, use login01.
+Users may encounter errors such as '**binary file can not be executed**' or '**source code string cannot contain null bytes**' after installing or updating Anaconda packages.
+
+The relevant filesystem limitation is simple: **ICFS does not support hard links**, while a default Conda installation uses **hard links** to manage packages and save disk space.
+
+Because of this, if Conda is used with its default hard-link behavior on ICFS, installed packages may become invalid and fail at runtime.
+
+On Gravity, we handle this by providing a customized user `~/.condarc` that **forces Conda to use soft links** instead of hard links.
+
+Therefore, the user-facing rule is:
+
+- you may use `conda/mamba install/create` on **both `login01` and `login02`**;
+- you should **not overwrite or remove the cluster-provided `.condarc`**.
+
+If the customized `.condarc` is kept in place, Conda package installation should work normally.
+
 
 ## hdf5 file open failure on login02
 When opening a hdf5 file on login02, one may sometimes run into the following error
@@ -33,7 +43,7 @@ or using `h5ls`:
 snap_001.0.hdf5: unable to open file
 ```
 
-This is a known problem in the NFS file system on `login02`. You can switch to read the file on `login01` instead.
+This issue was observed previously on `login02`. Please verify whether it still reproduces in the current environment before treating it as an active limitation.
 
 > [!WARNING]
 > Alternatively, you may choose to disable hdf5 file locking before reading, by setting the environment variable `HDF5_USE_FILE_LOCKING` to `FALSE`, e.g., in bash:

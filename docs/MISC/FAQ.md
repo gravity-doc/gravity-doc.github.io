@@ -98,11 +98,13 @@ From the *Warning*，you can see `Offending key in /home/lalala/.ssh/known_hosts
 
 ## source code string cannot contain null bytes
 
-`binary file can not be executed` or `source code string cannot contain null bytes` 👉 [issue of conda](/MISC/Issues?id=conda)   
+`binary file can not be executed` or `source code string cannot contain null bytes` 👉 [issue of conda](/MISC/Issues?id=conda)
 
-  > I am *so sorry* to tell you that your whole **CONDA** installation is destroyed. Cause this is a tricky bug🐛, we cannot fix it 😭.        
+  > The root cause is that the ICFS filesystem does **not support hard links**, while a default Conda installation uses **hard links** to manage packages and save disk space.
   >
-  > You should re-install your conda, and **never** install/update any package on **login01**.
+  > On Gravity, this is handled by a **customized `~/.condarc`** that forces Conda to use **soft links** instead.
+  >
+  > As long as you **do not overwrite or remove the cluster-provided `.condarc`**, using `conda/mamba install/create` on **both `login01` and `login02`** should work normally.
 
 ## Job logfile is empty
 
